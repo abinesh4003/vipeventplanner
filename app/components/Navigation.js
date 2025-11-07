@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -50,22 +52,37 @@ const Navigation = () => {
             className="rounded-full"
           />
           <span className="font-heading text-dark text-lg sm:text-xl tracking-wide font-semibold md:inline-block">
-            <span className="text-gold">EVENT</span> Planners
+            <span className="text-gold">Funtion</span> Planners
           </span>
         
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 font-medium font-heading text-[15px]">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="uppercase tracking-wide text-dark/80 hover:text-gold transition-colors duration-200"
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`uppercase tracking-wide transition-colors duration-200 relative pb-1 ${
+                  isActive 
+                    ? 'text-gold' 
+                    : 'text-dark/80 hover:text-gold'
+                }`}
+              >
+                {item.name}
+                {isActive && (
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
           <button
             type="button"
@@ -92,16 +109,23 @@ const Navigation = () => {
           className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t border-gold/20"
         >
           <div className="px-5 py-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="block w-full text-center text-dark uppercase tracking-wide font-medium py-2 hover:text-gold transition-colors duration-200"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`block w-full text-center uppercase tracking-wide font-medium py-2 transition-colors duration-200 ${
+                    isActive 
+                      ? 'text-gold' 
+                      : 'text-dark hover:text-gold'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
         </motion.div>
       )}
