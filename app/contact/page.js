@@ -1,125 +1,144 @@
-'use client';
 import React from "react";
-import { motion } from "framer-motion";
-import { Phone, MessageCircle, Mail, MapPin, Crown } from "lucide-react";
-import ContactSection from "../components/Contact"; // adjust path as needed
+import ContactPage from "../pages/contactPage";
 
-const ContactPage = () => {
-  const contactMethods = [
-    {
-      icon: <Phone className="w-6 h-6 text-[#d4af37]" />,
-      title: "Call Us",
-      desc: "Talk directly with our event expert",
-      value: "+91 8778304145",
-      link: "tel:+918778304145",
+export const metadata = {
+  title: "Contact Us - Get Free Quote for Event Management & Catering in Nagercoil | VIP Function Planners",
+  description: "Contact VIP Function Planners for professional event management and catering services in Nagercoil. Call us for free consultation and quotes. Available 24/7 for weddings, corporate events, and all celebrations across Kanyakumari district. Visit our office or book online today.",
+  keywords: "contact event planner nagercoil, catering services contact, event management enquiry, wedding planner contact nagercoil, get quote catering, book event planner, event management phone number nagercoil, catering services near me contact, vip function planners contact, event booking nagercoil",
+  authors: [{ name: "VIP Function Planners" }],
+  creator: "VIP Function Planners",
+  publisher: "VIP Function Planners",
+  metadataBase: new URL('https://vipfunctionplanners.com'),
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: "Contact VIP Function Planners - Event Management & Catering Nagercoil",
+    description: "Get in touch for professional event management and catering services in Nagercoil. Free consultation, instant quotes, and 24/7 availability for all your event needs.",
+    url: 'https://vipfunctionplanners.com/contact',
+    siteName: 'VIP Function Planners',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: '/contact-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact VIP Function Planners - Nagercoil',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Contact VIP Function Planners - Event Management Nagercoil",
+    description: "Reach out for event management and catering services in Nagercoil. Free quotes and consultation available.",
+    images: ['/contact-twitter.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
-    {
-      icon: <MessageCircle className="w-6 h-6 text-[#d4af37]" />,
-      title: "WhatsApp",
-      desc: "Instant chat & quick quotes",
-      value: "+91 8778304145",
-      link: "https://wa.me/918778304145",
-    },
-    {
-      icon: <Mail className="w-6 h-6 text-[#d4af37]" />,
-      title: "Email Us",
-      desc: "For detailed event proposals",
-      value: "vipfunctionplanners@gmail.com",
-      link: "mailto:vipfunctionplanners@gmail.com",
-    },
-    {
-      icon: <MapPin className="w-6 h-6 text-[#d4af37]" />,
-      title: "Visit Us",
-      desc: "Nagercoil, Tamil Nadu — Serving Kanyakumari District",
-      value: "Get Directions",
-      link: "https://maps.app.goo.gl/BpAtn8LuAQ6LYMXc6",
-    },
-  ];
+  },
+};
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact VIP Function Planners",
+  "description": "Contact page for VIP Function Planners - Event Management and Catering Services in Nagercoil",
+  "url": "https://vipfunctionplanners.com/contact",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "VIP Function Planners",
+    "image": "https://vipfunctionplanners.com/logo.jpg",
+    "@id": "https://vipfunctionplanners.com",
+    "url": "https://vipfunctionplanners.com",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "info@vipfunctionplanners.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street Address",
+      "addressLocality": "Nagercoil",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "629001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 8.1790,
+      "longitude": 77.4337
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Tamil"],
+        "contactOption": "TollFree",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-XXXXXXXXXX",
+        "contactType": "sales",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Tamil"]
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/vipfunctionplanners",
+      "https://www.instagram.com/vipfunctionplanners"
+    ]
+  }
+};
+
+const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-[#fff9ef] to-white text-gray-800">
-      
-      {/* ✨ Hero Section */}
-      <section className="py-20 text-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto"
-        >
-          <div className="inline-flex items-center gap-2 bg-[#d4af37]/10 border border-[#d4af37]/30 
-                          rounded-full px-4 py-2 mb-5 backdrop-blur-sm">
-            <Crown className="w-4 h-4 text-[#d4af37]" />
-            <span className="text-sm text-[#b9971f] font-medium">Let’s Connect</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 leading-tight text-gray-900">
-            Reach <span className="text-[#d4af37]">VIP Function Planners</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl mb-6 text-gray-600 font-light leading-relaxed">
-            We’re here to turn your special moments into golden memories.  
-            Whether it's a wedding, corporate event, or celebration — connect with us today.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* 📞 Contact Options */}
-      <section className="py-14 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Contact <span className="text-[#d4af37]">Our Team</span>
-            </h2>
-            <p className="text-gray-600 max-w-lg mx-auto">
-              Reach us through your preferred method below — we respond quickly.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactMethods.map((c, i) => (
-              <motion.a
-                key={i}
-                href={c.link}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-gradient-to-br from-[#fffaf2] to-white rounded-2xl border border-[#f5e6c2] p-6 
-                           hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-start"
-              >
-                <div className="mb-3">{c.icon}</div>
-                <h3 className="font-semibold text-lg text-gray-900 mb-1">{c.title}</h3>
-                <p className="text-sm text-gray-600 mb-2">{c.desc}</p>
-                <span className="text-[#d4af37] font-medium text-sm">{c.value}</span>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 📝 Contact Form */}
-      <section className="py-16 px-6 bg-gradient-to-br from-[#fffaf2] via-white to-[#fffaf2]">
-        <div className=" mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center mb-8"
-          >
-            Send Us a <span className="text-[#d4af37]">Message</span>
-          </motion.h2>
-
-          <ContactSection />
-        </div>
-      </section>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <ContactPage />
+    </>
   );
 };
 
-export default ContactPage;
+export default Contact;
