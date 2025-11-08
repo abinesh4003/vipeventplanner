@@ -27,7 +27,7 @@ export const metadata = {
   authors: [{ name: "VIP Function Planners" }],
   creator: "VIP Function Planners",
   publisher: "VIP Function Planners",
-  metadataBase: new URL('https://vipfunctionplanners.com'),
+  metadataBase: new URL('https://www.vipfunctionplanners.com'),
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -59,9 +59,9 @@ const organizationSchema = {
   "@type": "LocalBusiness",
   "name": "VIP Function Planners",
   "alternateName": "VIP Event Management and Catering",
-  "url": "https://vipfunctionplanners.com",
-  "logo": "https://vipfunctionplanners.com/logo.jpg",
-  "image": "https://vipfunctionplanners.com/logo.jpg",
+  "url": "https://www.vipfunctionplanners.com",
+  "logo": "https://www.vipfunctionplanners.com/logo.jpg",
+  "image": "https://www.vipfunctionplanners.com/logo.jpg",
   "description": "Best event management and catering services in Nagercoil specializing in weddings, corporate events, stage decoration, and celebrations",
   "telephone": "+91-XXXXXXXXXX",
   "email": "vipfunctionplanners@gmail.com",

@@ -1,21 +1,21 @@
- import React from "react";
- import GalleryPage from "../pages/galleryPage";
+import React from "react";
+import GalleryPage from "../pages/galleryPage";
 
- export const metadata = {
+export const metadata = {
   title: "Best Event Gallery - Wedding Photos & Stage Decoration | VIP Function Planners Nagercoil",
   description: "Explore our stunning gallery showcasing the best weddings, stage decorations, corporate events, and celebrations in Nagercoil. View premium catering setups, elegant decorations, and memorable events across Kanyakumari district. Real events, real moments from the best event planner.",
   keywords: "best event gallery nagercoil, best wedding photos nagercoil, best stage decoration photos, best event management portfolio, best catering gallery kanyakumari, best wedding decoration photos, best corporate event photos, best birthday party gallery, best function photos nagercoil, best event planner portfolio, best catering setup images, best wedding catering photos, best event decoration gallery nagercoil",
   authors: [{ name: "VIP Function Planners" }],
   creator: "VIP Function Planners",
   publisher: "VIP Function Planners",
-  metadataBase: new URL('https://vipfunctionplanners.com'),
+  metadataBase: new URL('https://www.vipfunctionplanners.com'),
   alternates: {
     canonical: '/gallery',
   },
   openGraph: {
     title: "Event Gallery - Wedding & Event Photos | VIP Function Planners Nagercoil",
     description: "Browse our collection of beautifully executed events in Nagercoil. Weddings, corporate functions, parties, and traditional celebrations with exceptional catering and decoration.",
-    url: 'https://vipfunctionplanners.com/gallery',
+    url: 'https://www.vipfunctionplanners.com/gallery',
     siteName: 'VIP Function Planners',
     locale: 'en_IN',
     type: 'website',
@@ -52,11 +52,11 @@ const gallerySchema = {
   "@type": "ImageGallery",
   "name": "VIP Function Planners Event Gallery",
   "description": "Photo gallery showcasing our event management and catering services in Nagercoil including weddings, corporate events, and celebrations",
-  "url": "https://vipfunctionplanners.com/gallery",
+  "url": "https://www.vipfunctionplanners.com/gallery",
   "provider": {
     "@type": "LocalBusiness",
     "name": "VIP Function Planners",
-    "image": "https://vipfunctionplanners.com/logo.jpg",
+    "image": "https://www.vipfunctionplanners.com/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nagercoil",
@@ -64,7 +64,7 @@ const gallerySchema = {
       "addressCountry": "IN"
     },
     "telephone": "+91-XXXXXXXXXX",
-    "url": "https://vipfunctionplanners.com"
+    "url": "https://www.vipfunctionplanners.com"
   },
   "about": [
     {
@@ -91,7 +91,7 @@ const gallerySchema = {
 };
 
 const Gallery = () => {
-  return  (
+  return (
     <>
       <script
         type="application/ld+json"

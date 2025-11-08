@@ -1,21 +1,21 @@
- import React from "react";
- import ServicesPage from "../pages/servicePage";
+import React from "react";
+import ServicesPage from "../pages/servicePage";
 
- export const metadata = {
+export const metadata = {
   title: "Best Catering & Event Management Services in Nagercoil | Wedding Stage Decoration | VIP Function Planners",
   description: "Best catering service & event planner in Nagercoil. Premium wedding services, stage decoration, corporate events, birthday parties, and traditional functions. Top-rated professional service across Kanyakumari with customized packages and guaranteed satisfaction.",
   keywords: "best catering services nagercoil, best event management services nagercoil, best wedding catering nagercoil, best stage decoration services nagercoil, best corporate event catering, best birthday party catering nagercoil, best engagement function catering, best traditional event catering, best outdoor catering nagercoil, best function hall catering, best marriage catering services, best event decoration services nagercoil, best wedding stage decoration nagercoil, top catering services kanyakumari, professional event planners nagercoil",
   authors: [{ name: "VIP Function Planners" }],
   creator: "VIP Function Planners",
   publisher: "VIP Function Planners",
-  metadataBase: new URL('https://vipfunctionplanners.com'),
+  metadataBase: new URL('https://www.vipfunctionplanners.com'),
   alternates: {
     canonical: '/services',
   },
   openGraph: {
     title: "Event Management & Catering Services in Nagercoil | VIP Function Planners",
     description: "Full-service event management and catering solutions for weddings, corporate events, parties, and traditional functions in Nagercoil. Customized packages, professional staff, and exceptional cuisine.",
-    url: 'https://vipfunctionplanners.com/services',
+    url: 'https://www.vipfunctionplanners.com/services',
     siteName: 'VIP Function Planners',
     locale: 'en_IN',
     type: 'website',
@@ -54,9 +54,9 @@ const servicesSchema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "VIP Function Planners",
-    "image": "https://vipfunctionplanners.com/logo.jpg",
-    "@id": "https://vipfunctionplanners.com",
-    "url": "https://vipfunctionplanners.com",
+    "image": "https://www.vipfunctionplanners.com/logo.jpg",
+    "@id": "https://www.vipfunctionplanners.com",
+    "url": "https://www.vipfunctionplanners.com",
     "telephone": "+91-XXXXXXXXXX",
     "priceRange": "$$",
     "address": {
@@ -153,7 +153,7 @@ const servicesSchema = {
 };
 
 const Services = () => {
-  return  (
+  return (
     <>
       <script
         type="application/ld+json"

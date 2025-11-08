@@ -1,5 +1,5 @@
 import React from "react";
-import AboutPage from "../pages/AboutPage"; 
+import AboutPage from "../pages/AboutPage";
 
 export const metadata = {
   title: "About Us - Best Event Management & Catering Company in Nagercoil | VIP Function Planners",
@@ -8,14 +8,14 @@ export const metadata = {
   authors: [{ name: "VIP Function Planners" }],
   creator: "VIP Function Planners",
   publisher: "VIP Function Planners",
-  metadataBase: new URL('https://vipfunctionplanners.com'),
+  metadataBase: new URL('https://www.vipfunctionplanners.com'),
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About VIP Function Planners - Premier Event Management & Catering in Nagercoil",
     description: "Discover why VIP Function Planners is Nagercoil's #1 choice for event management and catering. 15+ years experience, 1000+ successful events, and a commitment to excellence in every celebration.",
-    url: 'https://vipfunctionplanners.com/about',
+    url: 'https://www.vipfunctionplanners.com/about',
     siteName: 'VIP Function Planners',
     locale: 'en_IN',
     type: 'website',
@@ -52,8 +52,8 @@ const aboutSchema = {
   "@type": "Organization",
   "name": "VIP Function Planners",
   "alternateName": "VIP Event Management and Catering",
-  "url": "https://vipfunctionplanners.com",
-  "logo": "https://vipfunctionplanners.com/logo.jpg",
+  "url": "https://www.vipfunctionplanners.com",
+  "logo": "https://www.vipfunctionplanners.com/logo.jpg",
   "description": "Leading event management and catering company in Nagercoil with over 15 years of experience in organizing weddings, corporate events, and celebrations",
   "foundingDate": "2008",
   "address": {
