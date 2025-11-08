@@ -8,8 +8,8 @@ import WhyChooseUsSection from "./components/WhyChooseUs";
 import CTA from "./components/cta";
 
 export const metadata = {
-  title: "Best Event Management & Catering Services in Nagercoil | VIP Function Planners - Top Wedding Planners",
-  description: "VIP Function Planners - Best catering service & event planner in Nagercoil. Top-rated wedding services, stage decoration, corporate events, and party planning. 15+ years experience, 1000+ successful events across Kanyakumari. #1 choice for all celebrations.",
+  title: "VIP Function Planners - Best Event Management Nagercoil | Wedding & Catering Services",
+  description: "Premier event management and catering services in Nagercoil. Expert wedding planning, stage decoration, corporate events. 15+ years experience serving Kanyakumari district.",
   keywords: "best catering service in nagercoil, best event planner in nagercoil, best stage decoration in nagercoil, best wedding services in nagercoil, best caterers in nagercoil, top event management nagercoil, best wedding planners nagercoil, best birthday party organizers nagercoil, best corporate event management kanyakumari, best function hall catering nagercoil, best marriage event planners nagercoil, best party planners nagercoil, best event organizers nagercoil, best traditional function catering, best outdoor catering services nagercoil, vip function planners nagercoil",
   authors: [{ name: "VIP Function Planners" }],
   creator: "VIP Function Planners",

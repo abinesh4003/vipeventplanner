@@ -14,12 +14,12 @@ const AboutUs = () => {
     {
       url: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
       heading: "Best Event Planners In Nagercoil",
-      desc: "Plan your dream event with us and let us take care of the rest. We have a team of experienced event planners who will help you plan your event from start to finish."
+      desc: "Professional event planning services with experienced coordinators handling every detail of your special celebration from concept to completion."
     }, // Event planners working
     {
       url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
       heading: "Best Event Decorators In Nagercoil",
-      desc: "Decorate your event with us and let us take care of the rest. We have a team of experienced event decorators who will help you decorate your event from start to finish."
+      desc: "Creative decoration services transforming venues with stunning themes, elegant setups, and personalized design elements for memorable events."
     }, // Event setup
     {
       url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
@@ -34,7 +34,7 @@ const AboutUs = () => {
     {
       url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
       heading: "Best Wedding Photography In Nagercoil",
-      desc: "Plan your dream event with us and let us take care of the rest. we have the experienced team of wedding photographers to make your event more memorable."
+      desc: "Professional wedding photography capturing precious moments with artistic vision and technical expertise for timeless memories."
     }, // Event coordination
     {
       url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
@@ -44,7 +44,7 @@ const AboutUs = () => {
     {
       url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
       heading: "Top Rated Google Reviews In Nagercoil",
-      desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
+      desc: "Highly rated event management company with excellent client reviews and proven track record of successful celebrations in Nagercoil."
     }  // Professional team portrait
   ];
 
@@ -80,7 +80,7 @@ const AboutUs = () => {
 
   const testimonials = [
     {
-      quote: "They made our wedding look like a royal celebration! Everything was elegant and perfectly organized.",
+      quote: "Outstanding wedding coordination with royal elegance! Every detail was perfectly organized and executed flawlessly.",
       author: "Priya & Karthik",
       event: "NagerCoil",
     },
@@ -135,7 +135,7 @@ const AboutUs = () => {
       event: "Nagercoil",
     },
     {
-      quote: "The traditional welcome service added such a special touch to our event. Our guests felt truly honored and welcomed.",
+      quote: "Exceptional traditional welcome arrangements created a warm, honored atmosphere that impressed all our guests throughout the celebration.",
       author: "Geetha Krishnan",
       event: "Kanyakumari",
     }
