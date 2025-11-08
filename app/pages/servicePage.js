@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import CTA from "../components/cta";
 import {
   Palette,
   Utensils,
@@ -33,8 +34,9 @@ import {
   MapPin,
   Mail,
   ChevronDown,
-  Link
+
 } from 'lucide-react';
+import Link from "next/link";
 
 const ServicesPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -103,7 +105,7 @@ const ServicesPage = () => {
       ],
       features: [
         "Custom Thematic Design Concepts",
-        "Premium Floral & Fabric Arrangements",
+        " Floral & Fabric Arrangements",
         "Traditional & Modern Mandap Setups",
         "Professional LED & Ambient Lighting",
         "3D Props & Installations",
@@ -117,7 +119,7 @@ const ServicesPage = () => {
     {
       id: 2,
       icon: <Utensils size={28} />,
-      title: "Premium Wedding Catering",
+      title: "Quality Wedding Catering",
       shortDescription: "Authentic multi-cuisine catering with impeccable taste and presentation.",
       fullDescription: "Elevate your wedding feast with our traditional and modern catering services. We specialize in authentic South Indian wedding meals (11 kootu varieties, 5 curries, 3 payasam types), North Indian delicacies, and international cuisines. Our experienced chefs use the freshest ingredients, maintain strict hygiene standards, and create stunning food presentations that delight all senses.",
       category: "hospitality",
@@ -409,10 +411,10 @@ const ServicesPage = () => {
   };
 
   const stats = [
-    { number: "700+", label: "Events Completed", icon: <Calendar className="w-5 h-5" /> },
-    { number: "98%", label: "Client Satisfaction", icon: <Heart className="w-5 h-5" /> },
+    { number: "500+", label: "Events Completed", icon: <Calendar className="w-5 h-5" /> },
+    { number: "100%", label: "Client Satisfaction", icon: <Heart className="w-5 h-5" /> },
     { number: "60+", label: "Expert Team", icon: <Users className="w-5 h-5" /> },
-    { number: "8+", label: "Years Excellence", icon: <Award className="w-5 h-5" /> }
+    { number: "12+", label: "Years Excellence", icon: <Award className="w-5 h-5" /> }
   ];
 
   const whyChooseUs = [
@@ -467,23 +469,12 @@ const ServicesPage = () => {
       {/* Modern Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden "
+        className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]"
       >
-
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/service-hero.mp4" type="video/mp4" />
-        </video>
-
         {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.1)_50%,transparent_100%)]"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.4),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
         </div>
 
         {/* Floating Elements */}
@@ -511,7 +502,7 @@ const ServicesPage = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto py-16">
+        <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-6xl mx-auto py-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
@@ -522,10 +513,10 @@ const ServicesPage = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-[#d4af37]/20 border border-[#d4af37]/30 rounded-full px-4 py-2 mb-6 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 bg-white/40 border border-[var(--color-dark)]/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm"
             >
-              <Star className="w-4 h-4 text-[#d4af37] fill-[#d4af37]" />
-              <span className="text-xs md:text-sm text-[#d4af37] font-medium">Nagercoil's #1 Event Planners</span>
+              <Star className="w-4 h-4 text-[var(--color-dark)] fill-[var(--color-dark)]" />
+              <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Nagercoil's #1 Event Planners</span>
             </motion.div>
 
             <motion.h1
@@ -534,15 +525,15 @@ const ServicesPage = () => {
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Best <span className="text-[#d4af37]">Event Services</span>
+              Best <span className="text-[var(--color-dark)]">Event Services</span>
               <br />
-              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-300">
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[var(--color-dark)]/80">
                 in Nagercoil
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 font-light max-w-4xl mx-auto leading-relaxed px-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-[var(--color-dark)]/80 font-light max-w-4xl mx-auto leading-relaxed px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -556,21 +547,24 @@ const ServicesPage = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center"
             >
-              <motion.a
-                href="tel:+918778304145"
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#d4af37] text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
-                <Phone className="w-4 h-4 md:w-5 md:h-5" />
-                Call: +91 8778304145
-              </motion.a>
+                <Link
+                  href="tel:+918778304145"
+                  className="bg-[var(--color-dark)] text-[var(--color-gold-light)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base shadow-2xl hover:bg-black transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
+                >
+                  <Phone className="w-4 h-4 md:w-5 md:h-5" />
+                  Call: +91 8778304145
+                </Link>
+              </motion.div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
+                className="border-2 border-[var(--color-dark)] text-[var(--color-dark)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-[var(--color-dark)] hover:text-[var(--color-gold-light)] transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 View Services <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </motion.button>
@@ -581,18 +575,18 @@ const ServicesPage = () => {
               initial={{ opacity: 0 }}
               animate={isHeroInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-gray-400"
+              className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-[var(--color-dark)]/70"
             >
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
                 <span>700+ Events</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-                <span>98% Satisfaction</span>
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>100% Satisfaction</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
                 <span>ISO Certified</span>
               </div>
             </motion.div>
@@ -603,14 +597,14 @@ const ServicesPage = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+          className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--color-dark)]"
         >
           <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
         </motion.div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-black to-black/50 text-white">
+      <section className="py-12 md:py-16 bg-[var(--color-dark)] text-[var(--color-gold-light)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
@@ -682,7 +676,7 @@ const ServicesPage = () => {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
-              Our Premium <span className="text-[#d4af37]">Services</span>
+              Our <span className="text-[#d4af37]">Services</span>
             </h2>
             <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full mb-4 md:mb-6"></div>
             <p className="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto px-4 leading-relaxed">
@@ -895,66 +889,9 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-black to-black/50  text-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[length:20px_20px]"></div>
-        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-              Ready to Plan Your <span className="text-[#d4af37]">Dream Event?</span>
-            </h2>
-            <p className="text-gray-300 text-sm md:text-lg lg:text-xl mb-6 md:mb-8 leading-relaxed px-4">
-              Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!
-            </p>
+      <CTA text="Ready to Plan Your Dream Event?" desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!" btn1="Contact Now" btn2="View Gallery" btn1link="/contact" btn2link="/gallery" />
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-6 md:mb-8">
-              <motion.a
-                href="tel:+918778304145"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#d4af37] text-black px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base shadow-2xl hover:shadow-[#d4af37]/30 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
-              >
-                <Phone className="w-4 h-4 md:w-5 md:h-5" />
-                Call: +91 8778304145
-              </motion.a>
-
-              <motion.a
-                href="https://wa.me/918778304145"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-[#d4af37] text-[#d4af37] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-[#d4af37] hover:text-black transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
-              >
-                <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
-                WhatsApp Us
-              </motion.a>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-white border-t border-gray-700 pt-6 md:pt-8">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <Link href="mailto:shejinoantony@gmail.com" >vipfunctionplanners@gmail.com</Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Nagercoil, Tamil Nadu</span>
-              </div>
-            </div>
-
-            <p className="text-white/80 text-xs md:text-sm mt-4 md:mt-6 ">
-              ✨ Trusted by 700+ clients • ISO Certified • 24/7 Support
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Service Detail Modal */}
       <AnimatePresence>
@@ -1062,13 +999,13 @@ const ServicesPage = () => {
                   >
                     Close
                   </button>
-                  <a
-                    href="tel:+918778304145"
+                  <Link
+                    href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20event%20planning%20services:%20${selectedService.title}%20service. `}
                     className="bg-[#d4af37] text-black px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
                   >
                     <Phone className="w-4 h-4 md:w-5 md:h-5" />
                     Book This Service
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

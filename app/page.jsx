@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import SpecialHighlightsSection from "./components/Special";
 import Stalls from "./components/Stalls";
 import WhyChooseUsSection from "./components/WhyChooseUs";
+import CTA from "./components/cta";
 
 export const metadata = {
   title: "Best Event Management & Catering Services in Nagercoil | VIP Function Planners - Top Wedding Planners",
@@ -68,7 +69,7 @@ const homeSchema = {
   "@id": "https://vipfunctionplanners.com",
   "url": "https://vipfunctionplanners.com",
   "telephone": "+91-XXXXXXXXXX",
-  "email": "info@vipfunctionplanners.com",
+  "email": "vipfunctionplanners@gmail.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -116,8 +117,9 @@ export default function Home() {
         <AboutUs />
         <Services />
         <SpecialHighlightsSection />
-        <Stalls/>
-        <WhyChooseUsSection/>
+        <Stalls />
+        <WhyChooseUsSection />
+        <CTA text="Ready to make moments into unforgettable memories?" desc="Let us bring your vision to life with our Best event planning services" btn1="Book Now" btn2="View Services" btn1link="/contact" btn2link="/services" />
       </div>
     </>
   );

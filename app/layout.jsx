@@ -49,10 +49,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
+  themeColor: '#f7e9b8',
 };
 
 
@@ -66,7 +63,7 @@ const organizationSchema = {
   "image": "https://vipfunctionplanners.com/logo.jpg",
   "description": "Best event management and catering services in Nagercoil specializing in weddings, corporate events, stage decoration, and celebrations",
   "telephone": "+91-XXXXXXXXXX",
-  "email": "info@vipfunctionplanners.com",
+  "email": "vipfunctionplanners@gmail.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",

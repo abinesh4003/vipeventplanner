@@ -92,7 +92,7 @@ export default function ServicesGrid() {
         >
           We offer a wide range of services to ensure your wedding planning experience is stress-free and enjoyable.
         </motion.p>
-        <div className="h-1 w-20 bg-gold mx-auto rounded-full mb-8"></div>
+        <div className="h-1 w-20 bg-gold mx-auto rounded-full my-8"></div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">

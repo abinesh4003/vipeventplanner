@@ -19,3 +19,12 @@
    margin: 0;
    padding: 0;
  }
+
+ /* ---------- Scrollbar Hide ---------- */
+ .scrollbar-hide {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+ }
+ .scrollbar-hide::-webkit-scrollbar {
+   display: none;
+ }

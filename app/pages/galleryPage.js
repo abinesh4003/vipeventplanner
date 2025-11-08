@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   Search,
   Filter,
@@ -29,6 +30,8 @@ import {
   Instagram,
 } from 'lucide-react';
 
+import CTA from "../components/cta";
+
 const GalleryPage = () => {
   const [activeCategory, setActiveCategory] = useState("stage");
   const [selectedImage, setSelectedImage] = useState(null);
@@ -42,7 +45,7 @@ const GalleryPage = () => {
       name: "Stage Decorations",
       icon: <Palette className="w-5 h-5" />,
       count: 45,
-      color: "from-purple-500 to-pink-500",
+      color: "from-gold to-gold",
       description: "Beautiful stage setups for weddings and events"
     },
     {
@@ -50,7 +53,7 @@ const GalleryPage = () => {
       name: "Catering Services",
       icon: <Utensils className="w-5 h-5" />,
       count: 38,
-      color: "from-orange-500 to-red-500",
+      color: "from-gold to-gold",
       description: "Veg & Non-veg food presentations"
     },
     {
@@ -58,7 +61,7 @@ const GalleryPage = () => {
       name: "Entertainment & Games",
       icon: <Music className="w-5 h-5" />,
       count: 28,
-      color: "from-green-500 to-blue-500",
+      color: "from-gold to-gold",
       description: "DJ, games and guest entertainment"
     },
     {
@@ -66,7 +69,7 @@ const GalleryPage = () => {
       name: "Other Events",
       icon: <Sparkles className="w-5 h-5" />,
       count: 52,
-      color: "from-yellow-500 to-amber-500",
+      color: "from-gold to-gold",
       description: "Complete event management gallery"
     }
   ];
@@ -335,7 +338,7 @@ const GalleryPage = () => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!isModalOpen) return;
-      
+
       if (e.key === 'Escape') {
         closeImageModal();
       } else if (e.key === 'ArrowRight') {
@@ -351,23 +354,82 @@ const GalleryPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-x-hidden w-full">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-6">
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.4),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-4xl mx-auto py-16">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center"
+            transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-              Our <span className="text-[#d4af37]">Event Gallery</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-white/40 border border-[var(--color-dark)]/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm"
+            >
+              <Camera className="w-4 h-4 text-[var(--color-dark)]" />
+              <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Our Work Portfolio</span>
+            </motion.div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              Our <span className="text-[var(--color-dark)]">Event Gallery</span>
             </h1>
-            <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+
+            <p className="text-base sm:text-lg md:text-xl text-[var(--color-dark)]/80 font-light max-w-3xl mx-auto leading-relaxed mb-8">
               Explore our stunning event creations - Stage decorations, catering services, entertainment, and complete event management in Nagercoil
             </p>
+
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+            >
+              <Link
+                href="/contact"
+                className="bg-[var(--color-dark)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--color-dark)]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Book Your Event
+              </Link>
+              <Link
+                href="/about"
+                className="bg-white/20 text-[var(--color-dark)] px-6 py-3 rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
+              >
+                About Us
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-[var(--color-dark)]/70"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>700+ Events</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>1000+ Photos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>Real Events</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Category Navigation */}
       <div className="sticky top-0 z-30 bg-white/95 backdrop-blur-sm border-b shadow-sm">
@@ -379,17 +441,15 @@ const GalleryPage = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-4 py-3 rounded-2xl whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
-                  activeCategory === category.id
+                className={`flex items-center gap-2 px-4 py-3 rounded-2xl whitespace-nowrap transition-all duration-300 flex-shrink-0 ${activeCategory === category.id
                     ? `bg-gradient-to-r ${category.color} text-white shadow-lg`
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 {category.icon}
                 <span className="font-medium text-sm">{category.name}</span>
-                <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                  activeCategory === category.id ? "bg-white/20" : "bg-gray-300"
-                }`}>
+                <span className={`text-xs px-1.5 py-0.5 rounded-full ${activeCategory === category.id ? "bg-white/20" : "bg-gray-300"
+                  }`}>
                   {category.count}
                 </span>
               </motion.button>
@@ -436,10 +496,10 @@ const GalleryPage = () => {
                   alt={image.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <h3 className="text-white font-semibold text-sm mb-1 line-clamp-1">
@@ -495,242 +555,213 @@ const GalleryPage = () => {
           </div>
         )}
       </div>
-            {/* Behind the Scenes Section */}
-<section className="py-16 bg-white">
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12"
-    >
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        <span className="text-[#d4af37]">Behind The Scenes</span>
-      </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto">
-        See how we transform ordinary spaces into extraordinary experiences
-      </p>
-    </motion.div>
+      {/* Behind the Scenes Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              <span className="text-[#d4af37]">Behind The Scenes</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              See how we transform ordinary spaces into extraordinary experiences
+            </p>
+          </motion.div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="bg-gradient-to-br from-[#d4af37]/10 to-transparent p-8 rounded-2xl"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-[#d4af37] rounded-full flex items-center justify-center">
-            <Sparkles className="w-6 h-6 text-white" />
-          </div>
-          <h3 className="text-xl font-bold text-gray-900">Setup Process</h3>
-        </div>
-        <p className="text-gray-600 mb-4">
-          From empty venue to breathtaking setup - watch our team create magic step by step
-        </p>
-        <div className="space-y-2">
-          {['Venue Planning', 'Theme Execution', 'Lighting Setup', 'Final Touches'].map((step, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-[#d4af37]" />
-              <span className="text-sm text-gray-700">{step}</span>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="bg-gradient-to-br from-blue-50 to-transparent p-8 rounded-2xl"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-            <Zap className="w-6 h-6 text-white" />
-          </div>
-          <h3 className="text-xl font-bold text-gray-900">Real-time Execution</h3>
-        </div>
-        <p className="text-gray-600 mb-4">
-          Our team working seamlessly to ensure perfect execution during live events
-        </p>
-        <div className="space-y-2">
-          {['Coordination', 'Quality Check', 'Guest Management', 'Problem Solving'].map((step, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-blue-500" />
-              <span className="text-sm text-gray-700">{step}</span>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
-
-
-
-{/* Transformation Showcase Section */}
-<section className="py-16 bg-white">
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12"
-    >
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        Amazing <span className="text-[#d4af37]">Transformations</span>
-      </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto">
-        See how we transform ordinary spaces into extraordinary venues
-      </p>
-    </motion.div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {[
-        {
-          before: "https://images.unsplash.com/photo-1549451371-64aa98a6f660?auto=format&fit=crop&w=600&q=80",
-          after: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
-          title: "Empty Hall to Wedding Venue",
-          time: "8 hours transformation"
-        },
-        {
-          before: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80",
-          after: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80",
-          title: "Office Space to Conference Hall",
-          time: "6 hours setup"
-        }
-      ].map((transformation, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gray-50 rounded-2xl p-6"
-        >
-          <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">{transformation.title}</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="text-center">
-              <div className="relative h-48 rounded-lg overflow-hidden mb-2">
-                <img
-                  src={transformation.before}
-                  alt="Before"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs">
-                  Before
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-[#d4af37]/10 to-transparent p-8 rounded-2xl"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-[#d4af37] rounded-full flex items-center justify-center">
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900">Setup Process</h3>
               </div>
-              <p className="text-xs text-gray-600">Empty Space</p>
-            </div>
-            <div className="text-center">
-              <div className="relative h-48 rounded-lg overflow-hidden mb-2">
-                <img
-                  src={transformation.after}
-                  alt="After"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs">
-                  After
+              <p className="text-gray-600 mb-4">
+                From empty venue to breathtaking setup - watch our team create magic step by step
+              </p>
+              <div className="space-y-2">
+                {['Venue Planning', 'Theme Execution', 'Lighting Setup', 'Final Touches'].map((step, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#d4af37]" />
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-blue-50 to-transparent p-8 rounded-2xl"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900">Real-time Execution</h3>
               </div>
-              <p className="text-xs text-gray-600">Transformed</p>
+              <p className="text-gray-600 mb-4">
+                Our team working seamlessly to ensure perfect execution during live events
+              </p>
+              <div className="space-y-2">
+                {['Coordination', 'Quality Check', 'Guest Management', 'Problem Solving'].map((step, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm text-gray-700">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Transformation Showcase Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Amazing <span className="text-[#d4af37]">Transformations</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              See how we transform ordinary spaces into extraordinary venues
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                before: "https://images.unsplash.com/photo-1549451371-64aa98a6f660?auto=format&fit=crop&w=600&q=80",
+                after: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
+                title: "Empty Hall to Wedding Venue",
+                time: "8 hours transformation"
+              },
+              {
+                before: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80",
+                after: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80",
+                title: "Office Space to Conference Hall",
+                time: "6 hours setup"
+              }
+            ].map((transformation, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-2xl p-6"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">{transformation.title}</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <div className="relative h-48 rounded-lg overflow-hidden mb-2">
+                      <img
+                        src={transformation.before}
+                        alt="Before"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs">
+                        Before
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600">Empty Space</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="relative h-48 rounded-lg overflow-hidden mb-2">
+                      <img
+                        src={transformation.after}
+                        alt="After"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs">
+                        After
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600">Transformed</p>
+                  </div>
+                </div>
+                <div className="text-center mt-4">
+                  <p className="text-sm text-[#d4af37] font-medium">{transformation.time}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram Feed Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-black text-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Instagram className="w-8 h-8 text-[#d4af37]" />
+              <h2 className="text-2xl md:text-3xl font-bold">Follow Our Journey</h2>
             </div>
-          </div>
-          <div className="text-center mt-4">
-            <p className="text-sm text-[#d4af37] font-medium">{transformation.time}</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              See real-time updates and behind-the-scenes moments on Instagram
+            </p>
+          </motion.div>
 
-{/* Instagram Feed Section */}
-<section className="py-16 bg-gradient-to-b from-gray-900 to-black text-white">
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-12"
-    >
-      <div className="flex items-center justify-center gap-3 mb-4">
-        <Instagram className="w-8 h-8 text-[#d4af37]" />
-        <h2 className="text-2xl md:text-3xl font-bold">Follow Our Journey</h2>
-      </div>
-      <p className="text-gray-300 max-w-2xl mx-auto">
-        See real-time updates and behind-the-scenes moments on Instagram
-      </p>
-    </motion.div>
-
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-      {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-        <motion.div
-          key={item}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.05 }}
-          className="aspect-square bg-gray-800 rounded-lg overflow-hidden cursor-pointer relative group"
-        >
-          <div className="w-full h-full bg-gradient-to-br from-[#d4af37]/20 to-transparent flex items-center justify-center">
-            <Instagram className="w-8 h-8 text-[#d4af37] opacity-70" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square bg-gray-800 rounded-lg overflow-hidden cursor-pointer relative group"
+              >
+                <div className="w-full h-full bg-gradient-to-br from-[#d4af37]/20 to-transparent flex items-center justify-center">
+                  <Instagram className="w-8 h-8 text-[#d4af37] opacity-70" />
+                </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white text-sm font-medium">@vipfunctionplanners</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <p className="text-white text-sm font-medium">@vipfunctionplanners</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mt-8"
-    >
-      <a
-        href="#"
-        className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
-      >
-        <Instagram className="w-5 h-5" />
-        Follow on Instagram
-      </a>
-    </motion.div>
-  </div>
-</section>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
+          >
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+            >
+              <Instagram className="w-5 h-5" />
+              Follow on Instagram
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-[#d4af37] to-amber-500 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Like What You See?
-          </h2>
-          <p className="text-white/90 text-sm md:text-base mb-6 max-w-2xl mx-auto">
-            Let's create beautiful memories for your next event. Contact us for a free consultation and customized quote.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <motion.a
-              href="tel:+918778304145"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-[#d4af37] px-6 py-3 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              Call Now
-            </motion.a>
-            <motion.a
-              href="https://wa.me/918778304145"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-white hover:text-[#d4af37] transition-all"
-            >
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
-            </motion.a>
-          </div>
-        </div>
-      </div>
+      <CTA btn2="About Us" btn2link="/about" />
 
       {/* Image Modal */}
       <AnimatePresence>
@@ -815,10 +846,15 @@ const GalleryPage = () => {
                     <Share2 className="w-4 h-4" />
                     Share
                   </button>
-                  <button className="flex-1 bg-[#d4af37] text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors text-sm">
-                    <Phone className="w-4 h-4" />
-                    Book Similar
-                  </button>
+                 
+                    <button className="flex-1 bg-[#d4af37] text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors text-sm">
+                      <Phone className="w-4 h-4" />
+                       <Link href="/contact" className=""> Book Similar</Link>
+                     
+                    </button>
+                 
+
+                  
                 </div>
               </div>
 

@@ -60,7 +60,7 @@ const contactSchema = {
     "@id": "https://vipfunctionplanners.com",
     "url": "https://vipfunctionplanners.com",
     "telephone": "+91-XXXXXXXXXX",
-    "email": "info@vipfunctionplanners.com",
+    "email": "vipfunctionplanners@gmail.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

@@ -1,7 +1,7 @@
 'use client';
-import { 
-  Instagram, 
-  Facebook, 
+import {
+  Instagram,
+  Facebook,
   Youtube,
   Phone,
   Mail,
@@ -9,10 +9,20 @@ import {
   MessageCircle,
   ArrowRight
 } from 'lucide-react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const pageLinks = [
+    {name:'home', href:'/'},
+    {name: 'services', href: '/services'},
+    {name: 'gallery', href: '/gallery'},
+    {name: 'about', href: '/about'},
+    {name: 'testimonials', href: '/testimonials'},
+    {name: 'contact', href: '/contact'}
+  ]
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -30,33 +40,21 @@ const Footer = () => {
   return (
     <footer className="bg-[#0a0a0a] text-white pt-16 pb-10 font-montserrat">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
-        {/* CTA Section */}
-        <div className="text-center mb-12">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => scrollToSection('contact')}
-            className="bg-gradient-to-r from-gold to-gold-dark text-black px-8 py-4 rounded-full font-semibold shadow-md hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
-          >
-            Plan Your Event Today
-            <ArrowRight size={20} />
-          </motion.button>
-        </div>
+
 
         {/* Grid Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mb-12">
-          
+
           {/* Brand Section */}
           <div className="lg:col-span-2 text-center md:text-left">
             <h3 className="text-2xl font-bold text-gold mb-4 font-poppins">
               V.I.P Function Planners
             </h3>
-            <p className="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
-              Creating unforgettable experiences with precision, creativity, and luxury — 
+            <p className="text-gray-400 leading-relaxed mb-2 text-sm md:text-base">
+              Creating unforgettable experiences with precision, creativity, and luxury —
               the signature V.I.P touch that defines excellence in Nagercoil.
             </p>
-            <div className="flex justify-center md:justify-start gap-4">
+            {/* <div className="flex justify-center md:justify-start gap-4">
               {[Instagram, Facebook, Youtube].map((Icon, i) => (
                 <a
                   key={i}
@@ -66,21 +64,21 @@ const Footer = () => {
                   <Icon className="text-gold" size={20} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Quick Links</h4>
             <ul className="space-y-3 text-sm md:text-base">
-              {['home', 'about', 'services', 'gallery', 'testimonials', 'contact'].map((item) => (
-                <li key={item}>
+              {pageLinks.map((item) => (
+                <li key={item.name}>
+                 <Link href={item.href}>
                   <button
-                    onClick={() => scrollToSection(item)}
                     className="text-gray-400 hover:text-gold transition-colors capitalize"
                   >
-                    {item}
-                  </button>
+                    {item.name}
+                  </button></Link>
                 </li>
               ))}
             </ul>
@@ -98,9 +96,9 @@ const Footer = () => {
                 'Catering Services',
               ].map((service) => (
                 <li key={service}>
-                  <a href="#" className="text-gray-400 hover:text-gold transition-colors">
+                  <Link href="/services" className="text-gray-400 hover:text-gold transition-colors">
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -110,11 +108,10 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Support</h4>
             <ul className="space-y-3 text-sm md:text-base">
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors">FAQs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-gold transition-colors">Contact Support</a></li>
+              <li><Link href="/faqs" className="text-gray-400 hover:text-gold transition-colors">FAQs</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-400 hover:text-gold transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="text-gray-400 hover:text-gold transition-colors">Terms of Service</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-gold transition-colors">Contact Support</Link></li>
             </ul>
           </div>
 
@@ -124,9 +121,9 @@ const Footer = () => {
             <div className="space-y-4 text-sm md:text-base">
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Phone className="text-gold" size={18} />
-                <a href="tel:8778304145" className="text-gray-400 hover:text-gold transition-colors">
+                <Link href="tel:8778304145" className="text-gray-400 hover:text-gold transition-colors">
                   +91 8778304145
-                </a>
+                </Link>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <MessageCircle className="text-gold" size={18} />
@@ -136,9 +133,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Mail className="text-gold" size={18} />
-                <a href="mailto:vipfunctionplanners@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
-                  info@vipfunctionplanners.com
-                </a>
+                <Link href="mailto:vipfunctionplanners@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
+                  vipfunctionplanners@gmail.com
+                </Link>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <MapPin className="text-gold" size={18} />

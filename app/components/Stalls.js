@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Slider from "react-slick";
 import { PartyPopper, IceCream2, GlassWater, Candy, Beer, CupSoda, Popcorn } from "lucide-react";
-
+import Link from "next/link";
 
 const Stalls = () => {
   const ref = useRef(null);
@@ -160,13 +160,17 @@ const Stalls = () => {
                     <p className="text-gray-600 font-light font-montserrat mt-2 mb-4">
                       {stall.description}
                     </p>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="text-gold border border-gold px-5 py-2 rounded-full font-medium hover:bg-gold hover:text-white transition-all duration-300"
-                    >
-                      Explore
-                    </motion.button>
+
+
+                    <Link href='/contact'>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="text-gold border border-gold px-5 py-2 rounded-full font-medium hover:bg-gold hover:text-white transition-all duration-300"
+                      >
+                        Explore
+                      </motion.button>
+                      </Link>
                   </div>
                 </motion.div>
               </div>
@@ -181,6 +185,7 @@ const Stalls = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mt-14"
         >
+          <Link href='/contact'>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -188,6 +193,7 @@ const Stalls = () => {
           >
             Book Our Stalls
           </motion.button>
+          </Link>
           <p className="text-gray-600 text-sm mt-4 font-light">
             Make your event unforgettable with these premium additions.
           </p>

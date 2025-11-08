@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Slider from "react-slick";
+import Link from "next/link";
 
 const SpecialHighlightsSection = () => {
   const ref = useRef(null);
@@ -197,6 +198,7 @@ const SpecialHighlightsSection = () => {
                       </div>
                     )}
 
+                    <Link href="/services">
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -204,6 +206,7 @@ const SpecialHighlightsSection = () => {
                     >
                       Learn More
                     </motion.button>
+                    </Link>
                   </motion.div>
                 </div>
 

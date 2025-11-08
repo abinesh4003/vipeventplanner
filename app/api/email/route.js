@@ -40,9 +40,10 @@ export async function POST(request) {
     }
 
     // Validate phone format (basic validation)
-    if (!/^[\d\s\-\+\(\)]{10,}$/.test(phone.replace(/\D/g, ''))) {
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
       return NextResponse.json(
-        { error: "Invalid phone number format" },
+        { error: "Phone number must have at least 10 digits" },
         { status: 400 }
       );
     }
@@ -70,7 +71,7 @@ export async function POST(request) {
       "other": "Other"
     };
 
-    const formattedEventType = eventTypeLabels[eventType] || eventType;
+    const formattedEventType = eventTypeLabels[eventType.toLowerCase()] || eventType;
     const formattedEventDate = eventDate ? new Date(eventDate).toLocaleDateString() : 'Not specified';
 
     // Email options with all form data

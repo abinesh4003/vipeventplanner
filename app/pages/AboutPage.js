@@ -3,6 +3,8 @@
 'use client';
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import CTA from "../components/cta";
+import Image from "next/image";
 import {
   Heart,
   Award,
@@ -30,6 +32,8 @@ import {
   Gem,
   Eye
 } from 'lucide-react';
+import Slider from "react-slick";
+import Link from "next/link";
 
 const AboutPage = () => {
 
@@ -48,6 +52,44 @@ const AboutPage = () => {
       description: "Visionary leader with a passion for creating unforgettable experiences. Leads the creative direction and ensures every event reflects our premium standards.",
       achievements: ["500+ Events", "12 Years Excellence", "Premium Quality"]
     }
+  ];
+
+   const images = [
+    {
+      url: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      heading: "Best Event Planners In Nagercoil",
+      desc: "Plan your dream event with us and let us take care of the rest. We have a team of experienced event planners who will help you plan your event from start to finish."
+    }, // Event planners working
+    {
+      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+      heading: "Best Event Decorators In Nagercoil",
+      desc: "Decorate your event with us and let us take care of the rest. We have a team of experienced event decorators who will help you decorate your event from start to finish."
+    }, // Event setup
+    {
+      url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
+      heading: "Best Caterering Service In Nagercoil",
+      desc: "Cater for your event with us and let us take care of the rest. We are the best specialized catering services for weddings, corporate events, and all celebrations across Kanyakumari district."
+    }, // Team planning meeting
+    {
+      url: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
+      , heading: "Best Stalls and Desert Services In Nagercoil",
+      desc: "Get you favourite stalls and desert services with us and let us take care of the rest. we have all caregory of stalls and desert services for weddings, corporate events, and all celebrations across Kanyakumari district."
+    }, // Wedding planning // Corporate event
+    {
+      url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+      heading: "Best Wedding Photography In Nagercoil",
+      desc: "Plan your dream event with us and let us take care of the rest. we have the experienced team of wedding photographers to make your event more memorable."
+    }, // Event coordination
+    {
+      url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+      heading: "Best Music anad DJ Services In Nagercoil",
+      desc: "Our team of experienced DJs and music planners will help you plan your event from start to finish. Get the best music and DJ services for weddings, corporate events, and all celebrations across Kanyakumari district."
+    }, // Concert/entertainment event
+    {
+      url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+      heading: "Top Rated Google Reviews In Nagercoil",
+      desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
+    }  // Professional team portrait
   ];
 
   // Milestones timeline
@@ -119,70 +161,76 @@ const AboutPage = () => {
     }
   ];
 
+  const aboutSliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    arrows: false,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
+  }
+
   return (
     <div className="min-h-screen bg-white">
 {/* About Page Hero - Bright & Elegant */}
 <section
   ref={heroRef}
-  className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center text-center px-5 py-16 
-             bg-gradient-to-b from-[#fffaf0] via-white to-[#fff7e6] overflow-hidden"
+  className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]"
 >
-  {/* Soft Golden Glow Background */}
-  <div className="absolute inset-0">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(212,175,55,0.25),transparent_70%)]"></div>
+  {/* Animated Background Pattern */}
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.4),transparent_50%)]"></div>
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
   </div>
 
-  {/* Floating Subtle Gold Dots */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {[...Array(8)].map((_, i) => (
-      <motion.div
-        key={i}
-        className="absolute w-1.5 h-1.5 bg-[#d4af37]/40 rounded-full blur-[1px]"
-        style={{
-          left: `${(i * 12) % 100}%`,
-          top: `${(i * 9) % 100}%`,
-        }}
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.3, 0.8, 0.3],
-          scale: [0.9, 1.2, 0.9],
-        }}
-        transition={{
-          duration: 4 + (i % 2),
-          repeat: Infinity,
-          delay: i * 0.5,
-        }}
-      />
-    ))}
-  </div>
 
-  {/* Content */}
-  <div className="relative z-10 w-full max-w-xl mx-auto">
-    {/* Badge */}
+
+  {/* Hero Content */}
+  <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-4xl mx-auto py-16">
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="inline-flex items-center gap-2 bg-[#d4af37]/10 border border-[#d4af37]/30 
-                 rounded-full px-4 py-2 mb-5 backdrop-blur-sm"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
     >
-      <Crown className="w-4 h-4 text-[#d4af37]" />
-      <span className="text-xs text-[#b9971f] font-medium">Who We Are</span>
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="inline-flex items-center gap-2 bg-white/40 border border-[var(--color-dark)]/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm"
+      >
+        <Crown className="w-4 h-4 text-[var(--color-dark)]" />
+        <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Who We Are</span>
+      </motion.div>
 
     {/* Title */}
     <motion.h1
-      className="text-3xl sm:text-5xl font-bold text-gray-900 mb-3 leading-tight"
+      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
       initial={{ opacity: 0, y: 25 }}
       animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.3 }}
     >
-      About <span className="text-[#d4af37]">V.I.P Function Planners</span>
+      About <span className="text-[var(--color-dark)]">V.I.P Function Planners</span>
     </motion.h1>
 
     {/* Tagline */}
     <motion.p
-      className="text-base sm:text-lg text-gray-700 font-light leading-relaxed mb-4"
+      className="text-base sm:text-lg md:text-xl text-[var(--color-dark)]/80 font-light max-w-3xl mx-auto leading-relaxed mb-8"
       initial={{ opacity: 0, y: 25 }}
       animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.5 }}
@@ -190,43 +238,46 @@ const AboutPage = () => {
       Celebrating life’s finest moments with creativity, care, and golden perfection.
     </motion.p>
 
-    {/* Subtext */}
-    <motion.p
-      className="text-sm sm:text-base text-gray-500 leading-relaxed mb-8"
-      initial={{ opacity: 0, y: 25 }}
-      animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay: 0.7 }}
-    >
-      From weddings to grand corporate events, our journey since 2010 has been all about crafting
-      joy-filled memories that last a lifetime.
-    </motion.p>
-
-    {/* Buttons */}
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay: 0.9 }}
-      className="flex flex-col sm:flex-row gap-3 justify-center items-center"
-    >
-      <motion.a
-        href="/contact"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="bg-[#d4af37] text-white px-6 py-3 rounded-full font-semibold text-sm 
-                   shadow-md hover:shadow-[#d4af37]/30 transition-all duration-300 w-full sm:w-auto"
+      {/* Action Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
       >
-        Get in Touch
-      </motion.a>
+        <Link
+          href="/contact"
+          className="bg-[var(--color-dark)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--color-dark)]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        >
+          Get Free Quote
+        </Link>
+        <Link
+          href="/testimonials"
+          className="bg-white/20 text-[var(--color-dark)] px-6 py-3 rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
+        >
+          Our Happy Clients
+        </Link>
+      </motion.div>
 
-      <motion.a
-        href="/services"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="border border-[#d4af37] text-[#d4af37] px-6 py-3 rounded-full font-semibold text-sm 
-                   hover:bg-[#d4af37] hover:text-white transition-all duration-300 w-full sm:w-auto"
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isHeroInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.7 }}
+        className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-[var(--color-dark)]/70"
       >
-        Our Services
-      </motion.a>
+        <div className="flex items-center gap-2">
+          <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+          <span>500+ Events</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+          <span>12+ Years</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+          <span>Premium Quality</span>
+        </div>
+      </motion.div>
     </motion.div>
   </div>
 </section>
@@ -260,11 +311,25 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               className="w-full md:w-1/2"
             >
-              <img
-                src="/about.jpg"
-                alt="Our Story"
-                className="rounded-2xl shadow-xl w-full object-cover"
-              />
+             <Slider {...aboutSliderSettings}>
+               
+               {images.map((src, index) => (
+                  <div key={index} className="relative w-full h-[280px] md:h-[420px]">
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 text-white p-6" >
+                                       <h3 className="text-lg md:text-2xl font-bold mb-2">{src.heading}</h3>
+                                       <p>{src.desc}</p>
+                                     </div>
+                                     <Image
+                                       src={src.url}
+                                       alt={`Event ${index + 1}`}
+                                       fill
+                                       className="object-cover"
+                                       priority
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                                   </div>
+               ))}
+              </Slider>
             </motion.div>
 
             {/* Right Text */}
@@ -298,12 +363,24 @@ const AboutPage = () => {
   <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
     Our <span className="text-[#d4af37]">Motive</span>
   </h2>
-  <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+  <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
     At <span className="font-semibold text-[#d4af37]">V.I.P Function Planners</span>, 
     our purpose is simple — to transform every occasion into a timeless experience. 
     We believe every celebration deserves perfection, elegance, and a personal touch 
     that makes it unforgettable.
   </p>
+  
+  {/* Our Commitment */}
+  <div className="max-w-3xl mx-auto mt-8 bg-gradient-to-br from-[#fffaf2] to-white rounded-2xl p-8 border border-[#f5e6c2] shadow-sm">
+    <h3 className="text-xl font-bold text-gray-900 mb-4">
+      Our <span className="text-[#d4af37]">Commitment</span> to You
+    </h3>
+    <p className="text-gray-700 leading-relaxed">
+      We respect your investment and will deliver our best, worthwhile and quality service for all events. 
+      Whether it's a simple function or a grand celebration, our commitment remains unchanged. 
+      Trust us — we'll be with you forever in your memories.
+    </p>
+  </div>
 </section>
 
 
@@ -548,60 +625,7 @@ className="py-14 px-6 text-center bg-white border-t border-gray-100">
       </section>
 
       {/* Final CTA - Mobile Optimized */}
-      <section className="py-16 bg-gradient-to-r from-[#d4af37] to-amber-500 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Ready to Create Magic?
-            </h2>
-            <p className="text-white/90 text-sm sm:text-base mb-8 max-w-md mx-auto leading-relaxed">
-              Let's transform your vision into an unforgettable experience. Contact us for a personalized consultation.
-            </p>
-
-            <div className="flex flex-col gap-3 max-w-xs mx-auto">
-              <motion.a
-                href="tel:+918778304145"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-white text-[#d4af37] px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all text-sm"
-              >
-                <Phone className="w-4 h-4" />
-                Call +91 8778304145
-              </motion.a>
-
-              <motion.a
-                href="https://wa.me/918778304145"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="border border-white text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-2 hover:bg-white hover:text-[#d4af37] transition-all text-sm"
-              >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp Now
-              </motion.a>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs text-white/80">
-              <div className="flex items-center gap-1">
-                <CheckCircle className="w-3 h-3" />
-                <span>500+ Events</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <CheckCircle className="w-3 h-3" />
-                <span>12+ Years</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <CheckCircle className="w-3 h-3" />
-                <span>Nagercoil Based</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTA text="Ready to Plan Your Perfect Event?" desc="Let us bring your vision to life with our Best event planning services" btn1="Book Now" btn2="View Testimonials" btn1link="/contact" btn2link="/testimonials" />
     </div>
   );
 };

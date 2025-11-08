@@ -24,7 +24,8 @@ const Navigation = () => {
     { name: 'services', href: '/services' },
     { name: 'gallery', href: '/gallery' },
     { name: 'about', href: '/about' },
-    { name: 'contact', href: '/contact' }
+    { name: 'testimonials', href: '/testimonials' },
+    { name: 'contact', href: '/contact' },
   ];
 
   // Toggle menu using functional state update for correctness and readability
@@ -52,7 +53,7 @@ const Navigation = () => {
             className="rounded-full"
           />
           <span className="font-heading text-dark text-lg sm:text-xl tracking-wide font-semibold md:inline-block">
-            <span className="text-gold">Funtion</span> Planners
+            <span className="text-gold">Function</span> Planners
           </span>
         
         </Link>
