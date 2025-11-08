@@ -2,6 +2,7 @@ import "./globals.css";
 import { Montserrat, Poppins } from "next/font/google";
 import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
+import WatsappLogo from "./components/WatsappLogo";
 
 
 const montserrat = Montserrat({
@@ -110,9 +111,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`antialiased`}
+        className={`antialiased relative ${montserrat.variable} ${poppins.variable}`}
       >
         <Navbar />
+        <WatsappLogo />
         {children}
         <Footer />
       </body>
