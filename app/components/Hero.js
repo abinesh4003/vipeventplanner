@@ -31,7 +31,7 @@ const HeroSection = () => {
       className="relative flex flex-col items-center min-h-[calc(100vh-4rem)] pt-16 text-center overflow-hidden bg-gradient-to-b from-[#f9f9f9] via-white to-[#fdfdfd] px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-8"
     >
       {/* ✅ Background video */}
-      <video
+      {/* <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
@@ -39,7 +39,7 @@ const HeroSection = () => {
         playsInline
       >
         <source src="/hero1.mp4" type="video/mp4" />
-      </video>
+      </video> */}
 
       {/* Subtle overlay for readability */}
       {/* <div className="absolute inset-0 bg-white/75 backdrop-blur-[2px]" /> */}
@@ -77,7 +77,7 @@ const HeroSection = () => {
 
         className="relative z-10 mb-6 sm:mb-8"
       >
-        <div className="bg-gray-100 overflow-hidden backdrop-blur-md border border-gold/30 rounded-full p-4 sm:p-5 shadow-[0_0_25px_rgba(212,175,55,0.25)]">
+        <div className="bg-gray-100 overflow-hidden backdrop-blur-md  rounded-full p-4 sm:p-5 ">
           <Image
             src="/logo.png"
             alt="VIP Function Planners Logo"
@@ -95,7 +95,8 @@ const HeroSection = () => {
         transition={{ duration: 0.8 }}
         className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] font-bold leading-snug sm:leading-tight max-w-4xl z-10"
       >
-        <span className="text-gold">V.I.P</span> Function Planners
+        <span className="text-gold">V.I.P Function Planners</span> 
+        <span className='black text-lg block '>(catering Service)</span>
       </motion.h1>
 
       {/* Subheadline */}

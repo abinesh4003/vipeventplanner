@@ -9,7 +9,6 @@ const SpecialHighlightsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
   const [isMobile, setIsMobile] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -100,8 +99,7 @@ const SpecialHighlightsSection = () => {
     slidesToScroll: 1,
     arrows: !isMobile,
     pauseOnHover: false,
-    pauseOnfocus: false,
-    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
+    pauseOnfocus: false
   };
 
   return (
@@ -109,12 +107,12 @@ const SpecialHighlightsSection = () => {
       <div className="absolute top-20 left-4 text-gold/10 text-6xl md:text-8xl md:left-10">✦</div>
       <div className="absolute bottom-20 right-4 text-gold/10 text-6xl md:text-8xl md:right-10">✦</div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-0 md:px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-4 md:px-0"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-black font-poppins mb-4">
             Special <span className="text-gold">Highlights</span>
@@ -135,35 +133,33 @@ const SpecialHighlightsSection = () => {
                   } items-center gap-10`}
               >
                 {/* Image Slider with Zoom Animation */}
-                <div className="w-full lg:w-1/2 relative overflow-hidden rounded-3xl shadow-2xl border border-gold/10">
-                  <Slider {...sliderSettings}>
-                    {highlight.images.map((image, idx) => (
-                      <div key={idx} className="relative h-72 md:h-[480px] overflow-hidden rounded-3xl">
-                        <motion.div
-                          key={activeSlide === idx ? `active-${idx}` : `inactive-${idx}`}
-                          initial={{ scale: 1 }}
-                          animate={{
-                            scale: activeSlide === idx ? 1.4 : 1,
-                          }}
-                          transition={{ duration: 5, ease: "easeOut" }}
-                          className="w-full h-full"
-                        >
-                          <Image
-                            src={image}
-                            alt={highlight.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </motion.div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
+ <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-gold/10">
+  <Slider {...sliderSettings}>
+    {highlight.images.map((image, idx) => (
+      <div
+        key={idx}
+        className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] overflow-hidden rounded-none md:rounded-3xl"
+      >
+        <Image
+          src={image}
+          alt={highlight.title}
+          fill
+          className="object-cover object-center w-full h-full"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
+        />
+
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" /> */}
+      </div>
+    ))}
+  </Slider>
+</div>
+
+
 
                
                 {/* Text Content */}
-                <div className="w-full lg:w-1/2">
+                <div className="w-full lg:w-1/2 px-4 md:px-0">
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
