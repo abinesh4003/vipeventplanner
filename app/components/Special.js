@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Slider from "react-slick";
 import Link from "next/link";
+import { type } from "os";
 
 const SpecialHighlightsSection = () => {
   const ref = useRef(null);
@@ -23,22 +24,30 @@ const SpecialHighlightsSection = () => {
     {
       title: "Stunning Stage Decoration in Nagercoil",
       description: "Our stage décor in Nagercoil service transforms your venue into a breathtaking setting. Whether it's birthday theme décor, elegant wedding décor, luxury floral arrangements, or custom-designed stages, we deliver perfection every time.",
-      images: [
-        "/images/stage-highlight.jpg",
-        "/images/stage-highlight-2.jpg",
-        "/images/stage-highlight-3.jpg",
-        "/images/stage-highlight-4.jpg"
+      media: [
+        { type: "video", src: "/services/dec/decvid1.mp4" },
+         { type: "video", src: "/services/dec/decvid1.mp4" },
+        
+        // { type: "image", src: "/images/stage-highlight-2.jpg" },
+        // { type: "image", src: "/images/stage-highlight-3.jpg" },
+        // { type: "image", src: "/images/stage-highlight-4.jpg" }
       ],
       alignment: "left"
     },
     {
-
       title: "Best Catering Services in Nagercoil",
       description: "Food is the heart of every celebration, and we bring flavors your guests will never forget. Our catering services in Nagercoil include veg and non-veg wedding catering, buffet catering, and special menus with authentic taste, freshness, and presentation.",
-      images: [
-        "/images/catering-highlight.jpg",
-        "/images/catering-highlight-2.jpg",
-        "/images/catering-highlight-3.jpg"
+      media: [
+          {type: "video", src: "/services/cat/catvid.mp4"},
+    {type: "video", src: "/services/cat/catvid1.mp4"},
+    {type: "video", src: "/services/cat/catvid2.mp4"},
+     {type: "video", src: "/services/cat/catvid3.mp4"},
+
+
+
+        // { type: "image", src: "/images/catering-highlight.jpg" },
+        // { type: "image", src: "/images/catering-highlight-2.jpg" },
+        // { type: "image", src: "/images/catering-highlight-3.jpg" }
       ],
       alignment: "right",
       subItems: [
@@ -69,20 +78,23 @@ const SpecialHighlightsSection = () => {
     {
       title: "Entertainment & Special Arrivals",
       description: "Set the mood with our professional DJ music in Nagercoil, live games, and entertainment that keeps the crowd energized. Make a grand statement with our couple entry concepts like snow fog, fire shot, floral pathway, or royal-themed arrivals.",
-      images: [
-        "/images/entertainment-highlight.jpg",
-        "/images/entertainment-highlight-2.jpg",
-        "/images/entertainment-highlight-3.jpg"
+      media: [
+        {type: "video" ,src:"/services/dj/djvid.mp4"},
+        {type: "video" ,src:"/services/dj/djvid1.mp4"},
+
+        // { type: "image", src: "/images/entertainment-highlight.jpg" },
+        // { type: "image", src: "/images/entertainment-highlight-2.jpg" },
+        // { type: "image", src: "/images/entertainment-highlight-3.jpg" }
       ],
       alignment: "left"
     },
     {
       title: "Capture the Magic – Photography & Videography",
       description: "Relive your special day with our cinematic photography and videography. From candid emotions to stunning highlights, we capture every magical moment in style.",
-      images: [
-        "/images/photography-highlight.jpg",
-        "/images/photography-highlight-2.jpg",
-        "/images/photography-highlight-3.jpg"
+      media: [
+        { type: "image", src: "/images/photography-highlight.jpg" },
+        { type: "image", src: "/images/photography-highlight-2.jpg" },
+        { type: "image", src: "/images/photography-highlight-3.jpg" }
       ],
       alignment: "right"
     }
@@ -93,7 +105,7 @@ const SpecialHighlightsSection = () => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -135,21 +147,30 @@ const SpecialHighlightsSection = () => {
                 {/* Image Slider with Zoom Animation */}
  <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-gold/10">
   <Slider {...sliderSettings}>
-    {highlight.images.map((image, idx) => (
+    {highlight.media.map((item, idx) => (
       <div
         key={idx}
         className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] overflow-hidden rounded-none md:rounded-3xl"
       >
-        <Image
-          src={image}
-          alt={highlight.title}
-          fill
-          className="object-cover object-center w-full h-full"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          priority
-        />
-
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" /> */}
+        {item.type === "video" ? (
+          <video
+            src={item.src}
+            className="w-full h-full object-contain"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <Image
+            src={item.src}
+            alt={highlight.title}
+            fill
+            className="object-contain object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        )}
       </div>
     ))}
   </Slider>

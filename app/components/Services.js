@@ -2,25 +2,24 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Slider from "react-slick";
 import { ChevronDown, ChevronUp, Sparkles, Star } from "lucide-react";
 
 const services = [
   {
-
     title: "Stage Decoration",
     description: "Transform your venue into a breathtaking setting with our custom-designed stages and luxury floral arrangements.",
     detailedDescription: "Our expert designers create stunning backdrops, elegant mandaps, and thematic decorations that reflect your personality. We specialize in floral arrangements, lighting design, and custom props to make your event visually spectacular.",
     category: "styling",
-    image: "/services/stage.jpg",
+    images: ["/services/dec/stage1.jpeg", "/services/dec/stage2.jpeg", "/services/dec/stage3.jpeg", "/services/dec/stage4.jpeg"],
     highlights: ["Custom Thematic Designs", "Premium Floral Arrangements", "Elegant Backdrops", "Lighting Design"]
   },
   {
-
     title: "Catering Services",
     description: "Veg and non-veg wedding catering with authentic taste, freshness, and impeccable presentation.",
     detailedDescription: "Our culinary team prepares exquisite menus with the freshest ingredients. We offer live counters, international cuisines, and traditional specialties with attention to dietary preferences and presentation.",
     category: "hospitality",
-    image: "/services/catering.jpg",
+    images: ["/services/cat/cat1.jpg", "/services/cat/cat2.jpeg", "/services/cat/cat3.jpeg", "/services/cat/cat4.jpeg"],
     highlights: ["Veg & Non-Veg Options", "100+ Dish Selection", "Live Counters", "International Cuisines"]
   },
   {
@@ -28,49 +27,50 @@ const services = [
     description: "Complete catering solutions for weddings with traditional feasts and variety menus.",
     detailedDescription: "From elaborate wedding feasts to sophisticated buffet setups, we manage everything with precision. Our services include menu planning, food stations, serving staff, and cleanup.",
     category: "hospitality",
-    image: "/services/buffet.jpg",
+    images: ["/services/buffet.jpg", "/services/buffet.jpg", "/services/buffet.jpg"],
     highlights: ["Traditional Wedding Feasts", "Multiple Cuisine Options", "Professional Serving Staff", "Hygienic Food Handling"]
   },
   {
-
     title: "DJ Music",
     description: "Professional DJ services to set the mood and keep your celebration energized.",
     detailedDescription: "Our experienced DJs curate playlists that match your event's vibe. We provide high-quality sound systems, lighting effects, and MC services to keep the energy high throughout your celebration.",
     category: "entertainment",
-    image: "/services/dj.jpg",
+    images: ["/services/dj/dj1.jpg", "/services/dj/dj2.jpeg"],
     highlights: ["Curated Playlists", "High-Quality Sound Systems", "Lighting Effects", "MC Services"]
   },
   {
-
     title: "Welcome Dolls & Girls",
     description: "Elegant welcome arrangements to greet your guests in style.",
     detailedDescription: "Make a grand first impression with our traditional welcome services. We provide professionally trained staff in traditional attire, flower garlands, and ceremonial welcome items.",
     category: "hospitality",
-    image: "/services/wellcomedoll.jpg",
+    images: ["/services/doll/doll1.jpg", "/services/doll/doll2.jpeg","/services/doll/doll3.jpeg"],
     highlights: ["Traditional Attire", "Floral Arrangements", "Professional Staff", "Custom Welcome Rituals"]
   },
+ 
   {
-
-    title: "Fun Games & Return Gifts",
-    description: "Entertainment activities and thoughtfully curated return gifts for your guests.",
-    detailedDescription: "We organize engaging games and activities suitable for all age groups. Our return gift selection includes customized options that your guests will cherish as mementos of your special day.",
-    category: "entertainment",
-    image: "/services/games.jpg",
-    highlights: ["Age-Appropriate Activities", "Customized Return Gifts", "Professional Hosts", "Prizes & Awards"]
-  },
-  {
-
     title: "Photography & Videography",
     description: "Cinematic coverage to capture every magical moment of your special day.",
     detailedDescription: "Our professional photographers and videographers use state-of-the-art equipment to capture your event from every angle. We offer pre-wedding shoots, candid coverage, and beautifully edited albums and films.",
     category: "entertainment",
-    image: "/services/photo.jpg",
+    images: ["/services/photo.jpg", "/services/photo.jpg", "/services/photo.jpg"],
     highlights: ["Pre-Wedding Shoots", "Candid Coverage", "Drone Photography", "Custom Albums & Films"]
   },
 ];
 
 export default function ServicesGrid() {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: false
+  };
 
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
@@ -109,15 +109,21 @@ export default function ServicesGrid() {
                 <Sparkles className="mr-2 text-black" size={18} /> {s.title}
               </div>
 
-              {/* Image */}
+              {/* Image Slider */}
               <div className="relative w-full h-56 overflow-hidden">
-                <Image
-                  src={s.image}
-                  alt={s.title}
-                  width={400}
-                  height={250}
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                />
+                <Slider {...sliderSettings}>
+                  {s.images.map((img, idx) => (
+                    <div key={idx} className="relative w-full h-56">
+                      <Image
+                        src={img}
+                        alt={`${s.title} ${idx + 1}`}
+                        fill
+                        className="object-contain"
+                        sizes="400px"
+                      />
+                    </div>
+                  ))}
+                </Slider>
               </div>
 
               {/* Description */}
