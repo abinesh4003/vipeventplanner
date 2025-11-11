@@ -37,78 +37,162 @@ export default function TestimonialsPage() {
       event: "Wedding",
       category: "wedding",
       rating: 5,
-      date: "December 2024",
+      date: "2 weeks ago",
       location: "Nagercoil",
-      image: "https://ui-avatars.com/api/?name=Priya+Arjun&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Priya+Arjun&background=4285f4&color=fff&bold=true",
       message: "Our wedding was absolutely magical! The VIP Function Planners team exceeded all our expectations. From the stunning stage decoration to the delicious catering, everything was perfect. They handled every detail with such care and professionalism.",
       services: ["Stage Decoration", "Catering", "Photography"],
-      verified: true
+      verified: true,
+      helpful: 45
     },
     {
       name: "Ramesh Kumar",
       event: "Corporate Annual Meet",
       category: "corporate",
       rating: 5,
-      date: "November 2024",
+      date: "1 month ago",
       location: "Nagercoil",
-      image: "https://ui-avatars.com/api/?name=Ramesh+Kumar&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Ramesh+Kumar&background=34a853&color=fff&bold=true",
       message: "Professional and reliable service! Our corporate event was executed flawlessly. The team's attention to detail and punctuality impressed all our guests. Highly recommend for corporate events.",
       services: ["Event Planning", "Catering", "AV Setup"],
-      verified: true
+      verified: true,
+      helpful: 38
     },
     {
       name: "Divya Lakshmi",
       event: "Daughter's Birthday",
       category: "birthday",
       rating: 5,
-      date: "October 2024",
+      date: "3 weeks ago",
       location: "Kanyakumari",
-      image: "https://ui-avatars.com/api/?name=Divya+Lakshmi&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Divya+Lakshmi&background=ea4335&color=fff&bold=true",
       message: "They turned my daughter's birthday into a fairytale celebration! The theme decoration was outstanding, and the kids had an amazing time. Thank you for making her day so special!",
       services: ["Theme Decoration", "Entertainment", "Catering"],
-      verified: true
+      verified: true,
+      helpful: 52
     },
     {
       name: "Sundar & Meena",
       event: "25th Anniversary",
       category: "wedding",
       rating: 5,
-      date: "September 2024",
+      date: "1 month ago",
       location: "Marthandam",
-      image: "https://ui-avatars.com/api/?name=Sundar+Meena&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Sundar+Meena&background=fbbc04&color=fff&bold=true",
       message: "Celebrating our 25th anniversary was made memorable by VIP Function Planners. The elegant setup, wonderful food, and seamless coordination made our day perfect. Our guests are still talking about it!",
       services: ["Venue Decoration", "Catering", "Music"],
-      verified: true
+      verified: true,
+      helpful: 41
     },
     {
       name: "Tech Solutions Pvt Ltd",
       event: "Product Launch",
       category: "corporate",
       rating: 5,
-      date: "August 2024",
+      date: "2 months ago",
       location: "Nagercoil",
-      image: "https://ui-avatars.com/api/?name=Tech+Solutions&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Tech+Solutions&background=4285f4&color=fff&bold=true",
       message: "Outstanding service for our product launch event! The team managed everything from stage setup to guest coordination perfectly. Very professional and creative approach.",
       services: ["Event Management", "Stage Setup", "Branding"],
-      verified: true
+      verified: true,
+      helpful: 36
     },
     {
       name: "Lakshmi Devi",
       event: "60th Birthday Celebration",
       category: "birthday",
       rating: 5,
-      date: "July 2024",
+      date: "2 months ago",
       location: "Colachel",
-      image: "https://ui-avatars.com/api/?name=Lakshmi+Devi&background=d4af37&color=fff",
+      image: "https://ui-avatars.com/api/?name=Lakshmi+Devi&background=34a853&color=fff&bold=true",
       message: "The traditional welcome service and authentic South Indian catering were exceptional. All our guests were impressed with the taste and presentation. Truly professional service!",
       services: ["Traditional Catering", "Welcome Service", "Decoration"],
-      verified: true
+      verified: true,
+      helpful: 48
+    },
+    {
+      name: "Arun Prakash",
+      event: "Engagement Ceremony",
+      category: "wedding",
+      rating: 5,
+      date: "3 weeks ago",
+      location: "Nagercoil",
+      image: "https://ui-avatars.com/api/?name=Arun+Prakash&background=ea4335&color=fff&bold=true",
+      message: "Fantastic experience! The team was very responsive and accommodating to all our requests. The decoration was elegant and the food was delicious. Highly recommended!",
+      services: ["Decoration", "Catering", "Photography"],
+      verified: true,
+      helpful: 29
+    },
+    {
+      name: "Kavitha Rajan",
+      event: "Housewarming",
+      category: "wedding",
+      rating: 5,
+      date: "1 month ago",
+      location: "Kuzhithurai",
+      image: "https://ui-avatars.com/api/?name=Kavitha+Rajan&background=fbbc04&color=fff&bold=true",
+      message: "Perfect service from start to finish! They understood our vision and brought it to life beautifully. The traditional setup was authentic and impressive. Thank you!",
+      services: ["Traditional Setup", "Catering", "Welcome Service"],
+      verified: true,
+      helpful: 33
+    },
+    {
+      name: "Vijay Industries",
+      event: "Corporate Seminar",
+      category: "corporate",
+      rating: 5,
+      date: "3 months ago",
+      location: "Nagercoil",
+      image: "https://ui-avatars.com/api/?name=Vijay+Industries&background=4285f4&color=fff&bold=true",
+      message: "Excellent coordination and execution! They managed our 300+ guest seminar with great professionalism. The AV setup was perfect and catering was top-notch.",
+      services: ["Event Management", "AV Setup", "Catering"],
+      verified: true,
+      helpful: 27
+    },
+    {
+      name: "Meera Shankar",
+      event: "Baby Shower",
+      category: "birthday",
+      rating: 5,
+      date: "1 month ago",
+      location: "Marthandam",
+      image: "https://ui-avatars.com/api/?name=Meera+Shankar&background=34a853&color=fff&bold=true",
+      message: "Beautiful decoration and wonderful service! The team was very creative with the theme and everything looked picture-perfect. All my guests loved it!",
+      services: ["Theme Decoration", "Catering", "Photography"],
+      verified: true,
+      helpful: 31
+    },
+    {
+      name: "Rajesh & Preethi",
+      event: "Reception",
+      category: "wedding",
+      rating: 5,
+      date: "2 weeks ago",
+      location: "Kanyakumari",
+      image: "https://ui-avatars.com/api/?name=Rajesh+Preethi&background=ea4335&color=fff&bold=true",
+      message: "Amazing work by VIP Function Planners! Our reception was grand and elegant. The stage decoration was breathtaking and the food received so many compliments. Worth every penny!",
+      services: ["Stage Decoration", "Catering", "Lighting"],
+      verified: true,
+      helpful: 44
+    },
+    {
+      name: "Anitha Devi",
+      event: "Retirement Party",
+      category: "corporate",
+      rating: 5,
+      date: "3 weeks ago",
+      location: "Colachel",
+      image: "https://ui-avatars.com/api/?name=Anitha+Devi&background=fbbc04&color=fff&bold=true",
+      message: "They made my husband's retirement party so special! The arrangements were perfect, food was excellent, and the team was very professional. Highly satisfied!",
+      services: ["Event Planning", "Catering", "Entertainment"],
+      verified: true,
+      helpful: 25
     }
   ];
 
   const stats = [
     { icon: <Users className="w-6 h-6" />, number: "700+", label: "Happy Clients" },
-    { icon: <Star className="w-6 h-6" />, number: "4.9/5", label: "Average Rating" },
+    { icon: <Star className="w-6 h-6" />, number: "5.0/5", label: "Average Rating" },
     { icon: <Award className="w-6 h-6" />, number: "100%", label: "Satisfaction Rate" },
     { icon: <TrendingUp className="w-6 h-6" />, number: "95%", label: "Repeat Clients" }
   ];
@@ -164,16 +248,19 @@ export default function TestimonialsPage() {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             >
               <a
+                href="https://share.google/wCOPnn4wXiqnAcwab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/20 text-[var(--color-dark)]  px-6 py-3  rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2"
+              >
+                <Star className="w-5 h-5 fill-[var(--color-dark)]" />
+                Leave a Google Review
+              </a>
+              <a
                 href="tel:+918778304145"
                 className="bg-[var(--color-dark)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--color-dark)]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Book Your Event
-              </a>
-              <a
-                href="/contact"
-                className="bg-white/20 text-[var(--color-dark)] px-6 py-3 rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
-              >
-                Get Quote
               </a>
             </motion.div>
 
@@ -189,24 +276,51 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Google-Style Rating Summary */}
       <section className="py-12 bg-white border-b">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-[var(--color-gold)] mb-2 flex justify-center">{stat.icon}</div>
-                <div className="text-2xl md:text-3xl font-bold text-[var(--color-dark)] mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Left: Overall Rating */}
+                <div className="text-center md:text-left">
+                  <div className="text-6xl font-bold text-[var(--color-dark)] mb-2">5.0</div>
+                  <div className="flex items-center justify-center md:justify-start gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-6 h-6 text-[#fbbc04] fill-[#fbbc04]" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4">Based on 500+ reviews</p>
+                  <a
+                    href="https://share.google/wCOPnn4wXiqnAcwab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2  bg-[var(--color-gold-light)] text-[var(--color-dark)]  px-6 py-3  rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm "
+                  >
+                    <Star className="w-4 h-4 fill-[var(--color-dark)]" />
+                    Write a Review
+                  </a>
+                </div>
+
+                {/* Right: Stats Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="bg-white p-4 rounded-xl shadow-sm border text-center"
+                    >
+                      <div className="text-[var(--color-gold)] mb-2 flex justify-center">{stat.icon}</div>
+                      <div className="text-xl font-bold text-[var(--color-dark)] mb-1">{stat.number}</div>
+                      <div className="text-xs text-gray-600">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -292,14 +406,19 @@ export default function TestimonialsPage() {
 
                 {/* Footer */}
                 <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t">
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     <MapPin className="w-3 h-3" />
                     {testimonial.location}
                   </div>
                   <div className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    {testimonial.date}
+                    <ThumbsUp className="w-3 h-3" />
+                    <span>{testimonial.helpful} helpful</span>
                   </div>
+                </div>
+                
+                {/* Date */}
+                <div className="text-xs text-gray-400 mt-2">
+                  {testimonial.date}
                 </div>
               </motion.div>
             ))}

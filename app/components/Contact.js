@@ -113,7 +113,7 @@ const ContactSection = () => {
         )}
       </AnimatePresence>
 
-    <section className="py-14 sm:py-16 bg-[#fdfbf7] text-[#222] font-montserrat">
+    <section className="py-14 sm:py-16 bg-[#fdfbf7] text-[#222]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -123,7 +123,7 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-poppins">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
             Plan Your <span className="text-gold">Event Today</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[#555] max-w-2xl mx-auto leading-relaxed px-2">
@@ -141,7 +141,7 @@ const ContactSection = () => {
             className="lg:w-2/5"
           >
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#eee]">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-5 text-gold font-poppins">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-5 text-gold">
                 Get In Touch
               </h3>
 
@@ -219,7 +219,7 @@ const ContactSection = () => {
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#eee] relative">
               <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent pointer-events-none rounded-2xl" />
 
-              <h3 className="text-xl sm:text-2xl font-semibold mb-5 text-gold relative z-10 font-poppins">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-5 text-gold relative z-10">
                 Get a Free Quote
               </h3>
 

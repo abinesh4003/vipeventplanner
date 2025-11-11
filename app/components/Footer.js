@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0a0a0a] text-white pt-16 pb-10 font-montserrat">
+    <footer className="bg-[#0a0a0a] text-white pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
 
@@ -47,7 +47,7 @@ const Footer = () => {
 
           {/* Brand Section */}
           <div className="lg:col-span-2 text-center md:text-left">
-            <h3 className="text-2xl font-bold text-gold mb-4 font-poppins">
+            <h3 className="text-2xl font-bold text-gold mb-4">
               V.I.P Function Planners
             </h3>
             <p className="text-gray-400 leading-relaxed mb-2 text-sm md:text-base">
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-gold mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm md:text-base">
               {pageLinks.map((item) => (
                 <li key={item.name}>
@@ -86,7 +86,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Our Services</h4>
+            <h4 className="text-lg font-semibold text-gold mb-4">Our Services</h4>
             <ul className="space-y-3 text-sm md:text-base">
               {[
                 'Wedding Planning',
@@ -106,7 +106,7 @@ const Footer = () => {
 
           {/* Support / Legal */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Support</h4>
+            <h4 className="text-lg font-semibold text-gold mb-4">Support</h4>
             <ul className="space-y-3 text-sm md:text-base">
               <li><Link href="/faqs" className="text-gray-400 hover:text-gold transition-colors">FAQs</Link></li>
               <li><Link href="/privacy-policy" className="text-gray-400 hover:text-gold transition-colors">Privacy Policy</Link></li>
@@ -117,7 +117,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold text-gold mb-4 font-poppins">Get in Touch</h4>
+            <h4 className="text-lg font-semibold text-gold mb-4">Get in Touch</h4>
             <div className="space-y-4 text-sm md:text-base">
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Phone className="text-gold" size={18} />

@@ -106,11 +106,11 @@ const Stalls = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black font-poppins mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-3">
             Stalls & <span className="text-gold">Fun Options</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-gold to-gold-dark mx-auto mb-5" />
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light font-montserrat">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
             Elevate your celebrations with our elegant stalls and interactive experiences.
           </p>
         </motion.div>
@@ -154,10 +154,10 @@ const Stalls = () => {
 
                   {/* Content */}
                   <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-black font-poppins group-hover:text-gold transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-black group-hover:text-gold transition-colors duration-300">
                       {stall.name}
                     </h3>
-                    <p className="text-gray-600 font-light font-montserrat mt-2 mb-4">
+                    <p className="text-gray-600 font-light mt-2 mb-4">
                       {stall.description}
                     </p>
 

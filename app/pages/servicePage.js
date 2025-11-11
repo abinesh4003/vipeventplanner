@@ -1,6 +1,9 @@
 'use client';
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import CTA from "../components/cta";
 import {
   Palette,
@@ -34,372 +37,456 @@ import {
   MapPin,
   Mail,
   ChevronDown,
-
+  Car,
+  Home,
+  Cake,
+  Drum,
+  IceCream,
+  Popcorn,
+  Snowflake,
+  Sparkles as SparklesIcon,
+  ChevronLeft
 } from 'lucide-react';
 import Link from "next/link";
 
 const ServicesPage = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true });
 
-  useEffect(() => {
-    if (isModalOpen && selectedService) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prev) =>
-          prev === selectedService.images.length - 1 ? 0 : prev + 1
-        );
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-  }, [isModalOpen, selectedService]);
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    pauseOnHover: true
+  };
 
   const serviceCategories = [
     {
-      id: "all",
-      name: "All Services",
-      icon: <Sparkles className="w-4 h-4" />,
-      gradient: "from-purple-500 to-pink-500"
+      id: "decorations",
+      name: "Decorations",
+      icon: <Palette className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Transform any venue into a magical setting with our luxury décor services",
+      subServices: [
+        {
+          name: "Stage Decoration",
+          description: "Grand stage setups with premium floral arrangements, custom backdrops, and thematic props",
+          image: "/services/dec/stage1.jpeg",
+          images: [
+            "/services/dec/stage1.jpeg",
+            "/services/dec/stage2.jpeg",
+            "/services/dec/stage3.jpeg",
+            "/services/dec/stage4.jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.33 AM.jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.34 AM.jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM (1).jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM.jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM (1).jpeg",
+            "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg"
+          ],
+          features: ["Custom Thematic Designs", "Premium Floral Arrangements", "LED Lighting", "3D Props"]
+        },
+        {
+          name: "Car Decoration",
+          description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles",
+          image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+          features: ["Fresh Flower Garlands", "Ribbon Work", "Traditional Designs", "Modern Styles"]
+        },
+        {
+          name: "Home Decoration",
+          description: "Complete home transformation for festivals, weddings, and special occasions",
+          image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80",
+          features: ["Entrance Decor", "Living Area Setup", "Traditional Elements", "Modern Touches"]
+        },
+        {
+          name: "Birthday Decoration",
+          description: "Thematic birthday decorations for all ages with balloons, props, and backdrops",
+          image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80",
+          features: ["Theme Based Decor", "Balloon Arrangements", "Photo Backdrops", "Age Appropriate Designs"]
+        },
+        {
+          name: "Mandap Decoration",
+          description: "Traditional South Indian wedding mandap with floral arrangements",
+          image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=600&q=80",
+          features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
+        },
+        {
+          name: "Entrance Decoration",
+          description: "Grand entrance setups with floral arches and welcome decorations",
+          image: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=600&q=80",
+          features: ["Floral Arches", "Welcome Gates", "Lighting Effects", "Grand Designs"]
+        },
+        {
+          name: "Theme Decoration",
+          description: "Complete thematic decorations for various event concepts and styles",
+          image: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=600&q=80",
+          features: ["Custom Themes", "Concept Design", "Props & Backdrops", "Complete Setup"]
+        }
+      ]
     },
     {
-      id: "styling",
-      name: "Décor & Styling",
-      icon: <Palette className="w-4 h-4" />,
-      gradient: "from-blue-500 to-cyan-500"
+      id: "catering",
+      name: "Catering Services",
+      icon: <Utensils className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Authentic multi-cuisine catering with impeccable taste and presentation",
+      subServices: [
+        {
+          name: "Veg Catering",
+          description: "Complete vegetarian meals with traditional South Indian delicacies",
+          image: "/services/cat/cat1.jpg",
+          images: [
+            "/services/cat/cat1.jpg",
+            "/services/cat/cat2.jpeg",
+            "/services/cat/cat3.jpeg",
+            "/services/cat/cat4.jpeg"
+          ],
+          features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
+        },
+        {
+          name: "Non-Veg Catering",
+          description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
+          image: "/services/cat/cat2.jpeg",
+          images: [
+            "/services/cat/cat2.jpeg",
+            "/services/cat/cat1.jpg",
+            "/services/cat/cat3.jpeg",
+            "/services/cat/cat4.jpeg"
+          ],
+          features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
+        },
+        {
+          name: "Buffet Service",
+          description: "Professional buffet arrangement with multiple cuisine options",
+          image: "/services/buffet.jpg",
+          features: ["Multiple Cuisines", "Live Counters", "Professional Setup", "Hygiene Standards"]
+        },
+        {
+          name: "Serving Staff",
+          description: "Professional serving staff and coordinators for seamless service",
+          image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+          features: ["Trained Staff", "Hygiene Focus", "Guest Assistance", "Efficient Service"]
+        },
+        {
+          name: "Mutton Biryani Special",
+          description: "Signature mutton biryani cooked with traditional spices and techniques",
+          image: "https://images.unsplash.com/photo-1563379091339-03246963d96f?auto=format&fit=crop&w=600&q=80",
+          features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
+        },
+        {
+          name: "Food Presentation",
+          description: "Elegant food presentation and professional plating services",
+          image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80",
+          features: ["Elegant Plating", "Creative Presentation", "Professional Service", "Visual Appeal"]
+        },
+        {
+          name: "Special Diet Menu",
+          description: "Customized menus for special dietary needs and preferences",
+          image: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=600&q=80",
+          features: ["Custom Menus", "Dietary Requirements", "Health Conscious", "Allergen Free Options"]
+        }
+      ]
     },
     {
-      id: "hospitality",
-      name: "Catering",
-      icon: <Utensils className="w-4 h-4" />,
-      gradient: "from-orange-500 to-red-500"
+      id: "desserts",
+      name: "Desserts & Stalls",
+      icon: <IceCream className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Sweet treats and specialty food stalls for all your event needs",
+      subServices: [
+        {
+          name: "Popcorn Station",
+          description: "Freshly popped popcorn with various flavors and toppings",
+          image: "https://images.unsplash.com/photo-1571084295922-8747a2a27239?auto=format&fit=crop&w=600&q=80",
+          features: ["Multiple Flavors", "Caramel & Cheese", "Fresh Preparation", "Self-Service Station"]
+        },
+        {
+          name: "Ice Cream Parlor",
+          description: "Premium ice cream with toppings and customizations",
+          image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80",
+          features: ["Various Flavors", "Toppings Bar", "Waffle Cones", "Sundae Options"]
+        },
+        {
+          name: "Dessert Counters",
+          description: "Assorted Indian and Western desserts for all tastes",
+          image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80",
+          features: ["Indian Sweets", "Pastries & Cakes", "Fruit Desserts", "Sugar-free Options"]
+        },
+        {
+          name: "Live Food Counters",
+          description: "Live cooking stations with interactive food preparation",
+          image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=600&q=80",
+          features: ["Live Cooking", "Interactive Stations", "Fresh Preparation", "Chef Service"]
+        },
+        {
+          name: "Juice & Beverage Stall",
+          description: "Fresh juices, mocktails, and beverage stations",
+          image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80",
+          features: ["Fresh Juices", "Mocktails", "Beverage Bar", "Custom Drinks"]
+        },
+        {
+          name: "Chaat Counter",
+          description: "Traditional Indian street food and chaat items",
+          image: "/images/pani-puri-stall.jpg",
+          features: ["Street Food", "Chaat Varieties", "Live Preparation", "Authentic Taste"]
+        },
+        {
+          name: "Cotton Candy Stall",
+          description: "Sweet, fluffy clouds of pure happiness for all ages",
+          image: "/images/cotton-candy-stall.jpg",
+          features: ["Multiple Colors", "Fresh Preparation", "Kid Friendly", "Fun Experience"]
+        },
+        {
+          name: "Chocolate Fountain",
+          description: "Dip fruits and treats into rich melted chocolate",
+          image: "/images/chocolate-fountain.jpg",
+          features: ["Premium Chocolate", "Fresh Fruits", "Interactive Station", "Dessert Bar"]
+        },
+        {
+          name: "Wine Counter",
+          description: "A classy corner for your premium event moments",
+          image: "/images/wine-counter.jpg",
+          features: ["Premium Selection", "Professional Service", "Elegant Setup", "Bar Service"]
+        },
+        {
+          name: "Printed Balloons",
+          description: "Customized balloons with names or messages",
+          image: "/images/printed-balloons.jpg",
+          features: ["Custom Printing", "Multiple Colors", "Name & Messages", "Event Branding"]
+        },
+        {
+          name: "Specialty Food Stalls",
+          description: "Theme-based food stalls and specialty counters",
+          image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=600&q=80",
+          features: ["Theme Based", "Specialty Items", "Custom Stalls", "Unique Experience"]
+        }
+      ]
     },
     {
       id: "entertainment",
-      name: "Entertainment",
-      icon: <Music className="w-4 h-4" />,
-      gradient: "from-green-500 to-emerald-500"
+      name: "Music & Entertainment",
+      icon: <Music className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Professional entertainment services to energize your celebration",
+      subServices: [
+        {
+          name: "DJ Services",
+          description: "Professional DJs with extensive music libraries and equipment",
+          image: "/services/dj/dj1.jpg",
+          images: [
+            "/services/dj/dj1.jpg",
+            "/services/dj/dj2.jpeg"
+          ],
+          features: ["Bollywood & International", "Premium Sound Systems", "Lighting Effects", "MC Services"]
+        },
+        {
+          name: "Music Orchestra",
+          description: "Live bands and orchestras for traditional and contemporary music",
+          image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80",
+          features: ["Live Performances", "Multiple Genres", "Traditional Instruments", "Custom Playlists"]
+        },
+        {
+          name: "Dhol Drummers",
+          description: "Traditional dhol and percussion artists for grand entries",
+          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          features: ["Traditional Dhol", "Percussion Ensemble", "Grand Entry Beats", "Interactive Performance"]
+        },
+        {
+          name: "Photo Booth",
+          description: "Fun photo booth with props for guest entertainment",
+          image: "/services/photo.jpg",
+          features: ["Props & Backdrops", "Instant Prints", "Digital Copies", "Fun Experience"]
+        },
+        {
+          name: "Games & Activities",
+          description: "Fun games and activities for all age groups",
+          image: "/services/games.jpg",
+          features: ["All Ages", "Interactive Games", "Team Activities", "Entertainment"]
+        },
+        {
+          name: "Live Performances",
+          description: "Dance troupes and cultural performances",
+          image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=80",
+          features: ["Cultural Dances", "Bollywood Performances", "Interactive Acts", "Theme Based Shows"]
+        },
+        {
+          name: "Sound & Lighting",
+          description: "Professional sound systems and lighting effects",
+          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          features: ["Premium Sound", "Stage Lighting", "Special Effects", "Professional Setup"]
+        }
+      ]
     },
     {
-      id: "planning",
-      name: "Planning",
-      icon: <Target className="w-4 h-4" />,
-      gradient: "from-yellow-500 to-amber-500"
+      id: "welcome",
+      name: "Welcome Services",
+      icon: <SparklesIcon className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Grand traditional welcome with professional staff and ceremonial arrangements",
+      subServices: [
+        {
+          name: "Welcome Dolls",
+          description: "Traditional welcome dolls and decorative arrangements",
+          image: "/services/doll/doll1.jpg",
+          images: [
+            "/services/doll/doll1.jpg",
+            "/services/doll/doll2.jpeg",
+            "/services/doll/doll3.jpeg"
+          ],
+          features: ["Traditional Dolls", "Decorative Setup", "Cultural Significance", "Custom Designs"]
+        },
+        {
+          name: "Welcome Girls",
+          description: "Professionally trained staff in traditional attire for guest welcome",
+          image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
+          features: ["Traditional Attire", "Professional Training", "Guest Assistance", "Cultural Welcome"]
+        },
+        {
+          name: "Aarthi Services",
+          description: "Traditional aarthi and ceremonial welcome rituals",
+          image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=600&q=80",
+          features: ["Traditional Aarthi", "Ceremonial Items", "Religious Rituals", "Cultural Authenticity"]
+        },
+        {
+          name: "Floral Welcome",
+          description: "Fresh flower garlands and floral arrangements for guests",
+          image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80",
+          features: ["Fresh Flower Garlands", "Jasmine & Rose", "Traditional Designs", "Premium Quality"]
+        },
+        {
+          name: "Traditional Welcome Setup",
+          description: "Complete traditional welcome setup with all ceremonial items",
+          image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80",
+          features: ["Complete Setup", "Ceremonial Items", "Traditional Rituals", "Cultural Authenticity"]
+        },
+        {
+          name: "Custom Welcome Arrangements",
+          description: "Customized welcome setups matching event theme and requirements",
+          image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
+          features: ["Custom Design", "Theme Matching", "Personalized Touch", "Unique Concepts"]
+        },
+        {
+          name: "Professional Welcome Team",
+          description: "Trained professional team for grand welcome ceremonies",
+          image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
+          features: ["Professional Team", "Trained Staff", "Coordinated Service", "Grand Welcome"]
+        }
+      ]
+    },
+    {
+      id: "photography",
+      name: "Photography Services",
+      icon: <Camera className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Professional photography and videography to capture every precious moment",
+      subServices: [
+        {
+          name: "Pre-Wedding Shoots",
+          description: "Creative pre-wedding photography at locations of your choice",
+          image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
+          features: ["Location Shoots", "Creative Concepts", "Candid Photography", "Professional Editing"]
+        },
+        {
+          name: "Event Coverage",
+          description: "Complete event photography covering all ceremonies and moments",
+          image: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=600&q=80",
+          features: ["Full Day Coverage", "Multiple Photographers", "Candid Shots", "Traditional Poses"]
+        },
+        {
+          name: "Cinematic Videography",
+          description: "4K cinematic video coverage with drone shots and professional editing",
+          image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=600&q=80",
+          features: ["4K Resolution", "Drone Coverage", "Cinematic Editing", "Same Day Edits"]
+        },
+        {
+          name: "Album Design",
+          description: "Beautifully designed photo albums and digital galleries",
+          image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=600&q=80",
+          features: ["Premium Albums", "Digital Copies", "Custom Designs", "Quick Delivery"]
+        },
+        {
+          name: "Candid Photography",
+          description: "Natural and candid moments captured professionally",
+          image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
+          features: ["Natural Moments", "Candid Shots", "Emotional Captures", "Professional Quality"]
+        },
+        {
+          name: "Traditional Photography",
+          description: "Traditional posed photography for formal portraits",
+          image: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=600&q=80",
+          features: ["Formal Portraits", "Traditional Poses", "Family Photos", "Classic Style"]
+        },
+        {
+          name: "Same Day Edits",
+          description: "Quick editing and same day video highlights",
+          image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=600&q=80",
+          features: ["Quick Turnaround", "Same Day Delivery", "Highlight Reels", "Professional Editing"]
+        }
+      ]
+    },
+    {
+      id: "special-effects",
+      name: "Special Effects & Entries",
+      icon: <Snowflake className="w-6 h-6" />,
+      gradient: "from-[#f7e9b8] to-[#fdfcf9]",
+      description: "Grand entry setups with special effects for memorable moments",
+      subServices: [
+        {
+          name: "Snow Effects",
+          description: "Artificial snow machines for winter wonderland effects",
+          image: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=600&q=80",
+          features: ["Snow Machines", "Winter Theme", "Safe Materials", "Atmospheric Effect"]
+        },
+        {
+          name: "Confetti Cannons",
+          description: "Colorful confetti and streamer cannons for grand celebrations",
+          image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
+          features: ["Colorful Confetti", "Multiple Colors", "Grand Entries", "Photo Moments"]
+        },
+        {
+          name: "Bubble Machines",
+          description: "Bubble effects for magical and romantic atmospheres",
+          image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80",
+          features: ["Bubble Effects", "Romantic Atmosphere", "Child Friendly", "Continuous Operation"]
+        },
+        {
+          name: "Laser Shows",
+          description: "Professional laser light shows and effects",
+          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          features: ["Laser Patterns", "Color Effects", "Music Synchronization", "Professional Setup"]
+        },
+        {
+          name: "Fog Machines",
+          description: "Atmospheric fog and smoke effects for dramatic entries",
+          image: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=600&q=80",
+          features: ["Fog Effects", "Smoke Machines", "Dramatic Atmosphere", "Safe Materials"]
+        },
+        {
+          name: "Sparkler Effects",
+          description: "Safe sparkler effects for grand celebrations",
+          image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
+          features: ["Safe Sparklers", "Grand Effects", "Photo Moments", "Celebration Highlights"]
+        },
+        {
+          name: "LED Effects",
+          description: "Colorful LED lighting and special effects",
+          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          features: ["LED Lighting", "Color Effects", "Dynamic Patterns", "Modern Technology"]
+        }
+      ]
     }
   ];
-
-  const services = [
-    {
-      id: 1,
-      icon: <Palette size={28} />,
-      title: "Stage & Venue Decoration",
-      shortDescription: "Transform any venue into a magical setting with our luxury décor services.",
-      fullDescription: "Our award-winning design team creates breathtaking stage setups, mandap decorations, and complete venue transformations. From traditional South Indian wedding mandaps to contemporary corporate stages, we bring your vision to life with premium floral arrangements, custom backdrops, lighting design, and thematic props. Every detail is meticulously crafted to create Instagram-worthy moments.",
-      category: "styling",
-      images: [
-        "https://images.unsplash.com/photo-1519167758481-83f29da8c561?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Custom Thematic Design Concepts",
-        " Floral & Fabric Arrangements",
-        "Traditional & Modern Mandap Setups",
-        "Professional LED & Ambient Lighting",
-        "3D Props & Installations",
-        "On-site Design Consultation"
-      ],
-      startingPrice: "₹25,000",
-      duration: "4-6 hours setup",
-      popular: true,
-      stats: { events: 350, rating: 4.9 }
-    },
-    {
-      id: 2,
-      icon: <Utensils size={28} />,
-      title: "Quality Wedding Catering",
-      shortDescription: "Authentic multi-cuisine catering with impeccable taste and presentation.",
-      fullDescription: "Elevate your wedding feast with our traditional and modern catering services. We specialize in authentic South Indian wedding meals (11 kootu varieties, 5 curries, 3 payasam types), North Indian delicacies, and international cuisines. Our experienced chefs use the freshest ingredients, maintain strict hygiene standards, and create stunning food presentations that delight all senses.",
-      category: "hospitality",
-      images: [
-        "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Traditional South Indian Wedding Meals",
-        "Multi-Cuisine Menu Options (100+ dishes)",
-        "Live Cooking Counters & Food Stations",
-        "Veg & Non-Veg Specialty Menus",
-        "Professional Serving Staff & Coordinators",
-        "Custom Menu Planning & Tasting Sessions"
-      ],
-      startingPrice: "₹350/plate",
-      duration: "Full event coverage",
-      popular: true,
-      stats: { events: 600, rating: 4.9 }
-    },
-    {
-      id: 3,
-      icon: <Coffee size={28} />,
-      title: "Corporate Event Catering",
-      shortDescription: "Professional catering for conferences, seminars, and corporate gatherings.",
-      fullDescription: "From breakfast meetings to gala dinners, we provide sophisticated catering solutions for all corporate events. Our menu includes continental breakfast spreads, working lunch boxes, tea/coffee setups, cocktail snacks, and formal dinner buffets. We ensure timely service, professional presentation, and dietary accommodations for your business events.",
-      category: "hospitality",
-      images: [
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Continental & Indian Breakfast Options",
-        "Working Lunch Boxes & Buffets",
-        "Tea/Coffee & Snack Stations",
-        "Cocktail Reception Menus",
-        "Dietary Requirement Accommodations",
-        "Quick Service & Professional Staff"
-      ],
-      startingPrice: "₹250/plate",
-      duration: "Flexible timing",
-      popular: false,
-      stats: { events: 200, rating: 4.7 }
-    },
-    {
-      id: 4,
-      icon: <Music size={28} />,
-      title: "DJ & Live Music Entertainment",
-      shortDescription: "Professional DJs and live bands to energize your celebration.",
-      fullDescription: "Set the perfect mood with our entertainment services featuring experienced DJs with extensive music libraries, live bands for various genres, professional sound systems, dynamic lighting effects, and MC services. From traditional wedding songs to EDM party tracks, we customize playlists to match your event's vibe and keep your guests dancing all night.",
-      category: "entertainment",
-      images: [
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Professional DJ with Extensive Library",
-        "Live Band Options (Various Genres)",
-        "Premium Sound & Lighting Systems",
-        "Interactive MC Services",
-        "Custom Playlist Curation",
-        "Dance Floor Setup & Effects"
-      ],
-      startingPrice: "₹18,000",
-      duration: "6-8 hours",
-      popular: true,
-      stats: { events: 450, rating: 4.9 }
-    },
-    {
-      id: 5,
-      icon: <Sparkles size={28} />,
-      title: "Traditional Welcome Services",
-      shortDescription: "Grand traditional welcome with professional staff and ceremonial arrangements.",
-      fullDescription: "Create a memorable first impression with our traditional welcome services. We provide professionally trained staff in traditional attire, fresh flower garlands, welcome dolls, aarthi plates, traditional music, and ceremonial welcome setups. Our team ensures every guest feels special from the moment they arrive at your event.",
-      category: "hospitality",
-      images: [
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Staff in Traditional Attire",
-        "Fresh Floral Garland Arrangements",
-        "Welcome Dolls & Decorative Props",
-        "Aarthi & Ceremonial Items",
-        "Traditional Background Music",
-        "Guest Assistance & Coordination"
-      ],
-      startingPrice: "₹10,000",
-      duration: "3-4 hours",
-      popular: false,
-      stats: { events: 280, rating: 4.7 }
-    },
-    {
-      id: 6,
-      icon: <Camera size={28} />,
-      title: "Photography & Videography",
-      shortDescription: "Cinematic coverage capturing every precious moment professionally.",
-      fullDescription: "Preserve your special moments with our professional photography and videography services. Our team uses state-of-the-art equipment including 4K cameras, drones, and professional lighting. We offer pre-event shoots, candid photography, traditional portraits, cinematic videos, same-day edits, and beautifully designed albums. Every frame tells your unique story.",
-      category: "entertainment",
-      images: [
-        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "4K Videography & Drone Coverage",
-        "Candid & Traditional Photography",
-        "Pre-Event Shoots Available",
-        "Same Day Edit Videos",
-        "Premium Albums & Digital Copies",
-        "Multiple Photographers & Videographers"
-      ],
-      startingPrice: "₹25,000",
-      duration: "Full day coverage",
-      popular: true,
-      stats: { events: 400, rating: 4.9 }
-    },
-    {
-      id: 7,
-      icon: <Gift size={28} />,
-      title: "Entertainment & Return Gifts",
-      shortDescription: "Engaging activities and thoughtful return gifts for all age groups.",
-      fullDescription: "Keep your guests entertained with our diverse activity options and leave them with cherished memories through customized return gifts. We organize fun games, magic shows, mehendi artists, caricature artists, photo booths, and children's entertainment zones. Our return gift selection includes personalized items that reflect your event's theme.",
-      category: "entertainment",
-      images: [
-        "https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Interactive Games & Competitions",
-        "Magic Shows & Live Performers",
-        "Mehendi & Caricature Artists",
-        "Photo Booth with Props",
-        "Customized Return Gift Selection",
-        "Children's Entertainment Zone"
-      ],
-      startingPrice: "₹15,000",
-      duration: "Event duration",
-      popular: false,
-      stats: { events: 180, rating: 4.6 }
-    },
-    {
-      id: 8,
-      icon: <Flower2 size={28} />,
-      title: "Floral Design & Arrangements",
-      shortDescription: "Exquisite floral designs that add elegance to every corner.",
-      fullDescription: "Our floral designers create stunning arrangements using fresh, premium flowers sourced daily. From entrance arches to centerpieces, car decorations to bridal bouquets, we handle all floral requirements. We specialize in jasmine, rose, orchid, and lotus arrangements for traditional events, as well as contemporary floral installations for modern celebrations.",
-      category: "styling",
-      images: [
-        "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Fresh Premium Flower Selection",
-        "Traditional & Contemporary Designs",
-        "Bridal Bouquets & Accessories",
-        "Entrance Arches & Installations",
-        "Table Centerpieces & Garlands",
-        "Car & Venue Floral Decoration"
-      ],
-      startingPrice: "₹12,000",
-      duration: "3-5 hours setup",
-      popular: false,
-      stats: { events: 320, rating: 4.8 }
-    },
-    {
-      id: 9,
-      icon: <Target size={28} />,
-      title: "Complete Event Planning",
-      shortDescription: "End-to-end event management for stress-free celebrations.",
-      fullDescription: "Let us handle everything while you enjoy your special day. Our comprehensive event planning includes venue selection, vendor coordination, timeline management, budget planning, guest management, and day-of coordination. We work closely with you from concept to execution, ensuring every detail is perfect and every moment is memorable.",
-      category: "planning",
-      images: [
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Venue Selection & Negotiation",
-        "Vendor Coordination & Management",
-        "Budget Planning & Tracking",
-        "Timeline & Schedule Creation",
-        "Guest List Management",
-        "Day-of Event Coordination"
-      ],
-      startingPrice: "₹40,000",
-      duration: "Full planning cycle",
-      popular: true,
-      stats: { events: 250, rating: 4.9 }
-    },
-    {
-      id: 10,
-      icon: <Building2 size={28} />,
-      title: "Corporate Event Management",
-      shortDescription: "Professional management for conferences, seminars, and corporate functions.",
-      fullDescription: "Elevate your corporate events with our professional management services. We handle product launches, annual meetings, conferences, team building events, and corporate celebrations. Our services include venue setup, AV equipment, registration management, branding materials, stage management, and post-event reporting.",
-      category: "planning",
-      images: [
-        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Conference & Seminar Setup",
-        "AV Equipment & Technical Support",
-        "Registration & Guest Management",
-        "Branding & Marketing Materials",
-        "Stage & Presentation Management",
-        "Event Analytics & Reporting"
-      ],
-      startingPrice: "₹35,000",
-      duration: "1-3 days",
-      popular: false,
-      stats: { events: 150, rating: 4.8 }
-    },
-    {
-      id: 11,
-      icon: <Mic size={28} />,
-      title: "Sound & Lighting Systems",
-      shortDescription: "Professional audio-visual setup for perfect ambiance.",
-      fullDescription: "Create the perfect atmosphere with our premium sound and lighting systems. We provide high-quality PA systems, wireless microphones, LED stage lighting, architectural lighting, laser shows, and fog machines. Our technical team ensures crystal-clear audio and stunning visual effects throughout your event.",
-      category: "entertainment",
-      images: [
-        "https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Premium PA Sound Systems",
-        "Wireless & Wired Microphones",
-        "LED Stage & Architectural Lighting",
-        "Moving Heads & Par Lights",
-        "Laser Shows & Special Effects",
-        "On-site Technical Support Team"
-      ],
-      startingPrice: "₹20,000",
-      duration: "6-8 hours",
-      popular: false,
-      stats: { events: 380, rating: 4.8 }
-    },
-    {
-      id: 12,
-      icon: <PartyPopper size={28} />,
-      title: "Theme Parties & Celebrations",
-      shortDescription: "Creative themed events with complete décor and entertainment.",
-      fullDescription: "Transform your celebration with our creative theme party services. From Bollywood nights to retro themes, carnival setups to royal celebrations, we create immersive experiences. Our packages include themed décor, costumes, props, entertainment, food stations, and photo opportunities that match your chosen theme perfectly.",
-      category: "planning",
-      images: [
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"
-      ],
-      features: [
-        "Custom Theme Conceptualization",
-        "Complete Themed Décor Setup",
-        "Costume & Props Rental",
-        "Themed Entertainment Options",
-        "Food Stations Matching Theme",
-        "Photo Opportunities & Backdrops"
-      ],
-      startingPrice: "₹30,000",
-      duration: "4-6 hours",
-      popular: false,
-      stats: { events: 120, rating: 4.7 }
-    }
-  ];
-
-  const filteredServices = activeCategory === "all"
-    ? services
-    : services.filter(service => service.category === activeCategory);
 
   const openServiceModal = (service) => {
     setSelectedService(service);
-    setCurrentImageIndex(0);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
   };
@@ -563,7 +650,7 @@ const ServicesPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-[var(--color-dark)] text-[var(--color-dark)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-[var(--color-dark)] hover:text-[var(--color-gold-light)] transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 View Services <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
@@ -626,7 +713,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -662,139 +749,207 @@ const ServicesPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Services Grid Section */}
-      <section id="services-grid" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
+      {/* Services Section - Cinematic Modern Design */}
+      <section id="services-section" className="relative py-12 md:py-20 bg-gradient-to-b from-[#f7e9b8] via-[#fdfcf9] to-[#f7e9b8] overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-40 right-20 w-40 h-40 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
+
+        <div className="container mx-auto px-3 md:px-4 relative z-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
-              Our <span className="text-[#d4af37]">Services</span>
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-block mb-3 md:mb-4"
+            >
+              <span className="bg-[#d4af37] text-white px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide">OUR SERVICES</span>
+            </motion.div>
+            <h2 className="text-2xl md:text-5xl font-bold text-black mb-2 md:mb-4 px-4">
+              Crafting <span className="text-[#d4af37]">Unforgettable</span> Moments
             </h2>
-            <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full mb-4 md:mb-6"></div>
-            <p className="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto px-4 leading-relaxed">
-              Comprehensive event solutions covering décor, catering, entertainment, and complete event management in Nagercoil
+            <div className="h-1 w-16 md:w-20 bg-[#d4af37] mx-auto rounded-full mb-3 md:mb-6"></div>
+            <p className="text-gray-600 text-xs md:text-lg max-w-2xl mx-auto px-4 leading-relaxed">
+              Premium event solutions tailored for your special occasions
             </p>
           </motion.div>
 
-          {/* Category Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12"
-          >
-            {serviceCategories.map((category) => (
-              <motion.button
-                key={category.id}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 font-medium ${activeCategory === category.id
-                  ? "bg-[#d4af37] text-white shadow-lg shadow-[#d4af37]/30"
-                  : "bg-white border border-gray-200 text-gray-700 hover:border-[#d4af37]/50"
-                  }`}
-              >
-                {category.icon}
-                <span>{category.name}</span>
-              </motion.button>
-            ))}
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {filteredServices.map((service, index) => (
+          {/* Services Grid - Cinematic Cards */}
+          <div className="space-y-8 md:space-y-12">
+            {serviceCategories.map((category, categoryIndex) => (
               <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ y: -6 }}
-                className="group bg-white rounded-2xl md:rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl hover:border-[#d4af37]/30 transition-all duration-500 cursor-pointer"
-                onClick={() => openServiceModal(service)}
+                key={category.id}
+                initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative"
               >
-                {/* Image */}
-                <div className="relative h-44 md:h-52 overflow-hidden">
-                  <img
-                    src={service.images[0]}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                  {/* Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
-                    {service.popular && (
-                      <div className="bg-[#d4af37] text-white px-2.5 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                        <Star className="w-3 h-3" fill="currentColor" />
-                        Popular
+                {/* Category Card */}
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-3xl shadow-2xl border border-[#d4af37]/20 overflow-hidden">
+                  {/* Category Header - Compact & Modern */}
+                  <motion.div 
+                    className={`relative bg-gradient-to-r ${category.gradient} p-4 md:p-6`}
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <motion.div 
+                        className="bg-white/90 p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <div className="text-[#d4af37]">{category.icon}</div>
+                      </motion.div>
+                      <div className="flex-1">
+                        <h3 className="text-lg md:text-3xl font-bold text-[#222222] mb-0.5 md:mb-1">{category.name}</h3>
+                        <p className="text-[#222222]/70 text-xs md:text-base hidden md:block">{category.description}</p>
                       </div>
-                    )}
-                    <div className="bg-black/70 text-white px-2 py-1 rounded text-xs ml-auto">
-                      ⭐ {service.stats.rating}
+                      <motion.div
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                        className="hidden md:block"
+                      >
+                        <ChevronRight className="w-6 h-6 text-[#222222]/50" />
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Price */}
-                  <div className="absolute bottom-3 left-3 text-white">
-                    <p className="text-xs opacity-90 mb-0.5">From</p>
-                    <p className="text-base md:text-lg font-bold">{service.startingPrice}</p>
-                  </div>
-                </div>
+                  {/* Sub Services - Horizontal Scroll on Mobile, Grid on Desktop */}
+                  <div className="p-3 md:p-6">
+                    {/* Mobile: Horizontal Scroll */}
+                    <div className="md:hidden flex gap-3 overflow-x-auto scrollbar-hide pb-2 snap-x snap-mandatory">
+                      {category.subServices.map((subService, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: index * 0.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="group relative flex-shrink-0 w-[280px] snap-center"
+                          onClick={() => openServiceModal({ ...subService, category: category.name })}
+                        >
+                          <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg">
+                            {/* Image */}
+                            <img
+                              src={subService.image}
+                              alt={subService.name}
+                              className="w-full h-full object-cover group-active:scale-105 transition-transform duration-500"
+                            />
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            
+                            {/* Content */}
+                            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                              <motion.div
+                                initial={{ y: 20, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                              >
+                                <h4 className="text-white font-bold text-lg mb-2">{subService.name}</h4>
+                                <p className="text-white/80 text-xs mb-3 line-clamp-2">{subService.description}</p>
+                                
+                                {/* Features */}
+                                <div className="flex flex-wrap gap-1.5 mb-3">
+                                  {subService.features.slice(0, 2).map((feature, idx) => (
+                                    <span key={idx} className="bg-[#d4af37]/90 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
+                                      {feature}
+                                    </span>
+                                  ))}
+                                  {subService.features.length > 2 && (
+                                    <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
+                                      +{subService.features.length - 2}
+                                    </span>
+                                  )}
+                                </div>
 
-                {/* Content */}
-                <div className="p-4 md:p-5">
-                  <div className="flex items-start gap-2 md:gap-3 mb-2 md:mb-3">
-                    <div className="text-[#d4af37] flex-shrink-0 mt-0.5">
-                      {service.icon}
+                                {/* CTA Button */}
+                                <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-active:bg-[#c49d2f] transition-colors">
+                                  View Details <ArrowRight className="w-4 h-4" />
+                                </button>
+                              </motion.div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-black group-hover:text-[#d4af37] transition-colors duration-300 leading-tight">
-                      {service.title}
-                    </h3>
-                  </div>
 
-                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 line-clamp-2">
-                    {service.shortDescription}
-                  </p>
+                    {/* Desktop: Grid Layout */}
+                    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+                      {category.subServices.map((subService, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ y: -10, scale: 1.02 }}
+                          className="group relative cursor-pointer"
+                          onClick={() => openServiceModal({ ...subService, category: category.name })}
+                        >
+                          <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-xl">
+                            {/* Image */}
+                            <img
+                              src={subService.image}
+                              alt={subService.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
+                            
+                            {/* Content */}
+                            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                              <motion.div
+                                initial={{ y: 20, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.3 }}
+                              >
+                                <h4 className="text-white font-bold text-xl mb-2 group-hover:text-[#d4af37] transition-colors">{subService.name}</h4>
+                                <p className="text-white/80 text-sm mb-4 line-clamp-2 group-hover:line-clamp-none transition-all">{subService.description}</p>
+                                
+                                {/* Features */}
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                  {subService.features.slice(0, 3).map((feature, idx) => (
+                                    <span key={idx} className="bg-[#d4af37]/90 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
+                                      {feature}
+                                    </span>
+                                  ))}
+                                  {subService.features.length > 3 && (
+                                    <span className="bg-white/20 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
+                                      +{subService.features.length - 3}
+                                    </span>
+                                  )}
+                                </div>
 
-                  {/* Duration */}
-                  <div className="flex items-center gap-2 text-xs text-gray-500 mb-3 md:mb-4">
-                    <Clock className="w-3.5 h-3.5" />
-                    {service.duration}
-                  </div>
+                                {/* CTA Button */}
+                                <motion.button 
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  className="w-full bg-[#d4af37] text-black py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                >
+                                  Explore Service <ArrowRight className="w-4 h-4" />
+                                </motion.button>
+                              </motion.div>
+                            </div>
 
-                  {/* Features Preview */}
-                  <div className="space-y-1.5 md:space-y-2 mb-3 md:mb-4">
-                    {service.features.slice(0, 2).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-gray-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#d4af37] flex-shrink-0" />
-                        <span className="line-clamp-1">{feature}</span>
-                      </div>
-                    ))}
-                    {service.features.length > 2 && (
-                      <div className="text-xs text-[#d4af37] font-medium">
-                        +{service.features.length - 2} more features
-                      </div>
-                    )}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center justify-between pt-3 md:pt-4 border-t border-gray-100">
-                    <button className="flex items-center gap-1.5 md:gap-2 text-[#d4af37] font-semibold text-xs md:text-sm group-hover:gap-2.5 md:group-hover:gap-3 transition-all duration-300">
-                      View Details
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                    <div className="w-7 h-7 md:w-8 md:h-8 bg-[#d4af37]/10 rounded-full flex items-center justify-center group-hover:bg-[#d4af37] group-hover:text-white transition-all duration-300">
-                      <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                            {/* Hover Effect Border */}
+                            <div className="absolute inset-0 border-2 border-[#d4af37] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -889,9 +1044,14 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-
-      <CTA text="Ready to Plan Your Dream Event?" desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!" btn1="Contact Now" btn2="View Gallery" btn1link="/contact" btn2link="/gallery" />
-
+      <CTA 
+        text="Ready to Plan Your Dream Event?" 
+        desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!" 
+        btn1="Contact Now" 
+        btn2="View Gallery" 
+        btn1link="/contact" 
+        btn2link="/gallery" 
+      />
 
       {/* Service Detail Modal */}
       <AnimatePresence>
@@ -908,91 +1068,70 @@ const ServicesPage = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
               transition={{ type: "spring", damping: 25 }}
-              className="bg-white rounded-2xl md:rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-2xl md:rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header with Image Slider */}
-              <div className="relative h-64 md:h-80 lg:h-96">
-                <img
-                  src={selectedService.images[currentImageIndex]}
-                  alt={selectedService.title}
-                  className="w-full h-full object-cover rounded-t-2xl md:rounded-t-3xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-t-2xl md:rounded-t-3xl" />
-
-                {/* Close Button */}
+              {/* Image Slider Section */}
+              <div className="relative">
                 <button
                   onClick={closeServiceModal}
-                  className="absolute top-3 md:top-4 right-3 md:right-4 bg-black/70 text-white p-2 md:p-2.5 rounded-full hover:bg-black transition-colors z-10"
+                  className="absolute top-3 md:top-4 right-3 md:right-4 bg-white/90 text-black p-2 md:p-2.5 rounded-full hover:bg-white transition-colors z-20 shadow-lg"
                 >
                   <X className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
 
-                {/* Image Indicators */}
-                <div className="absolute bottom-16 md:bottom-20 left-1/2 transform -translate-x-1/2 flex gap-2">
-                  {selectedService.images.map((_, idx) => (
-                    <div
-                      key={idx}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-[#d4af37] w-6' : 'bg-white/50'
-                        }`}
-                    />
-                  ))}
-                </div>
-
-                {/* Bottom Info */}
-                <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4 text-white">
-                  <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <span className="bg-[#d4af37] px-2.5 py-1 rounded-full text-xs font-medium">
-                      {serviceCategories.find(cat => cat.id === selectedService.category)?.name}
-                    </span>
-                    {selectedService.popular && (
-                      <span className="bg-white/20 backdrop-blur-sm px-2 py-1 rounded text-xs flex items-center gap-1">
-                        <Star className="w-3 h-3" fill="currentColor" />
-                        Popular
-                      </span>
-                    )}
-                    <span className="bg-black/50 backdrop-blur-sm px-2 py-1 rounded text-xs">
-                      ⭐ {selectedService.stats.rating} ({selectedService.stats.events}+ events)
-                    </span>
-                  </div>
-                  <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2">
-                    {selectedService.title}
-                  </h2>
-                  <div className="flex items-center gap-3 text-xs md:text-sm">
-                    <span>⏱️ {selectedService.duration}</span>
-                    <span className="text-base md:text-lg font-bold">From {selectedService.startingPrice}</span>
-                  </div>
-                </div>
+                {selectedService.images && selectedService.images.length > 1 ? (
+                  <Slider {...sliderSettings} className="service-slider">
+                    {selectedService.images.map((img, index) => (
+                      <div key={index} className="outline-none">
+                        <img
+                          src={img}
+                          alt={`${selectedService.name} ${index + 1}`}
+                          className="w-full h-64 md:h-96 object-cover rounded-t-2xl md:rounded-t-3xl"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : (
+                  <img
+                    src={selectedService.image}
+                    alt={selectedService.name}
+                    className="w-full h-64 md:h-96 object-cover rounded-t-2xl md:rounded-t-3xl"
+                  />
+                )}
               </div>
 
-              {/* Modal Content */}
-              <div className="p-5 md:p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4">About This Service</h3>
-                    <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                      {selectedService.fullDescription}
-                    </p>
+              {/* Service Info Below Images */}
+              <div className="p-6 md:p-8">
+                <div className="mb-4">
+                  <div className="bg-[#d4af37] px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">
+                    {selectedService.category}
                   </div>
+                  <h2 className="text-2xl md:text-4xl font-bold mb-3 text-black">
+                    {selectedService.name}
+                  </h2>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                    {selectedService.description}
+                  </p>
+                </div>
 
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-black mb-3 md:mb-4 flex items-center gap-2">
-                      <CheckCircle className="text-[#d4af37] w-5 h-5 md:w-6 md:h-6" />
-                      What's Included
-                    </h3>
-                    <div className="space-y-2 md:space-y-3">
-                      {selectedService.features.map((feature, index) => (
-                        <div key={index} className="flex items-start gap-3 text-gray-700 p-2.5 md:p-3 bg-gray-50 rounded-lg text-sm md:text-base">
-                          <div className="w-1.5 h-1.5 bg-[#d4af37] rounded-full flex-shrink-0 mt-2"></div>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                <div className="mb-6 md:mb-8 border-t pt-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-black mb-4 flex items-center gap-2">
+                    <CheckCircle className="text-[#d4af37] w-5 h-5 md:w-6 md:h-6" />
+                    Service Features
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {selectedService.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg">
+                        <div className="w-2 h-2 bg-[#d4af37] rounded-full flex-shrink-0"></div>
+                        <span className="text-sm md:text-base">{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-end border-t pt-5 md:pt-6">
+                <div className="flex flex-col sm:flex-row gap-3 justify-end pt-6">
                   <button
                     onClick={closeServiceModal}
                     className="px-6 md:px-8 py-2.5 md:py-3 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-50 transition-colors font-medium text-sm md:text-base"
@@ -1000,7 +1139,7 @@ const ServicesPage = () => {
                     Close
                   </button>
                   <Link
-                    href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20event%20planning%20services:%20${selectedService.title}%20service. `}
+                    href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20${selectedService.name}%20service%20for%20${selectedService.category}.`}
                     className="bg-[#d4af37] text-black px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
                   >
                     <Phone className="w-4 h-4 md:w-5 md:h-5" />

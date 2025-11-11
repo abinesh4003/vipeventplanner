@@ -126,7 +126,7 @@ const SpecialHighlightsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 px-4 md:px-0"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black font-poppins mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Special <span className="text-gold">Highlights</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-gold to-gold-dark mx-auto mb-4" />
@@ -187,7 +187,7 @@ const SpecialHighlightsSection = () => {
                     transition={{ duration: 0.6, delay: index * 0.2 }}
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <h3 className="text-2xl md:text-3xl font-semibold text-black font-montserrat">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-black">
                         {highlight.title}
                       </h3>
                     </div>

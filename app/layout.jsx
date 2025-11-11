@@ -1,21 +1,7 @@
 import "./globals.css";
-import { Montserrat, Poppins } from "next/font/google";
 import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import WatsappLogo from "./components/WatsappLogo";
-
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-montserrat",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-poppins",
-});
 
 export const metadata = {
   title: {
@@ -110,9 +96,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body
-        className={`antialiased relative ${montserrat.variable} ${poppins.variable}`}
-      >
+      <body className="antialiased relative">
         <Navbar />
         <WatsappLogo />
         {children}
