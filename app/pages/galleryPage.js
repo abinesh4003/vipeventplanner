@@ -859,81 +859,80 @@ const galleryData = {
                 <div className="h-1 w-24 bg-[#d4af37] rounded-full"></div>
               </motion.div>
 
-              {/* Images - Horizontal Scroll */}
+              {/* Images - Slider */}
               <div className="relative">
-                <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+                <Slider
+                  dots={false}
+                  infinite={true}
+                  speed={900}
+                  slidesToShow={3}
+                  slidesToScroll={1}
+                  autoplay={true}
+                  autoplaySpeed={2400}
+                  arrows={false}
+                  pauseOnHover={false}
+                  pauseOnFocus={false}
+                  responsive={[
+                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                  ]}
+                >
                   {galleryData[service.id].map((image, index) => (
-                    <motion.div
-                      key={image.id}
-                      initial={{ opacity: 0, x: 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="group relative flex-shrink-0 w-[250px] md:w-[320px] snap-center cursor-pointer"
-                      onClick={() => openImageModal(image, index, service.id)}
-                    >
-                      <div className="relative h-[340px] md:h-[400px] rounded-3xl overflow-hidden shadow-2xl">
-                        <img
-                          src={image.src}
-                          alt={image.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                        
-                        {/* Content */}
-                        <div className="absolute inset-0 p-5 flex flex-col justify-between">
-                          {/* Top Right - Likes */}
-                          <div className="flex justify-end">
-                            <motion.div 
-                              whileHover={{ scale: 1.15 }}
-                              className="bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-white/30"
-                            >
-                              <Heart className="w-4 h-4 text-white fill-white" />
-                              <span className="text-white text-sm font-bold">{image.likes}</span>
-                            </motion.div>
-                          </div>
-
-                          {/* Bottom Info */}
-                          <div>
-                            <h3 className="text-white font-bold text-lg md:text-xl mb-2">{image.title}</h3>
-                            <p className="text-white/90 text-xs md:text-sm mb-3 line-clamp-2">{image.description}</p>
-                            <div className="flex items-center gap-2 text-white/80 text-xs mb-3">
-                              <MapPin className="w-3.5 h-3.5" />
-                              <span>{image.venue}</span>
+                    <div key={image.id} className="px-2">
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        whileHover={{ y: -10 }}
+                        className="group relative cursor-pointer"
+                        onClick={() => openImageModal(image, index, service.id)}
+                      >
+                        <div className="relative h-[340px] md:h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+                          <img
+                            src={image.src}
+                            alt={image.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                          <div className="absolute inset-0 p-5 flex flex-col justify-between">
+                            <div className="flex justify-end">
+                              <motion.div 
+                                whileHover={{ scale: 1.15 }}
+                                className="bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-white/30"
+                              >
+                                <Heart className="w-4 h-4 text-white fill-white" />
+                                <span className="text-white text-sm font-bold">{image.likes}</span>
+                              </motion.div>
                             </div>
-                            {image.type && (
-                              <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${
-                                image.type === 'veg' ? 'bg-green-500' :
-                                image.type === 'nonveg' ? 'bg-red-500' :
-                                'bg-blue-500'
-                              }`}>
-                                {image.type === 'veg' ? 'VEG' : image.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
-                              </span>
-                            )}
+                            <div>
+                              <h3 className="text-white font-bold text-lg md:text-xl mb-2">{image.title}</h3>
+                              <p className="text-white/90 text-xs md:text-sm mb-3 line-clamp-2">{image.description}</p>
+                              <div className="flex items-center gap-2 text-white/80 text-xs mb-3">
+                                <MapPin className="w-3.5 h-3.5" />
+                                <span>{image.venue}</span>
+                              </div>
+                              {image.type && (
+                                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${
+                                  image.type === 'veg' ? 'bg-green-500' :
+                                  image.type === 'nonveg' ? 'bg-red-500' :
+                                  'bg-blue-500'
+                                }`}>
+                                  {image.type === 'veg' ? 'VEG' : image.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                            <div className="bg-[#d4af37] rounded-full p-4">
+                              <ZoomIn className="w-8 h-8 text-white" />
+                            </div>
                           </div>
                         </div>
-
-                        {/* Hover Zoom Icon */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                          <div className="bg-[#d4af37] rounded-full p-4">
-                            <ZoomIn className="w-8 h-8 text-white" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    </div>
                   ))}
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="flex justify-center mt-4 gap-2">
-                  {galleryData[service.id].map((_, idx) => (
-                    <div key={idx} className="w-2 h-2 rounded-full bg-[#d4af37]/30"></div>
-                  ))}
-                </div>
+                </Slider>
               </div>
             </div>
           </section>
@@ -970,7 +969,7 @@ const galleryData = {
               </button>
 
               {/* Navigation Arrows */}
-              {/* <button
+              <button
                 onClick={() => navigateImage('prev')}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
               >
@@ -981,7 +980,7 @@ const galleryData = {
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
-              </button> */}
+              </button>
 
               {/* Image Slider */}
               <div className="relative h-64 md:h-96 bg-gray-100">

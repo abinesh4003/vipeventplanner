@@ -827,129 +827,122 @@ const ServicesPage = () => {
                     </div>
                   </motion.div>
 
-                  {/* Sub Services - Horizontal Scroll on Mobile, Grid on Desktop */}
+                  {/* Sub Services - Slider for both Mobile and Desktop */}
                   <div className="p-3 md:p-6">
-                    {/* Mobile: Horizontal Scroll */}
-                    <div className="md:hidden flex gap-3 overflow-x-auto scrollbar-hide pb-2 snap-x snap-mandatory">
-                      {category.subServices.map((subService, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.4, delay: index * 0.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="group relative flex-shrink-0 w-[280px] snap-center"
-                          onClick={() => openServiceModal({ ...subService, category: category.name })}
-                        >
-                          <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg">
-                            {/* Image */}
-                            <img
-                              src={subService.image}
-                              alt={subService.name}
-                              className="w-full h-full object-cover group-active:scale-105 transition-transform duration-500"
-                            />
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                            
-                            {/* Content */}
-                            <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                              <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
-                              >
-                                <h4 className="text-white font-bold text-lg mb-2">{subService.name}</h4>
-                                <p className="text-white/80 text-xs mb-3 line-clamp-2">{subService.description}</p>
-                                
-                                {/* Features */}
-                                <div className="flex flex-wrap gap-1.5 mb-3">
-                                  {subService.features.slice(0, 2).map((feature, idx) => (
-                                    <span key={idx} className="bg-[#d4af37]/90 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
-                                      {feature}
-                                    </span>
-                                  ))}
-                                  {subService.features.length > 2 && (
-                                    <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
-                                      +{subService.features.length - 2}
-                                    </span>
-                                  )}
+                    {/* Mobile: Slider */}
+                    <div className="md:hidden">
+                      <Slider
+                        dots={false}
+                        infinite={true}
+                        speed={900}
+                        slidesToShow={1}
+                        slidesToScroll={1}
+                        autoplay={true}
+                        autoplaySpeed={2400}
+                        arrows={false}
+                        pauseOnHover={false}
+                        pauseOnFocus={false}
+                      >
+                        {category.subServices.map((subService, index) => (
+                          <div key={index} className="px-2">
+                            <div
+                              className="group relative cursor-pointer"
+                              onClick={() => openServiceModal({ ...subService, category: category.name })}
+                            >
+                              <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg">
+                                <img
+                                  src={subService.image}
+                                  alt={subService.name}
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                                <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                                  <h4 className="text-white font-bold text-lg mb-2">{subService.name}</h4>
+                                  <p className="text-white/80 text-xs mb-3 line-clamp-2">{subService.description}</p>
+                                  <div className="flex flex-wrap gap-1.5 mb-3">
+                                    {subService.features.slice(0, 2).map((feature, idx) => (
+                                      <span key={idx} className="bg-[#d4af37]/90 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
+                                        {feature}
+                                      </span>
+                                    ))}
+                                    {subService.features.length > 2 && (
+                                      <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
+                                        +{subService.features.length - 2}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                                    View Details <ArrowRight className="w-4 h-4" />
+                                  </button>
                                 </div>
-
-                                {/* CTA Button */}
-                                <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 group-active:bg-[#c49d2f] transition-colors">
-                                  View Details <ArrowRight className="w-4 h-4" />
-                                </button>
-                              </motion.div>
+                              </div>
                             </div>
                           </div>
-                        </motion.div>
-                      ))}
+                        ))}
+                      </Slider>
                     </div>
 
-                    {/* Desktop: Grid Layout */}
-                    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-                      {category.subServices.map((subService, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ y: -10, scale: 1.02 }}
-                          className="group relative cursor-pointer"
-                          onClick={() => openServiceModal({ ...subService, category: category.name })}
-                        >
-                          <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-xl">
-                            {/* Image */}
-                            <img
-                              src={subService.image}
-                              alt={subService.name}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
-                            
-                            {/* Content */}
-                            <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                              <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                whileInView={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                              >
-                                <h4 className="text-white font-bold text-xl mb-2 group-hover:text-[#d4af37] transition-colors">{subService.name}</h4>
-                                <p className="text-white/80 text-sm mb-4 line-clamp-2 group-hover:line-clamp-none transition-all">{subService.description}</p>
-                                
-                                {/* Features */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                  {subService.features.slice(0, 3).map((feature, idx) => (
-                                    <span key={idx} className="bg-[#d4af37]/90 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
-                                      {feature}
-                                    </span>
-                                  ))}
-                                  {subService.features.length > 3 && (
-                                    <span className="bg-white/20 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
-                                      +{subService.features.length - 3}
-                                    </span>
-                                  )}
+                    {/* Desktop: Slider */}
+                    <div className="hidden md:block">
+                      <Slider
+                        dots={false}
+                        infinite={true}
+                        speed={900}
+                        slidesToShow={3}
+                        slidesToScroll={1}
+                        autoplay={true}
+                        autoplaySpeed={2400}
+                        arrows={false}
+                        pauseOnHover={false}
+                        pauseOnFocus={false}
+                        responsive={[
+                          { breakpoint: 1280, settings: { slidesToShow: 3 } },
+                          { breakpoint: 1024, settings: { slidesToShow: 2 } }
+                        ]}
+                      >
+                        {category.subServices.map((subService, index) => (
+                          <div key={index} className="px-2">
+                            <motion.div
+                              initial={{ opacity: 0, y: 30 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.5 }}
+                              whileHover={{ y: -10 }}
+                              className="group relative cursor-pointer"
+                              onClick={() => openServiceModal({ ...subService, category: category.name })}
+                            >
+                              <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-xl">
+                                <img
+                                  src={subService.image}
+                                  alt={subService.name}
+                                  className="w-full h-full object-fill group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
+                                <div className="absolute inset-0 p-5 flex flex-col justify-end">
+                                  <h4 className="text-white font-bold text-xl mb-2 group-hover:text-[#d4af37] transition-colors">{subService.name}</h4>
+                                  <p className="text-white/80 text-sm mb-4 line-clamp-2">{subService.description}</p>
+                                  <div className="flex flex-wrap gap-2 mb-4">
+                                    {subService.features.slice(0, 3).map((feature, idx) => (
+                                      <span key={idx} className="bg-[#d4af37]/90 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
+                                        {feature}
+                                      </span>
+                                    ))}
+                                    {subService.features.length > 3 && (
+                                      <span className="bg-white/20 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
+                                        +{subService.features.length - 3}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <button className="w-full bg-[#d4af37] text-black py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Explore Service <ArrowRight className="w-4 h-4" />
+                                  </button>
                                 </div>
-
-                                {/* CTA Button */}
-                                <motion.button 
-                                  whileHover={{ scale: 1.05 }}
-                                  whileTap={{ scale: 0.95 }}
-                                  className="w-full bg-[#d4af37] text-black py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                >
-                                  Explore Service <ArrowRight className="w-4 h-4" />
-                                </motion.button>
-                              </motion.div>
-                            </div>
-
-                            {/* Hover Effect Border */}
-                            <div className="absolute inset-0 border-2 border-[#d4af37] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 border-2 border-[#d4af37] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
+                              </div>
+                            </motion.div>
                           </div>
-                        </motion.div>
-                      ))}
+                        ))}
+                      </Slider>
                     </div>
                   </div>
                 </div>
@@ -1087,7 +1080,7 @@ const ServicesPage = () => {
                         <img
                           src={img}
                           alt={`${selectedService.name} ${index + 1}`}
-                          className="w-full h-64 md:h-96 object-cover rounded-t-2xl md:rounded-t-3xl"
+                          className="w-full h-64 md:h-96 object-fill rounded-t-2xl md:rounded-t-3xl"
                         />
                       </div>
                     ))}
