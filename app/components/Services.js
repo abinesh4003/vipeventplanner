@@ -118,7 +118,7 @@ export default function ServicesGrid() {
                         src={img}
                         alt={`${s.title} ${idx + 1}`}
                         fill
-                        className="object-contain"
+                        className="object-fill"
                         sizes="400px"
                       />
                     </div>

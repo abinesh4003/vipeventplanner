@@ -79,9 +79,9 @@ const SpecialHighlightsSection = () => {
       title: "Entertainment & Special Arrivals",
       description: "Set the mood with our professional DJ music in Nagercoil, live games, and entertainment that keeps the crowd energized. Make a grand statement with our couple entry concepts like snow fog, fire shot, floral pathway, or royal-themed arrivals.",
       media: [
-        {type: "video" ,src:"/services/dj/djvid.mp4"},
-        {type: "video" ,src:"/services/dj/djvid1.mp4"},
 
+        {type: "video" ,src:"/services/dj/djvid1.mp4"},
+        {type: "video" ,src:"/services/dj/djvid.mp4"},
         // { type: "image", src: "/images/entertainment-highlight.jpg" },
         // { type: "image", src: "/images/entertainment-highlight-2.jpg" },
         // { type: "image", src: "/images/entertainment-highlight-3.jpg" }
