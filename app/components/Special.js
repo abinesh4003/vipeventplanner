@@ -104,8 +104,6 @@ const SpecialHighlightsSection = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    autoplay: true,
-    autoplaySpeed: 10000,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,

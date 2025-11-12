@@ -97,37 +97,37 @@ const ServicesPage = () => {
         {
           name: "Car Decoration",
           description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles",
-          image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/car/cardec.webp",
           features: ["Fresh Flower Garlands", "Ribbon Work", "Traditional Designs", "Modern Styles"]
         },
         {
           name: "Home Decoration",
           description: "Complete home transformation for festivals, weddings, and special occasions",
-          image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/home/home.jpg",
           features: ["Entrance Decor", "Living Area Setup", "Traditional Elements", "Modern Touches"]
         },
         {
           name: "Birthday Decoration",
           description: "Thematic birthday decorations for all ages with balloons, props, and backdrops",
-          image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/birthday/birthday.webp",
           features: ["Theme Based Decor", "Balloon Arrangements", "Photo Backdrops", "Age Appropriate Designs"]
         },
         {
           name: "Mandap Decoration",
           description: "Traditional South Indian wedding mandap with floral arrangements",
-          image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/mandap/mandp.webp",
           features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
         },
         {
           name: "Entrance Decoration",
           description: "Grand entrance setups with floral arches and welcome decorations",
-          image: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/entrance/entrance.webp",
           features: ["Floral Arches", "Welcome Gates", "Lighting Effects", "Grand Designs"]
         },
         {
           name: "Theme Decoration",
           description: "Complete thematic decorations for various event concepts and styles",
-          image: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=600&q=80",
+          image: "/services/dec/theme/theme.jpg",
           features: ["Custom Themes", "Concept Design", "Props & Backdrops", "Complete Setup"]
         }
       ]
@@ -154,7 +154,7 @@ const ServicesPage = () => {
         {
           name: "Non-Veg Catering",
           description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
-          image: "/services/cat/cat2.jpeg",
+          image: "/services/cat/nonveg.jpg",
           images: [
             "/services/cat/cat2.jpeg",
             "/services/cat/cat1.jpg",
@@ -172,25 +172,25 @@ const ServicesPage = () => {
         {
           name: "Serving Staff",
           description: "Professional serving staff and coordinators for seamless service",
-          image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80",
+          image: "/services/cat/staff/staff.webp",
           features: ["Trained Staff", "Hygiene Focus", "Guest Assistance", "Efficient Service"]
         },
         {
           name: "Mutton Biryani Special",
           description: "Signature mutton biryani cooked with traditional spices and techniques",
-          image: "https://images.unsplash.com/photo-1563379091339-03246963d96f?auto=format&fit=crop&w=600&q=80",
+          image: "/services/cat/biriyani/biriyani.webp",
           features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
         },
         {
           name: "Food Presentation",
           description: "Elegant food presentation and professional plating services",
-          image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80",
+          image: "/services/cat/food/meal.jpg",
           features: ["Elegant Plating", "Creative Presentation", "Professional Service", "Visual Appeal"]
         },
         {
           name: "Special Diet Menu",
           description: "Customized menus for special dietary needs and preferences",
-          image: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=600&q=80",
+          image: "/services/cat/food/diet.jpg",
           features: ["Custom Menus", "Dietary Requirements", "Health Conscious", "Allergen Free Options"]
         }
       ]
@@ -205,31 +205,31 @@ const ServicesPage = () => {
         {
           name: "Popcorn Station",
           description: "Freshly popped popcorn with various flavors and toppings",
-          image: "https://images.unsplash.com/photo-1571084295922-8747a2a27239?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/popcorn.jpg",
           features: ["Multiple Flavors", "Caramel & Cheese", "Fresh Preparation", "Self-Service Station"]
         },
         {
           name: "Ice Cream Parlor",
           description: "Premium ice cream with toppings and customizations",
-          image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/icecream.jpg",
           features: ["Various Flavors", "Toppings Bar", "Waffle Cones", "Sundae Options"]
         },
         {
           name: "Dessert Counters",
           description: "Assorted Indian and Western desserts for all tastes",
-          image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/desserts.webp",
           features: ["Indian Sweets", "Pastries & Cakes", "Fruit Desserts", "Sugar-free Options"]
         },
         {
           name: "Live Food Counters",
           description: "Live cooking stations with interactive food preparation",
-          image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/livefood.jpg",
           features: ["Live Cooking", "Interactive Stations", "Fresh Preparation", "Chef Service"]
         },
         {
           name: "Juice & Beverage Stall",
           description: "Fresh juices, mocktails, and beverage stations",
-          image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/drinks.webp",
           features: ["Fresh Juices", "Mocktails", "Beverage Bar", "Custom Drinks"]
         },
         {
@@ -265,7 +265,7 @@ const ServicesPage = () => {
         {
           name: "Specialty Food Stalls",
           description: "Theme-based food stalls and specialty counters",
-          image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=600&q=80",
+          image: "/services/stalls/special.webp",
           features: ["Theme Based", "Specialty Items", "Custom Stalls", "Unique Experience"]
         }
       ]
@@ -830,15 +830,26 @@ const ServicesPage = () => {
                   {/* Sub Services - Slider for both Mobile and Desktop */}
                   <div className="p-3 md:p-6">
                     {/* Mobile: Slider */}
-                    <div className="md:hidden">
+                    <div className="relative">
+                      {/* Scroll Indicator - Mobile Only */}
+                      <div className="md:hidden flex items-center justify-end gap-2 mb-3 text-gray-500 text-xs">
+                        <motion.div
+                          animate={{ x: [0, 10, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.5 }}
+                          className="flex items-center gap-1 justify-start"
+                        >
+                          <span>Swipe</span>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </motion.div>
+                      </div>
                       <Slider
                         dots={false}
                         infinite={true}
                         speed={900}
                         slidesToShow={1}
                         slidesToScroll={1}
-                        autoplay={true}
-                        autoplaySpeed={2400}
                         arrows={false}
                         pauseOnHover={false}
                         pauseOnFocus={false}
@@ -846,35 +857,34 @@ const ServicesPage = () => {
                         {category.subServices.map((subService, index) => (
                           <div key={index} className="px-2">
                             <div
-                              className="group relative cursor-pointer"
+                              className="group cursor-pointer"
                               onClick={() => openServiceModal({ ...subService, category: category.name })}
                             >
-                              <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg">
+                              <div className="h-[200px] rounded-xl overflow-hidden shadow-lg mb-4">
                                 <img
                                   src={subService.image}
                                   alt={subService.name}
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-full object-fill"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                                <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                                  <h4 className="text-white font-bold text-lg mb-2">{subService.name}</h4>
-                                  <p className="text-white/80 text-xs mb-3 line-clamp-2">{subService.description}</p>
-                                  <div className="flex flex-wrap gap-1.5 mb-3">
-                                    {subService.features.slice(0, 2).map((feature, idx) => (
-                                      <span key={idx} className="bg-[#d4af37]/90 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
-                                        {feature}
-                                      </span>
-                                    ))}
-                                    {subService.features.length > 2 && (
-                                      <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] font-medium backdrop-blur-sm">
-                                        +{subService.features.length - 2}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
-                                    View Details <ArrowRight className="w-4 h-4" />
-                                  </button>
+                              </div>
+                              <div className="p-4">
+                                <h4 className="text-black font-bold text-lg mb-2">{subService.name}</h4>
+                                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{subService.description}</p>
+                                <div className="flex flex-wrap gap-1.5 mb-3">
+                                  {subService.features.slice(0, 2).map((feature, idx) => (
+                                    <span key={idx} className="bg-[#d4af37] text-white px-2 py-1 rounded-full text-xs font-medium">
+                                      {feature}
+                                    </span>
+                                  ))}
+                                  {subService.features.length > 2 && (
+                                    <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                                      +{subService.features.length - 2}
+                                    </span>
+                                  )}
                                 </div>
+                                <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                                  View Details <ArrowRight className="w-4 h-4" />
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -882,7 +892,7 @@ const ServicesPage = () => {
                       </Slider>
                     </div>
 
-                    {/* Desktop: Slider */}
+                    {/* Desktop: Slider
                     <div className="hidden md:block">
                       <Slider
                         dots={false}
@@ -890,7 +900,7 @@ const ServicesPage = () => {
                         speed={900}
                         slidesToShow={3}
                         slidesToScroll={1}
-                        autoplay={true}
+                        // autoplay={true}
                         autoplaySpeed={2400}
                         arrows={false}
                         pauseOnHover={false}
@@ -943,7 +953,7 @@ const ServicesPage = () => {
                           </div>
                         ))}
                       </Slider>
-                    </div>
+                    </div> */} 
                   </div>
                 </div>
               </motion.div>

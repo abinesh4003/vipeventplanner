@@ -865,7 +865,7 @@ const galleryData = {
                   dots={false}
                   infinite={true}
                   speed={900}
-                  slidesToShow={3}
+                  slidesToShow={1}
                   slidesToScroll={1}
                   autoplay={true}
                   autoplaySpeed={2400}
@@ -873,6 +873,7 @@ const galleryData = {
                   pauseOnHover={false}
                   pauseOnFocus={false}
                   responsive={[
+                    { breakpoint: 9999, settings: { slidesToShow: 3 } },
                     { breakpoint: 1024, settings: { slidesToShow: 2 } },
                     { breakpoint: 768, settings: { slidesToShow: 1 } }
                   ]}
