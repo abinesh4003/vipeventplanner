@@ -10,41 +10,42 @@ import "slick-carousel/slick/slick-theme.css";
 
 const AboutUs = () => {
   // Unsplash Images (Free to use)
+  
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/planners.jpg",
       heading: "Best Event Planners In Nagercoil",
-      desc: "Professional event planning services with experienced coordinators handling every detail of your special celebration from concept to completion."
+      desc: "Plan your dream event with us and let us take care of the rest. We have a team of experienced event planners who will help you plan your event from start to finish."
     }, // Event planners working
     {
-      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/stage.jpg",
       heading: "Best Event Decorators In Nagercoil",
-      desc: "Creative decoration services transforming venues with stunning themes, elegant setups, and personalized design elements for memorable events."
+      desc: "Decorate your event with us and let us take care of the rest. We have a team of experienced event decorators who will help you decorate your event from start to finish."
     }, // Event setup
     {
-      url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/catering.jpg",
       heading: "Best Caterering Service In Nagercoil",
       desc: "Cater for your event with us and let us take care of the rest. We are the best specialized catering services for weddings, corporate events, and all celebrations across Kanyakumari district."
     }, // Team planning meeting
     {
-      url: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
+      url: "/about/stalls.jpg"
       , heading: "Best Stalls and Desert Services In Nagercoil",
       desc: "Get you favourite stalls and desert services with us and let us take care of the rest. we have all caregory of stalls and desert services for weddings, corporate events, and all celebrations across Kanyakumari district."
     }, // Wedding planning // Corporate event
     {
-      url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/photo.jpg",
       heading: "Best Wedding Photography In Nagercoil",
-      desc: "Professional wedding photography capturing precious moments with artistic vision and technical expertise for timeless memories."
+      desc: "Plan your dream event with us and let us take care of the rest. we have the experienced team of wedding photographers to make your event more memorable."
     }, // Event coordination
     {
-      url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/dj.jpg",
       heading: "Best Music anad DJ Services In Nagercoil",
       desc: "Our team of experienced DJs and music planners will help you plan your event from start to finish. Get the best music and DJ services for weddings, corporate events, and all celebrations across Kanyakumari district."
     }, // Concert/entertainment event
     {
-      url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+      url: "/about/reviews.jpg",
       heading: "Top Rated Google Reviews In Nagercoil",
-      desc: "Highly rated event management company with excellent client reviews and proven track record of successful celebrations in Nagercoil."
+      desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
     }  // Professional team portrait
   ];
 
@@ -55,7 +56,7 @@ const AboutUs = () => {
     { icon: <Heart className="text-gold w-6 h-6" />, title: "Client Love", desc: "100% satisfaction guaranteed" },
   ];
 
-  const imageSliderSettings = {
+  const aboutSliderSettings = {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3500,
@@ -165,76 +166,102 @@ const AboutUs = () => {
           <div className="h-1 w-24 bg-gold mx-auto mt-4 rounded-full" />
         </motion.div>
 
-        {/* Image and Text */}
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left - Image Carousel */}
+        {/* 🌟 Our Story - Elegant & Responsive */}
+      <section className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        {/* Background Accent Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.08),transparent_60%)]"></div>
+
+        <div className="container mx-auto md:px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-1/2"
+            className="text-center mb-12"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Slider {...imageSliderSettings}>
-                {images.map((src, index) => (
-                  <div key={index} className="relative w-full h-[280px] md:h-[420px]">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 text-white p-6" >
-                      <h3 className="text-lg md:text-2xl font-bold mb-2">{src.heading}</h3>
-                      <p>{src.desc}</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="text-[#d4af37]">Journey</span>
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
+              From a passionate vision to Nagercoil’s most trusted event planners
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
+            {/* Image - Full width on mobile, half on desktop */}
+            <motion.div
+              style={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+              className="w-full md:w-1/2 -mx-4 md:mx-0"
+            >
+              <div className="md:rounded-3xl overflow-hidden shadow-2xl md:border-4 border-white">
+                <Slider {...aboutSliderSettings}>
+                  {images.map((src, index) => (
+                    <div key={index} className="relative w-full h-[320px] md:h-[480px]">
+                      <Image
+                        src={src.url}
+                        alt={`Event ${index + 1}`}
+                        fill
+                        className="object-fill"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 z-10 text-white p-6"
+                        style={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                      >
+                        <h3 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg">{src.heading}</h3>
+                        <p className="text-sm md:text-base text-white/90 drop-shadow-md">{src.desc}</p>
+                      </motion.div>
                     </div>
-                    <Image
-                      src={src.url}
-                      alt={`Event ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  </div>
-                ))}
-              </Slider>
-              <div className="absolute bottom-4 right-4 bg-black/60 text-gold px-4 py-2 rounded-md text-xs font-semibold tracking-widest">
-                SINCE 2010
+                  ))}
+                </Slider>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Right - Description */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="w-full lg:w-1/2"
-          >
-            <p className="text-gray-700 text-base md:text-lg mb-5 leading-relaxed">
-              At <span className="text-gold font-semibold">V.I.P Function Planners</span>,
-              we go beyond planning — we design unforgettable experiences filled with joy, precision, and beauty.
-            </p>
-            <p className="text-gray-700 text-base md:text-lg mb-5 leading-relaxed">
-              From dream weddings to corporate celebrations, our passionate team brings your vision to life
-              with luxury décor, world-class vendors, and attention to every elegant detail.
-            </p>
-
-            {/* Why Choose Us */}
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              {whyChooseUs.map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center text-center bg-white shadow-md border border-gold/10 rounded-xl py-4 px-2 transition-all"
-                >
-                  {item.icon}
-                  <h4 className="text-sm md:text-base font-semibold text-dark mt-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-600 text-xs md:text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+            {/* Text - Below on mobile, right on desktop */}
+            <motion.div
+              style={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
+            >
+              <motion.p
+                className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
+                style={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Since 2010, <strong className="text-[#d4af37]">V.I.P Function Planners</strong> has
+                transformed ordinary events into extraordinary experiences across
+                Nagercoil and beyond.
+              </motion.p>
+              <motion.p
+                className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"
+                style={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                What began as a dream to craft meaningful celebrations has evolved
+                into a legacy of creativity, precision, and unforgettable elegance.
+              </motion.p>
+              <motion.p
+                className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                style={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Every event we design reflects our belief — that every moment deserves
+                perfection, emotion, and timeless beauty.
+              </motion.p>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
         {/* Testimonials Slider */}
         <motion.div
