@@ -838,9 +838,10 @@ const galleryData = {
             <div className="container mx-auto px-3 md:px-4 relative z-10">
               {/* Service Header */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                initial={{ x: serviceIndex % 2 === 0 ? -100 : 100 }}
+                whileInView={{ x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6 }}
                 className="mb-8 md:mb-12"
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -859,81 +860,77 @@ const galleryData = {
                 <div className="h-1 w-24 bg-[#d4af37] rounded-full"></div>
               </motion.div>
 
-              {/* Images - Slider */}
-              <div className="relative">
-                <Slider
-                  dots={false}
-                  infinite={true}
-                  speed={900}
-                  slidesToShow={1}
-                  slidesToScroll={1}
-                  autoplay={true}
-                  autoplaySpeed={2400}
-                  arrows={false}
-                  pauseOnHover={false}
-                  pauseOnFocus={false}
-                  responsive={[
-                    { breakpoint: 9999, settings: { slidesToShow: 3 } },
-                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } }
-                  ]}
-                >
-                  {galleryData[service.id].map((image, index) => (
-                    <div key={image.id} className="px-2">
-                      <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        whileHover={{ y: -10 }}
-                        className="group relative cursor-pointer"
-                        onClick={() => openImageModal(image, index, service.id)}
-                      >
-                        <div className="relative h-[340px] md:h-[400px] rounded-3xl overflow-hidden shadow-2xl">
-                          <img
-                            src={image.src}
-                            alt={image.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                          <div className="absolute inset-0 p-5 flex flex-col justify-between">
-                            <div className="flex justify-end">
-                              <motion.div 
-                                whileHover={{ scale: 1.15 }}
-                                className="bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-white/30"
-                              >
-                                <Heart className="w-4 h-4 text-white fill-white" />
-                                <span className="text-white text-sm font-bold">{image.likes}</span>
-                              </motion.div>
-                            </div>
-                            <div>
-                              <h3 className="text-white font-bold text-lg md:text-xl mb-2">{image.title}</h3>
-                              <p className="text-white/90 text-xs md:text-sm mb-3 line-clamp-2">{image.description}</p>
-                              <div className="flex items-center gap-2 text-white/80 text-xs mb-3">
-                                <MapPin className="w-3.5 h-3.5" />
-                                <span>{image.venue}</span>
-                              </div>
-                              {image.type && (
-                                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${
-                                  image.type === 'veg' ? 'bg-green-500' :
-                                  image.type === 'nonveg' ? 'bg-red-500' :
-                                  'bg-blue-500'
-                                }`}>
-                                  {image.type === 'veg' ? 'VEG' : image.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
-                                </span>
-                              )}
-                            </div>
+              {/* Images - Pinterest Masonry Grid */}
+              <div className="columns-2 md:columns-2 lg:columns-3 gap-3 md:gap-4">
+                {galleryData[service.id].map((image, index) => (
+                  <motion.div
+                    key={image.id}
+                    initial={{ x: index % 2 === 0 ? -100 : 100 }}
+                    whileInView={{ x: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                    className="break-inside-avoid mb-3 md:mb-4"
+                  >
+                    <div
+                      className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-2xl group relative"
+                      onClick={() => openImageModal(image, index, service.id)}
+                    >
+                      <div className="relative overflow-hidden" style={{ height: `${180 + (index % 4) * 60}px` }}>
+                        <img 
+                          src={image.images?.[0] || image.src} 
+                          alt={image.title} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
+                        {image.images && image.images.length > 1 && (
+                          <div className="absolute top-3 right-3 bg-[#d4af37] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-lg">
+                            +{image.images.length}
                           </div>
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                            <div className="bg-[#d4af37] rounded-full p-4">
-                              <ZoomIn className="w-8 h-8 text-white" />
+                        )}
+                        <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                          <h3 className="font-bold text-sm md:text-base mb-1 line-clamp-1">{image.title}</h3>
+                          <div className="flex items-center justify-between text-xs">
+                            <div className="flex items-center gap-1">
+                              <MapPin className="w-3 h-3" />
+                              <span className="text-xs">{image.venue || 'Nagercoil'}</span>
                             </div>
+                            {image.likes && (
+                              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-1.5 py-0.5 rounded-full">
+                                <Heart className="w-3 h-3 fill-white" />
+                                <span className="text-xs">{image.likes}</span>
+                              </div>
+                            )}
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
+                      <div className="p-3 md:p-4 hidden md:block">
+                        <h3 className="text-black font-bold text-base mb-2">{image.title}</h3>
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">{image.description}</p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-gray-500 text-xs">
+                            <MapPin className="w-3.5 h-3.5 text-[#d4af37]" />
+                            <span>{image.venue || 'Nagercoil'}</span>
+                          </div>
+                          {image.likes && (
+                            <div className="flex items-center gap-1">
+                              <Heart className="w-3.5 h-3.5 text-[#d4af37] fill-[#d4af37]" />
+                              <span className="text-xs font-bold text-[#d4af37]">{image.likes}</span>
+                            </div>
+                          )}
+                        </div>
+                        {image.type && (
+                          <span className={`inline-block px-2 py-1 rounded-full text-xs font-bold text-white mt-2 ${
+                            image.type === 'veg' ? 'bg-green-500' :
+                            image.type === 'nonveg' ? 'bg-red-500' :
+                            'bg-blue-500'
+                          }`}>
+                            {image.type === 'veg' ? 'VEG' : image.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  ))}
-                </Slider>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </section>
@@ -944,64 +941,65 @@ const galleryData = {
       {/* CTA Section */}
       <CTA text="Love What You See?" desc="Let's create something amazing for your next event. Contact us today!" btn1="Book Now" btn2="View Services" btn1link="/contact" btn2link="/services" />
 
-      {/* Image Modal */}
+      {/* Image Modal - Cinematic */}
       <AnimatePresence>
         {isModalOpen && selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black z-50 flex items-end md:items-center justify-center"
             onClick={closeImageModal}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative w-full md:max-w-6xl max-h-[95vh] md:max-h-[90vh] bg-gradient-to-b from-gray-900 to-black md:rounded-3xl overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={closeImageModal}
-                className="absolute top-4 right-4 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+                className="absolute top-3 right-3 md:top-6 md:right-6 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:rotate-90"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
               {/* Navigation Arrows */}
               <button
                 onClick={() => navigateImage('prev')}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+                className="absolute left-2 md:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
               </button>
               <button
                 onClick={() => navigateImage('next')}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+                className="absolute right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
               {/* Image Slider */}
-              <div className="relative h-64 md:h-96 bg-gray-100">
+              <div className="relative h-[50vh] md:h-[70vh] bg-black">
                 {selectedImage.images && selectedImage.images.length > 0 ? (
                   <Slider
-                    dots={false}
+                    dots={true}
                     infinite={true}
-                    speed={500}
+                    speed={600}
                     slidesToShow={1}
                     slidesToScroll={1}
                     arrows={false}
-                    autoplay={true}
-                    autoplaySpeed={3000}
+                    autoplay={false}
+                    dotsClass="slick-dots !bottom-4"
                   >
                     {selectedImage.images.map((imgSrc, index) => (
-                      <div key={index} className="h-64 md:h-96">
+                      <div key={index} className="h-[50vh] md:h-[70vh]">
                         <img
                           src={imgSrc}
                           alt={`${selectedImage.title} - ${index + 1}`}
-                          className="w-full h-full object-fit"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                     ))}
@@ -1010,61 +1008,72 @@ const galleryData = {
                   <img
                     src={selectedImage.src}
                     alt={selectedImage.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 )}              
               </div>
-             
 
               {/* Image Info */}
-              <div className="p-4 md:p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
+              <div className="p-4 md:p-8 bg-gradient-to-t from-black via-gray-900/95 to-transparent">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-3xl font-bold text-white mb-2">
                       {selectedImage.title}
                     </h3>
-                    <p className="text-gray-600 text-sm md:text-base">
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                       {selectedImage.description}
                     </p>
                   </div>
-                  <div className="flex items-center gap-1 bg-[#d4af37]/10 px-2 py-1 rounded-full">
-                    <Heart className="w-4 h-4 text-[#d4af37]" />
-                    <span className="text-sm font-medium text-[#d4af37]">{selectedImage.likes}</span>
-                  </div>
+                  {selectedImage.likes && (
+                    <div className="flex items-center gap-2 bg-[#d4af37]/20 backdrop-blur-sm px-3 py-2 rounded-full">
+                      <Heart className="w-4 h-4 md:w-5 md:h-5 text-[#d4af37] fill-[#d4af37]" />
+                      <span className="text-sm md:text-base font-bold text-[#d4af37]">{selectedImage.likes}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Meta Information */}
-                <div className="grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#d4af37]" />
-                    <span>{selectedImage.venue}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-[#d4af37]" />
-                    <span>{selectedImage.date}</span>
-                  </div>
+                <div className="flex flex-wrap gap-4 text-sm md:text-base text-gray-300 mb-6">
+                  {selectedImage.venue && (
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#d4af37]" />
+                      <span>{selectedImage.venue}</span>
+                    </div>
+                  )}
+                  {selectedImage.date && (
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 md:w-5 md:h-5 text-[#d4af37]" />
+                      <span>{selectedImage.date}</span>
+                    </div>
+                  )}
+                  {selectedImage.type && (
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                      selectedImage.type === 'veg' ? 'bg-green-500' :
+                      selectedImage.type === 'nonveg' ? 'bg-red-500' :
+                      'bg-blue-500'
+                    }`}>
+                      {selectedImage.type === 'veg' ? 'VEG' : selectedImage.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
+                    </span>
+                  )}
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2 pt-4 border-t">
-                  <button className="flex-1 bg-gray-100 text-gray-700 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors text-sm">
-                    <Share2 className="w-4 h-4" />
+                <div className="flex gap-3">
+                  <button className="flex-1 bg-white/10 backdrop-blur-sm text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/20 transition-all duration-300 text-sm md:text-base font-medium">
+                    <Share2 className="w-4 h-4 md:w-5 md:h-5" />
                     Share
                   </button>
-                 
-                    <button className="flex-1 bg-[#d4af37] text-white py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors text-sm">
-                      <Phone className="w-4 h-4" />
-                       <Link href="/contact" className=""> Book Similar</Link>
-                     
+                  <Link href="/contact" className="flex-1">
+                    <button className="w-full bg-[#d4af37] text-black py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#c49d2f] transition-all duration-300 text-sm md:text-base font-bold shadow-lg hover:shadow-xl">
+                      <Phone className="w-4 h-4 md:w-5 md:h-5" />
+                      Book Similar
                     </button>
-                 
-
-                  
+                  </Link>
                 </div>
               </div>
 
               {/* Image Counter */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              <div className="absolute top-3 left-3 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-medium">
                 {currentIndex + 1} / {currentCategory ? galleryData[currentCategory].length : 0}
               </div>
             </motion.div>

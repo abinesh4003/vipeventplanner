@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -52,11 +52,9 @@ import Link from "next/link";
 const ServicesPage = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const heroRef = useRef(null);
-  const isHeroInView = useInView(heroRef, { once: true });
 
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -555,7 +553,6 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-white">
       {/* Modern Hero Section */}
       <section
-        ref={heroRef}
         className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]"
       >
         {/* Animated Background Pattern */}
@@ -564,80 +561,31 @@ const ServicesPage = () => {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[10, 25, 40, 60, 75, 15, 35, 55, 80, 20, 45, 65, 85, 30, 70].map((pos, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-[#d4af37] rounded-full"
-              style={{
-                left: `${pos}%`,
-                top: `${(i * 7) % 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0, 1, 0],
-                scale: [0, 1.5, 0],
-              }}
-              transition={{
-                duration: 3 + (i % 3),
-                repeat: Infinity,
-                delay: i * 0.2,
-              }}
-            />
-          ))}
-        </div>
+
 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-6xl mx-auto py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isHeroInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-white/40 border border-[var(--color-dark)]/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm"
-            >
+            <div className="inline-flex items-center gap-2 bg-white/40 border border-[var(--color-dark)]/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
               <Star className="w-4 h-4 text-[var(--color-dark)] fill-[var(--color-dark)]" />
               <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Nagercoil's #1 Event Planners</span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
               Best <span className="text-[var(--color-dark)]">Event Services</span>
               <br />
               <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[var(--color-dark)]/80">
                 in Nagercoil
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-[var(--color-dark)]/80 font-light max-w-4xl mx-auto leading-relaxed px-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-[var(--color-dark)]/80 font-light max-w-4xl mx-auto leading-relaxed px-4">
               From Birthdays and weddings to corporate events, we create unforgettable experiences with luxury décor, authentic catering, and flawless execution
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center"
-            >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+              <div>
                 <Link
                   href="tel:+918778304145"
                   className="bg-[var(--color-dark)] text-[var(--color-gold-light)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base shadow-2xl hover:bg-black transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
@@ -645,25 +593,18 @@ const ServicesPage = () => {
                   <Phone className="w-4 h-4 md:w-5 md:h-5" />
                   Call: +91 8778304145
                 </Link>
-              </motion.div>
+              </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-[var(--color-dark)] text-[var(--color-dark)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-[var(--color-dark)] hover:text-[var(--color-gold-light)] transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 View Services <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
             {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isHeroInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-[var(--color-dark)]/70"
-            >
+            <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-[var(--color-dark)]/70">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
                 <span>700+ Events</span>
@@ -676,18 +617,14 @@ const ServicesPage = () => {
                 <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
                 <span>ISO Certified</span>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--color-dark)]"
-        >
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--color-dark)]">
           <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
-        </motion.div>
+        </div>
       </section>
 
       {/* Stats Section */}
@@ -697,11 +634,11 @@ const ServicesPage = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="text-center"
+                style={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false }}
               >
                 <div className="text-[#d4af37] mb-2 flex justify-center">{stat.icon}</div>
                 <div className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">{stat.number}</div>
@@ -752,31 +689,25 @@ const ServicesPage = () => {
       </section> */}
 
       {/* Services Section - Cinematic Modern Design */}
-      <section id="services-section" className="relative py-12 md:py-20 bg-gradient-to-b from-[#f7e9b8] via-[#fdfcf9] to-[#f7e9b8] overflow-hidden">
+      <section id="services-section" className="relative py-12 md:py-20  overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 right-20 w-40 h-40 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-40 right-20 w-40 h-40 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
-        <div className="container mx-auto px-3 md:px-4 relative z-10">
+        <div className="w-full relative z-10">
           {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <motion.div 
             className="text-center mb-8 md:mb-12"
+            style={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-block mb-3 md:mb-4"
-            >
+            <div className="inline-block mb-3 md:mb-4">
               <span className="bg-[#d4af37] text-white px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide">OUR SERVICES</span>
-            </motion.div>
+            </div>
             <h2 className="text-2xl md:text-5xl font-bold text-black mb-2 md:mb-4 px-4">
               Crafting <span className="text-[#d4af37]">Unforgettable</span> Moments
             </h2>
@@ -786,46 +717,34 @@ const ServicesPage = () => {
             </p>
           </motion.div>
 
-          {/* Services Grid - Cinematic Cards */}
+          {/* Services Grid - Cards */}
           <div className="space-y-8 md:space-y-12">
             {serviceCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.id}
-                initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, delay: 0.2 }}
                 className="relative"
+                style={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                viewport={{ once: false, margin: "-100px" }}
               >
                 {/* Category Card */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl md:rounded-3xl shadow-2xl border border-[#d4af37]/20 overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-sm shadow-2xl border-y border-[#d4af37]/20 overflow-hidden">
                   {/* Category Header - Compact & Modern */}
-                  <motion.div 
-                    className={`relative bg-gradient-to-r ${category.gradient} p-4 md:p-6`}
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <div className={`relative bg-gradient-to-r ${category.gradient} p-4 md:p-6`}>
                     <div className="flex items-center gap-3 md:gap-4">
-                      <motion.div 
-                        className="bg-white/90 p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg"
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
+                      <div className="bg-white/90 p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg">
                         <div className="text-[#d4af37]">{category.icon}</div>
-                      </motion.div>
+                      </div>
                       <div className="flex-1">
                         <h3 className="text-lg md:text-3xl font-bold text-[#222222] mb-0.5 md:mb-1">{category.name}</h3>
                         <p className="text-[#222222]/70 text-xs md:text-base hidden md:block">{category.description}</p>
                       </div>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5 }}
-                        className="hidden md:block"
-                      >
+                      <div className="hidden md:block">
                         <ChevronRight className="w-6 h-6 text-[#222222]/50" />
-                      </motion.div>
+                      </div>
                     </div>
-                  </motion.div>
+                  </div>
 
                   {/* Sub Services - Slider for both Mobile and Desktop */}
                   <div className="p-3 md:p-6">
@@ -833,16 +752,12 @@ const ServicesPage = () => {
                     <div className="relative">
                       {/* Scroll Indicator - Mobile Only */}
                       <div className="md:hidden flex items-center justify-end gap-2 mb-3 text-gray-500 text-xs">
-                        <motion.div
-                          animate={{ x: [0, 10, 0] }}
-                          transition={{ repeat: Infinity, duration: 1.5 }}
-                          className="flex items-center gap-1 justify-start"
-                        >
+                        <div className="flex items-center gap-1 justify-start">
                           <span>Swipe</span>
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                        </motion.div>
+                        </div>
                       </div>
                       <Slider
                         dots={false}
@@ -853,37 +768,48 @@ const ServicesPage = () => {
                         arrows={false}
                         pauseOnHover={false}
                         pauseOnFocus={false}
+                        lazyLoad="ondemand"
+                        responsive={[
+                          { breakpoint: 9999, settings: { slidesToShow: 2 } },
+                          { breakpoint: 768, settings: { slidesToShow: 1 } }
+                        ]}
                       >
                         {category.subServices.map((subService, index) => (
                           <div key={index} className="px-2">
                             <div
-                              className="group cursor-pointer"
+                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer"
                               onClick={() => openServiceModal({ ...subService, category: category.name })}
                             >
-                              <div className="h-[200px] rounded-xl overflow-hidden shadow-lg mb-4">
-                                <img
-                                  src={subService.image}
-                                  alt={subService.name}
-                                  className="w-full h-full object-fill"
-                                />
+                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
+                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
                               </div>
-                              <div className="p-4">
-                                <h4 className="text-black font-bold text-lg mb-2">{subService.name}</h4>
-                                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{subService.description}</p>
-                                <div className="flex flex-wrap gap-1.5 mb-3">
-                                  {subService.features.slice(0, 2).map((feature, idx) => (
-                                    <span key={idx} className="bg-[#d4af37] text-white px-2 py-1 rounded-full text-xs font-medium">
-                                      {feature}
-                                    </span>
-                                  ))}
-                                  {subService.features.length > 2 && (
-                                    <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-                                      +{subService.features.length - 2}
-                                    </span>
-                                  )}
-                                </div>
-                                <button className="w-full bg-[#d4af37] text-black py-2 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
-                                  View Details <ArrowRight className="w-4 h-4" />
+                              <div className="h-56 overflow-hidden">
+                                {subService.images && subService.images.length > 1 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                    autoplay={true}
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.images.map((img, idx) => (
+                                      <div key={idx} className="h-56">
+                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : (
+                                  <img src={subService.image} alt={subService.name} className="w-full h-full object-cover" />
+                                )}
+                              </div>
+                              <div className="p-5 text-center">
+                                <p className="text-gray-700 text-sm mb-3">{subService.description}</p>
+                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
+                                  Learn More <ChevronDown size={18} />
                                 </button>
                               </div>
                             </div>
@@ -953,11 +879,11 @@ const ServicesPage = () => {
                           </div>
                         ))}
                       </Slider>
-                    </div> */} 
+                    </div> */}
                   </div>
                 </div>
               </motion.div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
@@ -965,12 +891,12 @@ const ServicesPage = () => {
       {/* Testimonials Section */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <motion.div 
             className="text-center mb-12 md:mb-16"
+            style={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
               What Our <span className="text-[#d4af37]">Clients Say</span>
@@ -985,11 +911,11 @@ const ServicesPage = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                className="bg-white p-5 md:p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl"
+                style={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-5 md:p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: false }}
               >
                 <div className="flex items-center gap-1 mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -1012,12 +938,12 @@ const ServicesPage = () => {
       {/* Service Areas Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <motion.div 
             className="text-center mb-10 md:mb-12"
+            style={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
               We Serve <span className="text-[#d4af37]">Across Nagercoil</span>
@@ -1032,11 +958,11 @@ const ServicesPage = () => {
             {["Nagercoil Town", "Kottar", "Vadasery", "Aralvaimozhi", "Kuzhithurai", "Colachel", "Kanyakumari", "Marthandam"].map((area, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
+                className="bg-gradient-to-br from-gray-50 to-white p-3 md:p-4 rounded-xl border border-gray-200 hover:border-[#d4af37]/50 text-center"
+                style={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-gradient-to-br from-gray-50 to-white p-3 md:p-4 rounded-xl border border-gray-200 hover:border-[#d4af37]/50 transition-all duration-300 text-center"
+                viewport={{ once: false }}
               >
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#d4af37] mx-auto mb-1.5 md:mb-2" />
                 <p className="text-xs md:text-sm font-medium text-gray-700">{area}</p>
@@ -1047,70 +973,63 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <CTA 
-        text="Ready to Plan Your Dream Event?" 
-        desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!" 
-        btn1="Contact Now" 
-        btn2="View Gallery" 
-        btn1link="/contact" 
-        btn2link="/gallery" 
+      <CTA
+        text="Ready to Plan Your Dream Event?"
+        desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!"
+        btn1="Contact Now"
+        btn2="View Gallery"
+        btn1link="/contact"
+        btn2link="/gallery"
       />
 
       {/* Service Detail Modal */}
-      <AnimatePresence>
-        {isModalOpen && selectedService && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-3 md:p-4"
-            onClick={closeServiceModal}
+      {isModalOpen && selectedService && (
+        <div
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-end md:items-center justify-center"
+          onClick={closeServiceModal}
+        >
+          <div
+            className="bg-white w-full md:max-w-4xl md:rounded-3xl max-h-[95vh] md:max-h-[90vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 30 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="bg-white rounded-2xl md:rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Image Slider Section */}
-              <div className="relative">
-                <button
-                  onClick={closeServiceModal}
-                  className="absolute top-3 md:top-4 right-3 md:right-4 bg-white/90 text-black p-2 md:p-2.5 rounded-full hover:bg-white transition-colors z-20 shadow-lg"
-                >
-                  <X className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
+            {/* Fixed Image Section */}
+            <div className="relative flex-shrink-0">
+              <button
+                onClick={closeServiceModal}
+                className="absolute top-3 right-3 md:top-4 md:right-4 bg-black/50 text-white p-1.5 rounded-full hover:bg-black/70 transition-colors z-20"
+              >
+                <X className="w-4 h-4" />
+              </button>
 
-                {selectedService.images && selectedService.images.length > 1 ? (
-                  <Slider {...sliderSettings} className="service-slider">
-                    {selectedService.images.map((img, index) => (
-                      <div key={index} className="outline-none">
-                        <img
-                          src={img}
-                          alt={`${selectedService.name} ${index + 1}`}
-                          className="w-full h-64 md:h-96 object-fill rounded-t-2xl md:rounded-t-3xl"
-                        />
-                      </div>
-                    ))}
-                  </Slider>
-                ) : (
-                  <img
-                    src={selectedService.image}
-                    alt={selectedService.name}
-                    className="w-full h-64 md:h-96 object-cover rounded-t-2xl md:rounded-t-3xl"
-                  />
-                )}
-              </div>
+              {selectedService.images && selectedService.images.length > 1 ? (
+                <Slider {...sliderSettings} className="service-slider">
+                  {selectedService.images.map((img, index) => (
+                    <div key={index} className="outline-none">
+                      <img
+                        src={img}
+                        alt={`${selectedService.name} ${index + 1}`}
+                        className="w-full h-56 md:h-96 object-fit md:rounded-t-3xl"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              ) : (
+                <img
+                  src={selectedService.image}
+                  alt={selectedService.name}
+                  className="w-full h-56 md:h-96 object-cover md:rounded-t-3xl"
+                />
+              )}
+            </div>
 
-              {/* Service Info Below Images */}
-              <div className="p-6 md:p-8">
+            {/* Scrollable Content Section */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-4 md:p-8">
                 <div className="mb-4">
-                  <div className="bg-[#d4af37] px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">
+                  <div className="bg-[#d4af37] px-3 py-1 rounded-full text-xs font-medium inline-block mb-2">
                     {selectedService.category}
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-bold mb-3 text-black">
+                  <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-3 text-black">
                     {selectedService.name}
                   </h2>
                   <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -1118,14 +1037,14 @@ const ServicesPage = () => {
                   </p>
                 </div>
 
-                <div className="mb-6 md:mb-8 border-t pt-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-black mb-4 flex items-center gap-2">
-                    <CheckCircle className="text-[#d4af37] w-5 h-5 md:w-6 md:h-6" />
+                <div className="mb-4 md:mb-6 border-t pt-4 md:pt-6">
+                  <h3 className="text-lg md:text-2xl font-bold text-black mb-3 md:mb-4 flex items-center gap-2">
+                    <CheckCircle className="text-[#d4af37] w-5 h-5" />
                     Service Features
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
                     {selectedService.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg">
+                      <div key={index} className="flex items-center gap-2 md:gap-3 text-gray-700 p-2 md:p-3 bg-gray-50 rounded-lg">
                         <div className="w-2 h-2 bg-[#d4af37] rounded-full flex-shrink-0"></div>
                         <span className="text-sm md:text-base">{feature}</span>
                       </div>
@@ -1134,26 +1053,26 @@ const ServicesPage = () => {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-end pt-6">
+                <div className="flex flex-col gap-2 md:gap-3 pt-4 md:pt-6 border-t">
+                  <Link
+                    href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20${selectedService.name}%20service%20for%20${selectedService.category}.`}
+                    className="bg-[#d4af37] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Book This Service
+                  </Link>
                   <button
                     onClick={closeServiceModal}
-                    className="px-6 md:px-8 py-2.5 md:py-3 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-50 transition-colors font-medium text-sm md:text-base"
+                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-50 transition-colors font-medium text-sm md:text-base"
                   >
                     Close
                   </button>
-                  <Link
-                    href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20${selectedService.name}%20service%20for%20${selectedService.category}.`}
-                    className="bg-[#d4af37] text-black px-6 md:px-8 py-2.5 md:py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
-                  >
-                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
-                    Book This Service
-                  </Link>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

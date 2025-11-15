@@ -80,22 +80,22 @@
 .service-slider .slick-prev,
 .service-slider .slick-next {
   z-index: 10;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
 }
 
 .service-slider .slick-prev {
-  left: 15px;
+  left: 10px;
 }
 
 .service-slider .slick-next {
-  right: 15px;
+  right: 10px;
 }
 
 .service-slider .slick-prev:before,
 .service-slider .slick-next:before {
-  font-size: 40px;
-  opacity: 0.8;
+  font-size: 20px;
+  opacity: 0.5;
 }
 
 .service-slider .slick-dots {
