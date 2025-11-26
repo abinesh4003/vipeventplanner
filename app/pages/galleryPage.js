@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Slider from "react-slick";
+import { loadGalleryAssets } from "../lib/galleryLoader";
 import {
   Search,
   Filter,
@@ -41,6 +42,7 @@ const GalleryPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentCategory, setCurrentCategory] = useState(null);
+  const assets = loadGalleryAssets();
 
   // Service galleries
 const serviceGalleries = [
@@ -100,20 +102,19 @@ const galleryData = {
   decorations: [
     {
       id: 1,
-      src: "/services/dec/stage1.jpeg",
-      images: [
-        "/services/dec/stage1.jpeg",
-        "/services/dec/stage2.jpeg",
-        "/services/dec/stage3.jpeg",
-        "/services/dec/stage4.jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.28.33 AM.jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.28.34 AM.jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM (1).jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM.jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM (1).jpeg",
-        "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg"
-      ],
+      src: assets.decorations.videos[0],
+      videos: assets.decorations.videos,
+      isVideo: true,
+      title: "Decoration Videos",
+      description: "Watch our stunning decoration work in action",
+      venue: "Nagercoil",
+      date: "2024",
+      likes: 312
+    },
+    {
+      id: 2,
+      src: assets.decorations.images[0],
+      images: assets.decorations.images.slice(0, 11),
       title: "Stage Decoration",
       description: "Grand stage setups with premium floral arrangements and LED lighting",
       venue: "Nagercoil",
@@ -121,82 +122,76 @@ const galleryData = {
       likes: 245
     },
     {
-      id: 2,
-      src: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Car Decoration",
-      description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles"
-    },
-    {
       id: 3,
-      src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Home Decoration",
-      description: "Complete home transformation for festivals, weddings, and special occasions"
+      src: assets.decorations.images[12],
+      images: [assets.decorations.images[12], assets.decorations.images[13], assets.decorations.images[14]],
+      title: "Car Decoration",
+      description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles",
+      venue: "Nagercoil",
+      likes: 198
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Birthday Decoration",
-      description: "Thematic birthday decorations with balloons, props, and backdrops"
+      src: assets.decorations.images[16],
+      images: [assets.decorations.images[16]],
+      title: "Home Decoration",
+      description: "Complete home transformation for festivals, weddings, and special occasions",
+      venue: "Nagercoil",
+      likes: 176
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Mandap Decoration",
-      description: "Traditional South Indian wedding mandap with floral arrangements"
+      src: assets.decorations.images[11],
+      images: [assets.decorations.images[11]],
+      title: "Birthday Decoration",
+      description: "Thematic birthday decorations with balloons, props, and backdrops",
+      venue: "Nagercoil",
+      likes: 234
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Entrance Decoration",
-      description: "Grand entrance setups with floral arches and welcome decorations"
+      src: assets.decorations.images[17],
+      images: [assets.decorations.images[17]],
+      title: "Mandap Decoration",
+      description: "Traditional South Indian wedding mandap with floral arrangements",
+      venue: "Nagercoil",
+      likes: 189
     },
     {
       id: 7,
-      src: "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519167758481-83f29da8c561?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80"
-      ],
+      src: assets.decorations.images[15],
+      images: [assets.decorations.images[15], assets.decorations.images[16]],
+      title: "Entrance Decoration",
+      description: "Grand entrance setups with floral arches and welcome decorations",
+      venue: "Nagercoil",
+      likes: 212
+    },
+    {
+      id: 8,
+      src: assets.decorations.images[18],
+      images: [assets.decorations.images[18]],
       title: "Theme Decoration",
-      description: "Complete thematic decorations for various event concepts and styles"
+      description: "Complete thematic decorations for various event concepts and styles",
+      venue: "Nagercoil",
+      likes: 167
     }
   ],
   catering: [
     {
       id: 1,
-      src: "/services/cat/cat1.jpg",
-      images: [
-        "/services/cat/cat1.jpg",
-        "/services/cat/cat2.jpeg",
-        "/services/cat/cat3.jpeg",
-        "/services/cat/cat4.jpeg"
-      ],
+      src: assets.catering.videos[0],
+      videos: assets.catering.videos,
+      isVideo: true,
+      title: "Catering Videos",
+      description: "See our catering services and food preparation in action",
+      venue: "Nagercoil",
+      date: "2024",
+      likes: 278
+    },
+    {
+      id: 2,
+      src: assets.catering.images[0],
+      images: assets.catering.images.slice(0, 4),
       title: "Veg Catering",
       description: "Complete vegetarian meals with traditional South Indian delicacies",
       venue: "Nagercoil",
@@ -205,14 +200,9 @@ const galleryData = {
       type: "veg"
     },
     {
-      id: 2,
-      src: "/services/cat/cat2.jpeg",
-      images: [
-        "/services/cat/cat2.jpeg",
-        "/services/cat/cat1.jpg",
-        "/services/cat/cat3.jpeg",
-        "/services/cat/cat4.jpeg"
-      ],
+      id: 3,
+      src: assets.catering.images[8],
+      images: [assets.catering.images[8], assets.catering.images[1], assets.catering.images[2]],
       title: "Non-Veg Catering",
       description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
       venue: "Nagercoil",
@@ -221,13 +211,9 @@ const galleryData = {
       type: "nonveg"
     },
     {
-      id: 3,
-      src: "/services/buffet.jpg",
-      images: [
-        "/services/buffet.jpg",
-        "/services/cat/cat3.jpeg",
-        "/services/cat/cat4.jpeg"
-      ],
+      id: 4,
+      src: assets.catering.images[9],
+      images: [assets.catering.images[9], assets.catering.images[2], assets.catering.images[3]],
       title: "Buffet Service",
       description: "Professional buffet arrangement with multiple cuisine options",
       venue: "Nagercoil",
@@ -236,24 +222,18 @@ const galleryData = {
       type: "both"
     },
     {
-      id: 4,
-      src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80"
-      ],
+      id: 5,
+      src: assets.catering.images[7],
+      images: [assets.catering.images[7]],
       title: "Serving Staff",
-      description: "Professional serving staff and coordinators for seamless service"
+      description: "Professional serving staff and coordinators for seamless service",
+      venue: "Nagercoil",
+      likes: 145
     },
     {
-      id: 5,
-      src: "/services/cat/cat3.jpeg",
-      images: [
-        "/services/cat/cat3.jpeg",
-        "/services/cat/cat4.jpeg",
-        "/services/cat/cat2.jpeg"
-      ],
+      id: 6,
+      src: assets.catering.images[4],
+      images: [assets.catering.images[4], assets.catering.images[3], assets.catering.images[1]],
       title: "Mutton Biryani Special",
       description: "Signature mutton biryani cooked with traditional spices and techniques",
       venue: "Nagercoil",
@@ -262,33 +242,29 @@ const galleryData = {
       type: "nonveg"
     },
     {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
-      ],
+      id: 7,
+      src: assets.catering.images[6],
+      images: [assets.catering.images[6], assets.catering.images[5]],
       title: "Food Presentation",
-      description: "Elegant food presentation and professional plating services"
+      description: "Elegant food presentation and professional plating services",
+      venue: "Nagercoil",
+      likes: 178
     },
     {
-      id: 7,
-      src: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
-      ],
+      id: 8,
+      src: assets.catering.images[5],
+      images: [assets.catering.images[5], assets.catering.images[6]],
       title: "Special Diet Menu",
-      description: "Customized menus for special dietary needs and preferences"
+      description: "Customized menus for special dietary needs and preferences",
+      venue: "Nagercoil",
+      likes: 156
     }
   ],
   stalls: [
     {
       id: 1,
-      src: "/images/popcorn-stall.jpg",
-      images: ["/images/popcorn-stall.jpg"],
+      src: assets.stalls.images[4],
+      images: [assets.stalls.images[4], assets.stalls.images[6]],
       title: "Popcorn Stall",
       description: "Fresh, buttery, and a total crowd favorite.",
       venue: "Nagercoil",
@@ -297,8 +273,8 @@ const galleryData = {
     },
     {
       id: 2,
-      src: "/images/cotton-candy-stall.jpg",
-      images: ["/images/cotton-candy-stall.jpg"],
+      src: assets.stalls.images[7],
+      images: [assets.stalls.images[7]],
       title: "Cotton Candy Stall",
       description: "Sweet, fluffy clouds of pure happiness.",
       venue: "Nagercoil",
@@ -307,8 +283,8 @@ const galleryData = {
     },
     {
       id: 3,
-      src: "/images/chocolate-fountain.jpg",
-      images: ["/images/chocolate-fountain.jpg"],
+      src: assets.stalls.images[8],
+      images: [assets.stalls.images[8], assets.stalls.images[0]],
       title: "Chocolate Fountain",
       description: "Dip fruits and treats into rich melted chocolate.",
       venue: "Nagercoil",
@@ -317,8 +293,8 @@ const galleryData = {
     },
     {
       id: 4,
-      src: "/images/ice-cream-stall.jpg",
-      images: ["/images/ice-cream-stall.jpg"],
+      src: assets.stalls.images[2],
+      images: [assets.stalls.images[2], assets.stalls.images[9]],
       title: "Ice Cream Counter",
       description: "Chilled desserts in your favorite creamy flavors.",
       venue: "Nagercoil",
@@ -327,8 +303,8 @@ const galleryData = {
     },
     {
       id: 5,
-      src: "/images/pani-puri-stall.jpg",
-      images: ["/images/pani-puri-stall.jpg"],
+      src: assets.stalls.images[10],
+      images: [assets.stalls.images[10], assets.stalls.images[3]],
       title: "Pani Puri & Chaat Stall",
       description: "Spicy, tangy, and made fresh on spot.",
       venue: "Nagercoil",
@@ -337,8 +313,8 @@ const galleryData = {
     },
     {
       id: 6,
-      src: "/images/wine-counter.jpg",
-      images: ["/images/wine-counter.jpg"],
+      src: assets.stalls.images[11],
+      images: [assets.stalls.images[11], assets.stalls.images[1]],
       title: "Wine Counter",
       description: "A classy corner for your premium event moments.",
       venue: "Nagercoil",
@@ -347,8 +323,8 @@ const galleryData = {
     },
     {
       id: 7,
-      src: "/images/mocktails.jpg",
-      images: ["/images/mocktails.jpg"],
+      src: assets.stalls.images[12],
+      images: [assets.stalls.images[12], assets.stalls.images[1]],
       title: "Mocktails & Drinks",
       description: "Refreshing drinks for an elegant welcome.",
       venue: "Nagercoil",
@@ -357,8 +333,8 @@ const galleryData = {
     },
     {
       id: 8,
-      src: "/images/printed-balloons.jpg",
-      images: ["/images/printed-balloons.jpg"],
+      src: assets.stalls.images[13],
+      images: [assets.stalls.images[13]],
       title: "Printed Balloons",
       description: "Customized balloons with names or messages.",
       venue: "Nagercoil",
@@ -369,12 +345,8 @@ const galleryData = {
   welcomeDolls: [
     {
       id: 1,
-      src: "/services/doll/doll1.jpg",
-      images: [
-        "/services/doll/doll1.jpg",
-        "/services/doll/doll2.jpeg",
-        "/services/doll/doll3.jpeg"
-      ],
+      src: assets.welcomeDolls.images[0],
+      images: assets.welcomeDolls.images,
       title: "Traditional Welcome Dolls",
       description: "Traditional welcome dolls and decorative arrangements",
       venue: "Nagercoil",
@@ -451,11 +423,19 @@ const galleryData = {
   entertainment: [
     {
       id: 1,
-      src: "/services/dj/dj1.jpg",
-      images: [
-        "/services/dj/dj1.jpg",
-        "/services/dj/dj2.jpeg"
-      ],
+      src: assets.entertainment.videos[0],
+      videos: assets.entertainment.videos,
+      isVideo: true,
+      title: "Entertainment Videos",
+      description: "Watch our DJ and entertainment services in action",
+      venue: "Nagercoil",
+      date: "2024",
+      likes: 256
+    },
+    {
+      id: 2,
+      src: assets.entertainment.images[0],
+      images: [assets.entertainment.images[0], assets.entertainment.images[1]],
       title: "DJ Services",
       description: "Professional DJs with extensive music libraries and equipment",
       venue: "Nagercoil",
@@ -463,33 +443,9 @@ const galleryData = {
       likes: 178
     },
     {
-      id: 2,
-      src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Music Orchestra",
-      description: "Live bands and orchestras for traditional and contemporary music"
-    },
-    {
       id: 3,
-      src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Dhol Drummers",
-      description: "Traditional dhol and percussion artists for grand entries"
-    },
-    {
-      id: 4,
-      src: "/services/photo.jpg",
-      images: [
-        "/services/photo.jpg"
-      ],
+      src: assets.entertainment.images[2],
+      images: [assets.entertainment.images[2]],
       title: "Photo Booth",
       description: "Fun photo booth with props for guest entertainment",
       venue: "Nagercoil",
@@ -497,38 +453,14 @@ const galleryData = {
       likes: 145
     },
     {
-      id: 5,
-      src: "/services/games.jpg",
-      images: [
-        "/services/games.jpg"
-      ],
+      id: 4,
+      src: assets.entertainment.images[3],
+      images: [assets.entertainment.images[3]],
       title: "Games & Activities",
       description: "Fun games and activities for all age groups",
       venue: "Nagercoil",
       date: "2024",
       likes: 132
-    },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Live Performances",
-      description: "Dance troupes and cultural performances"
-    },
-    {
-      id: 7,
-      src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Sound & Lighting",
-      description: "Professional sound systems and lighting effects"
     }
   ],
   photography: [
@@ -876,13 +808,31 @@ const galleryData = {
                       onClick={() => openImageModal(image, index, service.id)}
                     >
                       <div className="relative overflow-hidden" style={{ height: `${180 + (index % 4) * 60}px` }}>
-                        <img 
-                          src={image.images?.[0] || image.src} 
-                          alt={image.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                        />
+                        {image.isVideo ? (
+                          <video 
+                            src={image.src} 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            onMouseEnter={(e) => e.target.play()}
+                          />
+                        ) : (
+                          <img 
+                            src={image.images?.[0] || image.src} 
+                            alt={image.title} 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                          />
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
-                        {image.images && image.images.length > 1 && (
+                        {image.isVideo && image.videos && image.videos.length > 0 && (
+                          <div className="absolute top-3 right-3 bg-red-600 text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                            <Play className="w-3 h-3" />
+                            {image.videos.length}
+                          </div>
+                        )}
+                        {!image.isVideo && image.images && image.images.length > 1 && (
                           <div className="absolute top-3 right-3 bg-[#d4af37] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-lg">
                             +{image.images.length}
                           </div>
@@ -981,9 +931,32 @@ const galleryData = {
                 <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </button>
 
-              {/* Image Slider */}
+              {/* Image/Video Slider */}
               <div className="relative h-[50vh] md:h-[70vh] bg-black">
-                {selectedImage.images && selectedImage.images.length > 0 ? (
+                {selectedImage.isVideo && selectedImage.videos && selectedImage.videos.length > 0 ? (
+                  <Slider
+                    dots={true}
+                    infinite={true}
+                    speed={600}
+                    slidesToShow={1}
+                    slidesToScroll={1}
+                    arrows={false}
+                    autoplay={false}
+                    dotsClass="slick-dots !bottom-4"
+                  >
+                    {selectedImage.videos.map((vidSrc, index) => (
+                      <div key={`video-${index}`} className="h-[50vh] md:h-[70vh]">
+                        <video
+                          src={vidSrc}
+                          controls
+                          autoPlay
+                          muted
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : selectedImage.images && selectedImage.images.length > 0 ? (
                   <Slider
                     dots={true}
                     infinite={true}
@@ -995,7 +968,7 @@ const galleryData = {
                     dotsClass="slick-dots !bottom-4"
                   >
                     {selectedImage.images.map((imgSrc, index) => (
-                      <div key={index} className="h-[50vh] md:h-[70vh]">
+                      <div key={`image-${index}`} className="h-[50vh] md:h-[70vh]">
                         <img
                           src={imgSrc}
                           alt={`${selectedImage.title} - ${index + 1}`}
