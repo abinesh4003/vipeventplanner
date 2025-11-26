@@ -14,7 +14,7 @@ export const metadata = {
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
-  metadataBase: new URL('https://www.vipeventsmanagement.com'),
+  metadataBase: new URL('https://www.vipeventmanagement.com'),
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -46,9 +46,9 @@ const organizationSchema = {
   "@type": "LocalBusiness",
   "name": "VIP Event Management",
   "alternateName": "VIP Event Management and Catering",
-  "url": "https://www.vipeventsmanagement.com",
-  "logo": "https://www.vipeventsmanagement.com/logo.jpg",
-  "image": "https://www.vipeventsmanagement.com/logo.jpg",
+  "url": "https://www.vipeventmanagement.com",
+  "logo": "https://www.vipeventmanagement.com/logo.jpg",
+  "image": "https://www.vipeventmanagement.com/logo.jpg",
   "description": "Best event management and catering services in Nagercoil specializing in weddings, corporate events, stage decoration, and celebrations",
   "telephone": "+91-XXXXXXXXXX",
   "email": "vipeventsmanagement@gmail.com",

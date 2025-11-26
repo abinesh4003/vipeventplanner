@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.vipeventsmanagement.com',
+  siteUrl: 'https://www.vipeventmanagement.com',
   generateRobotsTxt: true,
   changefreq: 'weekly',
-  priority: 0.7, 
+  priority: 0.7,
   generateIndexSitemap: true,
 
   transform: async (config, path) => {
