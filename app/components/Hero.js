@@ -63,7 +63,7 @@ const VipEventManagementHero = () => {
             </motion.div>
 
             {/* Cinematic Vignette Overlay */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-transparent to-black/80"></div>
+            {/* <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-transparent to-black/80"></div> */}
             <div className="absolute inset-0 z-10" style={{
                 background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)'
             }}></div>
