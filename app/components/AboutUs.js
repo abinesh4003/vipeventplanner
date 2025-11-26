@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Star, PartyPopper, Heart, Sparkles } from "lucide-react";
+import { Star, PartyPopper, Heart, Sparkles,Trophy,Gem,Eye,} from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -142,6 +142,14 @@ const AboutUs = () => {
     }
   ];
 
+    // Achievement stats
+  const achievements = [
+    { icon: <Trophy className="w-6 h-6" />, number: "500+", text: "Successful Events" },
+    { icon: <Heart className="w-6 h-6" />, number: "100%", text: "Client Satisfaction" },
+    { icon: <Gem className="w-6 h-6" />, number: "12+", text: "Years Excellence" },
+    { icon: <Eye className="w-6 h-6" />, number: "50K+", text: "Happy Guests" }
+  ];
+
   return (
     <section id="about" className="relative py-16 md:py-24 bg-white overflow-hidden">
       {/* Decorative Background */}
@@ -167,7 +175,7 @@ const AboutUs = () => {
         </motion.div>
 
         {/* 🌟 Our Story - Elegant & Responsive */}
-        <section className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <section className="relative py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
           {/* Background Accent Pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.08),transparent_60%)]"></div>
 
@@ -259,9 +267,47 @@ const AboutUs = () => {
                   perfection, emotion, and timeless beauty.
                 </motion.p>
               </motion.div>
+
+   
             </div>
+
+                         {/* stats */}
+    <div className="relative py-8">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="container mx-auto px-6 md:px-12 z-10"
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+          {achievements.map((item, index) => (
+            <motion.div
+              key={index}
+              className="bg-gradient-to-br from-gold/5 to-white border border-gold/10 shadow-lg rounded-xl md:rounded-2xl p-3 md:p-6 text-center"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="text-gold mb-2 flex justify-center">
+                <div className="w-5 h-5 md:w-6 md:h-6">{item.icon}</div>
+              </div>
+              <div className="text-xl md:text-4xl font-bold text-dark mb-1 md:mb-2">
+                {item.number}
+              </div>
+              <div className="text-gray-600 text-[10px] md:text-sm leading-tight">
+                {item.text}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
           </div>
         </section>
+
+
+  
 
         {/* Testimonials Slider */}
         <motion.div

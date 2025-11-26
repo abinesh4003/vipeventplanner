@@ -72,7 +72,7 @@ const Stalls = () => {
   ];
 
   const sliderSettings = {
-    dots: true,
+   
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2400,
@@ -126,10 +126,12 @@ const Stalls = () => {
             {stalls.map((stall, index) => (
               <div key={index} className="px-3">
                 <motion.div
-                  whileHover={{ y: -6 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gold/10"
-                >
+                  
+                  initial={{ rotateX: 90 }}
+                  whileInView={{ rotateX: 0,  }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.7 }}
+                  className="group bg-white overflow-hidden hover:shadow-2xl border border-gold/10">
                   {/* Image with zoom animation */}
                   <div className="relative h-60 overflow-hidden">
                     <motion.div

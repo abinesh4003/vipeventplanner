@@ -28,6 +28,7 @@ const SpecialHighlightsSection = () => {
         { type: "video", src: "/services/dec/decvid1.mp4" },
          { type: "video", src: "/services/dec/decvid2.mp4" },
                   { type: "video", src: "/services/dec/decvid3.mp4" },
+                  { type: "video", src: "/services/dec/decvid4.mp4" },
 
         
         // { type: "image", src: "/images/stage-highlight-2.jpg" },
@@ -44,6 +45,7 @@ const SpecialHighlightsSection = () => {
     {type: "video", src: "/services/cat/catvid1.mp4"},
     {type: "video", src: "/services/cat/catvid2.mp4"},
      {type: "video", src: "/services/cat/catvid3.mp4"},
+     {type: "video", src: "/services/cat/catvid4.mp4"},
 
 
 
@@ -155,7 +157,7 @@ const SpecialHighlightsSection = () => {
         {item.type === "video" ? (
           <video
             src={item.src}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-fill object-center"
             autoPlay
             loop
             muted

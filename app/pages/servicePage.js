@@ -127,6 +127,7 @@ const ServicesPage = () => {
           name: "Entrance Decoration",
           description: "Grand entrance setups with floral arches and welcome decorations",
           image: "/services/dec/entrance/entrance.webp",
+          images:[ "/services/dec/entrance/entrance.webp","/services/dec/entrance/entrance1.jpg"],
           features: ["Floral Arches", "Welcome Gates", "Lighting Effects", "Grand Designs"]
         },
         {
@@ -186,18 +187,18 @@ const ServicesPage = () => {
           image: "/services/cat/biriyani/biriyani.webp",
           features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
         },
-        {
-          name: "Food Presentation",
-          description: "Elegant food presentation and professional plating services",
-          image: "/services/cat/food/meal.jpg",
-          features: ["Elegant Plating", "Creative Presentation", "Professional Service", "Visual Appeal"]
-        },
-        {
-          name: "Special Diet Menu",
-          description: "Customized menus for special dietary needs and preferences",
-          image: "/services/cat/food/diet.jpg",
-          features: ["Custom Menus", "Dietary Requirements", "Health Conscious", "Allergen Free Options"]
-        }
+        // {
+        //   name: "Food Presentation",
+        //   description: "Elegant food presentation and professional plating services",
+        //   image: "/services/cat/food/meal.jpg",
+        //   features: ["Elegant Plating", "Creative Presentation", "Professional Service", "Visual Appeal"]
+        // },
+        // {
+        //   name: "Special Diet Menu",
+        //   description: "Customized menus for special dietary needs and preferences",
+        //   image: "/services/cat/food/diet.jpg",
+        //   features: ["Custom Menus", "Dietary Requirements", "Health Conscious", "Allergen Free Options"]
+        // }
       ]
     },
     {
@@ -992,22 +993,37 @@ const ServicesPage = () => {
       {/* Service Detail Modal */}
       {isModalOpen && selectedService && (
         <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-end md:items-center justify-center"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={closeServiceModal}
         >
           <div
-            className="bg-white w-full md:max-w-4xl md:rounded-3xl max-h-[95vh] md:max-h-[90vh] flex flex-col"
+            className="bg-white w-full rounded-xl max-w-3xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Fixed Image Section */}
-            <div className="relative flex-shrink-0">
+            {/* Header with Title & Description */}
+            <div className="relative bg-gradient-to-br from-gold/10 to-white p-4 md:p-6 border-b border-gray-100">
               <button
                 onClick={closeServiceModal}
-                className="absolute top-3 right-3 md:top-4 md:right-4 bg-black/50 text-white p-1.5 rounded-full hover:bg-black/70 transition-colors z-20"
+                className="absolute top-3 right-3 md:top-4 md:right-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-full transition-colors"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5" />
               </button>
+              
+              <div className="pr-10">
+                <div className="bg-gold/20 px-3 py-1 rounded-full text-xs font-medium inline-block mb-2">
+                  {selectedService.category}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2 text-black">
+                  {selectedService.name}
+                </h2>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  {selectedService.description}
+                </p>
+              </div>
+            </div>
 
+            {/* Image Slider Section */}
+            <div className="relative flex-shrink-0 bg-gray-100">
               {selectedService.images && selectedService.images.length > 1 ? (
                 <Slider {...sliderSettings} className="service-slider">
                   {selectedService.images.map((img, index) => (
@@ -1015,7 +1031,7 @@ const ServicesPage = () => {
                       <img
                         src={img}
                         alt={`${selectedService.name} ${index + 1}`}
-                        className="w-full h-56 md:h-96 object-fit md:rounded-t-3xl"
+                        className="w-full h-48 md:h-80 object-cover"
                       />
                     </div>
                   ))}
@@ -1024,35 +1040,23 @@ const ServicesPage = () => {
                 <img
                   src={selectedService.image}
                   alt={selectedService.name}
-                  className="w-full h-56 md:h-96 object-cover md:rounded-t-3xl"
+                  className="w-full h-48 md:h-80 object-cover"
                 />
               )}
             </div>
 
             {/* Scrollable Content Section */}
             <div className="flex-1 overflow-y-auto">
-              <div className="p-4 md:p-8">
-                <div className="mb-4">
-                  <div className="bg-[#d4af37] px-3 py-1 rounded-full text-xs font-medium inline-block mb-2">
-                    {selectedService.category}
-                  </div>
-                  <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-3 text-black">
-                    {selectedService.name}
-                  </h2>
-                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                    {selectedService.description}
-                  </p>
-                </div>
-
-                <div className="mb-4 md:mb-6 border-t pt-4 md:pt-6">
-                  <h3 className="text-lg md:text-2xl font-bold text-black mb-3 md:mb-4 flex items-center gap-2">
-                    <CheckCircle className="text-[#d4af37] w-5 h-5" />
+              <div className="p-4 md:p-6">
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-lg md:text-xl font-bold text-black mb-3 flex items-center gap-2">
+                    <CheckCircle className="text-gold w-5 h-5" />
                     Service Features
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {selectedService.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2 md:gap-3 text-gray-700 p-2 md:p-3 bg-gray-50 rounded-lg">
-                        <div className="w-2 h-2 bg-[#d4af37] rounded-full flex-shrink-0"></div>
+                      <div key={index} className="flex items-start gap-2 text-gray-700 p-2 md:p-3 bg-gray-50 rounded-lg">
+                        <div className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5"></div>
                         <span className="text-sm md:text-base">{feature}</span>
                       </div>
                     ))}
@@ -1060,17 +1064,17 @@ const ServicesPage = () => {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col gap-2 md:gap-3 pt-4 md:pt-6 border-t">
+                <div className="flex flex-col gap-2 pt-4 border-t">
                   <Link
                     href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20${selectedService.name}%20service%20for%20${selectedService.category}.`}
-                    className="bg-[#d4af37] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-sm md:text-base"
+                    className="bg-gradient-to-r from-gold to-yellow-500 text-black px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm md:text-base"
                   >
                     <Phone className="w-4 h-4" />
                     Book This Service
                   </Link>
                   <button
                     onClick={closeServiceModal}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-50 transition-colors font-medium text-sm md:text-base"
+                    className="px-6 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors font-medium text-sm md:text-base"
                   >
                     Close
                   </button>
