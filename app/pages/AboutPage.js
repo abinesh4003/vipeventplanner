@@ -96,7 +96,7 @@ const AboutPage = () => {
   const milestones = [
     {
       year: "2010",
-      event: "Founded V.I.P Function Planners with a dream to redefine celebrations.",
+      event: "Founded V.I.P Event Management with a dream to redefine celebrations.",
 
       highlight: false,
     },
@@ -225,7 +225,7 @@ const AboutPage = () => {
               animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              About <span className="text-[var(--color-dark)]">V.I.P Function Planners</span>
+              About <span className="text-[var(--color-dark)]">V.I.P Event Management</span>
             </motion.h1>
 
             {/* Tagline */}
@@ -352,7 +352,7 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Since 2010, <strong className="text-[#d4af37]">V.I.P Function Planners</strong> has
+                Since 2010, <strong className="text-[#d4af37]">V.I.P Event Management</strong> has
                 transformed ordinary events into extraordinary experiences across
                 Nagercoil and beyond.
               </motion.p>
@@ -385,7 +385,7 @@ const AboutPage = () => {
           Our <span className="text-[#d4af37]">Motive</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6 text-center">
-          At <span className="font-semibold text-[#d4af37]">V.I.P Function Planners</span>,
+          At <span className="font-semibold text-[#d4af37]">V.I.P Event Management</span>,
           our purpose is simple — to transform every occasion into a timeless experience.
           We believe every celebration deserves perfection, elegance, and a personal touch
           that makes it unforgettable.

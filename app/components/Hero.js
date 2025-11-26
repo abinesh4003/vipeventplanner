@@ -1,158 +1,189 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight, Phone, Sparkles } from 'lucide-react';
 
-const HeroSection = () => {
-  const [particles, setParticles] = useState([]);
+const VipEventManagementHero = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    const headlines = [
+        { 
+            text: "Best Events & Wedding", 
+            highlight: "Management in Nagercoil",
+            tagline: "Creating unforgettable celebrations with elegance and perfection."
+        },
+        { 
+            text: "Best Catering", 
+            highlight: "Service in Nagercoil",
+            tagline: "Delicious cuisine crafted with passion and served with excellence."
+        },
+        { 
+            text: "Best Stage", 
+            highlight: "Decorators in Nagercoil",
+            tagline: "Transforming venues into breathtaking masterpieces of beauty."
+        },
+        { 
+            text: "Best Photography &", 
+            highlight: "Videography in Nagercoil",
+            tagline: "Capturing your precious moments in timeless frames forever."
+        },
+        { 
+            text: "Best DJ & Music", 
+            highlight: "Services in Nagercoil",
+            tagline: "Setting the perfect mood with electrifying beats and melodies."
+        },
+    ];
 
-  useEffect(() => {
-    setParticles(
-      Array.from({ length: 8 }).map((_, i) => ({
-        id: i,
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        duration: 6 + Math.random() * 4,
-        delay: Math.random() * 2,
-      }))
-    );
-  }, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % headlines.length);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+    return (
+        <div className="relative h-screen flex flex-col justify-between overflow-hidden pt-16 bg-gold-light">
+            {/* Video Background with Parallax */}
+            <motion.div 
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 2, ease: "easeOut" }}
+                className="absolute inset-0 z-0"
+            >
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/images/herobg.jpg"
+                    className="w-full h-full object-fill"
+                >
+                    <source src="/hero.mp4" type="video/mp4" />
+                </video>
+            </motion.div>
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  };
+            {/* Cinematic Vignette Overlay */}
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-transparent to-black/80"></div>
+            <div className="absolute inset-0 z-10" style={{
+                background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)'
+            }}></div>
 
-  return (
-    <section
-      id="home"
-      className="relative flex flex-col items-center min-h-[calc(100vh-4rem)] pt-16 text-center overflow-hidden bg-gradient-to-b from-[#f9f9f9] via-white to-[#fdfdfd] px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-8"
-    >
-      {/* ✅ Background video */}
-      {/* <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src="/hero1.mp4" type="video/mp4" />
-      </video> */}
+            {/* Top Content - Logo & Heading */}
+            <div className="relative z-20 w-full px-6 sm:px-8 md:px-12 pt-8 sm:pt-12">
+                <div className="max-w-6xl mx-auto text-center space-y-4">
+                    {/* Logo with Glow */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                        className="flex justify-center"
+                    >
+                        <div className="relative">
+                            <div className="absolute inset-0 blur-2xl bg-gold/30 rounded-full"></div>
+                            <img
+                                src="logo2.png"
+                                alt="VIP Event Management Logo"
+                                className="relative w-24 sm:w-32 md:w-36 drop-shadow-2xl"
+                            />
+                        </div>
+                    </motion.div>
 
-      {/* Subtle overlay for readability */}
-      {/* <div className="absolute inset-0 bg-white/75 backdrop-blur-[2px]" /> */}
+                    {/* Brand Name */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{duration:0.6}}
+                    >
+                        <p className="text-sm sm:text-base md:text-lg uppercase tracking-[0.3em] text-white/90 font-light flex items-center justify-center gap-2">
+                            <Sparkles className="text-gold" size={18} />
+                            V.I.P Event Management
+                            <Sparkles className="text-gold" size={18} />
+                        </p>
+                    </motion.div>
 
-      {/* Subtle golden glow background */}
-      {/* <div className="absolute inset-0 bg-gradient-radial from-gold/10 via-transparent to-transparent pointer-events-none" /> */}
+                    {/* SEO H1 - Hidden but readable by search engines */}
+                    <h1 className="sr-only">
+                        Best Events & Wedding Management, Catering Service, Stage Decorators, Photography & Videography, DJ & Music Services in Nagercoil
+                    </h1>
 
-      {/* Floating gold particles */}
-      {particles.map((particle) => (
-        <motion.span
-          key={particle.id}
-          className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gold/50 rounded-full"
-          style={{
-            top: `${particle.top}%`,
-            left: `${particle.left}%`,
-          }}
-          animate={{
-            y: [0, -12, 0],
-            opacity: [0.4, 0.9, 0.4],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            delay: particle.delay,
-          }}
-        />
-      ))}
+                    {/* Visual Heading with Sliding Text */}
+                    <div className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gold-light drop-shadow-2xl px-4 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] flex items-center justify-center" aria-hidden="true">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={currentIndex}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -50 }}
+                                transition={{ duration: 0.5 }}
+                                className="w-full"
+                            >
+                                {headlines[currentIndex].text}<br className="hidden sm:block" />{' '}
+                                <span className="text-white inline-block">
+                                    {headlines[currentIndex].highlight}
+                                </span>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
 
-      {/* Logo */}
-      <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.8 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    {/* Tagline with Sliding Text */}
+                    <div className="text-lg sm:text-xl md:text-2xl italic font-light text-white/70 drop-shadow-lg px-4 min-h-[60px] sm:min-h-[70px] flex items-center justify-center">
+                        <AnimatePresence mode="wait">
+                            <motion.p
+                                key={currentIndex}
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -50 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                            >
+                                "{headlines[currentIndex].tagline}"
+                            </motion.p>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
 
-        className="relative z-10 mb-6 sm:mb-8"
-      >
-        <div className="bg-gray-100 overflow-hidden backdrop-blur-md  rounded-full p-4 sm:p-5 ">
-          <Image
-            src="/logo.png"
-            alt="VIP Function Planners Logo"
-            width={140}
-            height={140}
-            className="object-contain w-[110px] sm:w-[140px] md:w-[160px]"
-          />
+            {/* Bottom Content - CTA Buttons */}
+            <div className="relative z-20 w-full px-6 sm:px-8 md:px-12 pb-12 sm:pb-16">
+                <div className="max-w-6xl mx-auto text-center space-y-6">
+                    {/* Divider Line */}
+                    <div className="h-0.5 w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-row gap-3 justify-center items-center flex-wrap">
+                        <Link href="/contact" className="inline-block">
+                            <motion.button 
+                                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(212, 175, 55, 0.6)' }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group relative px-6 py-3 border-2 border-gold text-gold bg-black/40 backdrop-blur-md hover:bg-gold hover:text-black transition-all duration-500 font-bold text-sm sm:text-base flex items-center gap-2 shadow-2xl overflow-hidden whitespace-nowrap"
+                            >
+                                <span className="relative z-10">PLAN YOUR EVENT</span>
+                                <ArrowRight className="relative z-10 group-hover:translate-x-1 transition-transform" size={18} />
+                                <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/20 to-gold/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                            </motion.button>
+                        </Link>
+                        <Link href="tel:8778304145" className="inline-block">
+                            <motion.button 
+                                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 255, 255, 0.4)' }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-6 py-3 bg-white/20 backdrop-blur-md border-2 border-white/50 text-white hover:bg-white hover:text-black transition-all duration-500 font-bold text-sm sm:text-base flex items-center gap-2 shadow-2xl whitespace-nowrap"
+                            >
+                                <Phone size={18} />
+                                CALL NOW
+                            </motion.button>
+                        </Link>
+                    </div>
+
+                    {/* Bottom Info */}
+                    <div className="text-white/60 text-sm">
+                        <p>⭐ 500+ Events | 15+ Years | 100% Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
         </div>
-      </motion.div>
-
-      {/* Headline */}
-      <motion.h1
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] font-bold leading-snug sm:leading-tight max-w-4xl z-10"
-      >
-        <span className="text-gold">V.I.P Function Planners</span> 
-        <span className='black text-lg block '>(catering Service)</span>
-      </motion.h1>
-
-      {/* Subheadline */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="font-body text-base sm:text-lg md:text-xl text-[#3a3a3a] mt-3 sm:mt-4 md:mt-6 max-w-2xl z-10"
-      >
-        Best Events & Wedding Management in Nagercoil
-      </motion.p>
-
-      {/* Tagline */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="italic text-gold font-medium text-sm sm:text-base md:text-lg mt-2 sm:mt-3 md:mt-4 z-10"
-      >
-        “Turning every moment into a golden memory.”
-      </motion.p>
-
-      {/* Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-8 sm:mt-10 md:mt-12 z-10"
-      >
-        <Link href="/contact">
-          <button
-            className="px-8 py-3 sm:px-10 sm:py-4 rounded-full font-heading font-semibold text-base sm:text-lg bg-gold text-[#1a1a1a] hover:brightness-110 hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] transition-all duration-300"
-          >
-            Plan Your Event
-          </button>
-        </Link>
-
-        <Link href="/services">
-
-          <button
-            className="px-8 py-3 sm:px-10 sm:py-4 rounded-full font-heading font-semibold text-base sm:text-lg border-2 border-gold text-[#1a1a1a] hover:bg-gold hover:text-black transition-all duration-300"
-          >
-            View Our Services
-          </button></Link>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-        className="absolute bottom-8 text-gold z-10"
-      >
-        <ArrowDown className="w-6 h-6 sm:w-7 sm:h-7" />
-      </motion.div>
-    </section>
-  );
+    );
 };
 
-export default HeroSection;
+export default VipEventManagementHero;

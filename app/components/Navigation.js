@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import path from 'path';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,7 +15,8 @@ const Navigation = () => {
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -33,27 +35,27 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className={`sticky top-0 w-full z-50 transition-all duration-500 ${
-        mounted && scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md border-b border-gold/20'
-          : 'bg-white/80 backdrop-blur-sm'
+      
+      className={`${pathname === '/' ? 'fixed' : 'sticky'} top-0 w-full z-50 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gold/20'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image
-            src="/logo.png"
+            src={pathname === '/' ? scrolled? '/logo.png' : '/logo2.png' :  '/logo.png'}
             alt="VIP Logo"
-            width={42}
-            height={42}
+            width={50}
+            height={50}
             className="rounded-full"
           />
-          <span className="font-heading text-dark text-lg sm:text-xl tracking-wide font-semibold md:inline-block">
-            <span className="text-gold">Function</span> Planners
+          <span className={`font-heading text-xl sm:text-2xl tracking-wide font-semibold md:inline-block transition-colors duration-300 ${
+            scrolled ? 'text-dark' : pathname === '/' ?  'text-white': 'text-dark'
+          }`}>
+            <span className={`${pathname=='/'? scrolled? 'text-gold' : 'text-white': 'text-gold'}`}>Event </span> Management
           </span>
         
         </Link>
@@ -69,7 +71,7 @@ const Navigation = () => {
                 className={`uppercase tracking-wide transition-colors duration-200 relative pb-1 ${
                   isActive 
                     ? 'text-gold' 
-                    : 'text-dark/80 hover:text-gold'
+                    : scrolled ? 'text-dark/80 hover:text-gold' : pathname=='/'?'text-white hover:text-gold' : 'text-dark/80 hover:text-gold'
                 }`}
               >
                 {item.name}
@@ -91,7 +93,9 @@ const Navigation = () => {
             aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
-            className="md:hidden text-gold bg-white/20 p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-transform duration-200 hover:scale-110 hover:bg-white/30"
+            className={`md:hidden p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-all duration-200 hover:scale-110 ${
+              scrolled ? 'text-gold bg-white/20 hover:bg-white/30' : 'text-white bg-black/20 hover:bg-black/30'
+            }`}
           >
             {menuOpen ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}
           </button>

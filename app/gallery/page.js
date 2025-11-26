@@ -2,21 +2,21 @@ import React from "react";
 import GalleryPage from "../pages/galleryPage";
 
 export const metadata = {
-  title: "Best Event Gallery - Wedding Photos & Stage Decoration | VIP Function Planners Nagercoil",
+  title: "Best Event Gallery - Wedding Photos & Stage Decoration | VIP Event Management Nagercoil",
   description: "Explore our stunning gallery showcasing the best weddings, stage decorations, corporate events, and celebrations in Nagercoil. View premium catering setups, elegant decorations, and memorable events across Kanyakumari district. Real events, real moments from the best event planner.",
   keywords: "best event gallery nagercoil, best wedding photos nagercoil, best stage decoration photos, best event management portfolio, best catering gallery kanyakumari, best wedding decoration photos, best corporate event photos, best birthday party gallery, best function photos nagercoil, best event planner portfolio, best catering setup images, best wedding catering photos, best event decoration gallery nagercoil",
-  authors: [{ name: "VIP Function Planners" }],
-  creator: "VIP Function Planners",
-  publisher: "VIP Function Planners",
-  metadataBase: new URL('https://www.vipfunctionplanners.com'),
+  authors: [{ name: "VIP Event Management" }],
+  creator: "VIP Event Management",
+  publisher: "VIP Event Management",
+  metadataBase: new URL('https://www.vipeventsmanagement.com'),
   alternates: {
     canonical: '/gallery',
   },
   openGraph: {
-    title: "Event Gallery - Wedding & Event Photos | VIP Function Planners Nagercoil",
+    title: "Event Gallery - Wedding & Event Photos | VIP Event Management Nagercoil",
     description: "Browse our collection of beautifully executed events in Nagercoil. Weddings, corporate functions, parties, and traditional celebrations with exceptional catering and decoration.",
-    url: 'https://www.vipfunctionplanners.com/gallery',
-    siteName: 'VIP Function Planners',
+    url: 'https://www.vipeventsmanagement.com/gallery',
+    siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -24,13 +24,13 @@ export const metadata = {
         url: '/gallery-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'VIP Function Planners Event Gallery - Nagercoil',
+        alt: 'VIP Event Management Event Gallery - Nagercoil',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Event Gallery - VIP Function Planners Nagercoil",
+    title: "Event Gallery - VIP Event Management Nagercoil",
     description: "View our portfolio of stunning weddings, corporate events, and celebrations in Nagercoil with premium catering and decoration services.",
     images: ['/gallery-twitter.jpg'],
   },
@@ -50,13 +50,13 @@ export const metadata = {
 const gallerySchema = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "name": "VIP Function Planners Event Gallery",
+  "name": "VIP Event Management Event Gallery",
   "description": "Photo gallery showcasing our event management and catering services in Nagercoil including weddings, corporate events, and celebrations",
-  "url": "https://www.vipfunctionplanners.com/gallery",
+  "url": "https://www.vipeventsmanagement.com/gallery",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "VIP Function Planners",
-    "image": "https://www.vipfunctionplanners.com/logo.jpg",
+    "name": "VIP Event Management",
+    "image": "https://www.vipeventsmanagement.com/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nagercoil",
@@ -64,7 +64,7 @@ const gallerySchema = {
       "addressCountry": "IN"
     },
     "telephone": "+91-XXXXXXXXXX",
-    "url": "https://www.vipfunctionplanners.com"
+    "url": "https://www.vipeventsmanagement.com"
   },
   "about": [
     {

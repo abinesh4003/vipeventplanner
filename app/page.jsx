@@ -8,26 +8,26 @@ import WhyChooseUsSection from "./components/WhyChooseUs";
 import CTA from "./components/cta";
 
 export const metadata = {
-  title: "VIP Function Planners - Best Event Management Nagercoil | Wedding & Catering Services",
+  title: "VIP Event Management - Best Event Management Nagercoil | Wedding & Catering Services",
   description: "Premier event management and catering services in Nagercoil. Expert wedding planning, stage decoration, corporate events. 15+ years experience serving Kanyakumari district.",
-  keywords: "best catering service in nagercoil, best event planner in nagercoil, best stage decoration in nagercoil, best wedding services in nagercoil, best caterers in nagercoil, top event management nagercoil, best wedding planners nagercoil, best birthday party organizers nagercoil, best corporate event management kanyakumari, best function hall catering nagercoil, best marriage event planners nagercoil, best party planners nagercoil, best event organizers nagercoil, best traditional function catering, best outdoor catering services nagercoil, vip function planners nagercoil",
-  authors: [{ name: "VIP Function Planners" }],
-  creator: "VIP Function Planners",
-  publisher: "VIP Function Planners",
+  keywords: "best catering service in nagercoil, best event planner in nagercoil, best stage decoration in nagercoil, best wedding services in nagercoil, best caterers in nagercoil, top event management nagercoil, best wedding planners nagercoil, best birthday party organizers nagercoil, best corporate event management kanyakumari, best function hall catering nagercoil, best marriage event planners nagercoil, best party planners nagercoil, best event organizers nagercoil, best traditional function catering, best outdoor catering services nagercoil, vip Event Management nagercoil",
+  authors: [{ name: "VIP Event Management" }],
+  creator: "VIP Event Management",
+  publisher: "VIP Event Management",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.vipfunctionplanners.com'),
+  metadataBase: new URL('https://www.vipeventsmanagement.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "VIP Function Planners - Best Event Management & Catering Services in Nagercoil",
+    title: "VIP Event Management - Best Event Management & Catering Services in Nagercoil",
     description: "Transform your special occasions into unforgettable memories with Nagercoil's leading event management and catering experts. Specializing in weddings, corporate events, and all celebrations with premium catering services.",
-    url: 'https://www.vipfunctionplanners.com',
-    siteName: 'VIP Function Planners',
+    url: 'https://www.vipeventsmanagement.com',
+    siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -35,13 +35,13 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'VIP Function Planners - Event Management & Catering Nagercoil',
+        alt: 'VIP Event Management - Event Management & Catering Nagercoil',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "VIP Function Planners - Best Event Management & Catering in Nagercoil",
+    title: "VIP Event Management - Best Event Management & Catering in Nagercoil",
     description: "Premier event management and catering services in Nagercoil. Expert wedding planners, corporate event organizers, and professional caterers serving Kanyakumari district.",
     images: ['/twitter-image.jpg'],
   },
@@ -64,12 +64,12 @@ export const metadata = {
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "VIP Function Planners",
-  "image": "https://www.vipfunctionplanners.com/logo.jpg",
-  "@id": "https://www.vipfunctionplanners.com",
-  "url": "https://www.vipfunctionplanners.com",
+  "name": "VIP Event Management",
+  "image": "https://www.vipeventsmanagement.com/logo.jpg",
+  "@id": "https://www.vipeventsmanagement.com",
+  "url": "https://www.vipeventsmanagement.com",
   "telephone": "+91-XXXXXXXXXX",
-  "email": "vipfunctionplanners@gmail.com",
+  "email": "vipeventsmanagement@gmail.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -93,8 +93,8 @@ const homeSchema = {
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/vipfunctionplanners",
-    "https://www.instagram.com/vipfunctionplanners"
+    "https://www.facebook.com/vipeventsmanagement",
+    "https://www.instagram.com/vipeventsmanagement"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",

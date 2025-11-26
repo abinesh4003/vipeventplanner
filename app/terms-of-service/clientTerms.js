@@ -38,14 +38,14 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Acceptance of Terms</h2>
               <p className="text-gray-600">
-                By engaging V.I.P Function Planners for event planning services, you agree to be bound by these Terms of Service. 
+                By engaging V.I.P Event Management for event planning services, you agree to be bound by these Terms of Service.
                 If you do not agree to these terms, please do not use our services.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Service Description</h2>
-              <p className="text-gray-600 mb-4">V.I.P Function Planners provides:</p>
+              <p className="text-gray-600 mb-4">V.I.P Event Management provides:</p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Event planning and coordination services</li>
                 <li>Venue decoration and setup</li>
@@ -79,7 +79,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
               <p className="text-gray-600 mb-4">
-                V.I.P Function Planners shall not be liable for:
+                V.I.P Event Management shall not be liable for:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Acts of nature, weather conditions, or force majeure events</li>
@@ -92,7 +92,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
               <p className="text-gray-600">
-                All event designs, concepts, and creative materials developed by V.I.P Function Planners remain our intellectual property. 
+                All event designs, concepts, and creative materials developed by V.I.P Event Management remain our intellectual property.
                 Clients may use these for their specific event but cannot reproduce or distribute them without permission.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function TermsOfServicePage() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Dispute Resolution</h2>
               <p className="text-gray-600">
-                Any disputes arising from our services will be resolved through mutual discussion. 
+                Any disputes arising from our services will be resolved through mutual discussion.
                 If unresolved, disputes will be subject to the jurisdiction of Nagercoil courts, Tamil Nadu.
               </p>
             </div>

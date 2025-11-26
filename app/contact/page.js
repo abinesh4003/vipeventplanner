@@ -2,21 +2,21 @@ import React from "react";
 import ContactPage from "../pages/contactPage";
 
 export const metadata = {
-  title: "Contact Us - Get Free Quote for Event Management & Catering in Nagercoil | VIP Function Planners",
-  description: "Contact VIP Function Planners for professional event management and catering services in Nagercoil. Call us for free consultation and quotes. Available 24/7 for weddings, corporate events, and all celebrations across Kanyakumari district. Visit our office or book online today.",
-  keywords: "contact event planner nagercoil, catering services contact, event management enquiry, wedding planner contact nagercoil, get quote catering, book event planner, event management phone number nagercoil, catering services near me contact, vip function planners contact, event booking nagercoil",
-  authors: [{ name: "VIP Function Planners" }],
-  creator: "VIP Function Planners",
-  publisher: "VIP Function Planners",
-  metadataBase: new URL('https://www.vipfunctionplanners.com'),
+  title: "Contact Us - Get Free Quote for Event Management & Catering in Nagercoil | VIP Event Management",
+  description: "Contact VIP Event Management for professional event management and catering services in Nagercoil. Call us for free consultation and quotes. Available 24/7 for weddings, corporate events, and all celebrations across Kanyakumari district. Visit our office or book online today.",
+  keywords: "contact event planner nagercoil, catering services contact, event management enquiry, wedding planner contact nagercoil, get quote catering, book event planner, event management phone number nagercoil, catering services near me contact, vip Event Management contact, event booking nagercoil",
+  authors: [{ name: "VIP Event Management" }],
+  creator: "VIP Event Management",
+  publisher: "VIP Event Management",
+  metadataBase: new URL('https://www.vipeventsmanagement.com'),
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: "Contact VIP Function Planners - Event Management & Catering Nagercoil",
+    title: "Contact VIP Event Management - Event Management & Catering Nagercoil",
     description: "Get in touch for professional event management and catering services in Nagercoil. Free consultation, instant quotes, and 24/7 availability for all your event needs.",
-    url: 'https://www.vipfunctionplanners.com/contact',
-    siteName: 'VIP Function Planners',
+    url: 'https://www.vipeventsmanagement.com/contact',
+    siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -24,13 +24,13 @@ export const metadata = {
         url: '/contact-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Contact VIP Function Planners - Nagercoil',
+        alt: 'Contact VIP Event Management - Nagercoil',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Contact VIP Function Planners - Event Management Nagercoil",
+    title: "Contact VIP Event Management - Event Management Nagercoil",
     description: "Reach out for event management and catering services in Nagercoil. Free quotes and consultation available.",
     images: ['/contact-twitter.jpg'],
   },
@@ -50,17 +50,17 @@ export const metadata = {
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact VIP Function Planners",
-  "description": "Contact page for VIP Function Planners - Event Management and Catering Services in Nagercoil",
-  "url": "https://www.vipfunctionplanners.com/contact",
+  "name": "Contact VIP Event Management",
+  "description": "Contact page for VIP Event Management - Event Management and Catering Services in Nagercoil",
+  "url": "https://www.vipeventsmanagement.com/contact",
   "mainEntity": {
     "@type": "LocalBusiness",
-    "name": "VIP Function Planners",
-    "image": "https://www.vipfunctionplanners.com/logo.jpg",
-    "@id": "https://www.vipfunctionplanners.com",
-    "url": "https://www.vipfunctionplanners.com",
+    "name": "VIP Event Management",
+    "image": "https://www.vipeventsmanagement.com/logo.jpg",
+    "@id": "https://www.vipeventsmanagement.com",
+    "url": "https://www.vipeventsmanagement.com",
     "telephone": "+91-XXXXXXXXXX",
-    "email": "vipfunctionplanners@gmail.com",
+    "email": "vipeventsmanagement@gmail.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -123,8 +123,8 @@ const contactSchema = {
       }
     ],
     "sameAs": [
-      "https://www.facebook.com/vipfunctionplanners",
-      "https://www.instagram.com/vipfunctionplanners"
+      "https://www.facebook.com/vipeventsmanagement",
+      "https://www.instagram.com/vipeventsmanagement"
     ]
   }
 };

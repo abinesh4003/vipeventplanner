@@ -14,13 +14,13 @@ export async function POST(request) {
     }
 
     const formData = await request.json();
-    const { 
-      name, 
-      email, 
-      phone, 
-      eventType, 
-      eventDate, 
-      message 
+    const {
+      name,
+      email,
+      phone,
+      eventType,
+      eventDate,
+      message
     } = formData;
 
     // Validate required fields
@@ -59,13 +59,13 @@ export async function POST(request) {
       },
     });
 
-    const {CONTACT_RECIPIENT_EMAIL1} = process.env;
+    const { CONTACT_RECIPIENT_EMAIL1 } = process.env;
 
     // Format event types for better display
     const eventTypeLabels = {
       "wedding": "Wedding",
       "birthday": "Birthday",
-      "engagement": "Engagement", 
+      "engagement": "Engagement",
       "reception": "Reception",
       "corporate": "Corporate Event",
       "other": "Other"
@@ -94,7 +94,7 @@ export async function POST(request) {
         ${message}
         
         ---
-        Sent from V.I.P Function Planners Website Contact Form
+        Sent from V.I.P Event Management Website Contact Form
       `,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 600px; color: #333;">
@@ -144,7 +144,7 @@ export async function POST(request) {
           </div>
           
           <div style="background: #2d3748; color: white; padding: 15px; text-align: center; font-size: 12px;">
-            <p style="margin: 0;">This inquiry was submitted through the V.I.P Function Planners website contact form</p>
+            <p style="margin: 0;">This inquiry was submitted through the V.I.P Event Management website contact form</p>
             <p style="margin: 5px 0 0 0;">
               <a href="tel:+918778304145" style="color: #d4af37; text-decoration: none;">+91 8778304145</a> • 
               <a href="mailto:shejinoantony@gmail.com" style="color: #d4af37; text-decoration: none;">shejinoantony@gmail.com</a>
@@ -156,11 +156,11 @@ export async function POST(request) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    
+
     return NextResponse.json(
-      { 
-        success: true, 
-        message: "Thank you for your inquiry! We will contact you within 24 hours." 
+      {
+        success: true,
+        message: "Thank you for your inquiry! We will contact you within 24 hours."
       },
       { status: 200 }
     );
@@ -168,8 +168,8 @@ export async function POST(request) {
   } catch (error) {
     console.error("SMTP Error:", error);
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         error: "Failed to send your message. Please try again later.",
         details: process.env.NODE_ENV === 'development' ? error.message : undefined
       },

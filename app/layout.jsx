@@ -2,18 +2,19 @@ import "./globals.css";
 import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import WatsappLogo from "./components/WatsappLogo";
+import ContactPopup from "./components/ContactPopup";
 
 export const metadata = {
   title: {
-    default: "VIP Function Planners - Best Event Management & Catering Services in Nagercoil",
-    template: "%s | VIP Function Planners"
+    default: "VIP Event Management - Best Event Management & Catering Services in Nagercoil",
+    template: "%s | VIP Event Management"
   },
   description: "Best event management and catering services in Nagercoil. Professional wedding planning, stage decoration, corporate events, and celebrations across Kanyakumari district.",
-  keywords: "event management nagercoil, catering services nagercoil, wedding planners, stage decoration, vip function planners",
-  authors: [{ name: "VIP Function Planners" }],
-  creator: "VIP Function Planners",
-  publisher: "VIP Function Planners",
-  metadataBase: new URL('https://www.vipfunctionplanners.com'),
+  keywords: "event management nagercoil, catering services nagercoil, wedding planners, stage decoration, vip Event Management",
+  authors: [{ name: "VIP Event Management" }],
+  creator: "VIP Event Management",
+  publisher: "VIP Event Management",
+  metadataBase: new URL('https://www.vipeventsmanagement.com'),
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -28,7 +29,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    siteName: 'VIP Function Planners',
+    siteName: 'VIP Event Management',
   },
 };
 
@@ -43,14 +44,14 @@ export const viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "VIP Function Planners",
+  "name": "VIP Event Management",
   "alternateName": "VIP Event Management and Catering",
-  "url": "https://www.vipfunctionplanners.com",
-  "logo": "https://www.vipfunctionplanners.com/logo.jpg",
-  "image": "https://www.vipfunctionplanners.com/logo.jpg",
+  "url": "https://www.vipeventsmanagement.com",
+  "logo": "https://www.vipeventsmanagement.com/logo.jpg",
+  "image": "https://www.vipeventsmanagement.com/logo.jpg",
   "description": "Best event management and catering services in Nagercoil specializing in weddings, corporate events, stage decoration, and celebrations",
   "telephone": "+91-XXXXXXXXXX",
-  "email": "vipfunctionplanners@gmail.com",
+  "email": "vipeventsmanagement@gmail.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
@@ -74,8 +75,8 @@ const organizationSchema = {
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/vipfunctionplanners",
-    "https://www.instagram.com/vipfunctionplanners"
+    "https://www.facebook.com/vipeventsmanagement",
+    "https://www.instagram.com/vipeventsmanagement"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -99,6 +100,7 @@ export default function RootLayout({
       <body className="antialiased relative">
         <Navbar />
         <WatsappLogo />
+        <ContactPopup />
         {children}
         <Footer />
       </body>

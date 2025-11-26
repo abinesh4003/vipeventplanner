@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.vipfunctionplanners.com
+Host: https://www.vipeventsmanagement.com
 
 # Sitemaps
-Sitemap: https://www.vipfunctionplanners.com/sitemap.xml
+Sitemap: https://www.vipeventsmanagement.com/sitemap.xml

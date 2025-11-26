@@ -40,7 +40,7 @@ export default function TestimonialsPage() {
       date: "2 weeks ago",
       location: "Nagercoil",
       image: "https://ui-avatars.com/api/?name=Priya+Arjun&background=4285f4&color=fff&bold=true",
-      message: "Our wedding was absolutely magical! The VIP Function Planners team exceeded all our expectations. From the stunning stage decoration to the delicious catering, everything was perfect. They handled every detail with such care and professionalism.",
+      message: "Our wedding was absolutely magical! The VIP Event Management team exceeded all our expectations. From the stunning stage decoration to the delicious catering, everything was perfect. They handled every detail with such care and professionalism.",
       services: ["Stage Decoration", "Catering", "Photography"],
       verified: true,
       helpful: 45
@@ -79,7 +79,7 @@ export default function TestimonialsPage() {
       date: "1 month ago",
       location: "Marthandam",
       image: "https://ui-avatars.com/api/?name=Sundar+Meena&background=fbbc04&color=fff&bold=true",
-      message: "Celebrating our 25th anniversary was made memorable by VIP Function Planners. The elegant setup, wonderful food, and seamless coordination made our day perfect. Our guests are still talking about it!",
+      message: "Celebrating our 25th anniversary was made memorable by VIP Event Management. The elegant setup, wonderful food, and seamless coordination made our day perfect. Our guests are still talking about it!",
       services: ["Venue Decoration", "Catering", "Music"],
       verified: true,
       helpful: 41
@@ -170,7 +170,7 @@ export default function TestimonialsPage() {
       date: "2 weeks ago",
       location: "Kanyakumari",
       image: "https://ui-avatars.com/api/?name=Rajesh+Preethi&background=ea4335&color=fff&bold=true",
-      message: "Amazing work by VIP Function Planners! Our reception was grand and elegant. The stage decoration was breathtaking and the food received so many compliments. Worth every penny!",
+      message: "Amazing work by VIP Event Management! Our reception was grand and elegant. The stage decoration was breathtaking and the food received so many compliments. Worth every penny!",
       services: ["Stage Decoration", "Catering", "Lighting"],
       verified: true,
       helpful: 44
@@ -334,8 +334,8 @@ export default function TestimonialsPage() {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 flex-shrink-0 ${activeCategory === category.id
-                    ? 'bg-[var(--color-gold)] text-[var(--color-dark)] shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                  ? 'bg-[var(--color-gold)] text-[var(--color-dark)] shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-gray-100'
                   }`}
               >
                 {category.icon}
@@ -415,7 +415,7 @@ export default function TestimonialsPage() {
                     <span>{testimonial.helpful} helpful</span>
                   </div>
                 </div>
-                
+
                 {/* Date */}
                 <div className="text-xs text-gray-400 mt-2">
                   {testimonial.date}

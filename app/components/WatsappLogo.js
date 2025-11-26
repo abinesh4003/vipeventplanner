@@ -14,7 +14,7 @@ export default function WatsappLogo() {
     }, []);
 
     const openWhatsApp = () => {
-        const message = "Hello V.I.P Function Planners! I'm interested in your event planning services.";
+        const message = "Hello V.I.P Event Management! I'm interested in your event planning services.";
         const whatsappUrl = `https://wa.me/918778304145?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
@@ -35,7 +35,7 @@ export default function WatsappLogo() {
                     <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
             )}
-            
+
             {/* WhatsApp Button */}
             <button
                 onClick={openWhatsApp}

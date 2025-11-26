@@ -16,12 +16,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const pageLinks = [
-    {name:'home', href:'/'},
-    {name: 'services', href: '/services'},
-    {name: 'gallery', href: '/gallery'},
-    {name: 'about', href: '/about'},
-    {name: 'testimonials', href: '/testimonials'},
-    {name: 'contact', href: '/contact'}
+    { name: 'home', href: '/' },
+    { name: 'services', href: '/services' },
+    { name: 'gallery', href: '/gallery' },
+    { name: 'about', href: '/about' },
+    { name: 'testimonials', href: '/testimonials' },
+    { name: 'contact', href: '/contact' }
   ]
 
   const scrollToSection = (id) => {
@@ -32,7 +32,7 @@ const Footer = () => {
   };
 
   const openWhatsApp = () => {
-    const message = "Hello V.I.P Function Planners! I'm interested in your event planning services.";
+    const message = "Hello V.I.P Event Management! I'm interested in your event planning services.";
     const whatsappUrl = `https://wa.me/918778304145?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -48,7 +48,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2 text-center md:text-left">
             <h3 className="text-2xl font-bold text-gold mb-4">
-              V.I.P Function Planners
+              V.I.P Event Management
             </h3>
             <p className="text-gray-400 leading-relaxed mb-2 text-sm md:text-base">
               Creating unforgettable experiences with precision, creativity, and luxury —
@@ -73,12 +73,12 @@ const Footer = () => {
             <ul className="space-y-3 text-sm md:text-base">
               {pageLinks.map((item) => (
                 <li key={item.name}>
-                 <Link href={item.href}>
-                  <button
-                    className="text-gray-400 hover:text-gold transition-colors capitalize"
-                  >
-                    {item.name}
-                  </button></Link>
+                  <Link href={item.href}>
+                    <button
+                      className="text-gray-400 hover:text-gold transition-colors capitalize"
+                    >
+                      {item.name}
+                    </button></Link>
                 </li>
               ))}
             </ul>
@@ -133,8 +133,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Mail className="text-gold" size={18} />
-                <Link href="mailto:vipfunctionplanners@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
-                  vipfunctionplanners@gmail.com
+                <Link href="mailto:vipeventsmanagement@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
+                  vipeventsmanagement@gmail.com
                 </Link>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
@@ -149,7 +149,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 mt-6 text-center md:text-left">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-xs sm:text-sm">
-              © {currentYear} <span className="text-gold font-semibold">V.I.P Function Planners</span>. All Rights Reserved.
+              © {currentYear} <span className="text-gold font-semibold">V.I.P Event Management</span>. All Rights Reserved.
             </p>
             <p className="text-gray-600 text-xs sm:text-sm">
               Crafted with 💛 by <span className="text-gold font-semibold">Your Creative Team</span>

@@ -11,7 +11,7 @@ export default function FAQsPage() {
       category: "General",
       questions: [
         {
-          q: "What services does V.I.P Function Planners offer?",
+          q: "What services does V.I.P Event Management offer?",
           a: "We offer complete event planning services including wedding planning, corporate events, birthday parties, stage decoration, catering services, photography, entertainment, and venue management across Nagercoil and Kanyakumari district."
         },
         {

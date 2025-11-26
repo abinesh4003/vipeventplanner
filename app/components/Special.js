@@ -26,7 +26,9 @@ const SpecialHighlightsSection = () => {
       description: "Our stage décor in Nagercoil service transforms your venue into a breathtaking setting. Whether it's birthday theme décor, elegant wedding décor, luxury floral arrangements, or custom-designed stages, we deliver perfection every time.",
       media: [
         { type: "video", src: "/services/dec/decvid1.mp4" },
-         { type: "video", src: "/services/dec/decvid1.mp4" },
+         { type: "video", src: "/services/dec/decvid2.mp4" },
+                  { type: "video", src: "/services/dec/decvid3.mp4" },
+
         
         // { type: "image", src: "/images/stage-highlight-2.jpg" },
         // { type: "image", src: "/images/stage-highlight-3.jpg" },

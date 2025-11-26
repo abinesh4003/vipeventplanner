@@ -3,18 +3,18 @@ import React from "react";
 import FAQsPage from "./clientFaq";
 
 export const metadata = {
-  title: "FAQs - VIP Function Planners Nagercoil | Event Planning Questions & Answers",
-  description: "Find answers to frequently asked questions about VIP Function Planners' event management, wedding planning, catering services, pricing, and booking process in Nagercoil and Kanyakumari district.",
-  keywords: "event planning faq nagercoil, wedding planner questions, catering service faq, event management queries, vip function planners help, booking questions kanyakumari",
+  title: "FAQs - VIP Event Management Nagercoil | Event Planning Questions & Answers",
+  description: "Find answers to frequently asked questions about VIP Event Management' event management, wedding planning, catering services, pricing, and booking process in Nagercoil and Kanyakumari district.",
+  keywords: "event planning faq nagercoil, wedding planner questions, catering service faq, event management queries, vip Event Management help, booking questions kanyakumari",
   openGraph: {
-    title: "FAQs - VIP Function Planners Event Planning Questions",
+    title: "FAQs - VIP Event Management Event Planning Questions",
     description: "Get answers to common questions about our event planning, wedding services, catering, and booking process.",
     type: "website",
     images: [{
       url: "/faq-og.jpg",
       width: 1200,
       height: 630,
-      alt: "VIP Function Planners FAQ"
+      alt: "VIP Event Management FAQ"
     }]
   }
 };
@@ -25,7 +25,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What services does V.I.P Function Planners offer?",
+      "name": "What services does V.I.P Event Management offer?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "We offer complete event planning services including wedding planning, corporate events, birthday parties, stage decoration, catering services, photography, entertainment, and venue management across Nagercoil and Kanyakumari district."

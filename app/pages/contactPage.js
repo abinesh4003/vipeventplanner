@@ -7,12 +7,12 @@ import ContactSection from "../components/Contact"; // adjust path as needed
 import Link from "next/link";
 
 const ContactPage = () => {
-  useEffect(()=>{
+  useEffect(() => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-  },[])
+  }, [])
   const contactMethods = [
     {
       icon: <Phone className="w-6 h-6 text-[#d4af37]" />,
@@ -46,7 +46,7 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-[#fff9ef] to-white text-gray-800">
-      
+
       {/* ✨ Hero Section */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]">
         {/* Animated Background Pattern */}
@@ -57,66 +57,66 @@ const ContactPage = () => {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-4xl mx-auto py-16">
-        <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-        >
-          <div className="inline-flex items-center gap-2 bg-[#d4af37]/10 border border-[#d4af37]/30 
+          >
+            <div className="inline-flex items-center gap-2 bg-[#d4af37]/10 border border-[#d4af37]/30 
                           rounded-full px-4 py-2 mb-5 backdrop-blur-sm">
-            <Crown className="w-4 h-4 text-[#d4af37]" />
-            <span className="text-sm text-[#b9971f] font-medium">Let’s Connect</span>
-          </div>
+              <Crown className="w-4 h-4 text-[#d4af37]" />
+              <span className="text-sm text-[#b9971f] font-medium">Let’s Connect</span>
+            </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Reach <span className="text-[var(--color-dark)]">VIP Function Planners</span>
+              Reach <span className="text-[var(--color-dark)]">VIP Event Management</span>
             </h1>
 
-          <p className="text-lg sm:text-xl mb-6 text-gray-600 font-light leading-relaxed">
-            We’re here to turn your special moments into golden memories.  
-            Whether it's a wedding, corporate event, or celebration — connect with us today.
-          </p>
-          {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
-          >
-            <a
-              href="tel:+918778304145"
-              className="bg-[var(--color-dark)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--color-dark)]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            <p className="text-lg sm:text-xl mb-6 text-gray-600 font-light leading-relaxed">
+              We’re here to turn your special moments into golden memories.
+              Whether it's a wedding, corporate event, or celebration — connect with us today.
+            </p>
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
             >
-              Call Now
-            </a>
-            <Link
-              href="/gallery"
-              className="bg-white/20 text-[var(--color-dark)] px-6 py-3 rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
-            >
-              View Gallery
-            </Link>
-          </motion.div>
+              <a
+                href="tel:+918778304145"
+                className="bg-[var(--color-dark)] text-white px-6 py-3 rounded-full font-medium hover:bg-[var(--color-dark)]/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Call Now
+              </a>
+              <Link
+                href="/gallery"
+                className="bg-white/20 text-[var(--color-dark)] px-6 py-3 rounded-full font-medium border border-[var(--color-dark)]/30 hover:bg-white/30 transition-all duration-300 backdrop-blur-sm"
+              >
+                View Gallery
+              </Link>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-[var(--color-dark)]/70"
-          >
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
-              <span>Quick Response</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
-              <span>Free Consultation</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
-              <span>24/7 Support</span>
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-[var(--color-dark)]/70"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>Quick Response</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>Free Consultation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-[var(--color-dark)]" />
+                <span>24/7 Support</span>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
         </div>
       </section>
 
@@ -190,8 +190,8 @@ const ContactPage = () => {
             Our <span className="text-[#d4af37]">Commitment</span> to You
           </h3>
           <p className="text-gray-700 leading-relaxed text-lg">
-            We respect your investment and will deliver our best, worthwhile and quality service for all events. 
-            Whether it's a simple function or a grand celebration, our commitment remains unchanged. 
+            We respect your investment and will deliver our best, worthwhile and quality service for all events.
+            Whether it's a simple function or a grand celebration, our commitment remains unchanged.
             Trust us — we'll be with you forever in your memories.
           </p>
         </motion.div>

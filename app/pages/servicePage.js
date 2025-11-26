@@ -530,7 +530,7 @@ const ServicesPage = () => {
       name: "Priya & Raj",
       event: "Wedding",
       rating: 5,
-      text: "VIP Function Planners made our dream wedding a reality! The décor was breathtaking, food was delicious, and coordination was flawless. Highly recommended!",
+      text: "VIP Event Management made our dream wedding a reality! The décor was breathtaking, food was delicious, and coordination was flawless. Highly recommended!",
       location: "Nagercoil"
     },
     {
@@ -660,7 +660,7 @@ const ServicesPage = () => {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
-              Why Choose <span className="text-[#d4af37]">VIP Function Planners?</span>
+              Why Choose <span className="text-[#d4af37]">VIP Event Management?</span>
             </h2>
             <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full mb-4 md:mb-6"></div>
             <p className="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto px-4">
@@ -698,7 +698,7 @@ const ServicesPage = () => {
 
         <div className="w-full relative z-10">
           {/* Section Header */}
-          <motion.div 
+          <motion.div
             className="text-center mb-8 md:mb-12"
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -883,7 +883,7 @@ const ServicesPage = () => {
                   </div>
                 </div>
               </motion.div>
-              ))}
+            ))}
           </div>
         </div>
       </section>
@@ -891,7 +891,7 @@ const ServicesPage = () => {
       {/* Testimonials Section */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12 md:mb-16"
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -938,7 +938,7 @@ const ServicesPage = () => {
       {/* Service Areas Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-10 md:mb-12"
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -975,7 +975,7 @@ const ServicesPage = () => {
       {/* CTA Section */}
       <CTA
         text="Ready to Plan Your Dream Event?"
-        desc="Contact VIP Function Planners today for a free consultation and customized quote. Let's create something extraordinary together!"
+        desc="Contact VIP Event Management today for a free consultation and customized quote. Let's create something extraordinary together!"
         btn1="Contact Now"
         btn2="View Gallery"
         btn1link="/contact"

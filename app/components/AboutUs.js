@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const AboutUs = () => {
   // Unsplash Images (Free to use)
-  
+
   const images = [
     {
       url: "/about/planners.jpg",
@@ -167,101 +167,101 @@ const AboutUs = () => {
         </motion.div>
 
         {/* 🌟 Our Story - Elegant & Responsive */}
-      <section className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-        {/* Background Accent Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.08),transparent_60%)]"></div>
+        <section className="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+          {/* Background Accent Pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.08),transparent_60%)]"></div>
 
-        <div className="container mx-auto md:px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-[#d4af37]">Journey</span>
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
-              From a passionate vision to Nagercoil’s most trusted event planners
-            </p>
-          </motion.div>
-
-          <div className="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
-            {/* Image - Full width on mobile, half on desktop */}
+          <div className="container mx-auto md:px-4 relative z-10">
             <motion.div
-              style={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.8 }}
-              className="w-full md:w-1/2 -mx-4 md:mx-0"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
             >
-              <div className="md:rounded-3xl overflow-hidden shadow-2xl md:border-4 border-white">
-                <Slider {...aboutSliderSettings}>
-                  {images.map((src, index) => (
-                    <div key={index} className="relative w-full h-[320px] md:h-[480px]">
-                      <Image
-                        src={src.url}
-                        alt={`Event ${index + 1}`}
-                        fill
-                        className="object-fill"
-                        priority
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 z-10 text-white p-6"
-                        style={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                      >
-                        <h3 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg">{src.heading}</h3>
-                        <p className="text-sm md:text-base text-white/90 drop-shadow-md">{src.desc}</p>
-                      </motion.div>
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Our <span className="text-[#d4af37]">Journey</span>
+              </h2>
+              <p className="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
+                From a passionate vision to Nagercoil’s most trusted event planners
+              </p>
             </motion.div>
 
-            {/* Text - Below on mobile, right on desktop */}
-            <motion.div
-              style={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
-            >
-              <motion.p
-                className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
-                style={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+            <div className="flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto">
+              {/* Image - Full width on mobile, half on desktop */}
+              <motion.div
+                style={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.8 }}
+                className="w-full md:w-1/2 -mx-4 md:mx-0"
               >
-                Since 2010, <strong className="text-[#d4af37]">V.I.P Function Planners</strong> has
-                transformed ordinary events into extraordinary experiences across
-                Nagercoil and beyond.
-              </motion.p>
-              <motion.p
-                className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"
-                style={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                <div className="md:rounded-3xl overflow-hidden shadow-2xl md:border-4 border-white">
+                  <Slider {...aboutSliderSettings}>
+                    {images.map((src, index) => (
+                      <div key={index} className="relative w-full h-[250px] md:h-[400px]">
+                        <Image
+                          src={src.url}
+                          alt={`Event ${index + 1}`}
+                          fill
+                          className="object-fill"
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        <motion.div
+                          className="absolute bottom-0 left-0 right-0 z-10 text-white p-6"
+                          style={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.3 }}
+                        >
+                          <h3 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-lg">{src.heading}</h3>
+                          <p className="text-sm md:text-base text-white/90 drop-shadow-md">{src.desc}</p>
+                        </motion.div>
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              </motion.div>
+
+              {/* Text - Below on mobile, right on desktop */}
+              <motion.div
+                style={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
               >
-                What began as a dream to craft meaningful celebrations has evolved
-                into a legacy of creativity, precision, and unforgettable elegance.
-              </motion.p>
-              <motion.p
-                className="text-gray-600 text-sm sm:text-base leading-relaxed"
-                style={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                Every event we design reflects our belief — that every moment deserves
-                perfection, emotion, and timeless beauty.
-              </motion.p>
-            </motion.div>
+                <motion.p
+                  className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4"
+                  style={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  Since 2010, <strong className="text-[#d4af37]">V.I.P Event Management</strong> has
+                  transformed ordinary events into extraordinary experiences across
+                  Nagercoil and beyond.
+                </motion.p>
+                <motion.p
+                  className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4"
+                  style={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  What began as a dream to craft meaningful celebrations has evolved
+                  into a legacy of creativity, precision, and unforgettable elegance.
+                </motion.p>
+                <motion.p
+                  className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                  style={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  Every event we design reflects our belief — that every moment deserves
+                  perfection, emotion, and timeless beauty.
+                </motion.p>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Testimonials Slider */}
         <motion.div

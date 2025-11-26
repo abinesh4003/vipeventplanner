@@ -2,21 +2,21 @@ import React from "react";
 import ServicesPage from "../pages/servicePage";
 
 export const metadata = {
-  title: "Best Catering & Event Management Services in Nagercoil | Wedding Stage Decoration | VIP Function Planners",
+  title: "Best Catering & Event Management Services in Nagercoil | Wedding Stage Decoration | VIP Event Management",
   description: "Best catering service & event planner in Nagercoil. Premium wedding services, stage decoration, corporate events, birthday parties, and traditional functions. Top-rated professional service across Kanyakumari with customized packages and guaranteed satisfaction.",
   keywords: "best catering services nagercoil, best event management services nagercoil, best wedding catering nagercoil, best stage decoration services nagercoil, best corporate event catering, best birthday party catering nagercoil, best engagement function catering, best traditional event catering, best outdoor catering nagercoil, best function hall catering, best marriage catering services, best event decoration services nagercoil, best wedding stage decoration nagercoil, top catering services kanyakumari, professional event planners nagercoil",
-  authors: [{ name: "VIP Function Planners" }],
-  creator: "VIP Function Planners",
-  publisher: "VIP Function Planners",
-  metadataBase: new URL('https://www.vipfunctionplanners.com'),
+  authors: [{ name: "VIP Event Management" }],
+  creator: "VIP Event Management",
+  publisher: "VIP Event Management",
+  metadataBase: new URL('https://www.vipeventsmanagement.com'),
   alternates: {
     canonical: '/services',
   },
   openGraph: {
-    title: "Event Management & Catering Services in Nagercoil | VIP Function Planners",
+    title: "Event Management & Catering Services in Nagercoil | VIP Event Management",
     description: "Full-service event management and catering solutions for weddings, corporate events, parties, and traditional functions in Nagercoil. Customized packages, professional staff, and exceptional cuisine.",
-    url: 'https://www.vipfunctionplanners.com/services',
-    siteName: 'VIP Function Planners',
+    url: 'https://www.vipeventsmanagement.com/services',
+    siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -24,13 +24,13 @@ export const metadata = {
         url: '/services-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'VIP Function Planners Services - Event Management & Catering',
+        alt: 'VIP Event Management Services - Event Management & Catering',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Event Management & Catering Services - VIP Function Planners Nagercoil",
+    title: "Event Management & Catering Services - VIP Event Management Nagercoil",
     description: "Professional event management and catering services for all occasions in Nagercoil and Kanyakumari district. Weddings, corporate events, parties, and more.",
     images: ['/services-twitter.jpg'],
   },
@@ -53,10 +53,10 @@ const servicesSchema = {
   "serviceType": "Event Management and Catering Services",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "VIP Function Planners",
-    "image": "https://www.vipfunctionplanners.com/logo.jpg",
-    "@id": "https://www.vipfunctionplanners.com",
-    "url": "https://www.vipfunctionplanners.com",
+    "name": "VIP Event Management",
+    "image": "https://www.vipeventsmanagement.com/logo.jpg",
+    "@id": "https://www.vipeventsmanagement.com",
+    "url": "https://www.vipeventsmanagement.com",
     "telephone": "+91-XXXXXXXXXX",
     "priceRange": "$$",
     "address": {
@@ -87,8 +87,8 @@ const servicesSchema = {
       "closes": "21:00"
     },
     "sameAs": [
-      "https://www.facebook.com/vipfunctionplanners",
-      "https://www.instagram.com/vipfunctionplanners"
+      "https://www.facebook.com/vipeventsmanagement",
+      "https://www.instagram.com/vipeventsmanagement"
     ]
   },
   "areaServed": {

@@ -46,7 +46,6 @@ const services = [
     images: ["/services/doll/doll1.jpg", "/services/doll/doll2.jpeg","/services/doll/doll3.jpeg"],
     highlights: ["Traditional Attire", "Floral Arrangements", "Professional Staff", "Custom Welcome Rituals"]
   },
- 
   {
     title: "Photography & Videography",
     description: "Cinematic coverage to capture every magical moment of your special day.",
@@ -95,7 +94,7 @@ export default function ServicesGrid() {
         <div className="h-1 w-20 bg-gold mx-auto rounded-full my-8"></div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {services.map((s, i) => (
             <motion.div
               key={i}
