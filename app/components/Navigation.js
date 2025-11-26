@@ -36,26 +36,25 @@ const Navigation = () => {
   return (
     <motion.nav
       
-      className={`${pathname === '/' ? 'fixed' : 'sticky'} top-0 w-full z-50 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gold/20'
-          : 'bg-transparent'
+      className={`sticky top-0 w-full z-50 ${
+        'bg-white/95 backdrop-blur-md shadow-md border-b border-gold/20'
+         
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image
-            src={pathname === '/' ? scrolled? '/logo.png' : '/logo2.png' :  '/logo.png'}
+            src={'/logo.png'}
             alt="VIP Logo"
             width={50}
             height={50}
             className="rounded-full"
           />
-          <span className={`font-heading text-xl sm:text-2xl tracking-wide font-semibold md:inline-block transition-colors duration-300 ${
-            scrolled ? 'text-dark' : pathname === '/' ?  'text-white': 'text-dark'
-          }`}>
-            <span className={`${pathname=='/'? scrolled? 'text-gold' : 'text-white': 'text-gold'}`}>Event </span> Management
+          <span className={`font-heading text-xl sm:text-2xl tracking-wide font-semibold md:inline-block transition-colors duration-300 
+             text-black
+          `}>
+            <span className={ 'text-gold'}>Event </span> Management
           </span>
         
         </Link>
@@ -71,7 +70,7 @@ const Navigation = () => {
                 className={`uppercase tracking-wide transition-colors duration-200 relative pb-1 ${
                   isActive 
                     ? 'text-gold' 
-                    : scrolled ? 'text-dark/80 hover:text-gold' : pathname=='/'?'text-white hover:text-gold' : 'text-dark/80 hover:text-gold'
+                    : scrolled ? 'text-dark/80 hover:text-gold' : 'text-dark/80 hover:text-gold'
                 }`}
               >
                 {item.name}
@@ -94,7 +93,7 @@ const Navigation = () => {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             className={`md:hidden p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-all duration-200 hover:scale-110 ${
-              scrolled ? 'text-gold bg-white/20 hover:bg-white/30' : 'text-white bg-black/20 hover:bg-black/30'
+              scrolled ? 'text-gold ' : 'text-black '
             }`}
           >
             {menuOpen ? <X size={26} aria-hidden="true" /> : <Menu size={26} aria-hidden="true" />}

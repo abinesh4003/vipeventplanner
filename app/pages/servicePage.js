@@ -95,7 +95,14 @@ const ServicesPage = () => {
         {
           name: "Car Decoration",
           description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles",
-          image: "/services/dec/car/cardec.webp",
+          image: "/services/dec/car/car2.jpg",
+          images: [
+              "/services/dec/car/car2.jpg",
+            "/services/dec/car/car1.jpg",
+            "/services/dec/car/cardec.webp",
+          
+          
+          ],
           features: ["Fresh Flower Garlands", "Ribbon Work", "Traditional Designs", "Modern Styles"]
         },
         {
