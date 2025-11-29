@@ -133,8 +133,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <Mail className="text-gold" size={18} />
-                <Link href="mailto:vipeventsmanagement@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
-                  vipeventsmanagement@gmail.com
+                <Link href="mailto:shejinoantony@gmail.com" className="text-gray-400 hover:text-gold transition-colors">
+                  shejinoantony@gmail.com
                 </Link>
               </div>
               <div className="flex items-center justify-center md:justify-start gap-3">

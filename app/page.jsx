@@ -8,9 +8,9 @@ import WhyChooseUsSection from "./components/WhyChooseUs";
 import CTA from "./components/cta";
 
 export const metadata = {
-  title: "VIP Event Management - Best Event Management Nagercoil | Wedding & Catering Services",
-  description: "Premier event management and catering services in Nagercoil. Expert wedding planning, stage decoration, corporate events. 15+ years experience serving Kanyakumari district.",
-  keywords: "best catering service in nagercoil, best event planner in nagercoil, best stage decoration in nagercoil, best wedding services in nagercoil, best caterers in nagercoil, top event management nagercoil, best wedding planners nagercoil, best birthday party organizers nagercoil, best corporate event management kanyakumari, best function hall catering nagercoil, best marriage event planners nagercoil, best party planners nagercoil, best event organizers nagercoil, best traditional function catering, best outdoor catering services nagercoil, vip Event Management nagercoil",
+  title: "Best Event Management Nagercoil | Affordable Wedding & Catering Services | VIP Event Management",
+  description: "#1 Best & Affordable Event Management in Nagercoil. Expert wedding planning, stage decoration, corporate events, catering services at best prices. 15+ years experience, 500+ events. Budget-friendly packages across Kanyakumari district.",
+  keywords: "best catering service in nagercoil, best event planner in nagercoil, best affordable event management nagercoil, best stage decoration in nagercoil, best wedding services in nagercoil, best caterers in nagercoil, top event management nagercoil, best wedding planners nagercoil, best birthday party organizers nagercoil, best corporate event management kanyakumari, best function hall catering nagercoil, best marriage event planners nagercoil, best party planners nagercoil, best event organizers nagercoil, best traditional function catering, best outdoor catering services nagercoil, best affordable catering nagercoil, best budget event planner, vip event management nagercoil",
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
@@ -69,8 +69,8 @@ const homeSchema = {
   "@id": "https://www.vipeventmanagement.com",
   "url": "https://www.vipeventmanagement.com",
   "telephone": "+91-XXXXXXXXXX",
-  "email": "vipeventsmanagement@gmail.com",
-  "priceRange": "$$",
+  "email": "shejinoantony@gmail.com",
+  "priceRange": "$-$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Your Street Address",
@@ -98,11 +98,12 @@ const homeSchema = {
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150",
-    "bestRating": "5"
+    "ratingValue": "4.9",
+    "reviewCount": "200",
+    "bestRating": "5",
+    "worstRating": "1"
   },
-  "description": "Best event management and catering services in Nagercoil. Specializing in weddings, corporate events, stage decoration, and all celebrations with 15+ years experience."
+  "description": "Best & most affordable event management and catering services in Nagercoil. Specializing in weddings, corporate events, stage decoration, and all celebrations with 15+ years experience. Premium quality at budget-friendly prices."
 };
 
 export default function Home() {

@@ -1,9 +1,22 @@
-# *
+# Best Event Management & Catering Services in Nagercoil - VIP Event Management
+# https://www.vipeventmanagement.com
+
 User-agent: *
 Allow: /
+Allow: /services
+Allow: /gallery
+Allow: /about
+Allow: /contact
+Allow: /testimonials
+Allow: /faqs
 
-# Host
-Host: https://www.vipeventmanagement.com
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
 
-# Sitemaps
+# Sitemap location
 Sitemap: https://www.vipeventmanagement.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

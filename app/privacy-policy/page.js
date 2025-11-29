@@ -4,9 +4,9 @@ import PrivacyPolicyPage from "./clientPrivacy";
 
 
 export const metadata = {
-  title: "Privacy Policy - VIP Event Management Nagercoil | Data Protection & Privacy Rights",
-  description: "Learn how VIP Event Management protects your personal information and privacy. Our comprehensive privacy policy covers data collection, usage, and your rights for event planning services in Nagercoil.",
-  keywords: "privacy policy nagercoil, data protection event planning, personal information security, privacy rights, vip Event Management privacy, data collection policy",
+  title: "Privacy Policy - Best Event Management Nagercoil | Data Protection | VIP Event Management",
+  description: "Learn how VIP Event Management, the best event planner in Nagercoil, protects your personal information and privacy. Comprehensive privacy policy for our best affordable event planning and catering services.",
+  keywords: "privacy policy nagercoil, best event planner data protection, personal information security, privacy rights, vip event management privacy, best event management data policy, secure booking nagercoil",
   openGraph: {
     title: "Privacy Policy - VIP Event Management Data Protection",
     description: "Comprehensive privacy policy explaining how we protect your personal information and respect your privacy rights.",

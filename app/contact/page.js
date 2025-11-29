@@ -2,9 +2,9 @@ import React from "react";
 import ContactPage from "../pages/contactPage";
 
 export const metadata = {
-  title: "Contact Us - Get Free Quote for Event Management & Catering in Nagercoil | VIP Event Management",
-  description: "Contact VIP Event Management for professional event management and catering services in Nagercoil. Call us for free consultation and quotes. Available 24/7 for weddings, corporate events, and all celebrations across Kanyakumari district. Visit our office or book online today.",
-  keywords: "contact event planner nagercoil, catering services contact, event management enquiry, wedding planner contact nagercoil, get quote catering, book event planner, event management phone number nagercoil, catering services near me contact, vip Event Management contact, event booking nagercoil",
+  title: "Contact Us - Get Free Quote | Best & Affordable Event Management Nagercoil | VIP Event Management",
+  description: "Contact VIP Event Management for best affordable event management & catering services in Nagercoil. Free consultation, instant quotes, best prices guaranteed. Available 24/7 for budget-friendly weddings, corporate events across Kanyakumari. Call now for economical packages!",
+  keywords: "contact best event planner nagercoil, best catering services contact, best event management enquiry, best wedding planner contact nagercoil, get free quote best catering, book best event planner, best event management phone number nagercoil, best catering services near me contact, vip event management contact, best event booking nagercoil, best affordable event contact, best budget event planner contact",
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
@@ -60,7 +60,7 @@ const contactSchema = {
     "@id": "https://www.vipeventmanagement.com",
     "url": "https://www.vipeventmanagement.com",
     "telephone": "+91-XXXXXXXXXX",
-    "email": "vipeventsmanagement@gmail.com",
+    "email": "shejinoantony@gmail.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

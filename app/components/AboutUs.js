@@ -7,11 +7,17 @@ import Image from "next/image";
 import { Star, PartyPopper, Heart, Sparkles,Trophy,Gem,Eye,} from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import GoogleBusiness from "./GoogleBusiness";
 
 const AboutUs = () => {
   // Unsplash Images (Free to use)
 
   const images = [
+     {
+      url: "/about/reviews.jpg",
+      heading: "Top Rated Google Reviews In Nagercoil",
+      desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
+    },  // Professional team portrait
     {
       url: "/about/planners.jpg",
       heading: "Best Event Planners In Nagercoil",
@@ -42,11 +48,7 @@ const AboutUs = () => {
       heading: "Best Music anad DJ Services In Nagercoil",
       desc: "Our team of experienced DJs and music planners will help you plan your event from start to finish. Get the best music and DJ services for weddings, corporate events, and all celebrations across Kanyakumari district."
     }, // Concert/entertainment event
-    {
-      url: "/about/reviews.jpg",
-      heading: "Top Rated Google Reviews In Nagercoil",
-      desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
-    }  // Professional team portrait
+   
   ];
 
   const whyChooseUs = [
@@ -58,7 +60,7 @@ const AboutUs = () => {
 
   const aboutSliderSettings = {
     infinite: true,
-    autoplay: true,
+  
     autoplaySpeed: 3500,
     speed: 1000,
     arrows: false,
@@ -205,6 +207,13 @@ const AboutUs = () => {
               >
                 <div className="md:rounded-3xl overflow-hidden shadow-2xl md:border-4 border-white">
                   <Slider {...aboutSliderSettings}>
+                    {/* Google Business Badge as First Slide */}
+                    <div className="relative w-full h-[250px] md:h-[400px] bg-gradient-to-br from-gray-50 to-white flex items-center justify-center p-6">
+                      <div className="w-full max-w-sm">
+                        <GoogleBusiness />
+                      </div>
+                    </div>
+                    
                     {images.map((src, index) => (
                       <div key={index} className="relative w-full h-[250px] md:h-[400px]">
                         <Image
@@ -305,6 +314,9 @@ const AboutUs = () => {
     </div>
           </div>
         </section>
+
+
+        
 
 
   

@@ -5,9 +5,7 @@ import Link from "next/link";
 import Slider from "react-slick";
 import { loadGalleryAssets } from "../lib/galleryLoader";
 import {
-  Search,
-  Filter,
-  ZoomIn,
+
   X,
   ChevronLeft,
   ChevronRight,
@@ -33,6 +31,8 @@ import {
   Coffee,
   SparklesIcon,
   Instagram,
+  Circle,
+  CirclePlay,
 } from 'lucide-react';
 
 import CTA from "../components/cta";
@@ -168,8 +168,8 @@ const galleryData = {
     },
     {
       id: 8,
-      src: assets.decorations.images[18],
-      images: [assets.decorations.images[18]],
+      src: assets.decorations.images[19],
+      images: [assets.decorations.images[19]],
       title: "Theme Decoration",
       description: "Complete thematic decorations for various event concepts and styles",
       venue: "Nagercoil",
@@ -353,41 +353,9 @@ const galleryData = {
       date: "2024",
       likes: 156
     },
+    
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Welcome Girls Service",
-      description: "Professionally trained staff in traditional attire for guest welcome"
-    },
-    {
-      id: 3,
-      src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Aarthi Services",
-      description: "Traditional aarthi and ceremonial welcome rituals"
-    },
-    {
-      id: 4,
-      src: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Floral Welcome",
-      description: "Fresh flower garlands and floral arrangements for guests"
-    },
-    {
-      id: 5,
       src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80",
       images: [
         "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80",
@@ -398,7 +366,7 @@ const galleryData = {
       description: "Complete traditional welcome setup with all ceremonial items"
     },
     {
-      id: 6,
+      id: 3,
       src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
       images: [
         "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
@@ -409,7 +377,7 @@ const galleryData = {
       description: "Customized welcome setups matching event theme and requirements"
     },
     {
-      id: 7,
+      id: 4,
       src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
       images: [
         "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
@@ -508,39 +476,7 @@ const galleryData = {
       title: "Album Design",
       description: "Beautifully designed photo albums and digital galleries"
     },
-    {
-      id: 5,
-      src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Candid Photography",
-      description: "Natural and candid moments captured professionally"
-    },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Traditional Photography",
-      description: "Traditional posed photography for formal portraits"
-    },
-    {
-      id: 7,
-      src: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Same Day Edits",
-      description: "Quick editing and same day video highlights"
-    }
+    
   ],
   specialEffects: [
     {
@@ -587,39 +523,7 @@ const galleryData = {
       title: "Laser Shows",
       description: "Professional laser light shows and effects"
     },
-    {
-      id: 5,
-      src: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Fog Machines",
-      description: "Atmospheric fog and smoke effects for dramatic entries"
-    },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "Sparkler Effects",
-      description: "Safe sparkler effects for grand celebrations"
-    },
-    {
-      id: 7,
-      src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-      images: [
-        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
-      ],
-      title: "LED Effects",
-      description: "Colorful LED lighting and special effects"
-    }
+   
   ]
 };
  
@@ -758,133 +662,132 @@ const galleryData = {
         </div>
       </section>
 
-      {/* Service Galleries - Section by Section */}
-      <div className="bg-white">
-        {serviceGalleries.map((service, serviceIndex) => (
-          <section key={service.id} className={`relative py-12 md:py-16 overflow-hidden ${serviceIndex % 2 === 0 ? 'bg-gradient-to-br from-[#f7e9b8]/30 via-[#fdfcf9] to-white' : 'bg-gradient-to-bl from-white via-[#fdfcf9] to-[#f7e9b8]/20'}`}>
-            {/* Decorative Background Elements */}
-            <div className="absolute inset-0 opacity-40 pointer-events-none">
-              <div className={`absolute ${serviceIndex % 2 === 0 ? 'top-10 right-10' : 'bottom-10 left-10'} w-64 h-64 bg-[#d4af37]/10 rounded-full blur-3xl`}></div>
-              <div className={`absolute ${serviceIndex % 2 === 0 ? 'bottom-20 left-20' : 'top-20 right-20'} w-48 h-48 bg-[#d4af37]/10 rounded-full blur-3xl`}></div>
-            </div>
-            <div className="container mx-auto px-3 md:px-4 relative z-10">
-              {/* Service Header */}
-              <motion.div
-                initial={{ x: serviceIndex % 2 === 0 ? -100 : 100 }}
-                whileInView={{ x: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6 }}
-                className="mb-8 md:mb-12"
+      {/* Gallery Section - Premium Black & White Theme */}
+      <div className="py-16 md:py-24 bg-gradient-to-b from-black via-zinc-900 to-black">
+        {serviceGalleries.map((service, serviceIndex) => {
+          const videos = galleryData[service.id].filter(item => item.isVideo);
+          const images = galleryData[service.id].filter(item => !item.isVideo);
+          
+          return (
+            <motion.section 
+              key={service.id} 
+              className="container mx-auto px-4 mb-24"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
+            >
+              {/* Category Header with Icon */}
+              <motion.div 
+                className="flex items-center gap-4 mb-10"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <motion.div 
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-[#d4af37] shadow-lg`}
-                  >
-                    {service.icon}
-                  </motion.div>
-                  <div>
-                    <h2 className="text-2xl md:text-4xl font-bold text-gray-900">{service.name}</h2>
-                    <p className="text-sm md:text-base text-gray-600 mt-1">{service.description}</p>
-                  </div>
+                <div className="p-4 bg-white rounded-2xl shadow-lg">
+                  <div className="text-black">{service.icon}</div>
                 </div>
-                <div className="h-1 w-24 bg-[#d4af37] rounded-full"></div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white">
+                    {service.name}
+                  </h2>
+                  <p className="text-gray-400 text-sm md:text-base mt-1">{service.description}</p>
+                </div>
               </motion.div>
 
-              {/* Images - Pinterest Masonry Grid */}
-              <div className="columns-2 md:columns-2 lg:columns-3 gap-3 md:gap-4">
-                {galleryData[service.id].map((image, index) => (
-                  <motion.div
-                    key={image.id}
-                    initial={{ x: index % 2 === 0 ? -100 : 100 }}
-                    whileInView={{ x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.5 }}
-                    className="break-inside-avoid mb-3 md:mb-4"
-                  >
-                    <div
-                      className="bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:shadow-2xl group relative"
-                      onClick={() => openImageModal(image, index, service.id)}
-                    >
-                      <div className="relative overflow-hidden" style={{ height: `${180 + (index % 4) * 60}px` }}>
-                        {image.isVideo ? (
+              {/* Videos */}
+              {videos.length > 0 && (
+                <div className="mb-12">
+                  <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                    <CirclePlay className="w-5 h-5" />
+                    Videos
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {videos.map((video, idx) => (
+                      <motion.div
+                        key={video.id}
+                        className="cursor-pointer group"
+                        onClick={() => openImageModal(video, galleryData[service.id].indexOf(video), service.id)}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        whileHover={{ scale: 1.03, y: -5 }}
+                      >
+                        <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-white/20">
                           <video 
-                            src={image.src} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            src={video.src} 
+                            className="w-full h-full object-cover"
                             autoPlay
                             muted
                             loop
                             playsInline
-                            onMouseEnter={(e) => e.target.play()}
                           />
-                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all flex items-center justify-center">
+                            <motion.div
+                              whileHover={{ scale: 1.2 }}
+                              className="bg-white/90 p-4 rounded-full shadow-xl"
+                            >
+                              <CirclePlay className="w-10 h-10 text-black" />
+                            </motion.div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Images - Grid Style */}
+              {images.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                    <Camera className="w-5 h-5" />
+                    Images
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {images.map((image, idx) => (
+                      <motion.div
+                        key={image.id}
+                        className="cursor-pointer group"
+                        onClick={() => openImageModal(image, galleryData[service.id].indexOf(image), service.id)}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: idx * 0.05 }}
+                        whileHover={{ scale: 1.03, y: -5 }}
+                      >
+                        <div className="relative bg-zinc-900 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-white/20 aspect-video">
                           <img 
                             src={image.images?.[0] || image.src} 
                             alt={image.title} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                           />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"></div>
-                        {image.isVideo && image.videos && image.videos.length > 0 && (
-                          <div className="absolute top-3 right-3 bg-red-600 text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-                            <Play className="w-3 h-3" />
-                            {image.videos.length}
-                          </div>
-                        )}
-                        {!image.isVideo && image.images && image.images.length > 1 && (
-                          <div className="absolute top-3 right-3 bg-[#d4af37] text-white px-2.5 py-1 rounded-full text-xs font-bold shadow-lg">
-                            +{image.images.length}
-                          </div>
-                        )}
-                        <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
-                          <h3 className="font-bold text-sm md:text-base mb-1 line-clamp-1">{image.title}</h3>
-                          <div className="flex items-center justify-between text-xs">
-                            <div className="flex items-center gap-1">
-                              <MapPin className="w-3 h-3" />
-                              <span className="text-xs">{image.venue || 'Nagercoil'}</span>
-                            </div>
-                            {image.likes && (
-                              <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-1.5 py-0.5 rounded-full">
-                                <Heart className="w-3 h-3 fill-white" />
-                                <span className="text-xs">{image.likes}</span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-3 md:p-4 hidden md:block">
-                        <h3 className="text-black font-bold text-base mb-2">{image.title}</h3>
-                        <p className="text-gray-600 text-sm mb-3 line-clamp-2">{image.description}</p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-gray-500 text-xs">
-                            <MapPin className="w-3.5 h-3.5 text-[#d4af37]" />
-                            <span>{image.venue || 'Nagercoil'}</span>
-                          </div>
-                          {image.likes && (
-                            <div className="flex items-center gap-1">
-                              <Heart className="w-3.5 h-3.5 text-[#d4af37] fill-[#d4af37]" />
-                              <span className="text-xs font-bold text-[#d4af37]">{image.likes}</span>
-                            </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          {image.images && image.images.length > 1 && (
+                            <motion.div 
+                              className="absolute top-3 right-3 bg-white text-black px-3 py-1.5 rounded-full text-xs font-bold shadow-lg"
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              +{image.images.length}
+                            </motion.div>
                           )}
+                          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p className="text-white text-sm font-semibold truncate">{image.title}</p>
+                          </div>
                         </div>
-                        {image.type && (
-                          <span className={`inline-block px-2 py-1 rounded-full text-xs font-bold text-white mt-2 ${
-                            image.type === 'veg' ? 'bg-green-500' :
-                            image.type === 'nonveg' ? 'bg-red-500' :
-                            'bg-blue-500'
-                          }`}>
-                            {image.type === 'veg' ? 'VEG' : image.type === 'nonveg' ? 'NON-VEG' : 'VEG & NON-VEG'}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-        ))}
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="mt-12 h-[1px] bg-white/50"> </div>
+            </motion.section>
+            
+          );
+        })}
       </div>
 
 
@@ -920,13 +823,13 @@ const galleryData = {
               {/* Navigation Arrows */}
               <button
                 onClick={() => navigateImage('prev')}
-                className="absolute left-2 md:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                className="absolute left-2 md:left-6 top-[55%] transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
               </button>
               <button
                 onClick={() => navigateImage('next')}
-                className="absolute right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                className="absolute right-2 md:right-6 top-[55%]  transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </button>

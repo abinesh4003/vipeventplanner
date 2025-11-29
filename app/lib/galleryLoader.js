@@ -22,13 +22,14 @@ export const loadGalleryAssets = () => {
         '/services/dec/entrance/entrance1.jpg',
         '/services/dec/home/home.jpg',
         '/services/dec/mandap/mandp.webp',
-        '/services/dec/theme/theme.jpg'
+        'services/dec/theme/theme.jpg',
       ],
       videos: [
         '/services/dec/decvid1.mp4',
         '/services/dec/decvid2.mp4',
         '/services/dec/decvid3.mp4',
-        '/services/dec/decvid4.mp4'
+        '/services/dec/decvid4.mp4',
+        '/services/dec/birthday/birthday.mp4'
       ]
     },
     catering: {

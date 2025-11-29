@@ -2,9 +2,9 @@ import React from "react";
 import AboutPage from "../pages/AboutPage";
 
 export const metadata = {
-  title: "About Us - Best Event Management & Catering Company in Nagercoil | VIP Event Management",
-  description: "VIP Event Management is Nagercoil's most trusted event management and catering company with 15+ years of excellence. We've successfully organized 1000+ weddings, corporate events, and celebrations across Kanyakumari district. Expert team, premium quality, and customer satisfaction guaranteed.",
-  keywords: "about vip Event Management, event management company nagercoil, catering company kanyakumari, professional event planners nagercoil, experienced caterers nagercoil, wedding planners about us, event management experience, trusted caterers kanyakumari, best event company nagercoil, event planning expertise",
+  title: "About Us - Best & Affordable Event Management Company in Nagercoil | VIP Event Management",
+  description: "VIP Event Management - Nagercoil's most trusted & affordable event management company. 15+ years excellence, 500+ events, best catering with premium quality. Budget-friendly wedding planning, stage decoration at best prices. 100% satisfaction guaranteed across Kanyakumari district.",
+  keywords: "about vip event management, best event management company nagercoil, best affordable catering company, best event planners nagercoil, best budget wedding planners, best experienced caterers nagercoil, best trusted event company, best affordable event services, best quality catering, best price event management, best economical wedding planners nagercoil, best budget event company kanyakumari",
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",

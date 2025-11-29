@@ -59,7 +59,7 @@ const ServicesPage = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
     pauseOnHover: true
@@ -77,18 +77,23 @@ const ServicesPage = () => {
           name: "Stage Decoration",
           description: "Grand stage setups with premium floral arrangements, custom backdrops, and thematic props",
           image: "/services/dec/stage1.jpeg",
-          images: [
-            "/services/dec/stage1.jpeg",
-            "/services/dec/stage2.jpeg",
-            "/services/dec/stage3.jpeg",
-            "/services/dec/stage4.jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.33 AM.jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.34 AM.jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM (1).jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM.jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM (1).jpeg",
-            "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg"
+          media: [
+            { type: "video", url: "/services/dec/decvid1.mp4" },
+            
+            { type: "video", url: "/services/dec/decvid2.mp4" },
+            { type: "image", url: "/services/dec/stage2.jpeg" },
+            { type: "image", url: "/services/dec/stage3.jpeg" },
+            { type: "video", url: "/services/dec/decvid3.mp4" },
+            { type: "image", url: "/services/dec/stage1.jpeg" },
+            { type: "image", url: "/services/dec/stage4.jpeg" },
+            { type: "video", url: "/services/dec/decvid4.mp4" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.33 AM.jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.34 AM.jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM (1).jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM.jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM (1).jpeg" },
+            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg" }
           ],
           features: ["Custom Thematic Designs", "Premium Floral Arrangements", "LED Lighting", "3D Props"]
         },
@@ -96,12 +101,10 @@ const ServicesPage = () => {
           name: "Car Decoration",
           description: "Beautiful floral and ribbon decorations for wedding cars and VIP vehicles",
           image: "/services/dec/car/car2.jpg",
-          images: [
-              "/services/dec/car/car2.jpg",
-            "/services/dec/car/car1.jpg",
-            "/services/dec/car/cardec.webp",
-          
-          
+          media: [
+            { type: "image", url: "/services/dec/car/car2.jpg" },
+            { type: "image", url: "/services/dec/car/car1.jpg" },
+            { type: "image", url: "/services/dec/car/cardec.webp" }
           ],
           features: ["Fresh Flower Garlands", "Ribbon Work", "Traditional Designs", "Modern Styles"]
         },
@@ -109,31 +112,49 @@ const ServicesPage = () => {
           name: "Home Decoration",
           description: "Complete home transformation for festivals, weddings, and special occasions",
           image: "/services/dec/home/home.jpg",
+          media: [
+            { type: "image", url: "/services/dec/home/home.jpg" }
+          ],
           features: ["Entrance Decor", "Living Area Setup", "Traditional Elements", "Modern Touches"]
         },
         {
           name: "Birthday Decoration",
           description: "Thematic birthday decorations for all ages with balloons, props, and backdrops",
           image: "/services/dec/birthday/birthday.webp",
+          media: [
+             { type: "video", url: "/services/dec/birthday/birthday.mp4" },
+            { type: "image", url: "/services/dec/birthday/birthday.webp" }
+          ],
           features: ["Theme Based Decor", "Balloon Arrangements", "Photo Backdrops", "Age Appropriate Designs"]
         },
         {
           name: "Mandap Decoration",
           description: "Traditional South Indian wedding mandap with floral arrangements",
           image: "/services/dec/mandap/mandp.webp",
+          media: [
+            { type: "image", url: "/services/dec/mandap/mandp.webp" }
+          ],
           features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
         },
         {
           name: "Entrance Decoration",
           description: "Grand entrance setups with floral arches and welcome decorations",
           image: "/services/dec/entrance/entrance.webp",
-          images:[ "/services/dec/entrance/entrance.webp","/services/dec/entrance/entrance1.jpg"],
+          media: [
+            { type: "image", url: "/services/dec/entrance/entrance.jpg" },
+            
+            { type: "image", url: "/services/dec/entrance/entrance1.jpg" },
+            { type: "image", url: "/services/dec/entrance/entrance.webp" },
+          ],
           features: ["Floral Arches", "Welcome Gates", "Lighting Effects", "Grand Designs"]
         },
         {
           name: "Theme Decoration",
           description: "Complete thematic decorations for various event concepts and styles",
           image: "/services/dec/theme/theme.jpg",
+          media: [
+            { type: "image", url: "/services/dec/theme/theme.jpg" }
+          ],
           features: ["Custom Themes", "Concept Design", "Props & Backdrops", "Complete Setup"]
         }
       ]
@@ -149,11 +170,16 @@ const ServicesPage = () => {
           name: "Veg Catering",
           description: "Complete vegetarian meals with traditional South Indian delicacies",
           image: "/services/cat/cat1.jpg",
-          images: [
-            "/services/cat/cat1.jpg",
-            "/services/cat/cat2.jpeg",
-            "/services/cat/cat3.jpeg",
-            "/services/cat/cat4.jpeg"
+          media: [
+            { type: "video", url: "/services/cat/catvid.mp4" },
+            { type: "image", url: "/services/cat/cat1.jpg" },
+            { type: "video", url: "/services/cat/catvid1.mp4" },
+            { type: "image", url: "/services/cat/cat2.jpeg" },
+            { type: "video", url: "/services/cat/catvid2.mp4" },
+            { type: "image", url: "/services/cat/cat3.jpeg" },
+            { type: "video", url: "/services/cat/catvid3.mp4" },
+            { type: "image", url: "/services/cat/cat4.jpeg" },
+            { type: "video", url: "/services/cat/catvid4.mp4" }
           ],
           features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
         },
@@ -161,11 +187,11 @@ const ServicesPage = () => {
           name: "Non-Veg Catering",
           description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
           image: "/services/cat/nonveg.jpg",
-          images: [
-            "/services/cat/cat2.jpeg",
-            "/services/cat/cat1.jpg",
-            "/services/cat/cat3.jpeg",
-            "/services/cat/cat4.jpeg"
+          media: [
+            { type: "image", url: "/services/cat/cat2.jpeg" },
+            { type: "image", url: "/services/cat/cat1.jpg" },
+            { type: "image", url: "/services/cat/cat3.jpeg" },
+            { type: "image", url: "/services/cat/cat4.jpeg" }
           ],
           features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
         },
@@ -173,18 +199,27 @@ const ServicesPage = () => {
           name: "Buffet Service",
           description: "Professional buffet arrangement with multiple cuisine options",
           image: "/services/buffet.jpg",
+          media: [
+            { type: "image", url: "/services/buffet.jpg" }
+          ],
           features: ["Multiple Cuisines", "Live Counters", "Professional Setup", "Hygiene Standards"]
         },
         {
           name: "Serving Staff",
           description: "Professional serving staff and coordinators for seamless service",
           image: "/services/cat/staff/staff.webp",
+          media: [
+            { type: "image", url: "/services/cat/staff/staff.webp" }
+          ],
           features: ["Trained Staff", "Hygiene Focus", "Guest Assistance", "Efficient Service"]
         },
         {
           name: "Mutton Biryani Special",
           description: "Signature mutton biryani cooked with traditional spices and techniques",
           image: "/services/cat/biriyani/biriyani.webp",
+          media: [
+            { type: "image", url: "/services/cat/biriyani/biriyani.webp" }
+          ],
           features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
         },
         // {
@@ -212,42 +247,49 @@ const ServicesPage = () => {
           name: "Popcorn Station",
           description: "Freshly popped popcorn with various flavors and toppings",
           image: "/services/stalls/popcorn.jpg",
+          media: [{ type: "image", url: "/services/stalls/popcorn.jpg" }],
           features: ["Multiple Flavors", "Caramel & Cheese", "Fresh Preparation", "Self-Service Station"]
         },
         {
           name: "Ice Cream Parlor",
           description: "Premium ice cream with toppings and customizations",
           image: "/services/stalls/icecream.jpg",
+          media: [{ type: "image", url: "/services/stalls/icecream.jpg" }],
           features: ["Various Flavors", "Toppings Bar", "Waffle Cones", "Sundae Options"]
         },
         {
           name: "Dessert Counters",
           description: "Assorted Indian and Western desserts for all tastes",
           image: "/services/stalls/desserts.webp",
+          media: [{ type: "image", url: "/services/stalls/desserts.webp" }],
           features: ["Indian Sweets", "Pastries & Cakes", "Fruit Desserts", "Sugar-free Options"]
         },
         {
           name: "Live Food Counters",
           description: "Live cooking stations with interactive food preparation",
           image: "/services/stalls/livefood.jpg",
+          media: [{ type: "image", url: "/services/stalls/livefood.jpg" }],
           features: ["Live Cooking", "Interactive Stations", "Fresh Preparation", "Chef Service"]
         },
         {
           name: "Juice & Beverage Stall",
           description: "Fresh juices, mocktails, and beverage stations",
           image: "/services/stalls/drinks.webp",
+          media: [{ type: "image", url: "/services/stalls/drinks.webp" }],
           features: ["Fresh Juices", "Mocktails", "Beverage Bar", "Custom Drinks"]
         },
         {
           name: "Chaat Counter",
           description: "Traditional Indian street food and chaat items",
           image: "/images/pani-puri-stall.jpg",
+          media: [{ type: "image", url: "/images/pani-puri-stall.jpg" }],
           features: ["Street Food", "Chaat Varieties", "Live Preparation", "Authentic Taste"]
         },
         {
           name: "Cotton Candy Stall",
           description: "Sweet, fluffy clouds of pure happiness for all ages",
           image: "/images/cotton-candy-stall.jpg",
+          media: [{ type: "image", url: "/images/cotton-candy-stall.jpg" }],
           features: ["Multiple Colors", "Fresh Preparation", "Kid Friendly", "Fun Experience"]
         },
         {
@@ -755,7 +797,7 @@ const ServicesPage = () => {
                   </div>
 
                   {/* Sub Services - Slider for both Mobile and Desktop */}
-                  <div className="p-3 md:p-6">
+                  <div className="px-0 py-3 md:px-6 md:py-4">
                     {/* Mobile: Slider */}
                     <div className="relative">
                       {/* Scroll Indicator - Mobile Only */}
@@ -778,8 +820,8 @@ const ServicesPage = () => {
                         pauseOnFocus={false}
                         lazyLoad="ondemand"
                         responsive={[
-                          { breakpoint: 9999, settings: { slidesToShow: 2 } },
-                          { breakpoint: 768, settings: { slidesToShow: 1 } }
+                          { breakpoint: 768, settings: { slidesToShow: 1 } },
+                          { breakpoint: 9999, settings: { slidesToShow: 2 } }
                         ]}
                       >
                         {category.subServices.map((subService, index) => (
@@ -791,8 +833,30 @@ const ServicesPage = () => {
                               <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
                                 <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
                               </div>
-                              <div className="h-56 overflow-hidden">
-                                {subService.images && subService.images.length > 1 ? (
+                              <div className="h-70 overflow-hidden">
+                                {subService.media && subService.media.length > 0 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                   
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.media.map((item, idx) => (
+                                      <div key={idx} className="h-56">
+                                        {item.type === "video" ? (
+                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
+                                        ) : (
+                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
+                                        )}
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : subService.images && subService.images.length > 1 ? (
                                   <Slider
                                     dots={false}
                                     infinite={true}
@@ -805,13 +869,13 @@ const ServicesPage = () => {
                                     pauseOnHover={false}
                                   >
                                     {subService.images.map((img, idx) => (
-                                      <div key={idx} className="h-56">
-                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                                      <div key={idx} className="aspect-video">
+                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
                                       </div>
                                     ))}
                                   </Slider>
                                 ) : (
-                                  <img src={subService.image} alt={subService.name} className="w-full h-full object-cover" />
+                                  <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
                                 )}
                               </div>
                               <div className="p-5 text-center">
@@ -1022,9 +1086,32 @@ const ServicesPage = () => {
               </div>
             </div>
 
-            {/* Image Slider Section */}
+            {/* Image/Video Slider Section */}
             <div className="relative flex-shrink-0 bg-gray-100">
-              {selectedService.images && selectedService.images.length > 1 ? (
+              {selectedService.media && selectedService.media.length > 0 ? (
+                <Slider {...sliderSettings} className="service-slider">
+                  {selectedService.media.map((item, index) => (
+                    <div key={index} className="outline-none">
+                      {item.type === "video" ? (
+                        <video
+                          src={item.url}
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          className="w-full h-48 md:h-80 object-fill"
+                        />
+                      ) : (
+                        <img
+                          src={item.url}
+                          alt={`${selectedService.name} ${index + 1}`}
+                          className="w-full h-48 md:h-80 object-fit"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </Slider>
+              ) : selectedService.images && selectedService.images.length > 1 ? (
                 <Slider {...sliderSettings} className="service-slider">
                   {selectedService.images.map((img, index) => (
                     <div key={index} className="outline-none">

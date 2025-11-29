@@ -86,8 +86,8 @@ const ContactSection = () => {
             className="fixed top-4 left-1/2 z-50 max-w-md w-full mx-4"
           >
             <div className={`rounded-xl shadow-2xl p-4 flex items-start gap-3 ${toast.type === 'success'
-                ? 'bg-gradient-to-r from-[var(--color-gold-light)] to-[var(--color-gold)]'
-                : 'bg-gradient-to-r from-red-100 to-red-200'
+              ? 'bg-gradient-to-r from-[var(--color-gold-light)] to-[var(--color-gold)]'
+              : 'bg-gradient-to-r from-red-100 to-red-200'
               }`}>
               {toast.type === 'success' ? (
                 <CheckCircle className="w-6 h-6 text-[var(--color-dark)] flex-shrink-0" />
@@ -150,7 +150,7 @@ const ContactSection = () => {
                 <div className="space-y-5 sm:space-y-6">
                   {[
                     { Icon: Phone, label: "Call Us", value: "+91 8778304145", href: "tel:8778304145" },
-                    { Icon: Mail, label: "Email Us", value: "vipeventsmanagement@gmail.com", href: "mailto:vipeventsmanagement@gmail.com" },
+                    { Icon: Mail, label: "Email Us", value: "shejinoantony@gmail.com", href: "mailto:shejinoantony@gmail.com" },
                     { Icon: MapPin, label: "Location", value: "Nagercoil, Kanyakumari District" },
                   ].map(({ Icon, label, value, href }, i) => (
                     <div key={i} className="flex gap-3 sm:gap-4 items-start">

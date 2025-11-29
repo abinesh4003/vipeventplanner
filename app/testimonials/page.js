@@ -2,9 +2,9 @@ import React from "react";
 import TestimonialsPage from "../pages/testmonials";
 
 export const metadata = {
-  title: "Client Testimonials - VIP Event Management Nagercoil | Real Reviews & Feedback",
-  description: "Read authentic client testimonials and reviews for VIP Event Management. 500+ satisfied customers share their wedding, corporate event, and celebration experiences in Nagercoil and Kanyakumari district.",
-  keywords: "testimonials nagercoil, event planner reviews, wedding planner feedback, client testimonials kanyakumari, vip Event Management reviews, event management testimonials, customer feedback nagercoil",
+  title: "Client Testimonials - Best Event Management Nagercoil | Real Reviews & Feedback | VIP Event Management",
+  description: "Read authentic testimonials for best event management in Nagercoil. 500+ satisfied customers share their experiences with our best affordable catering, wedding planning, and celebration services across Kanyakumari district. 4.9★ rated!",
+  keywords: "best testimonials nagercoil, best event planner reviews, best wedding planner feedback, best client testimonials kanyakumari, vip event management reviews, best event management testimonials, best customer feedback nagercoil, best affordable event reviews, top rated event planner nagercoil",
   openGraph: {
     title: "Client Testimonials - VIP Event Management Reviews",
     description: "Discover why 500+ clients trust VIP Event Management for their special events. Read real testimonials from weddings, corporate events, and celebrations.",
@@ -29,8 +29,8 @@ const testimonialsSchema = {
   "name": "VIP Event Management",
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "500",
+    "ratingValue": "4.9",
+    "reviewCount": "200",
     "bestRating": "5",
     "worstRating": "1"
   },
