@@ -94,7 +94,7 @@ const VipEventManagementHero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <p className="text-sm sm:text-base md:text-lg uppercase tracking-[0.3em] font-light flex items-center justify-center gap-2">
+                        <p className="text-sm sm:text-base md:text-lg uppercase tracking-[0.1em] font-light flex items-center justify-center gap-2">
                             <Sparkles className="text-gold" size={18} />
                             V.I.P Event Management
                             <Sparkles className="text-gold" size={18} />

@@ -91,9 +91,9 @@ const ServicesPage = () => {
             { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.34 AM.jpeg" },
             { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM (1).jpeg" },
             { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.28.35 AM.jpeg" },
-            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg" },
+            // { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.29.36 AM.jpeg" },
             { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM (1).jpeg" },
-            { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg" }
+            // { type: "image", url: "/services/dec/WhatsApp Image 2025-11-09 at 11.54.04 AM.jpeg" }
           ],
           features: ["Custom Thematic Designs", "Premium Floral Arrangements", "LED Lighting", "3D Props"]
         },
@@ -123,16 +123,17 @@ const ServicesPage = () => {
           image: "/services/dec/birthday/birthday.webp",
           media: [
              { type: "video", url: "/services/dec/birthday/birthday.mp4" },
-            { type: "image", url: "/services/dec/birthday/birthday.webp" }
+             { type: "image", url: "/services/dec/birthday/birthday1.webp" },
+             { type: "image", url: "/services/dec/birthday/birthday2.webp" }
           ],
           features: ["Theme Based Decor", "Balloon Arrangements", "Photo Backdrops", "Age Appropriate Designs"]
         },
         {
           name: "Mandap Decoration",
           description: "Traditional South Indian wedding mandap with floral arrangements",
-          image: "/services/dec/mandap/mandp.webp",
+          image: "/services/dec/mandap/mandp.mp4",
           media: [
-            { type: "image", url: "/services/dec/mandap/mandp.webp" }
+            { type: "video", url: "/services/dec/mandap/mandp.mp4" }
           ],
           features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
         },
@@ -166,30 +167,34 @@ const ServicesPage = () => {
       gradient: "from-[#f7e9b8] to-[#fdfcf9]",
       description: "Authentic multi-cuisine catering with impeccable taste and presentation",
       subServices: [
-        {
-          name: "Veg Catering",
+        { 
+          name: "Non-Veg Catering",
           description: "Complete vegetarian meals with traditional South Indian delicacies",
           image: "/services/cat/cat1.jpg",
           media: [
             { type: "video", url: "/services/cat/catvid.mp4" },
-            { type: "image", url: "/services/cat/cat1.jpg" },
+           
             { type: "video", url: "/services/cat/catvid1.mp4" },
-            { type: "image", url: "/services/cat/cat2.jpeg" },
             { type: "video", url: "/services/cat/catvid2.mp4" },
-            { type: "image", url: "/services/cat/cat3.jpeg" },
             { type: "video", url: "/services/cat/catvid3.mp4" },
+            { type: "video", url: "/services/cat/catvid4.mp4" },
+            { type: "image", url: "/services/cat/cat2.jpeg" },
+            
+            { type: "image", url: "/services/cat/cat3.jpeg" },
+            
             { type: "image", url: "/services/cat/cat4.jpeg" },
-            { type: "video", url: "/services/cat/catvid4.mp4" }
+          
           ],
           features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
         },
         {
-          name: "Non-Veg Catering",
+          name: "Veg Catering",
           description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
           image: "/services/cat/nonveg.jpg",
           media: [
+              { type: "image", url: "/services/cat/cat1.jpg" },
             { type: "image", url: "/services/cat/cat2.jpeg" },
-            { type: "image", url: "/services/cat/cat1.jpg" },
+           
             { type: "image", url: "/services/cat/cat3.jpeg" },
             { type: "image", url: "/services/cat/cat4.jpeg" }
           ],
@@ -200,16 +205,18 @@ const ServicesPage = () => {
           description: "Professional buffet arrangement with multiple cuisine options",
           image: "/services/buffet.jpg",
           media: [
-            { type: "image", url: "/services/buffet.jpg" }
+            { type: "image", url: "/services/buffet.jpg" },
+            { type: "image", url: "/services/cat/buffet/buffet.webp" },
+            // { type: "image", url: "/services/cat/buffet/buffet1.webp" }
           ],
           features: ["Multiple Cuisines", "Live Counters", "Professional Setup", "Hygiene Standards"]
         },
         {
           name: "Serving Staff",
           description: "Professional serving staff and coordinators for seamless service",
-          image: "/services/cat/staff/staff.webp",
+          image: "/services/cat/staff/staff.mp4",
           media: [
-            { type: "image", url: "/services/cat/staff/staff.webp" }
+            { type: "video", url: "/services/cat/staff/staff.mp4" }
           ],
           features: ["Trained Staff", "Hygiene Focus", "Guest Assistance", "Efficient Service"]
         },
@@ -222,18 +229,19 @@ const ServicesPage = () => {
           ],
           features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
         },
-        // {
-        //   name: "Food Presentation",
-        //   description: "Elegant food presentation and professional plating services",
-        //   image: "/services/cat/food/meal.jpg",
-        //   features: ["Elegant Plating", "Creative Presentation", "Professional Service", "Visual Appeal"]
-        // },
-        // {
-        //   name: "Special Diet Menu",
-        //   description: "Customized menus for special dietary needs and preferences",
-        //   image: "/services/cat/food/diet.jpg",
-        //   features: ["Custom Menus", "Dietary Requirements", "Health Conscious", "Allergen Free Options"]
-        // }
+      {
+          name: "Dining Setup",
+          description: "Complete dining setup with tables, chairs, and decorative elements",
+          image: "/services/cat/dining/dining.webp",
+          media: [
+            { type: "image", url: "/services/cat/dining/dining.webp" },
+            { type: "image", url: "/services/cat/dining/dining1.webp" },
+
+          ],
+          features: ["Customized Tables", "Decorative Chairs", "Lighting Setup", "Complete Setup"]
+
+      }
+
       ]
     },
     {
@@ -279,11 +287,18 @@ const ServicesPage = () => {
           features: ["Fresh Juices", "Mocktails", "Beverage Bar", "Custom Drinks"]
         },
         {
-          name: "Chaat Counter",
-          description: "Traditional Indian street food and chaat items",
+          name: "Pani Puri Counter",
+          description: "Traditional Indian street food and variety items",
           image: "/images/pani-puri-stall.jpg",
-          media: [{ type: "image", url: "/images/pani-puri-stall.jpg" }],
-          features: ["Street Food", "Chaat Varieties", "Live Preparation", "Authentic Taste"]
+          media: [{ type: "image", url: "/services/stalls/cheet.webp" }],
+          features: ["Street Food", "Multiple Varieties", "Live Preparation", "Authentic Taste"]
+        },
+        {
+          name: "Variety tea & Coffee Stall",
+          description: "Assorted tea and coffee options for all preferences",
+          image: "/services/stalls/tea.webp",
+          media: [{ type: "image", url: "/services/stalls/tea.webp" }],
+          features: ["Variety tea contains rose patel tea, black tea , green tea , luchi tea, herbal tea , lemon tea , masala tea", "Premium Selection", "Live Preparation", "Authentic Taste"]
         },
         {
           name: "Cotton Candy Stall",
@@ -313,10 +328,24 @@ const ServicesPage = () => {
         {
           name: "Specialty Food Stalls",
           description: "Theme-based food stalls and specialty counters",
-          image: "/services/stalls/special.webp",
+          image: "/services/cat/buffet/buffet1.webp",
+          media: [
+            { type: "image", url: "/services/stalls/tea1.webp" },
+            { type: "image", url: "/services/cat/buffet/buffet1.webp" },
+            { type: "image", url: "/services/stalls/special.webp" }],
           features: ["Theme Based", "Specialty Items", "Custom Stalls", "Unique Experience"]
         }
-      ]
+        ,
+        {
+          name : "Sweets beeda stall",
+          description : "Traditional south indian sweets beeda stall for all occasions",
+          image : "/services/stalls/sweets.webp",
+          media: [{ type: "image", url: "/services/stalls/sweets.webp" },
+            { type: "image", url: "/services/stalls/sweets1.webp" }
+          ],
+          features : ["Traditional sweets","Variety of beeda","Freshly made","Attractive presentation"]
+        }
+      ]  
     },
     {
       id: "entertainment",
@@ -383,12 +412,19 @@ const ServicesPage = () => {
         {
           name: "Welcome Dolls",
           description: "Traditional welcome dolls and decorative arrangements",
-          image: "/services/doll/doll1.jpg",
-          images: [
-            "/services/doll/doll1.jpg",
-            "/services/doll/doll2.jpeg",
-            "/services/doll/doll3.jpeg"
+          image: "/services/doll/doll.mp4",
+          // images: [
+          //   "/services/doll/doll1.jpg",
+          //   "/services/doll/doll2.jpeg",
+          //   "/services/doll/doll3.jpeg"
+          // ],
+          media: [
+            { type: "video", url: "/services/doll/doll.mp4" },
+            { type: "image", url: "/services/doll/doll1.jpg" },
+            { type: "image", url: "/services/doll/doll2.jpeg" },
+            { type: "image", url: "/services/doll/doll3.jpeg" }
           ],
+
           features: ["Traditional Dolls", "Decorative Setup", "Cultural Significance", "Custom Designs"]
         },
         {
@@ -488,17 +524,34 @@ const ServicesPage = () => {
       description: "Grand entry setups with special effects for memorable moments",
       subServices: [
         {
-          name: "Snow Effects",
-          description: "Artificial snow machines for winter wonderland effects",
-          image: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=600&q=80",
-          features: ["Snow Machines", "Winter Theme", "Safe Materials", "Atmospheric Effect"]
+          name:"Wedding Special Entry",
+          description:"Grand wedding entries with special effects like flower showers, snow effects, and LED dance floors",
+         
+          media: [{ type: "video", url: "/services/special-effects/weddingentry.mp4" },],
+          features:["Flower Showers","Snow Effects","LED Dance Floor","Grand Entrance"]
+        }
+        ,{
+          name: "flower entry",
+          description: "Elegant flower shower effects for grand entrances",
+          image: "/services/flower/flower.mp4",
+          media: [{ type: "video", url: "/services/special-effects/flower.mp4" },],
+          features: ["Flower Shower", "Ceremonial Items", "Traditional Rituals", "Cultural Authenticity"]
         },
         {
-          name: "Confetti Cannons",
-          description: "Colorful confetti and streamer cannons for grand celebrations",
-          image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
-          features: ["Colorful Confetti", "Multiple Colors", "Grand Entries", "Photo Moments"]
+          name: "Snow Effects",
+          description: "Artificial snow machines for winter wonderland effects",
+          image: "/services/snow/snow.mp4",
+          media: [{ type: "video", url: "/services/special-effects/snow.mp4" },],
+          features: ["Snow Machines", "Winter Theme", "Safe Materials", "Atmospheric Effect"]
         },
+          {
+          name: "LED dance floor",
+          description: "Colorful LED lighting and special effects",
+          image: "/services/special-effects/led.mp4",
+          media: [{ type: "video", url: "/services/special-effects/led.mp4" },],
+          features: ["LED Lighting", "Color Effects", "Dynamic Patterns", "Modern Technology"]
+        },
+       
         {
           name: "Bubble Machines",
           description: "Bubble effects for magical and romantic atmospheres",
@@ -523,12 +576,7 @@ const ServicesPage = () => {
           image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
           features: ["Safe Sparklers", "Grand Effects", "Photo Moments", "Celebration Highlights"]
         },
-        {
-          name: "LED Effects",
-          description: "Colorful LED lighting and special effects",
-          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
-          features: ["LED Lighting", "Color Effects", "Dynamic Patterns", "Modern Technology"]
-        }
+      
       ]
     }
   ];
@@ -798,17 +846,8 @@ const ServicesPage = () => {
 
                   {/* Sub Services - Slider for both Mobile and Desktop */}
                   <div className="px-0 py-3 md:px-6 md:py-4">
-                    {/* Mobile: Slider */}
-                    <div className="relative">
-                      {/* Scroll Indicator - Mobile Only */}
-                      <div className="md:hidden flex items-center justify-end gap-2 mb-3 text-gray-500 text-xs">
-                        <div className="flex items-center gap-1 justify-start">
-                          <span>Swipe</span>
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
+                    {/* Mobile Slider - 1 slide */}
+                    <div className="block md:hidden">
                       <Slider
                         dots={false}
                         infinite={true}
@@ -817,23 +856,17 @@ const ServicesPage = () => {
                         slidesToScroll={1}
                         arrows={false}
                         pauseOnHover={false}
-                        pauseOnFocus={false}
-                        lazyLoad="ondemand"
-                        responsive={[
-                          { breakpoint: 768, settings: { slidesToShow: 1 } },
-                          { breakpoint: 9999, settings: { slidesToShow: 2 } }
-                        ]}
                       >
                         {category.subServices.map((subService, index) => (
                           <div key={index} className="px-2">
                             <div
-                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer"
+                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
                               onClick={() => openServiceModal({ ...subService, category: category.name })}
                             >
                               <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
                                 <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
                               </div>
-                              <div className="h-70 overflow-hidden">
+                              <div className="h-56 overflow-hidden flex-shrink-0">
                                 {subService.media && subService.media.length > 0 ? (
                                   <Slider
                                     dots={false}
@@ -841,7 +874,6 @@ const ServicesPage = () => {
                                     speed={800}
                                     slidesToShow={1}
                                     slidesToScroll={1}
-                                   
                                     autoplaySpeed={3000}
                                     arrows={false}
                                     pauseOnHover={false}
@@ -869,17 +901,19 @@ const ServicesPage = () => {
                                     pauseOnHover={false}
                                   >
                                     {subService.images.map((img, idx) => (
-                                      <div key={idx} className="aspect-video">
+                                      <div key={idx} className="h-56">
                                         <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
                                       </div>
                                     ))}
                                   </Slider>
                                 ) : (
-                                  <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
+                                  <div className="h-56">
+                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
+                                  </div>
                                 )}
                               </div>
-                              <div className="p-5 text-center">
-                                <p className="text-gray-700 text-sm mb-3">{subService.description}</p>
+                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
+                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
                                 <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
                                   Learn More <ChevronDown size={18} />
                                 </button>
@@ -890,11 +924,163 @@ const ServicesPage = () => {
                       </Slider>
                     </div>
 
-                    {/* Desktop: Slider
-                    <div className="hidden md:block">
+                    {/* Tablet Slider - 2 slides */}
+                    <div className="hidden md:block lg:hidden">
                       <Slider
                         dots={false}
                         infinite={true}
+                        speed={900}
+                        slidesToShow={2}
+                        slidesToScroll={1}
+                        arrows={false}
+                        pauseOnHover={false}
+                      >
+                        {category.subServices.map((subService, index) => (
+                          <div key={index} className="px-2">
+                            <div
+                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
+                              onClick={() => openServiceModal({ ...subService, category: category.name })}
+                            >
+                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
+                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
+                              </div>
+                              <div className="h-56 overflow-hidden flex-shrink-0">
+                                {subService.media && subService.media.length > 0 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.media.map((item, idx) => (
+                                      <div key={idx} className="h-56">
+                                        {item.type === "video" ? (
+                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
+                                        ) : (
+                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
+                                        )}
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : subService.images && subService.images.length > 1 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                    autoplay={true}
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.images.map((img, idx) => (
+                                      <div key={idx} className="h-56">
+                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : (
+                                  <div className="h-56">
+                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
+                                  </div>
+                                )}
+                              </div>
+                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
+                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
+                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
+                                  Learn More <ChevronDown size={18} />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+
+                    {/* Desktop Slider - 3 slides */}
+                    <div className="hidden lg:block">
+                      <Slider
+                        dots={false}
+                        infinite={true}
+                        speed={900}
+                        slidesToShow={3}
+                        slidesToScroll={1}
+                        arrows={false}
+                        pauseOnHover={false}
+                      >
+                        {category.subServices.map((subService, index) => (
+                          <div key={index} className="px-2">
+                            <div
+                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
+                              onClick={() => openServiceModal({ ...subService, category: category.name })}
+                            >
+                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
+                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
+                              </div>
+                              <div className="h-56 overflow-hidden flex-shrink-0">
+                                {subService.media && subService.media.length > 0 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.media.map((item, idx) => (
+                                      <div key={idx} className="h-56">
+                                        {item.type === "video" ? (
+                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
+                                        ) : (
+                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
+                                        )}
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : subService.images && subService.images.length > 1 ? (
+                                  <Slider
+                                    dots={false}
+                                    infinite={true}
+                                    speed={800}
+                                    slidesToShow={1}
+                                    slidesToScroll={1}
+                                    autoplay={true}
+                                    autoplaySpeed={3000}
+                                    arrows={false}
+                                    pauseOnHover={false}
+                                  >
+                                    {subService.images.map((img, idx) => (
+                                      <div key={idx} className="h-56">
+                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
+                                      </div>
+                                    ))}
+                                  </Slider>
+                                ) : (
+                                  <div className="h-56">
+                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
+                                  </div>
+                                )}
+                              </div>
+                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
+                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
+                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
+                                  Learn More <ChevronDown size={18} />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+
+                    {/* Removed old desktop slider code
                         speed={900}
                         slidesToShow={3}
                         slidesToScroll={1}
