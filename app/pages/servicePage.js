@@ -845,7 +845,7 @@ const ServicesPage = () => {
                 viewport={{ once: false, margin: "-100px" }}
               >
                 {/* Category Card */}
-                <div className="bg-white/80 backdrop-blur-sm shadow-2xl border-y border-[#d4af37]/20 overflow-hidden">
+                <div className="bg-white/80 backdrop-blur-sm shadow-sm  shadow-gold/30 border-y border-[#d4af37]/20 overflow-hidden">
                   {/* Category Header - Compact & Modern */}
                   <div className={`relative bg-gradient-to-r ${category.gradient} p-4 md:p-6`}>
                     <div className="flex items-center gap-3 md:gap-4">
@@ -863,7 +863,7 @@ const ServicesPage = () => {
                   </div>
 
                   {/* Sub Services - Slider for both Mobile and Desktop */}
-                  <div className="px-0 py-3 md:px-6 md:py-4">
+                  <div className="px-0  my-8 md:px-6 md:py-16">
                     {/* Mobile Slider - 1 slide */}
                     <div className="block md:hidden">
                       <Slider
@@ -876,7 +876,7 @@ const ServicesPage = () => {
                         pauseOnHover={false}
                       >
                         {category.subServices.map((subService, index) => (
-                          <div key={index} className="px-2">
+                          <div key={index} className="px-2 py-6">
                             <div
                               className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
                               onClick={() => openServiceModal({ ...subService, category: category.name })}
