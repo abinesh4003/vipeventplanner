@@ -185,7 +185,7 @@ const ServicesPage = () => {
             { type: "image", url: "/services/cat/cat4.jpeg" },
           
           ],
-          features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
+           features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
         },
         {
           name: "Veg Catering",
@@ -198,7 +198,8 @@ const ServicesPage = () => {
             { type: "image", url: "/services/cat/cat3.jpeg" },
             { type: "image", url: "/services/cat/cat4.jpeg" }
           ],
-          features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
+         
+          features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
         },
         {
           name: "Buffet Service",
@@ -269,7 +270,12 @@ const ServicesPage = () => {
           name: "Dessert Counters",
           description: "Assorted Indian and Western desserts for all tastes",
           image: "/services/stalls/desserts.webp",
-          media: [{ type: "image", url: "/services/stalls/desserts.webp" }],
+          media: [
+             {type: "image", url: "/services/stalls/counters/desserts1.webp" },
+            { type: "image", url: "/services/stalls/counters/desserts2.webp" },
+            { type: "image", url: "/services/stalls/counters/desserts3.webp" },
+             { type: "image", url: "/services/stalls/counters/desserts4.webp" },
+            ],
           features: ["Indian Sweets", "Pastries & Cakes", "Fruit Desserts", "Sugar-free Options"]
         },
         {
@@ -310,7 +316,10 @@ const ServicesPage = () => {
         {
           name: "Chocolate Fountain",
           description: "Dip fruits and treats into rich melted chocolate",
-          image: "/images/chocolate-fountain.jpg",
+          image: "/services/stalls/chocolates.webp",
+          media: [{ type: "image", url: "/services/stalls/chocolates.webp" },
+            { type: "image", url: "/services/stalls/chocolates1.webp" }
+          ],
           features: ["Premium Chocolate", "Fresh Fruits", "Interactive Station", "Dessert Bar"]
         },
         {
@@ -392,12 +401,21 @@ const ServicesPage = () => {
           name: "Live Performances",
           description: "Dance troupes and cultural performances",
           image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=80",
+          media: [
+            { type: "video", url: "/services/entertainment/liveperformance.mp4" },
+          ],
           features: ["Cultural Dances", "Bollywood Performances", "Interactive Acts", "Theme Based Shows"]
         },
         {
           name: "Sound & Lighting",
           description: "Professional sound systems and lighting effects",
           image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          media:[
+            { type: "video", url: "/services/entertainment/sound.mp4" },
+             {type: "image", url: "/services/dec/home/home.jpg"},
+             { type: "image", url: "/services/entertainment/sound.webp" },
+            
+          ],
           features: ["Premium Sound", "Stage Lighting", "Special Effects", "Professional Setup"]
         }
       ]
