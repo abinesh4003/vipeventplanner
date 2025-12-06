@@ -79,7 +79,7 @@ const ServicesPage = () => {
           image: "/services/dec/stage1.jpeg",
           media: [
             { type: "video", url: "/services/dec/decvid1.mp4" },
-            
+
             { type: "video", url: "/services/dec/decvid2.mp4" },
             { type: "image", url: "/services/dec/stage2.jpeg" },
             { type: "image", url: "/services/dec/stage3.jpeg" },
@@ -122,9 +122,9 @@ const ServicesPage = () => {
           description: "Thematic birthday decorations for all ages with balloons, props, and backdrops",
           image: "/services/dec/birthday/birthday.webp",
           media: [
-             { type: "video", url: "/services/dec/birthday/birthday.mp4" },
-             { type: "image", url: "/services/dec/birthday/birthday1.webp" },
-             { type: "image", url: "/services/dec/birthday/birthday2.webp" }
+            { type: "video", url: "/services/dec/birthday/birthday.mp4" },
+            { type: "image", url: "/services/dec/birthday/birthday1.webp" },
+            { type: "image", url: "/services/dec/birthday/birthday2.webp" }
           ],
           features: ["Theme Based Decor", "Balloon Arrangements", "Photo Backdrops", "Age Appropriate Designs"]
         },
@@ -138,12 +138,30 @@ const ServicesPage = () => {
           features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
         },
         {
+          name:" Church Decoration",
+          description: "Elegant church decorations for weddings and special ceremonies",
+          image: "/services/dec/church.webp",
+          media: [
+            { type: "image", url: "/services/dec/church.webp" }
+          ],
+          features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
+        },
+        {
+          name:" Traditional decoration",
+          description: "Traditional South Indian wedding mandap with floral arrangements",
+          image: "/services/dec/traditional.webp",
+          media: [
+            { type: "image", url: "/services/dec/traditional.webp" }
+          ],
+          features: ["Traditional Mandap", "Floral Designs", "Cultural Elements", "Custom Themes"]
+        },
+        {
           name: "Entrance Decoration",
           description: "Grand entrance setups with floral arches and welcome decorations",
           image: "/services/dec/entrance/entrance.webp",
           media: [
             { type: "image", url: "/services/dec/entrance/entrance.jpg" },
-            
+
             { type: "image", url: "/services/dec/entrance/entrance1.jpg" },
             { type: "image", url: "/services/dec/entrance/entrance.webp" },
           ],
@@ -167,38 +185,38 @@ const ServicesPage = () => {
       gradient: "from-[#f7e9b8] to-[#fdfcf9]",
       description: "Authentic multi-cuisine catering with impeccable taste and presentation",
       subServices: [
-        { 
+        {
           name: "Non-Veg Catering",
           description: "Complete vegetarian meals with traditional South Indian delicacies",
           image: "/services/cat/cat1.jpg",
           media: [
             { type: "video", url: "/services/cat/catvid.mp4" },
-           
+
             { type: "video", url: "/services/cat/catvid1.mp4" },
             { type: "video", url: "/services/cat/catvid2.mp4" },
             { type: "video", url: "/services/cat/catvid3.mp4" },
             { type: "video", url: "/services/cat/catvid4.mp4" },
             { type: "image", url: "/services/cat/cat2.jpeg" },
-            
+
             { type: "image", url: "/services/cat/cat3.jpeg" },
-            
+
             { type: "image", url: "/services/cat/cat4.jpeg" },
-          
+
           ],
-           features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
+          features: ["Mutton Biryani", "Chicken Curry", "Fish Fry", "Special Gravy Items"]
         },
         {
           name: "Veg Catering",
           description: "Special non-vegetarian dishes including chicken, mutton, and fish preparations",
           image: "/services/cat/nonveg.jpg",
           media: [
-              { type: "image", url: "/services/cat/cat1.jpg" },
+            { type: "image", url: "/services/cat/cat1.jpg" },
             { type: "image", url: "/services/cat/cat2.jpeg" },
-           
+
             { type: "image", url: "/services/cat/cat3.jpeg" },
             { type: "image", url: "/services/cat/cat4.jpeg" }
           ],
-         
+
           features: ["11 Kootu Varieties", "5 Curry Types", "3 Payasam Varieties", "Fresh Ingredients"]
         },
         {
@@ -230,7 +248,7 @@ const ServicesPage = () => {
           ],
           features: ["Hyderabadi Style", "Traditional Dum Cooking", "Premium Mutton", "Secret Spice Blend"]
         },
-      {
+        {
           name: "Dining Setup",
           description: "Complete dining setup with tables, chairs, and decorative elements",
           image: "/services/cat/dining/dining.webp",
@@ -241,7 +259,7 @@ const ServicesPage = () => {
           ],
           features: ["Customized Tables", "Decorative Chairs", "Lighting Setup", "Complete Setup"]
 
-      }
+        }
 
       ]
     },
@@ -271,11 +289,11 @@ const ServicesPage = () => {
           description: "Assorted Indian and Western desserts for all tastes",
           image: "/services/stalls/desserts.webp",
           media: [
-             {type: "image", url: "/services/stalls/counters/desserts1.webp" },
+            { type: "image", url: "/services/stalls/counters/desserts1.webp" },
             { type: "image", url: "/services/stalls/counters/desserts2.webp" },
             { type: "image", url: "/services/stalls/counters/desserts3.webp" },
-             { type: "image", url: "/services/stalls/counters/desserts4.webp" },
-            ],
+            { type: "image", url: "/services/stalls/counters/desserts4.webp" },
+          ],
           features: ["Indian Sweets", "Pastries & Cakes", "Fruit Desserts", "Sugar-free Options"]
         },
         {
@@ -318,7 +336,7 @@ const ServicesPage = () => {
           description: "Dip fruits and treats into rich melted chocolate",
           image: "/services/stalls/chocolates.webp",
           media: [{ type: "image", url: "/services/stalls/chocolates.webp" },
-            { type: "image", url: "/services/stalls/chocolates1.webp" }
+          { type: "image", url: "/services/stalls/chocolates1.webp" }
           ],
           features: ["Premium Chocolate", "Fresh Fruits", "Interactive Station", "Dessert Bar"]
         },
@@ -346,15 +364,15 @@ const ServicesPage = () => {
         }
         ,
         {
-          name : "Sweets beeda stall",
-          description : "Traditional south indian sweets beeda stall for all occasions",
-          image : "/services/stalls/sweets.webp",
+          name: "Sweets beeda stall",
+          description: "Traditional south indian sweets beeda stall for all occasions",
+          image: "/services/stalls/sweets.webp",
           media: [{ type: "image", url: "/services/stalls/sweets.webp" },
-            { type: "image", url: "/services/stalls/sweets1.webp" }
+          { type: "image", url: "/services/stalls/sweets1.webp" }
           ],
-          features : ["Traditional sweets","Variety of beeda","Freshly made","Attractive presentation"]
+          features: ["Traditional sweets", "Variety of beeda", "Freshly made", "Attractive presentation"]
         }
-      ]  
+      ]
     },
     {
       id: "entertainment",
@@ -383,12 +401,36 @@ const ServicesPage = () => {
           name: "Dhol Drummers",
           description: "Traditional dhol and percussion artists for grand entries",
           image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          media: [
+            { type: "video", url: "services/entertainment/dhol.mp4" }
+          ],
           features: ["Traditional Dhol", "Percussion Ensemble", "Grand Entry Beats", "Interactive Performance"]
+        },
+        {
+          name :"Nasik Dhol",
+          description: "Energetic Nasik dhol artists for lively celebrations",
+          image: "/services/entertainment/nasik.mp4",
+          media: [
+            { type: "video", url: "services/entertainment/nasik.mp4" }
+          ],
+          features: ["Nasik Dhol", "Energetic Beats", "Interactive Performance", "Fun Experience"]
+        },
+        {
+          name :"Chendamelam",
+          description: "Traditional chendamelam artists for cultural performances",
+          image: "/services/entertainment/chendamelam.mp4",
+          media: [
+            { type: "video", url: "services/entertainment/chendamelam.mp4" }
+          ],
+          features: ["Traditional Chendamelam", "Cultural Dances", "Interactive Performance", "Fun Experience"]
         },
         {
           name: "Photo Booth",
           description: "Fun photo booth with props for guest entertainment",
           image: "/services/photo.jpg",
+          media: [
+            { type: "video", url: "services/entertainment/booth.mp4" }
+          ],
           features: ["Props & Backdrops", "Instant Prints", "Digital Copies", "Fun Experience"]
         },
         {
@@ -410,11 +452,11 @@ const ServicesPage = () => {
           name: "Sound & Lighting",
           description: "Professional sound systems and lighting effects",
           image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
-          media:[
+          media: [
             { type: "video", url: "/services/entertainment/sound.mp4" },
-             {type: "image", url: "/services/dec/home/home.jpg"},
-             { type: "image", url: "/services/entertainment/sound.webp" },
-            
+            { type: "image", url: "/services/dec/home/home.jpg" },
+            { type: "image", url: "/services/entertainment/sound.webp" },
+
           ],
           features: ["Premium Sound", "Stage Lighting", "Special Effects", "Professional Setup"]
         }
@@ -428,7 +470,7 @@ const ServicesPage = () => {
       description: "Grand traditional welcome with professional staff and ceremonial arrangements",
       subServices: [
         {
-          name: "Welcome Dolls",
+          name: "Professional welcome setup ",
           description: "Traditional welcome dolls and decorative arrangements",
           image: "/services/doll/doll.mp4",
           // images: [
@@ -448,31 +490,45 @@ const ServicesPage = () => {
         {
           name: "Welcome Girls",
           description: "Professionally trained staff in traditional attire for guest welcome",
-          image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
+          image: "/services/welcome/custom.mp4",
+          media: [
+            { type: "video", url: "/services/welcome/custom.mp4" },
+          ],
           features: ["Traditional Attire", "Professional Training", "Guest Assistance", "Cultural Welcome"]
         },
         {
-          name: "Aarthi Services",
+          name: "Return gifts",
           description: "Traditional aarthi and ceremonial welcome rituals",
-          image: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=600&q=80",
+          image: "/services/welcome/aarthi.webp",
+          media: [
+            { type: "image", url: "/services/welcome/aarthi.webp" },
+              { type: "image", url: "/services/welcome/aarthi1.webp" },
+              { type: "image", url: "/services/welcome/aarthi2.webp" },
+          ],
           features: ["Traditional Aarthi", "Ceremonial Items", "Religious Rituals", "Cultural Authenticity"]
         },
         {
-          name: "Floral Welcome",
-          description: "Fresh flower garlands and floral arrangements for guests",
-          image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80",
+          name: "Rename Selfie booth",
+          description: "Interactive selfie booth for guest entertainment during welcome",
+          image: "/services/welcome/selfie.mp4",
+          media: [
+            { type: "video", url: "/services/welcome/selfie.mp4" },
+          ],
           features: ["Fresh Flower Garlands", "Jasmine & Rose", "Traditional Designs", "Premium Quality"]
         },
         {
           name: "Traditional Welcome Setup",
           description: "Complete traditional welcome setup with all ceremonial items",
-          image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80",
+          image: "/services/welcome/traditional.webp",
           features: ["Complete Setup", "Ceremonial Items", "Traditional Rituals", "Cultural Authenticity"]
         },
         {
           name: "Custom Welcome Arrangements",
           description: "Customized welcome setups matching event theme and requirements",
-          image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
+          image: "/services/welcome/custom.mp4",
+          media: [
+            { type: "video", url: "/services/welcome/custom.mp4" },
+          ],
           features: ["Custom Design", "Theme Matching", "Personalized Touch", "Unique Concepts"]
         },
         {
@@ -542,13 +598,13 @@ const ServicesPage = () => {
       description: "Grand entry setups with special effects for memorable moments",
       subServices: [
         {
-          name:"Wedding Special Entry",
-          description:"Grand wedding entries with special effects like flower showers, snow effects, and LED dance floors",
-         
+          name: "Wedding Special Entry",
+          description: "Grand wedding entries with special effects like flower showers, snow effects, and LED dance floors",
+
           media: [{ type: "video", url: "/services/special-effects/weddingentry.mp4" },],
-          features:["Flower Showers","Snow Effects","LED Dance Floor","Grand Entrance"]
+          features: ["Flower Showers", "Snow Effects", "LED Dance Floor", "Grand Entrance"]
         }
-        ,{
+        , {
           name: "flower entry",
           description: "Elegant flower shower effects for grand entrances",
           image: "/services/flower/flower.mp4",
@@ -562,14 +618,14 @@ const ServicesPage = () => {
           media: [{ type: "video", url: "/services/special-effects/snow.mp4" },],
           features: ["Snow Machines", "Winter Theme", "Safe Materials", "Atmospheric Effect"]
         },
-          {
+        {
           name: "LED dance floor",
           description: "Colorful LED lighting and special effects",
           image: "/services/special-effects/led.mp4",
           media: [{ type: "video", url: "/services/special-effects/led.mp4" },],
           features: ["LED Lighting", "Color Effects", "Dynamic Patterns", "Modern Technology"]
         },
-       
+
         {
           name: "Bubble Machines",
           description: "Bubble effects for magical and romantic atmospheres",
@@ -594,7 +650,7 @@ const ServicesPage = () => {
           image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
           features: ["Safe Sparklers", "Grand Effects", "Photo Moments", "Celebration Highlights"]
         },
-      
+
       ]
     }
   ];
@@ -1276,7 +1332,7 @@ const ServicesPage = () => {
               >
                 <X className="w-5 h-5" />
               </button>
-              
+
               <div className="pr-10">
                 <div className="bg-gold/20 px-3 py-1 rounded-full text-xs font-medium inline-block mb-2">
                   {selectedService.category}
