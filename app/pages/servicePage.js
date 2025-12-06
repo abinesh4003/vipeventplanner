@@ -400,7 +400,7 @@ const ServicesPage = () => {
         {
           name: "Dhol Drummers",
           description: "Traditional dhol and percussion artists for grand entries",
-          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          image: "/services/entertainment/dhol.mp4",
           media: [
             { type: "video", url: "services/entertainment/dhol.mp4" }
           ],
@@ -442,7 +442,7 @@ const ServicesPage = () => {
         {
           name: "Live Performances",
           description: "Dance troupes and cultural performances",
-          image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=80",
+          image: "/services/entertainment/liveperformance.mp4",
           media: [
             { type: "video", url: "/services/entertainment/liveperformance.mp4" },
           ],
@@ -451,7 +451,7 @@ const ServicesPage = () => {
         {
           name: "Sound & Lighting",
           description: "Professional sound systems and lighting effects",
-          image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80",
+          image: "/services/entertainment/sound.mp4",
           media: [
             { type: "video", url: "/services/entertainment/sound.mp4" },
             { type: "image", url: "/services/dec/home/home.jpg" },
@@ -531,12 +531,7 @@ const ServicesPage = () => {
           ],
           features: ["Custom Design", "Theme Matching", "Personalized Touch", "Unique Concepts"]
         },
-        {
-          name: "Professional Welcome Team",
-          description: "Trained professional team for grand welcome ceremonies",
-          image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
-          features: ["Professional Team", "Trained Staff", "Coordinated Service", "Grand Welcome"]
-        }
+       
       ]
     },
     {
