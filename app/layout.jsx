@@ -270,7 +270,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="YOUR_ACTUAL_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="sAoWLSTs1HvNkfO5k_d6TQ5Nz1cix4j5x606sAg97Uc" />
         <link rel="canonical" href="https://www.vipeventmanagement.in" />
         <script
           type="application/ld+json"
