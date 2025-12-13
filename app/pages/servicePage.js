@@ -104,7 +104,7 @@ const ServicesPage = () => {
           media: [
             { type: "image", url: "/services/dec/car/car2.jpg" },
             { type: "image", url: "/services/dec/car/car1.jpg" },
-            { type: "image", url: "/services/dec/car/cardec.webp" }
+            // { type: "image", url: "/services/dec/car/cardec.webp" }
           ],
           features: ["Fresh Flower Garlands", "Ribbon Work", "Traditional Designs", "Modern Styles"]
         },
@@ -273,8 +273,8 @@ const ServicesPage = () => {
         {
           name: "Popcorn Station",
           description: "Freshly popped popcorn with various flavors and toppings",
-          image: "/services/stalls/popcorn.jpg",
-          media: [{ type: "image", url: "/services/stalls/popcorn.jpg" }],
+          image: "/images/popcorn-stall.jpg",
+          media: [{ type: "image", url: "/images/popcorn-stall.jpg" }],
           features: ["Multiple Flavors", "Caramel & Cheese", "Fresh Preparation", "Self-Service Station"]
         },
         {
@@ -339,12 +339,6 @@ const ServicesPage = () => {
           { type: "image", url: "/services/stalls/chocolates1.webp" }
           ],
           features: ["Premium Chocolate", "Fresh Fruits", "Interactive Station", "Dessert Bar"]
-        },
-        {
-          name: "Wine Counter",
-          description: "A classy corner for your premium event moments",
-          image: "/images/wine-counter.jpg",
-          features: ["Premium Selection", "Professional Service", "Elegant Setup", "Bar Service"]
         },
         {
           name: "Printed Balloons",
