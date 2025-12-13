@@ -32,6 +32,19 @@ export const metadata = {
     siteName: 'VIP Event Management',
     title: 'Best Event Management & Catering Services in Nagercoil | VIP Event Management',
     description: '#1 Rated Event Management & Catering in Nagercoil. Expert wedding planners, stage decoration, corporate events. 500+ successful events, 100% satisfaction.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'VIP Event Management - Best Event Management & Catering Services in Nagercoil',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Event Management & Catering Services in Nagercoil',
+    description: '#1 Rated Event Management & Catering in Nagercoil. Expert wedding planners, stage decoration, corporate events.',
     images: ['/og-image.jpg'],
   },
   robots: {

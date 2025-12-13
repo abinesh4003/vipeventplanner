@@ -32,7 +32,7 @@ const GoogleBusiness = () => {
             </div>
             <div className="flex-1">
               <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                VIP Event Management
+                V.I.P Event Management
               </h3>
               <p className="text-xs text-gray-500">Google Business Profile</p>
             </div>
