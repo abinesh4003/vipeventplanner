@@ -49,45 +49,15 @@ export const metadata = {
 
 const gallerySchema = {
   "@context": "https://schema.org",
-  "@type": "ImageGallery",
+  "@type": "CollectionPage",
   "name": "VIP Event Management Event Gallery",
   "description": "Photo gallery showcasing our event management and catering services in Nagercoil including weddings, corporate events, and celebrations",
   "url": "https://www.vipeventmanagement.in/gallery",
   "provider": {
     "@type": "LocalBusiness",
     "name": "VIP Event Management",
-    "image": "https://www.vipeventmanagement.in/logo.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nagercoil",
-      "addressRegion": "Tamil Nadu",
-      "addressCountry": "IN"
-    },
-    "telephone": "+91-XXXXXXXXXX",
     "url": "https://www.vipeventmanagement.in"
-  },
-  "about": [
-    {
-      "@type": "Event",
-      "name": "Wedding Events",
-      "description": "Professional wedding planning and catering services with elegant decorations"
-    },
-    {
-      "@type": "Event",
-      "name": "Corporate Events",
-      "description": "Business conferences, seminars, and corporate gatherings with premium catering"
-    },
-    {
-      "@type": "Event",
-      "name": "Birthday Celebrations",
-      "description": "Themed birthday parties with customized catering and decoration"
-    },
-    {
-      "@type": "Event",
-      "name": "Traditional Functions",
-      "description": "Cultural ceremonies and traditional events with authentic catering"
-    }
-  ]
+  }
 };
 
 const Gallery = () => {

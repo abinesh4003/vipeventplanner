@@ -144,11 +144,6 @@ const servicesSchema = {
         }
       }
     ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "150"
   }
 };
 
