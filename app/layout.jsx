@@ -14,7 +14,7 @@ export const metadata = {
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
-  metadataBase: new URL('https://www.vipeventmanagement.com'),
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -58,14 +58,14 @@ export const viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://www.vipeventmanagement.com/#organization",
+  "@id": "https://www.vipeventmanagement.in/#organization",
   "name": "VIP Event Management",
   "alternateName": ["VIP Event Management and Catering", "VIP Events Nagercoil", "Best Event Planner Nagercoil"],
-  "url": "https://www.vipeventmanagement.com",
-  "logo": "https://www.vipeventmanagement.com/logo.jpg",
+  "url": "https://www.vipeventmanagement.in",
+  "logo": "https://www.vipeventmanagement.in/logo.jpg",
   "image": [
-    "https://www.vipeventmanagement.com/logo.jpg",
-    "https://www.vipeventmanagement.com/og-image.jpg"
+    "https://www.vipeventmanagement.in/logo.jpg",
+    "https://www.vipeventmanagement.in/og-image.jpg"
   ],
   "description": "#1 Best & Affordable Event Management in Nagercoil. Best catering services with premium quality at affordable prices. Budget-friendly wedding planners, stage decoration, corporate events. 15+ years experience, 500+ successful events, 100% satisfaction. Quality service at best prices across Kanyakumari district.",
   "telephone": "+91-XXXXXXXXXX",
@@ -186,25 +186,25 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.vipeventmanagement.com"
+      "item": "https://www.vipeventmanagement.in"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://www.vipeventmanagement.com/services"
+      "item": "https://www.vipeventmanagement.in/services"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Gallery",
-      "item": "https://www.vipeventmanagement.com/gallery"
+      "item": "https://www.vipeventmanagement.in/gallery"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Contact",
-      "item": "https://www.vipeventmanagement.com/contact"
+      "item": "https://www.vipeventmanagement.in/contact"
     }
   ]
 };
@@ -270,8 +270,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="your-google-verification-code" />
-        <link rel="canonical" href="https://www.vipeventmanagement.com" />
+        <meta name="google-site-verification" content="YOUR_ACTUAL_VERIFICATION_CODE" />
+        <link rel="canonical" href="https://www.vipeventmanagement.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://www.vipeventmanagement.com';
+  const baseUrl = 'https://www.vipeventmanagement.in';
   
   return [
     {

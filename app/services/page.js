@@ -8,14 +8,14 @@ export const metadata = {
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
-  metadataBase: new URL('https://www.vipeventmanagement.com'),
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
   alternates: {
     canonical: '/services',
   },
   openGraph: {
     title: "Event Management & Catering Services in Nagercoil | VIP Event Management",
     description: "Full-service event management and catering solutions for weddings, corporate events, parties, and traditional functions in Nagercoil. Customized packages, professional staff, and exceptional cuisine.",
-    url: 'https://www.vipeventmanagement.com/services',
+    url: 'https://www.vipeventmanagement.in/services',
     siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
@@ -54,9 +54,9 @@ const servicesSchema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "VIP Event Management",
-    "image": "https://www.vipeventmanagement.com/logo.jpg",
-    "@id": "https://www.vipeventmanagement.com",
-    "url": "https://www.vipeventmanagement.com",
+    "image": "https://www.vipeventmanagement.in/logo.jpg",
+    "@id": "https://www.vipeventmanagement.in",
+    "url": "https://www.vipeventmanagement.in",
     "telephone": "+91-XXXXXXXXXX",
     "priceRange": "$$",
     "address": {

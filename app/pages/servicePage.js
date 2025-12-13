@@ -388,7 +388,10 @@ const ServicesPage = () => {
         {
           name: "Music Orchestra",
           description: "Live bands and orchestras for traditional and contemporary music",
-          image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80",
+          image: "/services/entertainment/orchestra.mp4",
+          media: [
+            { type: "video", url: "services/entertainment/music.mp4" }
+          ],
           features: ["Live Performances", "Multiple Genres", "Traditional Instruments", "Custom Playlists"]
         },
         {
@@ -464,8 +467,8 @@ const ServicesPage = () => {
       description: "Grand traditional welcome with professional staff and ceremonial arrangements",
       subServices: [
         {
-          name: "Professional welcome setup ",
-          description: "Traditional welcome dolls and decorative arrangements",
+          name: "Welcome Girls",
+          description: "Traditional welcome dolls and girls for decorative arrangements",
           image: "/services/doll/doll.mp4",
           // images: [
           //   "/services/doll/doll1.jpg",
@@ -482,13 +485,13 @@ const ServicesPage = () => {
           features: ["Traditional Dolls", "Decorative Setup", "Cultural Significance", "Custom Designs"]
         },
         {
-          name: "Welcome Girls",
-          description: "Professionally trained staff in traditional attire for guest welcome",
+          name: "Band set",
+          description: "Live band set for grand welcome ceremonies",
           image: "/services/welcome/custom.mp4",
           media: [
             { type: "video", url: "/services/welcome/custom.mp4" },
           ],
-          features: ["Traditional Attire", "Professional Training", "Guest Assistance", "Cultural Welcome"]
+          features: ["Live Band", "Traditional Music", "Grand Entrance", "Cultural Experience"]
         },
         {
           name: "Return gifts",
@@ -502,7 +505,7 @@ const ServicesPage = () => {
           features: ["Traditional Aarthi", "Ceremonial Items", "Religious Rituals", "Cultural Authenticity"]
         },
         {
-          name: "Rename Selfie booth",
+          name: "Selfie booth",
           description: "Interactive selfie booth for guest entertainment during welcome",
           image: "/services/welcome/selfie.mp4",
           media: [
@@ -538,43 +541,43 @@ const ServicesPage = () => {
         {
           name: "Pre-Wedding Shoots",
           description: "Creative pre-wedding photography at locations of your choice",
-          image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["Location Shoots", "Creative Concepts", "Candid Photography", "Professional Editing"]
         },
         {
           name: "Event Coverage",
           description: "Complete event photography covering all ceremonies and moments",
-          image: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["Full Day Coverage", "Multiple Photographers", "Candid Shots", "Traditional Poses"]
         },
         {
           name: "Cinematic Videography",
           description: "4K cinematic video coverage with drone shots and professional editing",
-          image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["4K Resolution", "Drone Coverage", "Cinematic Editing", "Same Day Edits"]
         },
         {
           name: "Album Design",
           description: "Beautifully designed photo albums and digital galleries",
-          image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["Premium Albums", "Digital Copies", "Custom Designs", "Quick Delivery"]
         },
         {
           name: "Candid Photography",
           description: "Natural and candid moments captured professionally",
-          image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["Natural Moments", "Candid Shots", "Emotional Captures", "Professional Quality"]
         },
         {
           name: "Traditional Photography",
           description: "Traditional posed photography for formal portraits",
-          image: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=600&q=80",
+      image: "/images/photo.webp",
           features: ["Formal Portraits", "Traditional Poses", "Family Photos", "Classic Style"]
         },
         {
           name: "Same Day Edits",
           description: "Quick editing and same day video highlights",
-          image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=600&q=80",
+          image: "/images/photo.webp",
           features: ["Quick Turnaround", "Same Day Delivery", "Highlight Reels", "Professional Editing"]
         }
       ]
@@ -616,9 +619,10 @@ const ServicesPage = () => {
         },
 
         {
-          name: "Bubble Machines",
+          name: "Bubbles Effect",
           description: "Bubble effects for magical and romantic atmospheres",
-          image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80",
+          image: "/services/special-effects/bubble.mp4",
+          media: [{ type: "video", url: "/services/special-effects/bubbles.mp4" },],
           features: ["Bubble Effects", "Romantic Atmosphere", "Child Friendly", "Continuous Operation"]
         },
         {
@@ -628,15 +632,17 @@ const ServicesPage = () => {
           features: ["Laser Patterns", "Color Effects", "Music Synchronization", "Professional Setup"]
         },
         {
-          name: "Fog Machines",
+          name: "Fog Effects",
           description: "Atmospheric fog and smoke effects for dramatic entries",
-          image: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?auto=format&fit=crop&w=600&q=80",
+          image: "/services/special-effects/fog.mp4",
+          media:[{type:"video", url:"/services/special-effects/snow.mp4"},],
           features: ["Fog Effects", "Smoke Machines", "Dramatic Atmosphere", "Safe Materials"]
         },
         {
           name: "Sparkler Effects",
           description: "Safe sparkler effects for grand celebrations",
-          image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
+          image: "/services/special-effects/sparkler.mp4",
+          media: [{ type: "video", url: "/services/special-effects/sparkler.mp4" },],
           features: ["Safe Sparklers", "Grand Effects", "Photo Moments", "Celebration Highlights"]
         },
 

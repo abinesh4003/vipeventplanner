@@ -8,14 +8,14 @@ export const metadata = {
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
-  metadataBase: new URL('https://www.vipeventmanagement.com'),
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: "About VIP Event Management - Premier Event Management & Catering in Nagercoil",
     description: "Discover why VIP Event Management is Nagercoil's #1 choice for event management and catering. 15+ years experience, 1000+ successful events, and a commitment to excellence in every celebration.",
-    url: 'https://www.vipeventmanagement.com/about',
+    url: 'https://www.vipeventmanagement.in/about',
     siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
@@ -52,8 +52,8 @@ const aboutSchema = {
   "@type": "Organization",
   "name": "VIP Event Management",
   "alternateName": "VIP Event Management and Catering",
-  "url": "https://www.vipeventmanagement.com",
-  "logo": "https://www.vipeventmanagement.com/logo.jpg",
+  "url": "https://www.vipeventmanagement.in",
+  "logo": "https://www.vipeventmanagement.in/logo.jpg",
   "description": "Leading event management and catering company in Nagercoil with over 15 years of experience in organizing weddings, corporate events, and celebrations",
   "foundingDate": "2008",
   "address": {

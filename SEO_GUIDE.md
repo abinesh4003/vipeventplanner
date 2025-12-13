@@ -59,7 +59,7 @@
 3. **Google Search Console**
    - Sign up: https://search.google.com/search-console
    - Verify your website
-   - Submit sitemap: https://www.vipeventmanagement.com/sitemap.xml
+   - Submit sitemap: https://www.vipeventmanagement.in/sitemap.xml
    - Check for errors weekly
 
 4. **Get Google Reviews**

@@ -51,7 +51,7 @@ const services = [
     description: "Cinematic coverage to capture every magical moment of your special day.",
     detailedDescription: "Our professional photographers and videographers use state-of-the-art equipment to capture your event from every angle. We offer pre-wedding shoots, candid coverage, and beautifully edited albums and films.",
     category: "entertainment",
-    images: ["/services/photo.jpg", "/services/photo.jpg", "/services/photo.jpg"],
+    images: ["/images/photo.webp", "/images/photo.webp", "/images/photo.webp"],
     highlights: ["Pre-Wedding Shoots", "Candid Coverage", "Drone Photography", "Custom Albums & Films"]
   },
 ];

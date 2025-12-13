@@ -8,14 +8,14 @@ export const metadata = {
   authors: [{ name: "VIP Event Management" }],
   creator: "VIP Event Management",
   publisher: "VIP Event Management",
-  metadataBase: new URL('https://www.vipeventmanagement.com'),
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
   alternates: {
     canonical: '/gallery',
   },
   openGraph: {
     title: "Event Gallery - Wedding & Event Photos | VIP Event Management Nagercoil",
     description: "Browse our collection of beautifully executed events in Nagercoil. Weddings, corporate functions, parties, and traditional celebrations with exceptional catering and decoration.",
-    url: 'https://www.vipeventmanagement.com/gallery',
+    url: 'https://www.vipeventmanagement.in/gallery',
     siteName: 'VIP Event Management',
     locale: 'en_IN',
     type: 'website',
@@ -52,11 +52,11 @@ const gallerySchema = {
   "@type": "ImageGallery",
   "name": "VIP Event Management Event Gallery",
   "description": "Photo gallery showcasing our event management and catering services in Nagercoil including weddings, corporate events, and celebrations",
-  "url": "https://www.vipeventmanagement.com/gallery",
+  "url": "https://www.vipeventmanagement.in/gallery",
   "provider": {
     "@type": "LocalBusiness",
     "name": "VIP Event Management",
-    "image": "https://www.vipeventmanagement.com/logo.jpg",
+    "image": "https://www.vipeventmanagement.in/logo.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Nagercoil",
@@ -64,7 +64,7 @@ const gallerySchema = {
       "addressCountry": "IN"
     },
     "telephone": "+91-XXXXXXXXXX",
-    "url": "https://www.vipeventmanagement.com"
+    "url": "https://www.vipeventmanagement.in"
   },
   "about": [
     {
