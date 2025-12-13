@@ -15,8 +15,8 @@ module.exports = {
       '/gallery': { priority: 0.9, changefreq: 'monthly' },
       '/testimonials': { priority: 0.9, changefreq: 'monthly' },
       '/faqs': { priority: 0.6, changefreq: 'monthly' },
-      '/privacy-policy': { priority: 0.4, changefreq: 'yearly' },
-      '/terms-of-service': { priority: 0.4, changefreq: 'yearly' },
+      '/privacy-policy': { priority: 0.6, changefreq: 'yearly' },
+      '/terms-of-service': { priority: 0.6, changefreq: 'yearly' },
     }
 
     const current = customPriorities[path] || {
