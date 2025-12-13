@@ -4,7 +4,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,
-  generateIndexSitemap: true,
+  generateIndexSitemap: false,
+  exclude: ['/api/*'],
 
   transform: async (config, path) => {
     const customPriorities = {
