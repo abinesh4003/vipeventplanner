@@ -13,6 +13,25 @@ export const metadata = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.vipeventmanagement.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Terms of Service",
+      "item": "https://www.vipeventmanagement.in/terms-of-service"
+    }
+  ]
+};
+
 const termsSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -33,6 +52,10 @@ const termsSchema = {
 const TermsOfService = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(termsSchema) }}

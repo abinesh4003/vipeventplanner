@@ -23,6 +23,25 @@ export const metadata = {
   }
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.vipeventmanagement.in"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Testimonials",
+      "item": "https://www.vipeventmanagement.in/testimonials"
+    }
+  ]
+};
+
 const testimonialsSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -53,6 +72,10 @@ const testimonialsSchema = {
 const Testimonials = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(testimonialsSchema) }}

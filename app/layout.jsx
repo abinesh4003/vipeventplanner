@@ -191,36 +191,7 @@ const organizationSchema = {
   "currenciesAccepted": "INR"
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.vipeventmanagement.in"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://www.vipeventmanagement.in/services"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Gallery",
-      "item": "https://www.vipeventmanagement.in/gallery"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Contact",
-      "item": "https://www.vipeventmanagement.in/contact"
-    }
-  ]
-};
+
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -288,10 +259,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <script
           type="application/ld+json"

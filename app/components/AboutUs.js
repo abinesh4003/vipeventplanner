@@ -316,11 +316,6 @@ const AboutUs = () => {
         </section>
 
 
-        
-
-
-  
-
         {/* Testimonials Slider */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
