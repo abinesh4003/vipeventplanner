@@ -21,7 +21,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/services-og.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'VIP Event Management Services - Event Management & Catering',
@@ -32,7 +32,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "Event Management & Catering Services - VIP Event Management Nagercoil",
     description: "Professional event management and catering services for all occasions in Nagercoil and Kanyakumari district. Weddings, corporate events, parties, and more.",
-    images: ['/services-twitter.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -166,7 +166,7 @@ const servicesSchema = {
   }
 };
 
-const Services = () => {
+export default function Services() {
   return (
     <>
       <script
@@ -180,6 +180,4 @@ const Services = () => {
       <ServicesPage />
     </>
   );
-};
-
-export default Services;
+}

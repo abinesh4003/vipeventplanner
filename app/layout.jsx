@@ -58,6 +58,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'sAoWLSTs1HvNkfO5k_d6TQ5Nz1cix4j5x606sAg97Uc',
+  },
 };
 
 export const viewport = {
@@ -254,8 +257,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="google-site-verification" content="sAoWLSTs1HvNkfO5k_d6TQ5Nz1cix4j5x606sAg97Uc" />
-        <link rel="canonical" href="https://www.vipeventmanagement.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

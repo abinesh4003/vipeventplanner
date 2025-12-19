@@ -21,7 +21,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/about-og.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'VIP Event Management Team - Event Management Nagercoil',
@@ -32,7 +32,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "About VIP Event Management - Event Management & Catering Nagercoil",
     description: "15+ years of creating memorable events in Nagercoil. Professional event management and catering services with proven track record.",
-    images: ['/about-twitter.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

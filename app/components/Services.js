@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Slider from "react-slick";
 import { ChevronDown, ChevronUp, Sparkles, Star } from "lucide-react";
 
@@ -162,6 +163,21 @@ export default function ServicesGrid() {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Services Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <Link
+            href="/services"
+            className="inline-block bg-gold text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View All Services
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/gallery-og.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'VIP Event Management Event Gallery - Nagercoil',
@@ -32,7 +32,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: "Event Gallery - VIP Event Management Nagercoil",
     description: "View our portfolio of stunning weddings, corporate events, and celebrations in Nagercoil with premium catering and decoration services.",
-    images: ['/gallery-twitter.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

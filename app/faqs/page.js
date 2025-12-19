@@ -6,17 +6,41 @@ export const metadata = {
   title: "FAQs - Best Event Management Nagercoil | Common Questions & Answers | VIP Event Management",
   description: "Get answers to FAQs about best event management, wedding planning, affordable catering services, pricing, and booking in Nagercoil. Learn about our best budget-friendly packages and services across Kanyakumari district.",
   keywords: "best event planning faq nagercoil, best wedding planner questions, best catering service faq, best affordable event management queries, vip event management help, best booking questions kanyakumari, best event planner faq, best budget event planning questions",
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
+  alternates: {
+    canonical: '/faqs',
+  },
   openGraph: {
     title: "FAQs - VIP Event Management Event Planning Questions",
     description: "Get answers to common questions about our event planning, wedding services, catering, and booking process.",
+    url: 'https://www.vipeventmanagement.in/faqs',
+    siteName: 'VIP Event Management',
+    locale: 'en_IN',
     type: "website",
     images: [{
-      url: "/faq-og.jpg",
+      url: "/og-image.jpg",
       width: 1200,
       height: 630,
       alt: "VIP Event Management FAQ"
     }]
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "FAQs - VIP Event Management",
+    description: "Common questions about event planning and catering services in Nagercoil.",
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const breadcrumbSchema = {

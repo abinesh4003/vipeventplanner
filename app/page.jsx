@@ -6,6 +6,25 @@ import Stalls from "./components/Stalls";
 import WhyChooseUsSection from "./components/WhyChooseUs";
 import CTA from "./components/cta";
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.vipeventmanagement.in"
+    }
+  ]
+};
+
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -21,6 +40,10 @@ const homeSchema = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}

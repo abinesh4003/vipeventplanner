@@ -7,11 +7,41 @@ export const metadata = {
   title: "Privacy Policy - Best Event Management Nagercoil | Data Protection | VIP Event Management",
   description: "Learn how VIP Event Management, the best event planner in Nagercoil, protects your personal information and privacy. Comprehensive privacy policy for our best affordable event planning and catering services.",
   keywords: "privacy policy nagercoil, best event planner data protection, personal information security, privacy rights, vip event management privacy, best event management data policy, secure booking nagercoil",
+  metadataBase: new URL('https://www.vipeventmanagement.in'),
+  alternates: {
+    canonical: '/privacy-policy',
+  },
   openGraph: {
     title: "Privacy Policy - VIP Event Management Data Protection",
     description: "Comprehensive privacy policy explaining how we protect your personal information and respect your privacy rights.",
-    type: "website"
-  }
+    url: 'https://www.vipeventmanagement.in/privacy-policy',
+    siteName: 'VIP Event Management',
+    locale: 'en_IN',
+    type: "website",
+    images: [{
+      url: '/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'VIP Event Management Privacy Policy'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Privacy Policy - VIP Event Management",
+    description: "How we protect your personal information and privacy.",
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const breadcrumbSchema = {
