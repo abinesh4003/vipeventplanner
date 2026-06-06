@@ -583,7 +583,7 @@ const galleryData = {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isModalOpen, currentIndex]);
 
-  return (
+   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-x-hidden w-full">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-gold-light)] to-[var(--color-gold)]">
@@ -592,7 +592,7 @@ const galleryData = {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.4),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
         </div>
-
+ 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-4xl mx-auto py-16">
           <motion.div
@@ -609,15 +609,15 @@ const galleryData = {
               <Camera className="w-4 h-4 text-[var(--color-dark)]" />
               <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Our Work Portfolio</span>
             </motion.div>
-
+ 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
               Our <span className="text-[var(--color-dark)]">Event Gallery</span>
             </h1>
-
+ 
             <p className="text-base sm:text-lg md:text-xl text-[var(--color-dark)]/80 font-light max-w-3xl mx-auto leading-relaxed mb-8">
               Explore our stunning event creations - Stage decorations, catering services, entertainment, and complete event management in Nagercoil
             </p>
-
+ 
             {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -638,7 +638,7 @@ const galleryData = {
                 About Us
               </Link>
             </motion.div>
-
+ 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -661,24 +661,24 @@ const galleryData = {
           </motion.div>
         </div>
       </section>
-
-      {/* Gallery Section - Premium Black & White Theme */}
+ 
+      {/* Gallery Section */}
       <div className="py-16 md:py-24 bg-gradient-to-b from-black via-zinc-900 to-black">
         {serviceGalleries.map((service, serviceIndex) => {
           const videos = galleryData[service.id].filter(item => item.isVideo);
           const images = galleryData[service.id].filter(item => !item.isVideo);
-          
+ 
           return (
-            <motion.section 
-              key={service.id} 
+            <motion.section
+              key={service.id}
               className="container mx-auto px-4 mb-24"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
+              transition={{ duration: 0.6 }}
             >
-              {/* Category Header with Icon */}
-              <motion.div 
+              {/* Category Header */}
+              <motion.div
                 className="flex items-center gap-4 mb-10"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -695,7 +695,7 @@ const galleryData = {
                   <p className="text-gray-400 text-sm md:text-base mt-1">{service.description}</p>
                 </div>
               </motion.div>
-
+ 
               {/* Videos */}
               {videos.length > 0 && (
                 <div className="mb-12">
@@ -707,30 +707,33 @@ const galleryData = {
                     {videos.map((video, idx) => (
                       <motion.div
                         key={video.id}
-                        className="cursor-pointer group"
+                        className="cursor-pointer group hover:scale-[1.03] hover:-translate-y-1 transition-transform duration-300"
                         onClick={() => openImageModal(video, galleryData[service.id].indexOf(video), service.id)}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        whileHover={{ scale: 1.03, y: -5 }}
+                        transition={{ duration: 0.4 }}
                       >
                         <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border-2 border-white/20">
-                          <video 
-                            src={video.src} 
-                            className="w-full h-full object-cover"
-                            autoPlay
+                          <video
+                            src={video.src}
                             muted
                             loop
                             playsInline
+                            preload="none"
+                            className="w-full h-full object-cover"
+                            ref={(el) => {
+                              if (!el) return;
+                              const io = new IntersectionObserver(([e]) => {
+                                if (e.isIntersecting) { el.play(); io.disconnect(); }
+                              }, { threshold: 0.1 });
+                              io.observe(el);
+                            }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all flex items-center justify-center">
-                            <motion.div
-                              whileHover={{ scale: 1.2 }}
-                              className="bg-white/90 p-4 rounded-full shadow-xl"
-                            >
+                            <div className="bg-white/90 p-4 rounded-full shadow-xl">
                               <CirclePlay className="w-10 h-10 text-black" />
-                            </motion.div>
+                            </div>
                           </div>
                         </div>
                       </motion.div>
@@ -738,8 +741,8 @@ const galleryData = {
                   </div>
                 </div>
               )}
-
-              {/* Images - Grid Style */}
+ 
+              {/* Images */}
               {images.length > 0 && (
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
@@ -750,28 +753,25 @@ const galleryData = {
                     {images.map((image, idx) => (
                       <motion.div
                         key={image.id}
-                        className="cursor-pointer group"
+                        className="cursor-pointer group hover:scale-[1.03] hover:-translate-y-1 transition-transform duration-300"
                         onClick={() => openImageModal(image, galleryData[service.id].indexOf(image), service.id)}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: idx * 0.05 }}
-                        whileHover={{ scale: 1.03, y: -5 }}
+                        transition={{ duration: 0.4 }}
                       >
                         <div className="relative bg-zinc-900 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-white/20 aspect-video">
-                          <img 
-                            src={image.images?.[0] || image.src} 
-                            alt={image.title} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                          <img
+                            src={image.images?.[0] || image.src}
+                            alt={image.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           {image.images && image.images.length > 1 && (
-                            <motion.div 
-                              className="absolute top-3 right-3 bg-white text-black px-3 py-1.5 rounded-full text-xs font-bold shadow-lg"
-                              whileHover={{ scale: 1.1 }}
-                            >
+                            <div className="absolute top-3 right-3 bg-white text-black px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
                               +{image.images.length}
-                            </motion.div>
+                            </div>
                           )}
                           <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p className="text-white text-sm font-semibold truncate">{image.title}</p>
@@ -782,19 +782,17 @@ const galleryData = {
                   </div>
                 </div>
               )}
-
+ 
               <div className="mt-12 h-[1px] bg-white/50"> </div>
             </motion.section>
-            
           );
         })}
       </div>
-
-
+ 
       {/* CTA Section */}
       <CTA text="Love What You See?" desc="Let's create something amazing for your next event. Contact us today!" btn1="Book Now" btn2="View Services" btn1link="/contact" btn2link="/services" />
-
-      {/* Image Modal - Cinematic */}
+ 
+      {/* Image Modal */}
       <AnimatePresence>
         {isModalOpen && selectedImage && (
           <motion.div
@@ -819,7 +817,7 @@ const galleryData = {
               >
                 <X className="w-5 h-5 md:w-6 md:h-6" />
               </button>
-
+ 
               {/* Navigation Arrows */}
               <button
                 onClick={() => navigateImage('prev')}
@@ -829,12 +827,12 @@ const galleryData = {
               </button>
               <button
                 onClick={() => navigateImage('next')}
-                className="absolute right-2 md:right-6 top-[55%]  transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
+                className="absolute right-2 md:right-6 top-[55%] transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-md text-white p-2 md:p-3 rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
                 <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </button>
-
-              {/* Image/Video Slider */}
+ 
+              {/* Modal Media */}
               <div className="relative h-[50vh] md:h-[70vh] bg-black">
                 {selectedImage.isVideo && selectedImage.videos && selectedImage.videos.length > 0 ? (
                   <Slider
@@ -854,6 +852,7 @@ const galleryData = {
                           controls
                           autoPlay
                           muted
+                          preload="none"
                           className="w-full h-full object-contain"
                         />
                       </div>
@@ -876,6 +875,7 @@ const galleryData = {
                           src={imgSrc}
                           alt={`${selectedImage.title} - ${index + 1}`}
                           className="w-full h-full object-contain"
+                          loading="lazy"
                         />
                       </div>
                     ))}
@@ -885,11 +885,12 @@ const galleryData = {
                     src={selectedImage.src}
                     alt={selectedImage.title}
                     className="w-full h-full object-contain"
+                    loading="lazy"
                   />
-                )}              
+                )}
               </div>
-
-              {/* Image Info */}
+ 
+              {/* Modal Info */}
               <div className="p-4 md:p-8 bg-gradient-to-t from-black via-gray-900/95 to-transparent">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
@@ -907,8 +908,8 @@ const galleryData = {
                     </div>
                   )}
                 </div>
-
-                {/* Meta Information */}
+ 
+                {/* Meta */}
                 <div className="flex flex-wrap gap-4 text-sm md:text-base text-gray-300 mb-6">
                   {selectedImage.venue && (
                     <div className="flex items-center gap-2">
@@ -932,7 +933,7 @@ const galleryData = {
                     </span>
                   )}
                 </div>
-
+ 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   <button className="flex-1 bg-white/10 backdrop-blur-sm text-white py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/20 transition-all duration-300 text-sm md:text-base font-medium">
@@ -947,8 +948,8 @@ const galleryData = {
                   </Link>
                 </div>
               </div>
-
-              {/* Image Counter */}
+ 
+              {/* Counter */}
               <div className="absolute top-3 left-3 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs md:text-sm font-medium">
                 {currentIndex + 1} / {currentCategory ? galleryData[currentCategory].length : 0}
               </div>
@@ -959,5 +960,5 @@ const galleryData = {
     </div>
   );
 };
-
+ 
 export default GalleryPage;

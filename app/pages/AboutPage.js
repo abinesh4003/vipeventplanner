@@ -307,7 +307,7 @@ const AboutPage = () => {
             <motion.div
               style={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="w-full md:w-1/2 -mx-4 md:mx-0"
             >
@@ -342,7 +342,7 @@ const AboutPage = () => {
             <motion.div
               style={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
             >

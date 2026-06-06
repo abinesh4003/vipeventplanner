@@ -84,6 +84,7 @@ const VipEventManagementHero = () => {
                                 src="logo.png"
                                 alt="VIP Event Management Logo"
                                 className="relative w-24 sm:w-32 md:w-36 drop-shadow-2xl"
+                                loading="lazy"
                             />
                         </div>
                     </motion.div>

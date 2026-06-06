@@ -114,13 +114,15 @@ export default function ServicesGrid() {
                 <Slider {...sliderSettings}>
                   {s.images.map((img, idx) => (
                     <div key={idx} className="relative w-full h-56">
-                      <Image
-                        src={img}
-                        alt={`${s.title} ${idx + 1}`}
-                        fill
-                        className="object-fill"
-                        sizes="400px"
-                      />
+                     <Image
+  src={img}
+  alt={`${s.title} ${idx + 1}`}
+  fill
+  className="object-cover"
+  sizes="400px"
+  loading={i === 0 && idx === 0 ? undefined : "lazy"}
+  priority={i === 0 && idx === 0}
+/>
                     </div>
                   ))}
                 </Slider>

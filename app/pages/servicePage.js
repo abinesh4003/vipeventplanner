@@ -716,7 +716,7 @@ const ServicesPage = () => {
     }
   ];
 
-  return (
+return (
     <div className="min-h-screen bg-white">
       {/* Modern Hero Section */}
       <section
@@ -727,9 +727,7 @@ const ServicesPage = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.4),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(212,175,55,0.2)_50%,transparent_100%)]"></div>
         </div>
-
-
-
+ 
         {/* Hero Content */}
         <div className="relative z-10 text-center text-[var(--color-dark)] px-4 max-w-6xl mx-auto py-16">
           <div>
@@ -738,7 +736,7 @@ const ServicesPage = () => {
               <Star className="w-4 h-4 text-[var(--color-dark)] fill-[var(--color-dark)]" />
               <span className="text-xs md:text-sm text-[var(--color-dark)] font-medium">Nagercoil's #1 Event Planners</span>
             </div>
-
+ 
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
               Best <span className="text-[var(--color-dark)]">Event Services</span>
               <br />
@@ -746,11 +744,11 @@ const ServicesPage = () => {
                 in Nagercoil
               </span>
             </h1>
-
+ 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 text-[var(--color-dark)]/80 font-light max-w-4xl mx-auto leading-relaxed px-4">
               From Birthdays and weddings to corporate events, we create unforgettable experiences with luxury décor, authentic catering, and flawless execution
             </p>
-
+ 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
               <div>
                 <Link
@@ -761,7 +759,7 @@ const ServicesPage = () => {
                   Call: +91 8778304145
                 </Link>
               </div>
-
+ 
               <button
                 onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="border-2 border-[var(--color-dark)] text-[var(--color-dark)] px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-base hover:bg-[var(--color-dark)] hover:text-[var(--color-gold-light)] transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
@@ -769,7 +767,7 @@ const ServicesPage = () => {
                 View Services <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </div>
-
+ 
             {/* Trust Indicators */}
             <div className="mt-8 md:mt-12 flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-[var(--color-dark)]/70">
               <div className="flex items-center gap-2">
@@ -787,13 +785,13 @@ const ServicesPage = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Scroll Indicator */}
         <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-[var(--color-dark)]">
           <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
         </div>
       </section>
-
+ 
       {/* Stats Section */}
       <section className="py-12 md:py-16 bg-[var(--color-dark)] text-[var(--color-gold-light)]">
         <div className="container mx-auto px-4">
@@ -805,7 +803,7 @@ const ServicesPage = () => {
                 style={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
               >
                 <div className="text-[#d4af37] mb-2 flex justify-center">{stat.icon}</div>
                 <div className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">{stat.number}</div>
@@ -815,54 +813,15 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Why Choose Us Section */}
-      {/* <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
-              Why Choose <span className="text-[#d4af37]">VIP Event Management?</span>
-            </h2>
-            <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full mb-4 md:mb-6"></div>
-            <p className="text-gray-600 text-sm md:text-lg max-w-3xl mx-auto px-4">
-              Leading event management company in Nagercoil delivering excellence since 2016
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl border border-[#d4af37]/20 hover:border-[#d4af37]/40 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <div className="text-[#d4af37] mb-4">{item.icon}</div>
-                <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Services Section - Cinematic Modern Design */}
-      <section id="services-section" className="relative py-12 md:py-20  overflow-hidden">
+ 
+      {/* Services Section */}
+      <section id="services-section" className="relative py-12 md:py-20 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-40 right-20 w-40 h-40 bg-[#d4af37]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
-
+ 
         <div className="w-full relative z-10">
           {/* Section Header */}
           <motion.div
@@ -870,7 +829,7 @@ const ServicesPage = () => {
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
           >
             <div className="inline-block mb-3 md:mb-4">
               <span className="bg-[#d4af37] text-white px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide">OUR SERVICES</span>
@@ -883,7 +842,7 @@ const ServicesPage = () => {
               Premium event solutions tailored for your special occasions
             </p>
           </motion.div>
-
+ 
           {/* Services Grid - Cards */}
           <div className="space-y-8 md:space-y-12">
             {serviceCategories.map((category, categoryIndex) => (
@@ -893,11 +852,11 @@ const ServicesPage = () => {
                 style={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                viewport={{ once: false, margin: "-100px" }}
+                viewport={{ once: true, margin: "-100px" }}
               >
                 {/* Category Card */}
-                <div className="bg-white/80 backdrop-blur-sm shadow-sm  shadow-gold/30 border-y border-[#d4af37]/20 overflow-hidden">
-                  {/* Category Header - Compact & Modern */}
+                <div className="bg-white/80 backdrop-blur-sm shadow-sm shadow-gold/30 border-y border-[#d4af37]/20 overflow-hidden">
+                  {/* Category Header */}
                   <div className={`relative bg-gradient-to-r ${category.gradient} p-4 md:p-6`}>
                     <div className="flex items-center gap-3 md:gap-4">
                       <div className="bg-white/90 p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg">
@@ -912,309 +871,132 @@ const ServicesPage = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* Sub Services - Slider for both Mobile and Desktop */}
-                  <div className="px-0  my-8 md:px-6 md:py-16">
-                    {/* Mobile Slider - 1 slide */}
-                    <div className="block md:hidden">
-                      <Slider
-                        dots={false}
-                        infinite={true}
-                        speed={900}
-                        slidesToShow={1}
-                        slidesToScroll={1}
-                        arrows={false}
-                        pauseOnHover={false}
-                      >
-                        {category.subServices.map((subService, index) => (
-                          <div key={index} className="px-2 py-6">
-                            <div
-                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
-                              onClick={() => openServiceModal({ ...subService, category: category.name })}
-                            >
-                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
-                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
-                              </div>
-                              <div className="h-56 overflow-hidden flex-shrink-0">
-                                {subService.media && subService.media.length > 0 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.media.map((item, idx) => (
-                                      <div key={idx} className="h-56">
-                                        {item.type === "video" ? (
-                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
-                                        ) : (
-                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                        )}
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : subService.images && subService.images.length > 1 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplay={true}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.images.map((img, idx) => (
-                                      <div key={idx} className="h-56">
-                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : (
-                                  <div className="h-56">
-                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
-                                  </div>
-                                )}
-                              </div>
-                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
-                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
-                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
-                                  Learn More <ChevronDown size={18} />
-                                </button>
-                              </div>
+ 
+                  {/* ── SINGLE RESPONSIVE SLIDER (replaces 3 separate blocks) ── */}
+                  <div className="px-0 my-8 md:px-6 md:py-16">
+                  <Slider
+  dots={false}
+  infinite={true}
+  speed={900}
+  slidesToShow={3}
+  slidesToScroll={1}
+  arrows={false}
+  pauseOnHover={false}
+  responsive={[
+    { breakpoint: 1024, settings: { slidesToShow: 2 } },
+    { breakpoint: 768,  settings: { slidesToShow: 1 } },
+  ]}
+>
+                      {category.subServices.map((subService, index) => (
+                        <div key={index} className="px-2 py-6">
+                          <div
+                            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
+                            onClick={() => openServiceModal({ ...subService, category: category.name })}
+                          >
+                            {/* Card Title */}
+                            <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
+                              <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
                             </div>
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-
-                    {/* Tablet Slider - 2 slides */}
-                    <div className="hidden md:block lg:hidden">
-                      <Slider
-                        dots={false}
-                        infinite={true}
-                        speed={900}
-                        slidesToShow={2}
-                        slidesToScroll={1}
-                        arrows={false}
-                        pauseOnHover={false}
-                      >
-                        {category.subServices.map((subService, index) => (
-                          <div key={index} className="px-2">
-                            <div
-                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
-                              onClick={() => openServiceModal({ ...subService, category: category.name })}
-                            >
-                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
-                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
-                              </div>
-                              <div className="h-56 overflow-hidden flex-shrink-0">
-                                {subService.media && subService.media.length > 0 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.media.map((item, idx) => (
-                                      <div key={idx} className="h-56">
-                                        {item.type === "video" ? (
-                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
-                                        ) : (
-                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                        )}
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : subService.images && subService.images.length > 1 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplay={true}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.images.map((img, idx) => (
-                                      <div key={idx} className="h-56">
-                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : (
-                                  <div className="h-56">
-                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
-                                  </div>
-                                )}
-                              </div>
-                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
-                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
-                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
-                                  Learn More <ChevronDown size={18} />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-
-                    {/* Desktop Slider - 3 slides */}
-                    <div className="hidden lg:block">
-                      <Slider
-                        dots={false}
-                        infinite={true}
-                        speed={900}
-                        slidesToShow={3}
-                        slidesToScroll={1}
-                        arrows={false}
-                        pauseOnHover={false}
-                      >
-                        {category.subServices.map((subService, index) => (
-                          <div key={index} className="px-2">
-                            <div
-                              className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden cursor-pointer flex flex-col"
-                              onClick={() => openServiceModal({ ...subService, category: category.name })}
-                            >
-                              <div className="bg-gradient-to-r from-gold/20 to-yellow-100 text-black font-semibold text-base p-3 flex items-center justify-center">
-                                <Sparkles className="mr-2 text-black" size={16} /> {subService.name}
-                              </div>
-                              <div className="h-56 overflow-hidden flex-shrink-0">
-                                {subService.media && subService.media.length > 0 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.media.map((item, idx) => (
-                                      <div key={idx} className="h-56">
-                                        {item.type === "video" ? (
-                                          <video src={item.url} autoPlay muted loop playsInline className="w-full h-full object-fill" />
-                                        ) : (
-                                          <img src={item.url} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                        )}
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : subService.images && subService.images.length > 1 ? (
-                                  <Slider
-                                    dots={false}
-                                    infinite={true}
-                                    speed={800}
-                                    slidesToShow={1}
-                                    slidesToScroll={1}
-                                    autoplay={true}
-                                    autoplaySpeed={3000}
-                                    arrows={false}
-                                    pauseOnHover={false}
-                                  >
-                                    {subService.images.map((img, idx) => (
-                                      <div key={idx} className="h-56">
-                                        <img src={img} alt={`${subService.name} ${idx + 1}`} className="w-full h-full object-fill" />
-                                      </div>
-                                    ))}
-                                  </Slider>
-                                ) : (
-                                  <div className="h-56">
-                                    <img src={subService.image} alt={subService.name} className="w-full h-full object-fill" />
-                                  </div>
-                                )}
-                              </div>
-                              <div className="p-5 text-center flex-grow flex flex-col justify-between">
-                                <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
-                                <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
-                                  Learn More <ChevronDown size={18} />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </Slider>
-                    </div>
-
-                    {/* Removed old desktop slider code
-                        speed={900}
-                        slidesToShow={3}
-                        slidesToScroll={1}
-                        // autoplay={true}
-                        autoplaySpeed={2400}
-                        arrows={false}
-                        pauseOnHover={false}
-                        pauseOnFocus={false}
-                        responsive={[
-                          { breakpoint: 1280, settings: { slidesToShow: 3 } },
-                          { breakpoint: 1024, settings: { slidesToShow: 2 } }
-                        ]}
-                      >
-                        {category.subServices.map((subService, index) => (
-                          <div key={index} className="px-2">
-                            <motion.div
-                              initial={{ opacity: 0, y: 30 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.5 }}
-                              whileHover={{ y: -10 }}
-                              className="group relative cursor-pointer"
-                              onClick={() => openServiceModal({ ...subService, category: category.name })}
-                            >
-                              <div className="relative h-[380px] rounded-2xl overflow-hidden shadow-xl">
-                                <img
-                                  src={subService.image}
-                                  alt={subService.name}
-                                  className="w-full h-full object-fill group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
-                                <div className="absolute inset-0 p-5 flex flex-col justify-end">
-                                  <h4 className="text-white font-bold text-xl mb-2 group-hover:text-[#d4af37] transition-colors">{subService.name}</h4>
-                                  <p className="text-white/80 text-sm mb-4 line-clamp-2">{subService.description}</p>
-                                  <div className="flex flex-wrap gap-2 mb-4">
-                                    {subService.features.slice(0, 3).map((feature, idx) => (
-                                      <span key={idx} className="bg-[#d4af37]/90 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
-                                        {feature}
-                                      </span>
-                                    ))}
-                                    {subService.features.length > 3 && (
-                                      <span className="bg-white/20 text-white px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-sm">
-                                        +{subService.features.length - 3}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <button className="w-full bg-[#d4af37] text-black py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    Explore Service <ArrowRight className="w-4 h-4" />
-                                  </button>
+ 
+                            {/* Card Media */}
+                            <div className="h-56 overflow-hidden flex-shrink-0">
+                              {subService.media && subService.media.length > 0 ? (
+                                <Slider
+                                  dots={false}
+                                  infinite={true}
+                                  autoplay={true}
+                                  autoplaySpeed={3000}
+                                  speed={800}
+                                  slidesToShow={1}
+                                  slidesToScroll={1}
+                                  arrows={false}
+                                  pauseOnHover={false}
+                                >
+                                  {subService.media.map((item, idx) => (
+                                    <div key={idx} className="h-56">
+                                      {item.type === "video" ? (
+                                        <video
+                                          src={item.url}
+                                          muted
+                                          loop
+                                          playsInline
+                                          preload="none"
+                                          className="w-full h-full object-cover"
+                                          ref={(el) => {
+                                            if (!el) return;
+                                            const io = new IntersectionObserver(([e]) => {
+                                              if (e.isIntersecting) { el.play(); io.disconnect(); }
+                                            }, { threshold: 0.1 });
+                                            io.observe(el);
+                                          }}
+                                        />
+                                      ) : (
+                                        <img
+                                          src={item.url}
+                                          alt={`${subService.name} ${idx + 1}`}
+                                          className="w-full h-full object-cover"
+                                          loading="lazy"
+                                        />
+                                      )}
+                                    </div>
+                                  ))}
+                                </Slider>
+                              ) : subService.images && subService.images.length > 1 ? (
+                                <Slider
+                                  dots={false}
+                                  infinite={true}
+                                  autoplay={true}
+                                  autoplaySpeed={3000}
+                                  speed={800}
+                                  slidesToShow={1}
+                                  slidesToScroll={1}
+                                  arrows={false}
+                                  pauseOnHover={false}
+                                >
+                                  {subService.images.map((img, idx) => (
+                                    <div key={idx} className="h-56">
+                                      <img
+                                        src={img}
+                                        alt={`${subService.name} ${idx + 1}`}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                      />
+                                    </div>
+                                  ))}
+                                </Slider>
+                              ) : (
+                                <div className="h-56">
+                                  <img
+                                    src={subService.image}
+                                    alt={subService.name}
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                  />
                                 </div>
-                                <div className="absolute inset-0 border-2 border-[#d4af37] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                              </div>
-                            </motion.div>
+                              )}
+                            </div>
+ 
+                            {/* Card Body */}
+                            <div className="p-5 text-center flex-grow flex flex-col justify-between">
+                              <p className="text-gray-700 text-sm mb-3 line-clamp-3">{subService.description}</p>
+                              <button className="text-gold font-medium flex items-center justify-center gap-2 mx-auto">
+                                Learn More <ChevronDown size={18} />
+                              </button>
+                            </div>
                           </div>
-                        ))}
-                      </Slider>
-                    </div> */}
+                        </div>
+                      ))}
+                    </Slider>
                   </div>
+                  {/* ── END SINGLE SLIDER ── */}
+ 
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
+ 
       {/* Testimonials Section */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
@@ -1223,7 +1005,7 @@ const ServicesPage = () => {
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
               What Our <span className="text-[#d4af37]">Clients Say</span>
@@ -1233,7 +1015,7 @@ const ServicesPage = () => {
               Real experiences from our satisfied clients across Nagercoil
             </p>
           </motion.div>
-
+ 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -1242,7 +1024,7 @@ const ServicesPage = () => {
                 style={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
               >
                 <div className="flex items-center gap-1 mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -1261,7 +1043,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-
+ 
       {/* Service Areas Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -1270,7 +1052,7 @@ const ServicesPage = () => {
             style={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-bold text-black mb-3 md:mb-4">
               We Serve <span className="text-[#d4af37]">Across Nagercoil</span>
@@ -1280,7 +1062,7 @@ const ServicesPage = () => {
               Premium event management services available throughout Nagercoil and surrounding areas
             </p>
           </motion.div>
-
+ 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
             {["Nagercoil Town", "Kottar", "Vadasery", "Aralvaimozhi", "Kuzhithurai", "Colachel", "Kanyakumari", "Marthandam"].map((area, index) => (
               <motion.div
@@ -1289,7 +1071,7 @@ const ServicesPage = () => {
                 style={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
               >
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#d4af37] mx-auto mb-1.5 md:mb-2" />
                 <p className="text-xs md:text-sm font-medium text-gray-700">{area}</p>
@@ -1298,7 +1080,7 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-
+ 
       {/* CTA Section */}
       <CTA
         text="Ready to Plan Your Dream Event?"
@@ -1308,7 +1090,7 @@ const ServicesPage = () => {
         btn1link="/contact"
         btn2link="/gallery"
       />
-
+ 
       {/* Service Detail Modal */}
       {isModalOpen && selectedService && (
         <div
@@ -1319,7 +1101,7 @@ const ServicesPage = () => {
             className="bg-white w-full rounded-xl max-w-3xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header with Title & Description */}
+            {/* Modal Header */}
             <div className="relative bg-gradient-to-br from-gold/10 to-white p-4 md:p-6 border-b border-gray-100">
               <button
                 onClick={closeServiceModal}
@@ -1327,7 +1109,6 @@ const ServicesPage = () => {
               >
                 <X className="w-5 h-5" />
               </button>
-
               <div className="pr-10">
                 <div className="bg-gold/20 px-3 py-1 rounded-full text-xs font-medium inline-block mb-2">
                   {selectedService.category}
@@ -1340,8 +1121,8 @@ const ServicesPage = () => {
                 </p>
               </div>
             </div>
-
-            {/* Image/Video Slider Section */}
+ 
+            {/* Modal Media Slider */}
             <div className="relative flex-shrink-0 bg-gray-100">
               {selectedService.media && selectedService.media.length > 0 ? (
                 <Slider {...sliderSettings} className="service-slider">
@@ -1354,13 +1135,15 @@ const ServicesPage = () => {
                           autoPlay
                           muted
                           loop
-                          className="w-full h-48 md:h-80 object-fill"
+                          preload="none"
+                          className="w-full h-48 md:h-80 object-cover"
                         />
                       ) : (
                         <img
                           src={item.url}
                           alt={`${selectedService.name} ${index + 1}`}
-                          className="w-full h-48 md:h-80 object-fit"
+                          className="w-full h-48 md:h-80 object-cover"
+                          loading="lazy"
                         />
                       )}
                     </div>
@@ -1374,6 +1157,7 @@ const ServicesPage = () => {
                         src={img}
                         alt={`${selectedService.name} ${index + 1}`}
                         className="w-full h-48 md:h-80 object-cover"
+                        loading="lazy"
                       />
                     </div>
                   ))}
@@ -1383,11 +1167,12 @@ const ServicesPage = () => {
                   src={selectedService.image}
                   alt={selectedService.name}
                   className="w-full h-48 md:h-80 object-cover"
+                  loading="lazy"
                 />
               )}
             </div>
-
-            {/* Scrollable Content Section */}
+ 
+            {/* Modal Scrollable Body */}
             <div className="flex-1 overflow-y-auto">
               <div className="p-4 md:p-6">
                 <div className="mb-4 md:mb-6">
@@ -1404,8 +1189,8 @@ const ServicesPage = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* CTA Buttons */}
+ 
+                {/* Modal CTA */}
                 <div className="flex flex-col gap-2 pt-4 border-t">
                   <Link
                     href={`https://wa.me/918778304145?text=I'm%20interested%20in%20your%20${selectedService.name}%20service%20for%20${selectedService.category}.`}
@@ -1429,5 +1214,5 @@ const ServicesPage = () => {
     </div>
   );
 };
-
+ 
 export default ServicesPage;

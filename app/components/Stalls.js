@@ -96,7 +96,7 @@ const Stalls = () => {
   ];
 
   const sliderSettings = {
-   
+
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2400,
@@ -150,27 +150,24 @@ const Stalls = () => {
             {stalls.map((stall, index) => (
               <div key={index} className="px-3">
                 <motion.div
-                  
+
                   initial={{ rotateX: 90 }}
-                  whileInView={{ rotateX: 0,  }}
-                  viewport={{ once: false }}
+                  whileInView={{ rotateX: 0, }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.7 }}
                   className="group bg-white overflow-hidden hover:shadow-2xl border border-gold/10">
                   {/* Image with zoom animation */}
                   <div className="relative h-60 overflow-hidden">
-                    <motion.div
-                      initial={{ scale: 1 }}
-                      animate={{ scale: 1.1 }}
-                      transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-                      className="w-full h-full"
-                    >
+                    <div className="w-full h-full zoom-pan">
                       <Image
                         src={stall.image}
                         alt={stall.name}
                         fill
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover"
                       />
-                    </motion.div>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex justify-end items-start p-4">
                       <div className="bg-white/90 rounded-full p-2 shadow-lg">
                         {stall.icon}
@@ -196,7 +193,7 @@ const Stalls = () => {
                       >
                         Explore
                       </motion.button>
-                      </Link>
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -212,13 +209,13 @@ const Stalls = () => {
           className="text-center mt-14"
         >
           <Link href='/contact'>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Book Our Stalls
-          </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-gold to-gold-dark text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Book Our Stalls
+            </motion.button>
           </Link>
           <p className="text-gray-600 text-sm mt-4 font-light">
             Make your event unforgettable with these premium additions.

@@ -77,22 +77,22 @@ const aboutSchema = {
   "foundingDate": "2008",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Your Street Address",
+    "streetAddress": "South Street , Asaripallam , Nagercoil ,629201",
     "addressLocality": "Nagercoil",
     "addressRegion": "Tamil Nadu",
-    "postalCode": "629001",
+    "postalCode": "629201",
     "addressCountry": "IN"
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-XXXXXXXXXX",
+    "telephone": "+91-8778304145",
     "contactType": "customer service",
     "areaServed": "IN",
     "availableLanguage": ["English", "Tamil"]
   },
   "sameAs": [
-    "https://www.facebook.com/vipeventsmanagement",
-    "https://www.instagram.com/vipeventsmanagement",
+    "https://https://www.facebook.com/vipeventmanagementnagercoil",
+    "https://www.instagram.com/nagercoil_decorator/",
     "https://www.youtube.com/@vipeventsmanagement"
   ],
   "aggregateRating": {

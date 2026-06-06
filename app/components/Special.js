@@ -8,7 +8,7 @@ import { type } from "os";
 
 const SpecialHighlightsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -26,11 +26,11 @@ const SpecialHighlightsSection = () => {
       description: "Our stage décor in Nagercoil service transforms your venue into a breathtaking setting. Whether it's birthday theme décor, elegant wedding décor, luxury floral arrangements, or custom-designed stages, we deliver perfection every time.",
       media: [
         { type: "video", src: "/services/dec/decvid1.mp4" },
-         { type: "video", src: "/services/dec/decvid2.mp4" },
-                  { type: "video", src: "/services/dec/decvid3.mp4" },
-                  { type: "video", src: "/services/dec/birthday/birthday.mp4" },
+        { type: "video", src: "/services/dec/decvid2.mp4" },
+        { type: "video", src: "/services/dec/decvid3.mp4" },
+        { type: "video", src: "/services/dec/birthday/birthday.mp4" },
 
-        
+
         // { type: "image", src: "/images/stage-highlight-2.jpg" },
         // { type: "image", src: "/images/stage-highlight-3.jpg" },
         // { type: "image", src: "/images/stage-highlight-4.jpg" }
@@ -41,11 +41,11 @@ const SpecialHighlightsSection = () => {
       title: "Best Catering Services in Nagercoil",
       description: "Food is the heart of every celebration, and we bring flavors your guests will never forget. Our catering services in Nagercoil include veg and non-veg wedding catering, buffet catering, and special menus with authentic taste, freshness, and presentation.",
       media: [
-          {type: "video", src: "/services/cat/catvid.mp4"},
-    {type: "video", src: "/services/cat/catvid1.mp4"},
-    {type: "video", src: "/services/cat/catvid2.mp4"},
-     {type: "video", src: "/services/cat/catvid3.mp4"},
-     {type: "video", src: "/services/cat/catvid4.mp4"},
+        { type: "video", src: "/services/cat/catvid.mp4" },
+        { type: "video", src: "/services/cat/catvid1.mp4" },
+        { type: "video", src: "/services/cat/catvid2.mp4" },
+        { type: "video", src: "/services/cat/catvid3.mp4" },
+        { type: "video", src: "/services/cat/catvid4.mp4" },
 
 
 
@@ -84,8 +84,8 @@ const SpecialHighlightsSection = () => {
       description: "Set the mood with our professional DJ music in Nagercoil, live games, and entertainment that keeps the crowd energized. Make a grand statement with our couple entry concepts like snow fog, fire shot, floral pathway, or royal-themed arrivals.",
       media: [
 
-        {type: "video" ,src:"/services/dj/djvid1.mp4"},
-        {type: "video" ,src:"/services/dj/djvid.mp4"},
+        { type: "video", src: "/services/dj/djvid1.mp4" },
+        { type: "video", src: "/services/dj/djvid.mp4" },
         // { type: "image", src: "/images/entertainment-highlight.jpg" },
         // { type: "image", src: "/images/entertainment-highlight-2.jpg" },
         // { type: "image", src: "/images/entertainment-highlight-3.jpg" }
@@ -147,40 +147,48 @@ const SpecialHighlightsSection = () => {
                   } items-center gap-10`}
               >
                 {/* Image Slider with Zoom Animation */}
- <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-gold/10">
-  <Slider {...sliderSettings}>
-    {highlight.media.map((item, idx) => (
-      <div
-        key={idx}
-        className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] overflow-hidden rounded-none md:rounded-3xl"
-      >
-        {item.type === "video" ? (
-          <video
-            src={item.src}
-            className="w-full h-full object-fill object-center"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        ) : (
-          <Image
-            src={item.src}
-            alt={highlight.title}
-            fill
-            className="object-contain object-center"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority
-          />
-        )}
-      </div>
-    ))}
-  </Slider>
-</div>
+                <div className="w-full lg:w-1/2 relative overflow-hidden rounded-none md:rounded-3xl shadow-none md:shadow-2xl border-none md:border md:border-gold/10">
+                  <Slider {...sliderSettings}>
+                    {highlight.media.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] overflow-hidden rounded-none md:rounded-3xl"
+                      >
+                        {item.type === "video" ? (
+                          <video
+                            src={item.src}
+                            className="w-full h-full object-cover object-center"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="none"
+                            ref={(el) => {
+                              if (!el) return;
+                              const io = new IntersectionObserver(([e]) => {
+                                if (e.isIntersecting) { el.play(); io.disconnect(); }
+                              }, { threshold: 0.25 });
+                              io.observe(el);
+                            }}
+                          />
+                        ) : (
+                          <Image
+                            src={item.src}
+                            alt={highlight.title}
+                            fill
+                            className="object-contain object-center"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
 
 
 
-               
+
                 {/* Text Content */}
                 <div className="w-full lg:w-1/2 px-4 md:px-0">
                   <motion.div
@@ -218,13 +226,13 @@ const SpecialHighlightsSection = () => {
                     )}
 
                     <Link href="/services">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all font-medium"
-                    >
-                      Learn More
-                    </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all font-medium"
+                      >
+                        Learn More
+                      </motion.button>
                     </Link>
                   </motion.div>
                 </div>

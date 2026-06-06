@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Star, PartyPopper, Heart, Sparkles,Trophy,Gem,Eye,} from "lucide-react";
+import { Star, PartyPopper, Heart, Sparkles, Trophy, Gem, Eye, } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GoogleBusiness from "./GoogleBusiness";
@@ -13,7 +13,7 @@ const AboutUs = () => {
   // Unsplash Images (Free to use)
 
   const images = [
-     {
+    {
       url: "/about/reviews.jpg",
       heading: "Top Rated Google Reviews In Nagercoil",
       desc: "we are the 100% client satisfied and top rated google reviews in Nagercoil. we are the best event planners in Nagercoil."
@@ -48,7 +48,7 @@ const AboutUs = () => {
       heading: "Best Music anad DJ Services In Nagercoil",
       desc: "Our team of experienced DJs and music planners will help you plan your event from start to finish. Get the best music and DJ services for weddings, corporate events, and all celebrations across Kanyakumari district."
     }, // Concert/entertainment event
-   
+
   ];
 
   const whyChooseUs = [
@@ -60,7 +60,7 @@ const AboutUs = () => {
 
   const aboutSliderSettings = {
     infinite: true,
-  
+    autoplay: true,
     autoplaySpeed: 3500,
     speed: 1000,
     arrows: false,
@@ -144,7 +144,7 @@ const AboutUs = () => {
     }
   ];
 
-    // Achievement stats
+  // Achievement stats
   const achievements = [
     { icon: <Trophy className="w-6 h-6" />, number: "500+", text: "Successful Events" },
     { icon: <Heart className="w-6 h-6" />, number: "100%", text: "Client Satisfaction" },
@@ -201,7 +201,7 @@ const AboutUs = () => {
               <motion.div
                 style={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 className="w-full md:w-1/2 -mx-4 md:mx-0"
               >
@@ -213,7 +213,7 @@ const AboutUs = () => {
                         <GoogleBusiness />
                       </div>
                     </div>
-                    
+
                     {images.map((src, index) => (
                       <div key={index} className="relative w-full h-[250px] md:h-[400px]">
                         <Image
@@ -221,7 +221,7 @@ const AboutUs = () => {
                           alt={`Event ${index + 1}`}
                           fill
                           className="object-fill"
-                          priority
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                         <motion.div
@@ -243,7 +243,7 @@ const AboutUs = () => {
               <motion.div
                 style={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-100"
               >
@@ -277,41 +277,41 @@ const AboutUs = () => {
                 </motion.p>
               </motion.div>
 
-   
+
             </div>
 
-                         {/* stats */}
-    <div className="relative py-8">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="container mx-auto px-6 md:px-12 z-10"
-      >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-          {achievements.map((item, index) => (
-            <motion.div
-              key={index}
-              className="bg-gradient-to-br from-gold/5 to-white border border-gold/10 shadow-lg rounded-xl md:rounded-2xl p-3 md:p-6 text-center"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <div className="text-gold mb-2 flex justify-center">
-                <div className="w-5 h-5 md:w-6 md:h-6">{item.icon}</div>
-              </div>
-              <div className="text-xl md:text-4xl font-bold text-dark mb-1 md:mb-2">
-                {item.number}
-              </div>
-              <div className="text-gray-600 text-[10px] md:text-sm leading-tight">
-                {item.text}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
+            {/* stats */}
+            <div className="relative py-8">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="container mx-auto px-6 md:px-12 z-10"
+              >
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                  {achievements.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-gradient-to-br from-gold/5 to-white border border-gold/10 shadow-lg rounded-xl md:rounded-2xl p-3 md:p-6 text-center"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      <div className="text-gold mb-2 flex justify-center">
+                        <div className="w-5 h-5 md:w-6 md:h-6">{item.icon}</div>
+                      </div>
+                      <div className="text-xl md:text-4xl font-bold text-dark mb-1 md:mb-2">
+                        {item.number}
+                      </div>
+                      <div className="text-gray-600 text-[10px] md:text-sm leading-tight">
+                        {item.text}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

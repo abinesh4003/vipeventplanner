@@ -3,6 +3,7 @@ import Navbar from "./components/Navigation";
 import Footer from "./components/Footer";
 import WatsappLogo from "./components/WatsappLogo";
 import ContactPopup from "./components/ContactPopup";
+import { ReactLenis } from 'lenis/react';
 
 export const metadata = {
   title: {
@@ -84,15 +85,15 @@ const organizationSchema = {
     "https://www.vipeventmanagement.in/og-image.jpg"
   ],
   "description": "#1 Best & Affordable Event Management in Nagercoil. Best catering services with premium quality at affordable prices. Budget-friendly wedding planners, stage decoration, corporate events. 15+ years experience, 500+ successful events, 100% satisfaction. Quality service at best prices across Kanyakumari district.",
-  "telephone": "+91-XXXXXXXXXX",
+  "telephone": "+91-8778304145",
   "email": "shejinoantony@gmail.com",
   "priceRange": "$-$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Your Street Address",
+    "streetAddress": "South Street , Asaripallam , Nagercoil ,629201",
     "addressLocality": "Nagercoil",
     "addressRegion": "Tamil Nadu",
-    "postalCode": "629001",
+    "postalCode": "629201",
     "addressCountry": "IN"
   },
   "geo": {
@@ -123,8 +124,8 @@ const organizationSchema = {
     }
   ],
   "sameAs": [
-    "https://www.facebook.com/vipeventsmanagement",
-    "https://www.instagram.com/vipeventsmanagement"
+    "https://https://www.facebook.com/vipeventmanagementnagercoil",
+    "https://www.instagram.com/nagercoil_decorator/"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -267,11 +268,13 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased relative">
-        <Navbar />
-        <WatsappLogo />
-        <ContactPopup />
-        {children}
-        <Footer />
+        <ReactLenis root options={{ duration: 1.2, lerp: 0.1 }}>
+          <Navbar />
+          <WatsappLogo />
+          <ContactPopup />
+          {children}
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );
